@@ -1,0 +1,225 @@
+.ss-pd {
+    padding: 0 20px;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 123rem;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.head-verti.center {
+    text-align: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.head-verti {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.mb-32 {
+    margin-bottom: 3.2rem;
+}
+
+
+.homes-logis-box {
+    overflow: hidden;
+}
+
+.homes-logis-list {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 701px) {
+
+    .homes-logis-item:nth-child(1),
+    .homes-logis-item:nth-child(2),
+    .homes-logis-item:nth-child(3) {
+        margin-bottom: auto;
+    }
+}
+
+@media screen and (min-width: 701px) {
+
+    .homes-logis-item:nth-child(1),
+    .homes-logis-item:nth-child(4),
+    .homes-logis-item:nth-child(7) {
+        text-align: right;
+    }
+}
+
+.homes-logis-item {
+    position: relative;
+    z-index: 2;
+}
+
+.homes-logis-item {
+    width: calc(100% / 3.1);
+}
+
+.col {
+    width: 100%;
+    padding: 0 calc(var(--cg) / 2);
+    margin-bottom: var(--rg);
+}
+
+
+.homes-logis-circle {
+    position: relative;
+    width: calc(100% / 3);
+}
+
+
+
+.homes-logis-circle .circle-text {
+    aspect-ratio: 485 / 426;
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 115%;
+}
+
+.homes-logis-circle .icon {
+    position: absolute;
+    font-size: 24px;
+    width: 20%;
+    aspect-ratio: 1 / 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    border-radius: 100rem;
+    background-color: var(--color-pri);
+}
+
+
+.homes-logis-circle .circle-img {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    padding: 2rem;
+    background-color: #E6EDF3;
+    border-radius: 100rem;
+}
+
+
+.homes-logis-circle .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) rotate(-90deg);
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
+
+
+.homes-logis-circle .circle-text img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+
+img {
+    max-width: 100%;
+    border-radius: inherit;
+    height: auto;
+}
+
+
+.homes-logis-circle .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) rotate(-90deg);
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
+
+
+.homes-logis-circle .icon {
+    translate: none;
+    rotate: none;
+    scale: none;
+    transform: translate(-50%, -50%) translate(502px, 261px);
+    position: absolute;
+    font-size: 24px;
+    width: 20%;
+    aspect-ratio: 1 / 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    border-radius: 100rem;
+    background-color: var(--color-pri);
+}
+
+
+body img.attachment-full.size-full {
+    object-fit: cover !important;
+}
+
+.homes-logis-circle .icon img {
+    width: 50%;
+    height: 50%;
+    border-radius: 0;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+
+.homes-logis-circle .circle-tts {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.homes-logis-circle .circle-tt:nth-child(1) {
+    position: absolute;
+    right: 100%;
+    bottom: 10%;
+}
+
+.homes-logis-circle .circle-tt {
+    font-weight: 700;
+    --f-sz: clamp(1.5rem, calc(1.3279rem + 0.2459vw), 1.8rem);
+    font-size: var(--f-sz);
+}

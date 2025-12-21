@@ -1,0 +1,104 @@
+.store-sys-map .wrapper .img-inner {
+  aspect-ratio: 777/1284;
+}
+.store-sys-map .wrapper .img-inner img {
+  height: 100%;
+  width: 100%;
+  display: block;
+  object-fit: contain;
+}
+.store-sys-map .wrapper .img-Map {
+  aspect-ratio: 776/1284;
+  pointer-events: none;
+}
+.store-sys-map .wrapper .img-Map svg {
+  height: 100%;
+  width: 100%;
+}
+.store-sys-map .imgArrows {
+  aspect-ratio: 793.6/1277.87;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: visible;
+}
+.store-sys-map .imgArrows .imgArrow {
+  aspect-ratio: 35/45;
+  width: 4%;
+  position: absolute;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-transform-origin: bottom center;
+  transform-origin: bottom center;
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .store-sys-map .imgArrows .imgArrow:hover {
+    transform: scale(1.2);
+    z-index: 10;
+  }
+}
+.store-sys-map .imgArrows .imgArrow img {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+.store-sys-map .imgArrows .imgArrow[posi-id=hanoi1] {
+  left: 36%;
+  top: 15%;
+}
+.store-sys-map .imgArrows .imgArrow[posi-id=hanoi2] {
+  left: 34%;
+  top: 14%;
+}
+.store-sys-map .imgArrows .imgArrow[posi-id=vinhphuc1] {
+  left: 33%;
+  top: 10.5%;
+}
+.store-sys-map .imgArrows .imgArrow[posi-id=vinhphuc2] {
+  left: 30%;
+  top: 10.5%;
+}
+.store-sys-map .imgArrows .imgArrow[posi-id=haiphong1] {
+  left: 45%;
+  top: 14%;
+}
+.store-sys-map .imgArrows .imgArrow[posi-id=haiphong2] {
+  left: 43%;
+  top: 14%;
+}
+.store-sys-map .imgArrows .imgArrow[posi-id=ninhbinh1] {
+  left: 37%;
+  top: 18%;
+}
+.store-sys-map .imgArrows .imgArrow[posi-id=ninhbinh2] {
+  left: 40%;
+  top: 19%;
+}
+.store-sys-map .imgArrows .imgArrow[posi-id=nghean] {
+  left: 27%;
+  top: 25%;
+}
+.store-sys-map .imgArrows .imgArrow[posi-id=binhduong] {
+  left: 51%;
+  top: 79%;
+}
+.store-sys-map .imgArrows .imgArrow[posi-id=hcm1] {
+  left: 45%;
+  top: 80.5%;
+}
+.store-sys-map .imgArrows .imgArrow[posi-id=hcm2] {
+  left: 44%;
+  top: 83.5%;
+}
+.store-sys-map .imgArrows .imgArrow[posi-id=hcm3] {
+  left: 46.5%;
+  top: 84.9%;
+}
+.store-sys-map .imgArrows .imgArrow[posi-id=hcm4] {
+  left: 50%;
+  top: 84.5%;
+}
+
+/*# sourceMappingURL=update.css.map */

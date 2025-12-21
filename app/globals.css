@@ -1,0 +1,134 @@
+/* Reset và base styles */
+:root {
+  --primary-color: #FBAE17;
+  --secondary-color: #0066CC;
+  --text-color: #000000;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.ss-pd {
+  padding: 80px 0;
+}
+
+.bg-pri {
+  background-color: var(--primary-color);
+}
+
+.bg-blue {
+  background-color: var(--secondary-color);
+}
+
+.white {
+  color: var(--white);
+}
+
+.title-48 {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/* Grid system */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.col {
+  padding: 0 15px;
+}
+
+.rows-3 .col {
+  width: 33.333%;
+}
+
+.rows-4 .col {
+  width: 25%;
+}
+
+.rows-5 .col {
+  width: 20%;
+}
+
+/* Button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn.pri {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: 2px solid var(--primary-color);
+}
+
+.btn.pri:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+.btn.white {
+  background-color: var(--white);
+  color: var(--primary-color);
+  border: 2px solid var(--white);
+}
+
+.btn.white:hover {
+  background-color: transparent;
+  color: var(--white);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+
+  .rows-3 .col,
+  .rows-4 .col,
+  .rows-5 .col {
+    width: 50%;
+  }
+
+  .title-48 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .rows-3 .col,
+  .rows-4 .col,
+  .rows-5 .col {
+    width: 100%;
+  }
+
+  .ss-pd {
+    padding: 40px 0;
+  }
+
+  .title-48 {
+    font-size: 28px;
+  }
+}

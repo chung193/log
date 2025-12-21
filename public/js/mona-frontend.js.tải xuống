@@ -1,0 +1,6 @@
+import Load from "./modules/load-mode.js";
+import StoreModule from "./modules/store.js";
+// /****************************/
+
+Load();
+StoreModule();

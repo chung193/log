@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary-color: #0066cc;
+    --secondary-color: #ff9900;
+}
+
+/* Custom styles */
+.container {
+    @apply mx-auto px-4 max-w-7xl;
+}
+
+.btn-primary {
+    @apply bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300;
+}
+
+.section-padding {
+    @apply py-16 md:py-24;
+}

@@ -1,0 +1,228 @@
+.homes-solv .homes-solv-svg {
+    position: relative;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    overflow: visible;
+}
+
+.homes-solv .main-svg {
+    width: 100%;
+    height: auto;
+}
+
+svg:not(:root) {
+    overflow-clip-margin: content-box;
+    overflow: hidden;
+}
+
+.homes-solv .moving-icon {
+    position: absolute;
+    width: 5%;
+    height: auto;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+.homes-solv-con {
+    position: relative;
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+
+.homes-solv-con .img {
+    width: 70vw;
+    margin: 0 auto;
+    margin-top: -20rem;
+    position: relative;
+    z-index: 2;
+}
+
+.homes-solv-con .img-inner {
+    display: block;
+    padding-top: calc((440 / 792) * 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.homes-solv-con .img-inner img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+    display: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.homes-solv-con::after {
+    content: '';
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    bottom: 0;
+    background-color: #E6EDF3;
+    z-index: -1;
+}
+
+.homes-solv-con {
+    position: relative;
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+
+.homes-solv-slide {
+    background-color: #E6EDF3;
+}
+
+.container {
+    width: 100%;
+    max-width: 123rem;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+
+.head-verti.center {
+    text-align: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.head-verti {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.mb-32 {
+    margin-bottom: 3.2rem;
+}
+
+tml:not(.no-js) [data-aos^=fade][data-aos^=fade].aos-animate {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+}
+
+html:not(.no-js) [data-aos^=fade][data-aos^=fade] {
+    opacity: 0;
+    transition-property: opacity, -webkit-transform;
+    transition-property: opacity, transform;
+    transition-property: opacity, transform, -webkit-transform;
+}
+
+[data-aos][data-aos][data-aos-delay="200"].aos-animate,
+body[data-aos-delay="200"] [data-aos].aos-animate {
+    transition-delay: .2s;
+}
+
+.title-48 {
+    --f-sz: clamp(2rem, calc(0.3934rem + 2.2951vw), 4.8rem);
+    font-size: var(--f-sz);
+    position: relative;
+    color: var(--color-text);
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.head-verti .desc {
+    max-width: 90rem;
+}
+
+.desc {
+    color: #021441;
+    font-weight: 300;
+    --f-sz: clamp(1.5rem, calc(1.3279rem + 0.2459vw), 1.8rem);
+    font-size: var(--f-sz);
+}
+
+.homes-solv-swiper {
+    max-width: 152.7rem;
+    width: calc(100% - 3rem);
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.homes-solv-swiper .swiper {
+    overflow: visible;
+}
+
+.row {
+    --cg: 2.4rem;
+    --rg: 2.4rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 calc(var(--cg) / 2 * -1) calc(var(--rg) * -1);
+}
+
+.swiper-pointer-events {
+    touch-action: pan-y;
+}
+
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+}
+
+.swiper-pagination {
+    position: static;
+    margin-top: 1.6rem;
+}
+
+.swiper-pagination-lock {
+    display: none;
+}
+
+.swiper-pagination {
+    position: absolute;
+    text-align: center;
+    transition: .3s opacity;
+    transform: translate3d(0, 0, 0);
+    z-index: 10;
+}
