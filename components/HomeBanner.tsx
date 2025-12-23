@@ -29,21 +29,22 @@ const slides = [
 export default function HomeBanner() {
     const [activeIndex, setActiveIndex] = useState(0)
 
-    const getNextIndex = (offset: number) => {
-        return (activeIndex + offset) % slides.length
+    const handleNext = () => {
+        setActiveIndex((activeIndex + 1) % slides.length)
     }
 
     const handlePrev = () => {
         setActiveIndex((activeIndex - 1 + slides.length) % slides.length)
     }
 
-    const handleNext = () => {
-        setActiveIndex((activeIndex + 1) % slides.length)
+    // Click trực tiếp vào preview slide để set nó thành active
+    const handlePreviewClick = (index) => {
+        setActiveIndex(index)
     }
 
-    const handlePreviewClick = (indexOffset: number) => {
-        const targetIndex = (activeIndex + indexOffset) % slides.length
-        setActiveIndex(targetIndex)
+    // Lấy slide tiếp theo dựa trên offset
+    const getSlideAtOffset = (offset) => {
+        return slides[(activeIndex + offset) % slides.length]
     }
 
     return (
@@ -147,25 +148,18 @@ export default function HomeBanner() {
                     transition: all 0.3s ease;
                     z-index: 30;
                     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-                    right: 32px;
-                    top: 50%;
                 }
 
                 .nav-btn:hover {
                     box-shadow: 0 6px 16px rgba(0,0,0,0.3);
                 }
 
-                .nav-prev {
-                    transform: translateY(-40px);
-                    display: none;
-                }
-
                 .nav-next {
                     position: absolute;
                     top: 50%;
-                    right: 1rem;
+                    right: 5%;
                     overflow: hidden;
-                    z-index: 1;
+                    transform: translateY(-50%);
                 }
 
                 .nav-next::before {
@@ -191,6 +185,7 @@ export default function HomeBanner() {
 
                 .find-more-button {
                     animation: fadeInUp 0.5s ease-out;
+                    margin-top: 15px;
                 }
 
                 @keyframes fadeInUp {
@@ -206,7 +201,7 @@ export default function HomeBanner() {
             `}</style>
 
             <div className="banner-grid">
-                {/* Main Slide - SLIDE TO NHẤT, ĐANG ACTIVE */}
+                {/* Main Slide - Luôn hiển thị slide active */}
                 <div className="main-slide">
                     <img
                         src={slides[activeIndex].image}
@@ -217,66 +212,53 @@ export default function HomeBanner() {
 
                     <div className="main-title">
                         {slides[activeIndex].title}
-                        <FindMoreButton
-                            href={slides[activeIndex].link}
-                            label="Tìm hiểu thêm"
-                        />
+                        <div className="find-more-button">
+                            <FindMoreButton
+                                href={slides[activeIndex].link}
+                                label="Tìm hiểu thêm"
+                            />
+                        </div>
                     </div>
 
-
+                    {/* Nút Next nằm trong main slide */}
+                    <div className="nav-next nav-btn" onClick={handleNext}>
+                        <FontAwesomeIcon icon={faArrowRight} />
+                    </div>
                 </div>
 
-                {/* Preview Slide 1 - KHÔNG CÓ FindMoreButton */}
+                {/* Preview Slide 1 */}
                 <div
                     className="preview-slide"
-                    onClick={() => handlePreviewClick(1)}
+                    onClick={() => handlePreviewClick((activeIndex + 1) % slides.length)}
                     style={{ gridColumn: '2', gridRow: '1' }}
                 >
                     <img
-                        src={slides[getNextIndex(1)].image}
-                        alt={slides[getNextIndex(1)].title}
+                        src={getSlideAtOffset(1).image}
+                        alt={getSlideAtOffset(1).title}
                         className="slide-image"
                     />
                     <div className="preview-overlay"></div>
                     <div className="preview-title">
-                        {slides[getNextIndex(1)].title}
-                        <FindMoreButton
-                            href={slides[activeIndex].link}
-                            label="Tìm hiểu thêm"
-                        />
+                        {getSlideAtOffset(1).title}
                     </div>
-
                 </div>
 
-                {/* Preview Slide 2 - KHÔNG CÓ FindMoreButton */}
+                {/* Preview Slide 2 */}
                 <div
                     className="preview-slide"
-                    onClick={() => handlePreviewClick(2)}
+                    onClick={() => handlePreviewClick((activeIndex + 2) % slides.length)}
                     style={{ gridColumn: '3', gridRow: '1' }}
                 >
                     <img
-                        src={slides[getNextIndex(2)].image}
-                        alt={slides[getNextIndex(2)].title}
+                        src={getSlideAtOffset(2).image}
+                        alt={getSlideAtOffset(2).title}
                         className="slide-image"
                     />
                     <div className="preview-overlay"></div>
                     <div className="preview-title">
-                        {slides[getNextIndex(2)].title}
-                        <FindMoreButton
-                            href={slides[activeIndex].link}
-                            label="Tìm hiểu thêm"
-                        />
+                        {getSlideAtOffset(2).title}
                     </div>
                 </div>
-            </div>
-
-            {/* Navigation Buttons */}
-            <div className="nav-prev nav-btn" onClick={handlePrev}>
-                <i className="fa-solid fa-arrow-right"></i>
-            </div>
-
-            <div className="nav-next nav-btn" onClick={handleNext}>
-                <FontAwesomeIcon icon={faArrowRight} />
             </div>
         </section>
     )
