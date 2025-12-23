@@ -3,11 +3,13 @@ import './FindMoreButton.css';
 
 type FindMoreButtonProps = {
     label?: string;
+    href?: string;
     onClick?: () => void;
 };
 
 const FindMoreButton: React.FC<FindMoreButtonProps> = ({
     label = 'TÌM HIỂU THÊM',
+    href = '#',
     onClick,
 }) => {
     return (
