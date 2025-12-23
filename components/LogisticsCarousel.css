@@ -28,6 +28,11 @@
     object-fit: cover;
 }
 
+.item {
+    height: 315px;
+    width: 388px;
+}
+
 /* Logo block */
 .logo-item {
     display: flex;
