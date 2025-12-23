@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useRef } from 'react';
 import './Ecosystem.css';
 
 interface LogisticsItemProps {
@@ -18,26 +19,18 @@ const LogisticsItem: React.FC<LogisticsItemProps> = ({ title, subtitle, descript
                     {description && <p className="sub">{description}</p>}
                     {items && items.length > 0 && (
                         twoColumns ? (
-                            <table style={{ height: '24px', width: '100%' }}>
-                                <tbody>
-                                    <tr style={{ height: '24px' }}>
-                                        <td style={{ width: '56.9667%', height: '24px' }}>
-                                            <ul>
-                                                {items.slice(0, Math.ceil(items.length / 2)).map((item, idx) => (
-                                                    <li key={idx}>{item}</li>
-                                                ))}
-                                            </ul>
-                                        </td>
-                                        <td style={{ width: '43.0333%', height: '24px' }}>
-                                            <ul>
-                                                {items.slice(Math.ceil(items.length / 2)).map((item, idx) => (
-                                                    <li key={idx}>{item}</li>
-                                                ))}
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div className="two-column-list">
+                                <ul>
+                                    {items.slice(0, Math.ceil(items.length / 2)).map((item, idx) => (
+                                        <li key={idx}>{item}</li>
+                                    ))}
+                                </ul>
+                                <ul>
+                                    {items.slice(Math.ceil(items.length / 2)).map((item, idx) => (
+                                        <li key={idx}>{item}</li>
+                                    ))}
+                                </ul>
+                            </div>
                         ) : (
                             <ul>
                                 {items.map((item, idx) => (
@@ -56,20 +49,59 @@ const LogisticsItem: React.FC<LogisticsItemProps> = ({ title, subtitle, descript
 interface CircleIconProps {
     src: string;
     alt: string;
-    transform: string;
+    angle: number; // Góc tính từ tâm (0-360 độ)
 }
 
-const CircleIcon: React.FC<CircleIconProps> = ({ src, alt, transform }) => {
+const CircleIcon: React.FC<CircleIconProps> = ({ src, alt, angle }) => {
+    const iconRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const updatePosition = () => {
+            if (!iconRef.current) return;
+
+            const circleContainer = iconRef.current.closest('.homes-logis-circle');
+            if (!circleContainer) return;
+
+            // Lấy circle-img để tính bán kính chính xác
+            const circleImg = circleContainer.querySelector('.circle-img') as HTMLElement;
+            if (!circleImg) return;
+
+            const imgRect = circleImg.getBoundingClientRect();
+            const containerRect = circleContainer.getBoundingClientRect();
+
+            // Tính tâm của circle-img so với container
+            const centerX = (imgRect.left - containerRect.left) + imgRect.width / 2;
+            const centerY = (imgRect.top - containerRect.top) + imgRect.height / 2;
+
+            // Bán kính = nửa chiều rộng của circle-img
+            const radius = imgRect.width / 2;
+
+            // Tính toán vị trí dựa trên góc
+            const radian = angle * (Math.PI / 180);
+            const x = centerX + radius * Math.cos(radian);
+            const y = centerY + radius * Math.sin(radian);
+
+            // Áp dụng vị trí
+            iconRef.current.style.left = `${x}px`;
+            iconRef.current.style.top = `${y}px`;
+        };
+
+        // Chạy nhiều lần để đảm bảo layout ổn định
+        updatePosition();
+        const timeout1 = setTimeout(updatePosition, 50);
+        const timeout2 = setTimeout(updatePosition, 150);
+
+        window.addEventListener('resize', updatePosition);
+
+        return () => {
+            window.removeEventListener('resize', updatePosition);
+            clearTimeout(timeout1);
+            clearTimeout(timeout2);
+        };
+    }, [angle]);
+
     return (
-        <div
-            className="icon"
-            style={{
-                translate: 'none',
-                rotate: 'none',
-                scale: 'none',
-                transform: transform
-            }}
-        >
+        <div ref={iconRef} className="icon">
             <img
                 width="48"
                 height="48"
@@ -88,32 +120,32 @@ const Ecosystem: React.FC = () => {
         {
             src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-1.svg',
             alt: 'Hàng hóa',
-            transform: 'translate(-50%, -50%) translate(390px, 210px)'
+            angle: -30  // Trên bên phải
         },
         {
             src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-2.svg',
             alt: 'Kho',
-            transform: 'translate(-50%, -50%) translate(305px, 395px)'
+            angle: 30   // Dưới bên phải
         },
         {
             src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-3.svg',
             alt: 'Building',
-            transform: 'translate(-50%, -50%) translate(115px, 402px)'
+            angle: 90   // Dưới cùng
         },
         {
             src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-4.svg',
             alt: 'Trucking',
-            transform: 'translate(-50%, -50%) translate(22px, 210px)'
+            angle: 150  // Dưới bên trái
         },
         {
             src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-5.svg',
             alt: 'cửa hàng',
-            transform: 'translate(-50%, -50%) translate(115px, 4px)'
+            angle: 210  // Trên bên trái
         },
         {
             src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-6.svg',
             alt: 'Khách hàng',
-            transform: 'translate(-50%, -50%) translate(312px, 13px)'
+            angle: 270  // Trên cùng (vì circle đã rotate -90deg)
         }
     ];
 
@@ -187,7 +219,7 @@ const Ecosystem: React.FC = () => {
                                             key={idx}
                                             src={icon.src}
                                             alt={icon.alt}
-                                            transform={icon.transform}
+                                            angle={icon.angle}
                                         />
                                     ))}
                                 </div>

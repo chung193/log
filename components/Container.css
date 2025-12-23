@@ -89,9 +89,6 @@
 .homes-logis-circle .circle-img {
     aspect-ratio: 1 / 1;
     width: 100%;
-    max-width: 420px;
-    /* Cố định kích thước tối đa */
-    margin: 0 auto;
     padding: 2rem;
     background-color: #E6EDF3;
     border-radius: 100rem;
@@ -100,34 +97,33 @@
 /* Circle Container for Icons */
 .homes-logis-circle .circle {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
     width: 100%;
-    height: 100%;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
-    pointer-events: none;
 }
 
 /* Icon Styles - Simplified positioning */
 .homes-logis-circle .icon {
     position: absolute;
-    width: 48px;
-    height: 48px;
+    width: 20%;
+    aspect-ratio: 1 / 1;
     display: flex;
     justify-content: center;
     align-items: center;
     transform: translate(-50%, -50%);
     transform-origin: 50% 50%;
-    border-radius: 50%;
+    border-radius: 100rem;
     background-color: var(--color-pri, #FBAE17);
-    pointer-events: auto;
 }
 
 .homes-logis-circle .icon img {
     width: 50%;
     height: 50%;
     border-radius: 0;
-    transform: none;
+    transform: rotate(90deg);
     object-fit: cover;
 }
 
