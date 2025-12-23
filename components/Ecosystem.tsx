@@ -88,32 +88,32 @@ const Ecosystem: React.FC = () => {
         {
             src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-1.svg',
             alt: 'Hàng hóa',
-            transform: 'translate(-50%, -50%) translate(502px, 261px)'
+            transform: 'translate(-50%, -50%) translate(390px, 210px)'
         },
         {
             src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-2.svg',
             alt: 'Kho',
-            transform: 'translate(-50%, -50%) translate(381.5px, 469.712px)'
+            transform: 'translate(-50%, -50%) translate(305px, 395px)'
         },
         {
             src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-3.svg',
             alt: 'Building',
-            transform: 'translate(-50%, -50%) translate(140.5px, 469.712px)'
+            transform: 'translate(-50%, -50%) translate(115px, 402px)'
         },
         {
             src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-4.svg',
             alt: 'Trucking',
-            transform: 'translate(-50%, -50%) translate(20px, 261px)'
+            transform: 'translate(-50%, -50%) translate(22px, 210px)'
         },
         {
             src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-5.svg',
             alt: 'cửa hàng',
-            transform: 'translate(-50%, -50%) translate(140.5px, 52.2879px)'
+            transform: 'translate(-50%, -50%) translate(115px, 4px)'
         },
         {
             src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-6.svg',
             alt: 'Khách hàng',
-            transform: 'translate(-50%, -50%) translate(381.5px, 52.2879px)'
+            transform: 'translate(-50%, -50%) translate(312px, 13px)'
         }
     ];
 

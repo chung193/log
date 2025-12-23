@@ -226,3 +226,132 @@ body[data-aos-delay="200"] [data-aos].aos-animate {
     transform: translate3d(0, 0, 0);
     z-index: 10;
 }
+
+.img-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.img-inner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.1s ease;
+}
+
+.img-inner img.active {
+    display: block !important;
+    opacity: 1;
+}
+
+/* .homes-solv-svg {
+    position: relative;
+    width: 100%;
+}
+
+.main-svg {
+    width: 100%;
+    height: auto;
+}
+
+.moving-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.1s linear;
+    transform-origin: center center;
+    pointer-events: none;
+}
+
+.animated-line {
+    transition: stroke-dashoffset 0.1s linear;
+}
+
+.homes-solv-svg {
+    position: relative;
+    width: 100%;
+}
+
+.main-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.moving-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.05s linear;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.animated-line {
+    transition: stroke-dashoffset 0.05s linear;
+}
+
+.img-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.img-inner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.1s ease;
+}
+
+.img-inner img.active {
+    display: block !important;
+    opacity: 1;
+} */
+
+.homes-solv-svg {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+}
+
+.main-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.moving-icon {
+    position: absolute;
+    pointer-events: none;
+    z-index: 10;
+    will-change: transform;
+    margin-top: -20px;
+    margin-left: -10px;
+}
+
+.animated-line {
+    will-change: stroke-dashoffset;
+}
+
+.img-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.img-inner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
