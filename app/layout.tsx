@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
         }} />
 
         {/* CSS Files */}
-        <link rel="stylesheet" href="/css/style.min.css" />
+        {/* <link rel="stylesheet" href="/css/style.min.css" /> */}
         <link rel="stylesheet" href="/css/styles.css" />
         <link rel="stylesheet" href="/css/style.css" />
         <link rel="stylesheet" href="/css/style(1).css" />

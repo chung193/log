@@ -30,7 +30,7 @@ export default function Home() {
         <LogisticsStats />
         <WhyChooseVNP />
         <PartnersSection />
-        <NewsBlogSection />
+        {/* <NewsBlogSection /> */}
         <ContactFormSection />
       </main>
       {/* <Footer /> */}

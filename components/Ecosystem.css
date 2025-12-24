@@ -111,8 +111,8 @@
 /* Icon Styles - Simplified positioning */
 .homes-logis-circle .icon {
     position: absolute;
-    width: 48px;
-    height: 48px;
+    width: 81px !important;
+    height: 81px !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,16 +146,16 @@
     font-size: clamp(1.5rem, calc(1.3279rem + 0.2459vw), 1.8rem);
 }
 
-.homes-logis-circle .circle-tt:nth-child(1) {
+/* .homes-logis-circle .circle-tt:nth-child(1) {
     position: absolute;
     right: 100%;
     bottom: 10%;
-}
+}*/
 
 .homes-logis-circle .circle-tt:nth-child(2) {
     position: absolute;
-    left: 100%;
-    top: 10%;
+    left: 100% !important;
+    top: 80% !important;
 }
 
 /* General Image Styles */
@@ -211,4 +211,19 @@ img {
         max-width: 500px;
         margin: 2rem auto;
     }
+}
+
+.homes-logis-circle .circle .icon:nth-child(2)::after {
+    -webkit-transform: rotate(30deg);
+    transform: rotate(50deg) !important;
+    top: 140%;
+    left: 20%;
+}
+
+.homes-logis-circle .circle .icon:nth-child(4)::after {
+    -webkit-transform: rotate(60deg);
+    transform: rotate(59deg) !important;
+    width: 21rem;
+    top: -209% !important;
+    right: -30% !important;
 }

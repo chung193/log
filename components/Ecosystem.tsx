@@ -120,32 +120,32 @@ const Ecosystem: React.FC = () => {
         {
             src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-1.svg',
             alt: 'Hàng hóa',
-            angle: -30  // Trên bên phải
+            angle: 0  // Trên bên phải
         },
         {
             src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-2.svg',
             alt: 'Kho',
-            angle: 30   // Dưới bên phải
+            angle: 60   // Dưới bên phải
         },
         {
             src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-3.svg',
             alt: 'Building',
-            angle: 90   // Dưới cùng
+            angle: 120   // Dưới cùng
         },
         {
             src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-4.svg',
             alt: 'Trucking',
-            angle: 150  // Dưới bên trái
+            angle: 180  // Dưới bên trái
         },
         {
             src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-5.svg',
             alt: 'cửa hàng',
-            angle: 210  // Trên bên trái
+            angle: 240  // Trên bên trái
         },
         {
             src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-6.svg',
             alt: 'Khách hàng',
-            angle: 270  // Trên cùng (vì circle đã rotate -90deg)
+            angle: 300  // Trên cùng (vì circle đã rotate -90deg)
         }
     ];
 

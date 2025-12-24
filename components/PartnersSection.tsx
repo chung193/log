@@ -5,38 +5,38 @@ import React from 'react';
 const PartnersSection = () => {
     // Danh sách logo đối tác hiệp hội
     const associations = [
-        { id: 1, name: 'VCCI', logo: '/logos/vcci.png' },
-        { id: 2, name: 'JCTRANS', logo: '/logos/jctrans.png' },
-        { id: 3, name: 'IATA', logo: '/logos/iata.png' },
-        { id: 4, name: 'WCA', logo: '/logos/wca.png' },
-        { id: 5, name: 'VCCI', logo: '/logos/vcci.png' },
-        { id: 6, name: 'JCTRANS', logo: '/logos/jctrans.png' },
-        { id: 7, name: 'IATA', logo: '/logos/iata.png' },
-        { id: 8, name: 'WCA', logo: '/logos/wca.png' },
-        { id: 9, name: 'VCCI', logo: '/logos/vcci.png' },
-        { id: 10, name: 'JCTRANS', logo: '/logos/jctrans.png' }
+        { id: 1, name: 'VCCI', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 2, name: 'JCTRANS', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 3, name: 'IATA', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 4, name: 'WCA', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 5, name: 'VCCI', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 6, name: 'JCTRANS', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 7, name: 'IATA', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 8, name: 'WCA', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 9, name: 'VCCI', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 10, name: 'JCTRANS', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' }
     ];
 
     // Danh sách logo mạng lưới đối tác
     const partners = [
-        { id: 1, name: 'Korean Air', logo: '/logos/korean-air.png' },
-        { id: 2, name: 'USPS', logo: '/logos/usps.png' },
-        { id: 3, name: 'Vietnam Airlines', logo: '/logos/vietnam-airlines.png' },
-        { id: 4, name: 'ZIM', logo: '/logos/zim.png' },
-        { id: 5, name: 'Hapag-Lloyd', logo: '/logos/hapag-lloyd.png' },
-        { id: 6, name: 'Cargolux', logo: '/logos/cargolux.png' },
-        { id: 7, name: 'VietJet Air', logo: '/logos/vietjet.png' },
-        { id: 8, name: 'Qatar Airways', logo: '/logos/qatar.png' },
-        { id: 9, name: 'Korean Air', logo: '/logos/korean-air.png' },
-        { id: 10, name: 'China Air', logo: '/logos/china-air.png' },
-        { id: 11, name: 'HMM', logo: '/logos/hmm.png' },
-        { id: 12, name: 'MSC', logo: '/logos/msc.png' },
-        { id: 13, name: 'ONE', logo: '/logos/one.png' },
-        { id: 14, name: 'Bamboo Airways', logo: '/logos/bamboo.png' },
-        { id: 15, name: 'Maersk', logo: '/logos/maersk.png' },
-        { id: 16, name: 'Cosco', logo: '/logos/cosco.png' },
-        { id: 17, name: 'China Air', logo: '/logos/china-air.png' },
-        { id: 18, name: 'HMM', logo: '/logos/hmm.png' }
+        { id: 1, name: 'Korean Air', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 2, name: 'USPS', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 3, name: 'Vietnam Airlines', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 4, name: 'ZIM', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 5, name: 'Hapag-Lloyd', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 6, name: 'Cargolux', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 7, name: 'VietJet Air', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 8, name: 'Qatar Airways', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 9, name: 'Korean Air', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 10, name: 'China Air', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 11, name: 'HMM', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 12, name: 'MSC', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 13, name: 'ONE', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 14, name: 'Bamboo Airways', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 15, name: 'Maersk', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 16, name: 'Cosco', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 17, name: 'China Air', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
+        { id: 18, name: 'HMM', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' }
     ];
 
     return (
@@ -86,16 +86,13 @@ const PartnersSection = () => {
                                         alignItems: 'center',
                                         justifyContent: 'center',
                                         padding: '10px',
-                                        filter: 'grayscale(100%)',
                                         opacity: 0.7,
                                         transition: 'all 0.3s ease'
                                     }}
                                         onMouseEnter={(e) => {
-                                            e.currentTarget.style.filter = 'grayscale(0%)';
                                             e.currentTarget.style.opacity = '1';
                                         }}
                                         onMouseLeave={(e) => {
-                                            e.currentTarget.style.filter = 'grayscale(100%)';
                                             e.currentTarget.style.opacity = '0.7';
                                         }}
                                     >
@@ -103,7 +100,6 @@ const PartnersSection = () => {
                                         <div style={{
                                             width: '100%',
                                             height: '100%',
-                                            backgroundColor: '#e0e0e0',
                                             borderRadius: '8px',
                                             display: 'flex',
                                             alignItems: 'center',
@@ -112,7 +108,7 @@ const PartnersSection = () => {
                                             color: '#666',
                                             fontWeight: 'bold'
                                         }}>
-                                            {item.name}
+                                            <img src={item.logo} alt={item.name} />
                                         </div>
                                     </div>
                                 </div>
@@ -153,22 +149,18 @@ const PartnersSection = () => {
                                     }}
                                 >
                                     <div style={{
-                                        width: '140px',
-                                        height: '80px',
+                                        width: '150px',
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
                                         padding: '10px',
-                                        filter: 'grayscale(100%)',
                                         opacity: 0.7,
                                         transition: 'all 0.3s ease'
                                     }}
                                         onMouseEnter={(e) => {
-                                            e.currentTarget.style.filter = 'grayscale(0%)';
                                             e.currentTarget.style.opacity = '1';
                                         }}
                                         onMouseLeave={(e) => {
-                                            e.currentTarget.style.filter = 'grayscale(100%)';
                                             e.currentTarget.style.opacity = '0.7';
                                         }}
                                     >
@@ -176,7 +168,6 @@ const PartnersSection = () => {
                                         <div style={{
                                             width: '100%',
                                             height: '100%',
-                                            backgroundColor: '#e0e0e0',
                                             borderRadius: '8px',
                                             display: 'flex',
                                             alignItems: 'center',
@@ -187,7 +178,7 @@ const PartnersSection = () => {
                                             textAlign: 'center',
                                             padding: '5px'
                                         }}>
-                                            {item.name}
+                                            <img src={item.logo} alt={item.name} />
                                         </div>
                                     </div>
                                 </div>

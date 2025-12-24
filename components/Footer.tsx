@@ -25,26 +25,26 @@ const Footer = () => {
                     {/* Column 1 - Văn phòng */}
                     <div>
                         <h3 style={{
-                            fontSize: '18px',
+                            fontSize: '2rem',
                             fontWeight: 'bold',
                             color: '#1a3b5c',
                             marginBottom: '20px'
                         }}>
                             Văn phòng
                         </h3>
-                        <div style={{ fontSize: '14px', color: '#4a5568', lineHeight: '1.8' }}>
+                        <div style={{ fontSize: '1.8rem', color: '#4a5568', lineHeight: '1.8' }}>
                             <p style={{ margin: '0 0 15px 0' }}>
-                                <strong style={{ color: '#1a3b5c' }}>Trụ sở chính:</strong><br />
+                                <p style={{ color: '#1a3b5c', fontWeight: 700, fontSize: '1.8rem' }}>Trụ sở chính:</p>
                                 Số 5 Phạm Hùng, Phường Cầu Giấy, Hà Nội
                             </p>
                             <p style={{ margin: '0 0 15px 0' }}>
-                                <strong style={{ color: '#1a3b5c' }}>Văn phòng Hải Phòng:</strong><br />
-                                Số 5 Đường Nguyễn Trị Phương, Phường<br />
+                                <p style={{ color: '#1a3b5c', fontWeight: 700, fontSize: '1.8rem' }}>Văn phòng Hải Phòng:</p>
+                                Số 5 Đường Nguyễn Trị Phương, Phường
                                 Hồng Bàng, TP. Hải Phòng
                             </p>
                             <p style={{ margin: '0' }}>
-                                <strong style={{ color: '#1a3b5c' }}>Văn phòng HCM:</strong><br />
-                                Số 8 Phan Đình Giót, Phường Tân Sơn Hòa,<br />
+                                <p style={{ color: '#1a3b5c', fontWeight: 700, fontSize: '1.8rem' }}>Văn phòng HCM:</p>
+                                Số 8 Phan Đình Giót, Phường Tân Sơn Hòa,
                                 TP. Hồ Chí Minh
                             </p>
                         </div>
@@ -53,20 +53,20 @@ const Footer = () => {
                     {/* Column 2 - Liên Hệ */}
                     <div>
                         <h3 style={{
-                            fontSize: '18px',
+                            fontSize: '2rem',
                             fontWeight: 'bold',
                             color: '#1a3b5c',
                             marginBottom: '20px'
                         }}>
                             Liên Hệ
                         </h3>
-                        <div style={{ fontSize: '14px', color: '#4a5568', lineHeight: '1.8' }}>
+                        <div style={{ fontSize: '1.8rem', color: '#4a5568', lineHeight: '1.8' }}>
                             <p style={{ margin: '0 0 10px 0' }}>
-                                <strong style={{ color: '#1a3b5c' }}>Hotline:</strong><br />
+                                <p style={{ color: '#1a3b5c', fontWeight: 700, fontSize: '1.8rem' }}>Hotline:</p>
                                 024 3685 5333
                             </p>
                             <p style={{ margin: '0' }}>
-                                <strong style={{ color: '#1a3b5c' }}>Email:</strong><br />
+                                <p style={{ color: '#1a3b5c', fontWeight: 700, fontSize: '1.8rem' }}>Email:</p>
                                 <a href="mailto:marketinglogistics@vnpost.vn" style={{
                                     color: '#4a5568',
                                     textDecoration: 'none'
@@ -80,7 +80,7 @@ const Footer = () => {
                     {/* Column 3 - Công ty */}
                     <div>
                         <h3 style={{
-                            fontSize: '18px',
+                            fontSize: '2rem',
                             fontWeight: 'bold',
                             color: '#1a3b5c',
                             marginBottom: '20px'
@@ -91,7 +91,7 @@ const Footer = () => {
                             listStyle: 'none',
                             padding: 0,
                             margin: 0,
-                            fontSize: '14px',
+                            fontSize: '1.8rem',
                             lineHeight: '2'
                         }}>
                             <li>
@@ -172,7 +172,7 @@ const Footer = () => {
                     {/* Column 4 - Giải pháp */}
                     <div>
                         <h3 style={{
-                            fontSize: '18px',
+                            fontSize: '2rem',
                             fontWeight: 'bold',
                             color: '#1a3b5c',
                             marginBottom: '20px'
@@ -183,7 +183,7 @@ const Footer = () => {
                             listStyle: 'none',
                             padding: 0,
                             margin: 0,
-                            fontSize: '14px',
+                            fontSize: '1.8rem',
                             lineHeight: '2'
                         }}>
                             <li>
@@ -368,7 +368,7 @@ const Footer = () => {
                             fontSize: '11px',
                             fontWeight: 'bold'
                         }}>
-                            ĐÃ THÔNG BÁO<br />BỘ CÔNG THƯƠNG
+                            ĐÃ THÔNG BÁOBỘ CÔNG THƯƠNG
                         </div>
                     </div>
                 </div>

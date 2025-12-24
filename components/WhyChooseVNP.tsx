@@ -1,8 +1,10 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 
 const WhyChooseVNP = () => {
+    const [hoveredId, setHoveredId] = useState<number | null>(null);
+
     const reasons = [
         {
             id: 1,
@@ -16,35 +18,35 @@ const WhyChooseVNP = () => {
             icon: '✱',
             title: 'Nhân sự chuyên nghiệp',
             description: 'Sở hữu một đội ngũ nhân lực tinh nhuệ, chuyên nghiệp và tận tâm, luôn sẵn sàng phục vụ, giải đáp mọi nhu cầu khách hàng và đội tác 24/7.',
-            hasArrow: false
+            hasArrow: true
         },
         {
             id: 3,
             icon: '🎁',
             title: 'Dịch vụ đa dạng',
             description: 'Chúng tôi cung cấp hệ sinh thái Logistics toàn diện bao gồm: Kho vận, Logistics quốc tế, Thương mại điện tử quốc tế, Logistics nội địa và giải pháp xuất nhập khẩu.',
-            hasArrow: false
+            hasArrow: true
         },
         {
             id: 4,
             icon: '⚡',
             title: 'Nhanh chóng linh hoạt',
             description: 'Với mạng lưới phủ sóng toàn quốc và năng lực vận chuyển lên tới 230 Quốc gia và vùng lãnh thổ, chúng tôi cam kết mang đến những giải pháp vận chuyển nhanh chóng, linh hoạt.',
-            hasArrow: false
+            hasArrow: true
         },
         {
             id: 5,
             icon: '💰',
             title: 'Tối ưu chi phí',
             description: 'Tại Vietnam Post Logistics, khách hàng được trải nghiệm các dịch vụ Logistics từ đó giúp bạn tối ưu chi phí, thiết kế những giải pháp phù hợp nhất với doanh nghiệp.',
-            hasArrow: false
+            hasArrow: true
         },
         {
             id: 6,
             icon: '🔒',
             title: 'An toàn - bảo mật',
             description: 'Chúng tôi cũng tuân thủ các tiêu chuẩn và quy định về bảo mật thông tin khách hàng và hàng hóa, đảm bảo sự tin cậy và an tâm cho người sử dụng dịch vụ.',
-            hasArrow: false
+            hasArrow: true
         }
     ];
 
@@ -96,6 +98,8 @@ const WhyChooseVNP = () => {
                     {reasons.map((reason) => (
                         <div
                             key={reason.id}
+                            onMouseEnter={() => setHoveredId(reason.id)}
+                            onMouseLeave={() => setHoveredId(null)}
                             style={{
                                 position: 'relative',
                                 backgroundColor: '#FFF',
@@ -105,22 +109,15 @@ const WhyChooseVNP = () => {
                                 display: 'flex',
                                 flexDirection: 'column',
                                 boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+                                transform: hoveredId === reason.id ? 'translateY(-8px)' : 'translateY(0)',
                                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                                 cursor: 'pointer'
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.transform = 'translateY(-8px)';
-                                e.currentTarget.style.boxShadow = '0 12px 30px rgba(0,0,0,0.15)';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.transform = 'translateY(0)';
-                                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
                             }}
                         >
                             {/* Icon */}
                             <div style={{
                                 fontSize: '48px',
-                                marginBottom: '20px',
+                                marginBottom: '10px',
                                 color: '#FFA500'
                             }}>
                                 {reason.icon}
@@ -148,34 +145,32 @@ const WhyChooseVNP = () => {
                                 {reason.description}
                             </p>
 
-                            {/* Arrow Button (only for first card) */}
+                            {/* Arrow Button - Chỉ hiện khi hover */}
                             {reason.hasArrow && (
-                                <div style={{
-                                    position: 'absolute',
-                                    bottom: '30px',
-                                    right: '30px',
-                                    width: '50px',
-                                    height: '50px',
-                                    backgroundColor: '#FFF4E6',
-                                    borderRadius: '50%',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    cursor: 'pointer',
-                                    transition: 'background-color 0.3s ease'
-                                }}
+                                <div
                                     onMouseEnter={(e) => {
-                                        e.currentTarget.style.backgroundColor = '#FFE4B3';
+                                        e.currentTarget.style.backgroundColor = '#004687';
                                     }}
                                     onMouseLeave={(e) => {
-                                        e.currentTarget.style.backgroundColor = '#FFF4E6';
+                                        e.currentTarget.style.backgroundColor = '#FBAE17';
                                     }}
-                                >
-                                    <span style={{
-                                        fontSize: '24px',
-                                        color: '#FFA500',
-                                        fontWeight: 'bold'
-                                    }}>→</span>
+                                    style={{
+                                        position: 'absolute',
+                                        bottom: '30px',
+                                        right: '30px',
+                                        width: '50px',
+                                        height: '50px',
+                                        backgroundColor: '#FBAE17',
+                                        borderRadius: '50%',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        cursor: 'pointer',
+                                        opacity: hoveredId === reason.id ? 1 : 0,
+                                        transform: hoveredId === reason.id ? 'scale(1)' : 'scale(0.8)',
+                                        transition: 'all 0.3s ease'
+                                    }}>
+                                    <img src="/images/ic-arrow.svg" alt="" />
                                 </div>
                             )}
                         </div>

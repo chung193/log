@@ -1,6 +1,44 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { CountUp } from 'countup.js';
+
+const StatCard = ({ value, prefix = '', suffix = '', delay = 0 }: { value: number; prefix?: string; suffix?: string; delay?: number }) => {
+    const countUpRef = useRef(null);
+    const [hasStarted, setHasStarted] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting && !hasStarted) {
+                    setTimeout(() => {
+                        const countUp = new CountUp(countUpRef.current, value, {
+                            duration: 2.5,
+                            separator: ',',
+                            prefix: prefix,
+                            suffix: suffix,
+                            useEasing: true,
+                        });
+
+                        if (!countUp.error) {
+                            countUp.start();
+                            setHasStarted(true);
+                        }
+                    }, delay);
+                }
+            },
+            { threshold: 0.3 }
+        );
+
+        if (countUpRef.current) {
+            observer.observe(countUpRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, [value, prefix, suffix, hasStarted, delay]);
+
+    return <span ref={countUpRef}>0</span>;
+};
 
 const LogisticsStats = () => {
     return (
@@ -75,7 +113,7 @@ const LogisticsStats = () => {
                                     lineHeight: '1',
                                     letterSpacing: '-2px'
                                 }}>
-                                    230
+                                    <StatCard value={230} delay={0} />
                                 </h2>
                                 <p style={{
                                     margin: 0,
@@ -134,7 +172,7 @@ const LogisticsStats = () => {
                                     lineHeight: '1',
                                     letterSpacing: '-1px'
                                 }}>
-                                    50,000
+                                    <StatCard value={50000} delay={200} />
                                 </h2>
                                 <p style={{
                                     margin: 0,
@@ -202,7 +240,7 @@ const LogisticsStats = () => {
                                     textAlign: 'right',
                                     letterSpacing: '-1px'
                                 }}>
-                                    1,200,000
+                                    <StatCard value={1200000} delay={400} />
                                 </h2>
                                 <p style={{
                                     margin: 0,
@@ -261,7 +299,7 @@ const LogisticsStats = () => {
                                     lineHeight: '1',
                                     letterSpacing: '-1px'
                                 }}>
-                                    500,000
+                                    <StatCard value={500000} delay={600} />
                                 </h2>
                                 <p style={{
                                     margin: 0,
@@ -270,7 +308,7 @@ const LogisticsStats = () => {
                                     color: '#FFF',
                                     opacity: 0.95
                                 }}>
-                                    m2 kho bãi
+                                    m² kho bãi
                                 </p>
                             </div>
                         </div>
