@@ -1,53 +1,63 @@
 'use client';
-
 import React, { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
 
-const WhyChooseVNP = () => {
+const why_choose_us = () => {
     const [hoveredId, setHoveredId] = useState<number | null>(null);
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
 
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
     const reasons = [
         {
             id: 1,
             icon: '⚡',
-            title: 'Thương hiệu uy tín',
-            description: 'Kế thừa thương hiệu uy tín Quốc gia của Tổng Công ty Bưu điện Việt Nam, Vietnam Post Logistics xứng đáng là người bạn đồng hành đáng tin cậy của mọi khách hàng.',
+            title: t('why_choose_us.reason_1_title'),
+            description: t('why_choose_us.reason_1_description'),
             hasArrow: true
         },
         {
             id: 2,
             icon: '✱',
-            title: 'Nhân sự chuyên nghiệp',
-            description: 'Sở hữu một đội ngũ nhân lực tinh nhuệ, chuyên nghiệp và tận tâm, luôn sẵn sàng phục vụ, giải đáp mọi nhu cầu khách hàng và đội tác 24/7.',
+            title: t('why_choose_us.reason_2_title'),
+            description: t('why_choose_us.reason_2_description'),
             hasArrow: true
         },
         {
             id: 3,
             icon: '🎁',
-            title: 'Dịch vụ đa dạng',
-            description: 'Chúng tôi cung cấp hệ sinh thái Logistics toàn diện bao gồm: Kho vận, Logistics quốc tế, Thương mại điện tử quốc tế, Logistics nội địa và giải pháp xuất nhập khẩu.',
+            title: t('why_choose_us.reason_3_title'),
+            description: t('why_choose_us.reason_3_description'),
             hasArrow: true
         },
         {
             id: 4,
             icon: '⚡',
-            title: 'Nhanh chóng linh hoạt',
-            description: 'Với mạng lưới phủ sóng toàn quốc và năng lực vận chuyển lên tới 230 Quốc gia và vùng lãnh thổ, chúng tôi cam kết mang đến những giải pháp vận chuyển nhanh chóng, linh hoạt.',
+            title: t('why_choose_us.reason_4_title'),
+            description: t('why_choose_us.reason_4_description'),
             hasArrow: true
         },
         {
             id: 5,
             icon: '💰',
-            title: 'Tối ưu chi phí',
-            description: 'Tại Vietnam Post Logistics, khách hàng được trải nghiệm các dịch vụ Logistics từ đó giúp bạn tối ưu chi phí, thiết kế những giải pháp phù hợp nhất với doanh nghiệp.',
+            title: t('why_choose_us.reason_5_title'),
+            description: t('why_choose_us.reason_5_description'),
             hasArrow: true
         },
         {
             id: 6,
             icon: '🔒',
-            title: 'An toàn - bảo mật',
-            description: 'Chúng tôi cũng tuân thủ các tiêu chuẩn và quy định về bảo mật thông tin khách hàng và hàng hóa, đảm bảo sự tin cậy và an tâm cho người sử dụng dịch vụ.',
+            title: t('why_choose_us.reason_6_title'),
+            description: t('why_choose_us.reason_6_description'),
             hasArrow: true
-        }
+        },
     ];
 
     return (
@@ -181,4 +191,4 @@ const WhyChooseVNP = () => {
     );
 };
 
-export default WhyChooseVNP;
+export default why_choose_us;

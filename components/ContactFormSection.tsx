@@ -2,11 +2,24 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import FindMoreButton from './FindMoreButton';
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
 
 const ContactHeroSection = () => {
     const sectionRef = useRef<HTMLDivElement>(null);
     const lastScrollY = useRef(0);
     const [flyOffset, setFlyOffset] = useState(0);
+
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
+
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
 
     useEffect(() => {
         lastScrollY.current = window.scrollY;
@@ -54,18 +67,24 @@ const ContactHeroSection = () => {
                 }}
             >
                 <h2 style={{ fontSize: 48, fontWeight: 700, marginBottom: 40 }}>
-                    Liên hệ với Vietnam Post Logistics
+                    {t('contact.title')}
                 </h2>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, maxWidth: 700 }}>
-                    <Input label="Tên của bạn" placeholder="Nhập Tên của bạn" />
-                    <Input label="Tên công ty" placeholder="Tên công ty" />
-                    <Input label="Email" placeholder="Email" />
-                    <Input label="Số điện thoại" placeholder="Số điện thoại" />
+                <div
+                    style={{
+                        display: 'grid',
+                        gridTemplateColumns: '1fr 1fr',
+                        gap: 20,
+                        maxWidth: 700
+                    }}>
+                    <Input label={t('contact.name')} placeholder={t('contact.name')} />
+                    <Input label={t('contact.company')} placeholder={t('contact.company')} />
+                    <Input label={t('contact.email')} placeholder={t('contact.email')} />
+                    <Input label={t('contact.phone')} placeholder={t('contact.phone')} />
                 </div>
 
                 <div style={{ marginTop: 40 }}>
-                    <FindMoreButton label="Liên hệ tư vấn" />
+                    <FindMoreButton label={t('button.contact_us')} />
                 </div>
             </div>
 

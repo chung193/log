@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import LanguageSwitcher from './LanguageSwitcher'
+
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isSearchOpen, setIsSearchOpen] = useState(false)
@@ -19,7 +20,6 @@ export default function Header() {
                 { name: 'FAQS', href: '/cong-ty/faqs/' }
             ]
         },
-        // ... Add other menu items
     ]
 
     return (
@@ -73,9 +73,9 @@ export default function Header() {
                         <div className="hd-act">
 
 
-                            <div className="hd-srch" onClick={() => setIsSearchOpen(true)}>
+                            {/* <div className="hd-srch" onClick={() => setIsSearchOpen(true)}>
                                 <img src="/images/ic-srch.svg" alt="Search" />
-                            </div>
+                            </div> */}
 
                             <LanguageSwitcher />
 

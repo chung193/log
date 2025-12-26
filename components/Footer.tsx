@@ -1,8 +1,19 @@
 'use client';
 
 import React from 'react';
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
+const Footer = (initialLocale = "en") => {
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
 
-const Footer = () => {
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
     return (
         <footer style={{
             backgroundColor: '#f8f9fa',
@@ -30,22 +41,20 @@ const Footer = () => {
                             color: '#1a3b5c',
                             marginBottom: '20px'
                         }}>
-                            Văn phòng
+                            {t('footer.office_hp')}
                         </h3>
                         <div style={{ fontSize: '1.8rem', color: '#4a5568', lineHeight: '1.8' }}>
                             <p style={{ margin: '0 0 15px 0' }}>
                                 <p style={{ color: '#1a3b5c', fontWeight: 700, fontSize: '1.8rem' }}>Trụ sở chính:</p>
-                                Số 5 Phạm Hùng, Phường Cầu Giấy, Hà Nội
+                                {t('footer.office_hp_detail')}
                             </p>
                             <p style={{ margin: '0 0 15px 0' }}>
                                 <p style={{ color: '#1a3b5c', fontWeight: 700, fontSize: '1.8rem' }}>Văn phòng Hải Phòng:</p>
-                                Số 5 Đường Nguyễn Trị Phương, Phường
-                                Hồng Bàng, TP. Hải Phòng
+                                {t('footer.office_hn')}
                             </p>
                             <p style={{ margin: '0' }}>
                                 <p style={{ color: '#1a3b5c', fontWeight: 700, fontSize: '1.8rem' }}>Văn phòng HCM:</p>
-                                Số 8 Phan Đình Giót, Phường Tân Sơn Hòa,
-                                TP. Hồ Chí Minh
+                                {t('footer.office_hn_detail')}
                             </p>
                         </div>
                     </div>
@@ -58,20 +67,22 @@ const Footer = () => {
                             color: '#1a3b5c',
                             marginBottom: '20px'
                         }}>
-                            Liên Hệ
+                            {t('footer.contact')}
                         </h3>
                         <div style={{ fontSize: '1.8rem', color: '#4a5568', lineHeight: '1.8' }}>
                             <p style={{ margin: '0 0 10px 0' }}>
                                 <p style={{ color: '#1a3b5c', fontWeight: 700, fontSize: '1.8rem' }}>Hotline:</p>
-                                024 3685 5333
+                                {t('footer.phone')}
                             </p>
                             <p style={{ margin: '0' }}>
-                                <p style={{ color: '#1a3b5c', fontWeight: 700, fontSize: '1.8rem' }}>Email:</p>
+                                <p style={{ color: '#1a3b5c', fontWeight: 700, fontSize: '1.8rem' }}>
+                                    {t('footer.email')}
+                                </p>
                                 <a href="mailto:marketinglogistics@vnpost.vn" style={{
                                     color: '#4a5568',
                                     textDecoration: 'none'
                                 }}>
-                                    marketinglogistics@vnpost.vn
+                                    {t('footer.email_address')}
                                 </a>
                             </p>
                         </div>
@@ -85,7 +96,7 @@ const Footer = () => {
                             color: '#1a3b5c',
                             marginBottom: '20px'
                         }}>
-                            Công ty
+                            {t('footer.company')}
                         </h3>
                         <ul style={{
                             listStyle: 'none',
@@ -103,7 +114,7 @@ const Footer = () => {
                                     onMouseEnter={(e) => e.currentTarget.style.color = '#0A5A99'}
                                     onMouseLeave={(e) => e.currentTarget.style.color = '#4a5568'}
                                 >
-                                    Về chúng tôi
+                                    {t('footer.about_us')}
                                 </a>
                             </li>
                             <li>
@@ -115,7 +126,7 @@ const Footer = () => {
                                     onMouseEnter={(e) => e.currentTarget.style.color = '#0A5A99'}
                                     onMouseLeave={(e) => e.currentTarget.style.color = '#4a5568'}
                                 >
-                                    Cơ sở vật chất
+                                    {t('footer.careers')}
                                 </a>
                             </li>
                             <li>
@@ -127,9 +138,11 @@ const Footer = () => {
                                     onMouseEnter={(e) => e.currentTarget.style.color = '#0A5A99'}
                                     onMouseLeave={(e) => e.currentTarget.style.color = '#4a5568'}
                                 >
-                                    Tuyển dụng
+                                    {t('footer.recruitment')}
                                 </a>
                             </li>
+
+
                             <li>
                                 <a href="#" style={{
                                     color: '#4a5568',
@@ -139,31 +152,7 @@ const Footer = () => {
                                     onMouseEnter={(e) => e.currentTarget.style.color = '#0A5A99'}
                                     onMouseLeave={(e) => e.currentTarget.style.color = '#4a5568'}
                                 >
-                                    Blog
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" style={{
-                                    color: '#4a5568',
-                                    textDecoration: 'none',
-                                    transition: 'color 0.3s'
-                                }}
-                                    onMouseEnter={(e) => e.currentTarget.style.color = '#0A5A99'}
-                                    onMouseLeave={(e) => e.currentTarget.style.color = '#4a5568'}
-                                >
-                                    FAQS
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" style={{
-                                    color: '#4a5568',
-                                    textDecoration: 'none',
-                                    transition: 'color 0.3s'
-                                }}
-                                    onMouseEnter={(e) => e.currentTarget.style.color = '#0A5A99'}
-                                    onMouseLeave={(e) => e.currentTarget.style.color = '#4a5568'}
-                                >
-                                    Liên hệ
+                                    {t('footer.contact')}
                                 </a>
                             </li>
                         </ul>
@@ -177,7 +166,7 @@ const Footer = () => {
                             color: '#1a3b5c',
                             marginBottom: '20px'
                         }}>
-                            Giải pháp
+                            {t('footer.solution')}
                         </h3>
                         <ul style={{
                             listStyle: 'none',
@@ -195,7 +184,7 @@ const Footer = () => {
                                     onMouseEnter={(e) => e.currentTarget.style.color = '#0A5A99'}
                                     onMouseLeave={(e) => e.currentTarget.style.color = '#4a5568'}
                                 >
-                                    TMĐT Quốc tế
+                                    {t('footer.services.ocean_freight')}
                                 </a>
                             </li>
                             <li>
@@ -207,7 +196,7 @@ const Footer = () => {
                                     onMouseEnter={(e) => e.currentTarget.style.color = '#0A5A99'}
                                     onMouseLeave={(e) => e.currentTarget.style.color = '#4a5568'}
                                 >
-                                    Logistics quốc tế
+                                    {t('footer.services.air_freight')}
                                 </a>
                             </li>
                             <li>
@@ -219,7 +208,7 @@ const Footer = () => {
                                     onMouseEnter={(e) => e.currentTarget.style.color = '#0A5A99'}
                                     onMouseLeave={(e) => e.currentTarget.style.color = '#4a5568'}
                                 >
-                                    Logistics nội địa
+                                    {t('footer.services.customers_partner')}
                                 </a>
                             </li>
                             <li>
@@ -231,7 +220,7 @@ const Footer = () => {
                                     onMouseEnter={(e) => e.currentTarget.style.color = '#0A5A99'}
                                     onMouseLeave={(e) => e.currentTarget.style.color = '#4a5568'}
                                 >
-                                    Kho vận
+                                    {t('footer.services.contract_logistics_warehousing')}
                                 </a>
                             </li>
                             <li>
@@ -243,7 +232,7 @@ const Footer = () => {
                                     onMouseEnter={(e) => e.currentTarget.style.color = '#0A5A99'}
                                     onMouseLeave={(e) => e.currentTarget.style.color = '#4a5568'}
                                 >
-                                    Xuất nhập khẩu
+                                    {t('footer.services.customers_partner')}
                                 </a>
                             </li>
                         </ul>
@@ -267,20 +256,13 @@ const Footer = () => {
                         <div style={{
                             width: '200px',
                             height: '60px',
-                            backgroundColor: '#f0f0f0',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
                             borderRadius: '8px'
                         }}>
                             {/* Logo placeholder - replace with actual logo */}
-                            <div style={{
-                                fontSize: '24px',
-                                fontWeight: 'bold',
-                                color: '#0A5A99'
-                            }}>
-                                VNP LOGISTICS
-                            </div>
+                            <img src='/images/logo.svg' alt='Company Logo' style={{ maxWidth: '100%', maxHeight: '100%' }} />
                         </div>
                         <div style={{
                             fontSize: '14px',
@@ -291,10 +273,9 @@ const Footer = () => {
                                 color: '#1a3b5c',
                                 marginBottom: '4px'
                             }}>
-                                CÔNG TY LOGISTICS
+                                {/* EXPEDITORS GLOBAL */}
                             </div>
                             <div style={{ color: '#4a5568' }}>
-                                TỔNG CÔNG TY BƯU ĐIỆN VIỆT NAM
                             </div>
                         </div>
                     </div>
@@ -308,42 +289,30 @@ const Footer = () => {
                         <a href="#" style={{
                             width: '40px',
                             height: '40px',
-                            borderRadius: '50%',
-                            backgroundColor: '#1a3b5c',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            color: '#FFF',
                             textDecoration: 'none',
                             transition: 'background-color 0.3s'
                         }}
-                            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#0A5A99'}
-                            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#1a3b5c'}
                         >
-                            <span style={{ fontSize: '20px' }}>f</span>
+                            <img src='/images/ic-fb.svg' alt='Facebook' style={{ width: '100%' }} />
                         </a>
                         <a href="#" style={{
                             width: '40px',
                             height: '40px',
-                            borderRadius: '50%',
-                            backgroundColor: '#1a3b5c',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            color: '#FFF',
                             textDecoration: 'none',
                             transition: 'background-color 0.3s'
                         }}
-                            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#0A5A99'}
-                            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#1a3b5c'}
                         >
-                            <span style={{ fontSize: '20px' }}>in</span>
+                            <img src='/images/ic-ins.svg' alt='LinkedIn' style={{ width: '100' }} />
                         </a>
                         <a href="#" style={{
                             width: '40px',
                             height: '40px',
-                            borderRadius: '50%',
-                            backgroundColor: '#1a3b5c',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
@@ -351,15 +320,11 @@ const Footer = () => {
                             textDecoration: 'none',
                             transition: 'background-color 0.3s'
                         }}
-                            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#0A5A99'}
-                            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#1a3b5c'}
                         >
-                            <span style={{ fontSize: '20px' }}>♪</span>
+                            <img src='/images/ic-tiktok.svg' alt='tiktok' style={{ width: '100' }} />
                         </a>
                         <div style={{
                             width: '120px',
-                            height: '40px',
-                            backgroundColor: '#0A5A99',
                             borderRadius: '20px',
                             display: 'flex',
                             alignItems: 'center',
@@ -368,7 +333,8 @@ const Footer = () => {
                             fontSize: '11px',
                             fontWeight: 'bold'
                         }}>
-                            ĐÃ THÔNG BÁOBỘ CÔNG THƯƠNG
+                            <img src='/images/bct.png' alt='BCT Logo'
+                                style={{ width: '100%', marginRight: '8px' }} />
                         </div>
                     </div>
                 </div>

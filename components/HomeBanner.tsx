@@ -5,28 +5,44 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import FindMoreButton from './FindMoreButton'
 import './HomeBanner.css' // Import file CSS riêng cho component
-const slides = [
-    {
-        id: 1,
-        image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&h=900&fit=crop',
-        title: 'Giới thiệu',
-        link: '/giai-phap/giai-phap-cross-border-truck/'
-    },
-    {
-        id: 2,
-        image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1600&h=900&fit=crop',
-        title: 'Hệ sinh thái',
-        link: '/giai-phap/giai-phap-cross-border-truck/'
-    },
-    {
-        id: 3,
-        image: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1600&h=900&fit=crop',
-        title: 'Giải pháp',
-        link: '/giai-phap/thuong-mai-dien-tu-quoc-te/'
-    }
-]
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
+
 
 export default function HomeBanner() {
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
+
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
+
+
+    const slides = [
+        {
+            id: 1,
+            image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&h=900&fit=crop',
+            title: t('banner.slide_1_caption'),
+            link: '/giai-phap/giai-phap-cross-border-truck/'
+        },
+        {
+            id: 2,
+            image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1600&h=900&fit=crop',
+            title: t('banner.slide_2_caption'),
+            link: '/giai-phap/giai-phap-cross-border-truck/'
+        },
+        {
+            id: 3,
+            image: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1600&h=900&fit=crop',
+            title: t('banner.slide_3_caption'),
+            link: '/giai-phap/thuong-mai-dien-tu-quoc-te/'
+        }
+    ]
+
     const [activeIndex, setActiveIndex] = useState(0)
 
     const handleNext = () => {
@@ -65,7 +81,7 @@ export default function HomeBanner() {
                         <div className="find-more-button">
                             <FindMoreButton
                                 href={slides[activeIndex].link}
-                                label="Tìm hiểu thêm"
+                                label={t('button.find_more')}
                             />
                         </div>
                     </div>

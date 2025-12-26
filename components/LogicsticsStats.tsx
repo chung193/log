@@ -2,10 +2,14 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { CountUp } from 'countup.js';
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
 
 const StatCard = ({ value, prefix = '', suffix = '', delay = 0 }: { value: number; prefix?: string; suffix?: string; delay?: number }) => {
     const countUpRef = useRef(null);
     const [hasStarted, setHasStarted] = useState(false);
+
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -41,6 +45,15 @@ const StatCard = ({ value, prefix = '', suffix = '', delay = 0 }: { value: numbe
 };
 
 const LogisticsStats = () => {
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
+
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
     return (
         <div style={{
             padding: '40px 20px',
@@ -103,7 +116,7 @@ const LogisticsStats = () => {
                                     color: '#FFF',
                                     opacity: 0.95
                                 }}>
-                                    Vận chuyển tới
+                                    {t('stats.title_1')}
                                 </p>
                                 <h2 style={{
                                     margin: '0 0 15px 0',
@@ -113,7 +126,7 @@ const LogisticsStats = () => {
                                     lineHeight: '1',
                                     letterSpacing: '-2px'
                                 }}>
-                                    <StatCard value={230} delay={0} />
+                                    <StatCard value={t('stats.stat_1')} delay={0} />
                                 </h2>
                                 <p style={{
                                     margin: 0,
@@ -122,7 +135,7 @@ const LogisticsStats = () => {
                                     color: '#FFF',
                                     opacity: 0.95
                                 }}>
-                                    Quốc gia & vùng lãnh thổ
+                                    {t('stats.desc_1')}
                                 </p>
                             </div>
                         </div>
@@ -162,7 +175,7 @@ const LogisticsStats = () => {
                                     color: '#FFF',
                                     opacity: 0.95
                                 }}>
-                                    Vận chuyển
+                                    {t('stats.title_2')}
                                 </p>
                                 <h2 style={{
                                     margin: '0 0 10px 0',
@@ -172,7 +185,7 @@ const LogisticsStats = () => {
                                     lineHeight: '1',
                                     letterSpacing: '-1px'
                                 }}>
-                                    <StatCard value={50000} delay={200} />
+                                    <StatCard value={t('stats.stat_2')} delay={200} />
                                 </h2>
                                 <p style={{
                                     margin: 0,
@@ -181,7 +194,7 @@ const LogisticsStats = () => {
                                     color: '#FFF',
                                     opacity: 0.95
                                 }}>
-                                    Container mỗi tháng
+                                    {t('stats.desc_2')}
                                 </p>
                             </div>
                         </div>
@@ -229,7 +242,7 @@ const LogisticsStats = () => {
                                     opacity: 0.95,
                                     textAlign: 'right'
                                 }}>
-                                    Xuất khẩu
+                                    {t('stats.title_2')}
                                 </p>
                                 <h2 style={{
                                     margin: '0 0 10px 0',
@@ -240,7 +253,7 @@ const LogisticsStats = () => {
                                     textAlign: 'right',
                                     letterSpacing: '-1px'
                                 }}>
-                                    <StatCard value={1200000} delay={400} />
+                                    <StatCard value={t('stats.stat_2')} delay={400} />
                                 </h2>
                                 <p style={{
                                     margin: 0,
@@ -250,7 +263,7 @@ const LogisticsStats = () => {
                                     opacity: 0.95,
                                     textAlign: 'right'
                                 }}>
-                                    Tấn hàng mỗi tháng
+                                    {t('stats.desc_2')}
                                 </p>
                             </div>
                         </div>
@@ -289,7 +302,7 @@ const LogisticsStats = () => {
                                     color: '#FFF',
                                     opacity: 0.95
                                 }}>
-                                    Tổng diện tích
+                                    {t('stats.title_4')}
                                 </p>
                                 <h2 style={{
                                     margin: '0 0 10px 0',
@@ -299,7 +312,7 @@ const LogisticsStats = () => {
                                     lineHeight: '1',
                                     letterSpacing: '-1px'
                                 }}>
-                                    <StatCard value={500000} delay={600} />
+                                    <StatCard value={t('stats.stat_4')} delay={600} />
                                 </h2>
                                 <p style={{
                                     margin: 0,
@@ -308,7 +321,7 @@ const LogisticsStats = () => {
                                     color: '#FFF',
                                     opacity: 0.95
                                 }}>
-                                    m² kho bãi
+                                    {t('stats.desc_4')}
                                 </p>
                             </div>
                         </div>

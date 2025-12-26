@@ -1,37 +1,52 @@
 'use client';
 import React, { useState } from 'react';
 import FindMoreButton from './FindMoreButton';
-const Solution: React.FC = () => {
-    const [activeIndex, setActiveIndex] = useState(0); // Col đầu tiên active mặc định
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
+type SolutionProps = {
+    initialLocale?: Locale;
+};
 
+const Solution: React.FC<SolutionProps> = ({ initialLocale = 'en' }) => {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
+
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
     const slides = [
         {
-            title: 'Kho vận',
-            description: 'Giải pháp kho vận thông minh, giúp doanh nghiệp tối ưu hoạt động và nguồn vốn.',
+            title: t('solution.slides.slide_1_title'),
+            description: t('solution.slides.slide_1_desc'),
             image: 'https://vietnampostlogistics.com/wp-content/uploads/2025/04/kv.jpg',
             link: 'https://vietnampostlogistics.com/giai-phap/giai-phap-kho-van/'
         },
         {
-            title: 'Logistics Quốc tế',
-            description: 'Cung cấp giải pháp Logistics toàn diện từ đường biển, hàng không, đường bộ, đường sắt và hơn thế nữa.',
+            title: t('solution.slides.slide_2_title'),
+            description: t('solution.slides.slide_2_desc'),
             image: 'https://vietnampostlogistics.com/wp-content/uploads/2025/04/Untitled-1-1.jpg',
             link: 'https://vietnampostlogistics.com/giai-phap/giai-phap-sea-freight/'
         },
         {
-            title: 'Vận tải đường bộ',
-            description: 'Dịch vụ vận chuyển đường bộ nhanh chóng, an toàn trên toàn quốc.',
+            title: t('solution.slides.slide_3_title'),
+            description: t('solution.slides.slide_3_desc'),
             image: 'https://vietnampostlogistics.com/wp-content/uploads/2025/04/Untitled-1-1.jpg',
             link: 'https://vietnampostlogistics.com/giai-phap/giai-phap-sea-freight/'
         },
         {
-            title: 'E-commerce Logistics',
-            description: 'Giải pháp logistics chuyên biệt cho thương mại điện tử.',
+            title: t('solution.slides.slide_4_title'),
+            description: t('solution.slides.slide_4_desc'),
             image: 'https://vietnampostlogistics.com/wp-content/uploads/2025/04/Untitled-1-1.jpg',
             link: 'https://vietnampostlogistics.com/giai-phap/giai-phap-sea-freight/'
         },
         {
-            title: 'Dịch vụ tùy chỉnh',
-            description: 'Giải pháp logistics được thiết kế riêng theo nhu cầu doanh nghiệp.',
+            title: t('solution.slides.slide_4_title'),
+            description: t('solution.slides.slide_4_desc'),
             image: 'https://vietnampostlogistics.com/wp-content/uploads/2025/04/Untitled-1-1.jpg',
             link: 'https://vietnampostlogistics.com/giai-phap/giai-phap-sea-freight/'
         }
@@ -43,13 +58,12 @@ const Solution: React.FC = () => {
                 <div className="head-verti center mb-32" style={{ textAlign: 'center', marginBottom: '32px' }}>
                     <div className="line">
                         <h2 className="title title-48" style={{ fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: '700', marginBottom: '20px' }}>
-                            Giải pháp toàn diện
+                            {t('solution.title')}
                         </h2>
                     </div>
                     <div className="line">
                         <p className="desc" style={{ fontSize: '16px', lineHeight: '1.6', maxWidth: '800px', margin: '0 auto', color: '#666' }}>
-                            Là hệ sinh thái Logistics toàn diện hàng đầu Việt Nam, chúng tôi luôn tập trung hướng đến sự chuyên nghiệp, nhanh chóng và tiện lợi, nhằm cung cấp cho khách hàng những dịch vụ chất lượng nhất.<br />
-                            Vietnam Post Logistics đã và đang mang đến một hệ sinh thái Logistics bao gồm 5 giải pháp toàn diện dành cho khách hàng từ nội địa đến Quốc tế.
+                            {t('solution.description')}
                         </p>
                     </div>
                 </div>

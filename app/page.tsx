@@ -26,14 +26,11 @@ export default function Home() {
         <Ecosystem />
         <Container />
         <Solution />
-
         <LogisticsStats />
         <WhyChooseVNP />
         <PartnersSection />
-        {/* <NewsBlogSection /> */}
         <ContactFormSection />
       </main>
-      {/* <Footer /> */}
     </>
   )
 }

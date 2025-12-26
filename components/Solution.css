@@ -44,6 +44,10 @@
     margin-bottom: var(--rg, 20px);
 }
 
+.test {
+    bottom: 0 !important
+}
+
 .homes-logis-item {
     position: relative;
     z-index: 2;

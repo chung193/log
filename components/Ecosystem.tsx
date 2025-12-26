@@ -1,6 +1,9 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
 import './Ecosystem.css';
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
 
 interface LogisticsItemProps {
     title: string;
@@ -10,7 +13,23 @@ interface LogisticsItemProps {
     twoColumns?: boolean;
 }
 
-const LogisticsItem: React.FC<LogisticsItemProps> = ({ title, subtitle, description, items, twoColumns }) => {
+const LogisticsItem: React.FC<LogisticsItemProps> = ({
+    title,
+    subtitle,
+    description,
+    items,
+    twoColumns,
+}) => {
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
+
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
+
     return (
         <div className="homes-logis-item col">
             <div className="inner">
@@ -115,7 +134,17 @@ const CircleIcon: React.FC<CircleIconProps> = ({ src, alt, angle }) => {
     );
 };
 
-const Ecosystem: React.FC = () => {
+const Ecosystem: React.FC = (initialLocale?: Locale) => {
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
+
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
+
     const circleIcons: CircleIconProps[] = [
         {
             src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-1.svg',
@@ -156,7 +185,7 @@ const Ecosystem: React.FC = () => {
                     <div className="head-verti center mb-32">
                         <div className="line aos-init aos-animate" data-aos="fade-up-cus">
                             <h2 className="title title-48 add-className text-verti is-inview">
-                                Hệ sinh thái Logistics
+                                {t('ecosystem.title')}
                             </h2>
                         </div>
                     </div>
@@ -164,34 +193,42 @@ const Ecosystem: React.FC = () => {
                         <div className="homes-logis-list row gap-res">
                             {/* Communication */}
                             <LogisticsItem
-                                title="Communication"
-                                subtitle="Consumer"
+                                title={t('ecosystem.item_1')}
+                                subtitle={t('ecosystem.sub_item_1')}
                             />
 
                             {/* Procurement */}
                             <LogisticsItem
-                                title="Procurement"
-                                subtitle="Raw Materiala"
+                                title={t('ecosystem.item_2')}
+                                subtitle={t('ecosystem.sub_item_2')}
                             />
 
                             {/* Inbound Logistics */}
                             <LogisticsItem
-                                title="Inbound Logistics"
-                                subtitle="Supplier"
+                                title={t('ecosystem.item_3')}
+                                subtitle={t('ecosystem.sub_item_3')}
+                                subtitle={t('ecosystem.desc_3')}
+                            />
+
+                            {/* Inbound Logistics */}
+                            <LogisticsItem
+                                title={t('ecosystem.item_4')}
+                                subtitle={t('ecosystem.sub_item_4')}
+                                subtitle={t('ecosystem.desc_4')}
                                 items={[
-                                    'Import Freight: Air, Ocean (FLC & LCL),customs Clearance',
-                                    'Storage Service: PVMI (bonded warehouse,CFS..), Factory fulfillment center',
-                                    'Land trucking'
+                                    t('ecosystem.items_item_4.item_1'),
+                                    t('ecosystem.items_item_4.item_2'),
+                                    t('ecosystem.items_item_4.item_3'),
                                 ]}
                             />
 
                             {/* E-commerce */}
                             <LogisticsItem
-                                title="E-commerce"
+                                title={t('ecosystem.item_5')}
                                 items={[
-                                    'E-commerce, B2C delivery',
-                                    'COD',
-                                    'E-commerce platform'
+                                    t('ecosystem.items_item_5.item_1'),
+                                    t('ecosystem.items_item_5.item_2'),
+                                    t('ecosystem.items_item_5.item_3'),
                                 ]}
                             />
 
@@ -224,43 +261,43 @@ const Ecosystem: React.FC = () => {
                                     ))}
                                 </div>
                                 <div className="circle-tts">
-                                    <div className="circle-tt">Retailer</div>
-                                    <div className="circle-tt">Manufacturer</div>
+                                    <div className="circle-tt">{t('ecosystem.Retailer')}</div>
+                                    <div className="circle-tt">{t('ecosystem.Manufacturer')}</div>
                                 </div>
                             </div>
 
                             {/* Supply Chain Finance */}
                             <LogisticsItem
-                                title="Supply Chain Finance"
-                                description="Optimize cash flow for supplier or buyer"
+                                title={t('ecosystem.item_6')}
+                                description={t('ecosystem.desc_6')}
                             />
 
                             {/* Last-miles Delivery */}
                             <LogisticsItem
-                                title="Last-miles Delivery"
+                                title={t('ecosystem.item_7')}
                                 items={[
-                                    'Nation wide Hub & transport network',
-                                    'Land trucking',
-                                    'Air shipment'
+                                    t('ecosystem.items_item_7.item_1'),
+                                    t('ecosystem.items_item_7.item_2'),
+                                    t('ecosystem.items_item_7.item_3'),
                                 ]}
                             />
 
                             {/* Distribution Service */}
                             <LogisticsItem
-                                title="Distribution Service"
-                                subtitle="Distributors"
-                                description="VNP is deploying modern distribution strateg by using nationwide networl"
+                                title={t('ecosystem.item_8')}
+                                subtitle={t('ecosystem.sub_item_8')}
+                                description={t('ecosystem.desc_8')}
                             />
 
                             {/* Outbound Logistics */}
                             <LogisticsItem
-                                title="Outbound Logistics"
+                                title={t('ecosystem.item_9')}
                                 items={[
-                                    'Distribution center',
-                                    'Fulfillment center',
-                                    'Land trucking',
-                                    'Air, Ocean freight',
-                                    'VAS'
+                                    t('ecosystem.items_item_9.item_1'),
+                                    t('ecosystem.items_item_9.item_2'),
+                                    t('ecosystem.items_item_9.item_3'),
+                                    t('ecosystem.items_item_9.item_4'),
+                                    t('ecosystem.items_item_9.item_5'),
                                 ]}
                                 twoColumns={true}
                             />
