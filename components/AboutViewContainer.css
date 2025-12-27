@@ -1,0 +1,27 @@
+/* Thêm vào file CSS của component hoặc global CSS */
+
+.ab-view-img {
+    position: relative;
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+    transform: translateZ(0);
+    /* Kích hoạt hardware acceleration */
+}
+
+/* Hiệu ứng khi hover */
+.ab-view-img:hover {
+    transition: transform 0.3s ease-out;
+}
+
+/* Đảm bảo section có chiều cao đủ để scroll */
+.sec-ab-view {
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Tùy chỉnh tốc độ parallax */
+@media (min-width: 768px) {
+    .ParaYScroll {
+        transition: transform 0.05s linear;
+    }
+}

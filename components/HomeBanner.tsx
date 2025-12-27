@@ -10,7 +10,7 @@ import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
 
 
-export default function HomeBanner() {
+export default function HomeBanner({ initialLocale = 'en' }) {
     const searchParams = useSearchParams();
     const langParam = searchParams.get('lang');
 

@@ -44,7 +44,7 @@ const StatCard = ({ value, prefix = '', suffix = '', delay = 0 }: { value: numbe
     return <span ref={countUpRef}>0</span>;
 };
 
-const LogisticsStats = () => {
+const LogisticsStats = ({ initialLocale = 'en' }) => {
     const searchParams = useSearchParams();
     const langParam = searchParams.get('lang');
 

@@ -6,7 +6,7 @@ import { useSearchParams } from 'next/navigation';
 import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
 
-const ContactHeroSection = () => {
+const ContactHeroSection = ({ initialLocale = 'en' }) => {
     const sectionRef = useRef<HTMLDivElement>(null);
     const lastScrollY = useRef(0);
     const [flyOffset, setFlyOffset] = useState(0);

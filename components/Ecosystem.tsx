@@ -1,9 +1,6 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
 import './Ecosystem.css';
-import { useSearchParams } from 'next/navigation';
-import { useTranslations } from '@/hooks/useTranslations';
-import { Locale } from '@/lib/i18n';
 
 interface LogisticsItemProps {
     title: string;
@@ -13,23 +10,7 @@ interface LogisticsItemProps {
     twoColumns?: boolean;
 }
 
-const LogisticsItem: React.FC<LogisticsItemProps> = ({
-    title,
-    subtitle,
-    description,
-    items,
-    twoColumns,
-}) => {
-    const searchParams = useSearchParams();
-    const langParam = searchParams.get('lang');
-
-    const locale: Locale =
-        langParam === 'en' || langParam === 'vi'
-            ? langParam
-            : initialLocale;
-
-    const { t } = useTranslations(locale);
-
+const LogisticsItem: React.FC<LogisticsItemProps> = ({ title, subtitle, description, items, twoColumns }) => {
     return (
         <div className="homes-logis-item col">
             <div className="inner">
@@ -134,17 +115,7 @@ const CircleIcon: React.FC<CircleIconProps> = ({ src, alt, angle }) => {
     );
 };
 
-const Ecosystem: React.FC = (initialLocale?: Locale) => {
-    const searchParams = useSearchParams();
-    const langParam = searchParams.get('lang');
-
-    const locale: Locale =
-        langParam === 'en' || langParam === 'vi'
-            ? langParam
-            : initialLocale;
-
-    const { t } = useTranslations(locale);
-
+const Ecosystem: React.FC = () => {
     const circleIcons: CircleIconProps[] = [
         {
             src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-1.svg',
@@ -185,7 +156,7 @@ const Ecosystem: React.FC = (initialLocale?: Locale) => {
                     <div className="head-verti center mb-32">
                         <div className="line aos-init aos-animate" data-aos="fade-up-cus">
                             <h2 className="title title-48 add-className text-verti is-inview">
-                                {t('ecosystem.title')}
+                                Hệ sinh thái Logistics
                             </h2>
                         </div>
                     </div>
@@ -193,42 +164,34 @@ const Ecosystem: React.FC = (initialLocale?: Locale) => {
                         <div className="homes-logis-list row gap-res">
                             {/* Communication */}
                             <LogisticsItem
-                                title={t('ecosystem.item_1')}
-                                subtitle={t('ecosystem.sub_item_1')}
+                                title="Communication"
+                                subtitle="Consumer"
                             />
 
                             {/* Procurement */}
                             <LogisticsItem
-                                title={t('ecosystem.item_2')}
-                                subtitle={t('ecosystem.sub_item_2')}
+                                title="Procurement"
+                                subtitle="Raw Materiala"
                             />
 
                             {/* Inbound Logistics */}
                             <LogisticsItem
-                                title={t('ecosystem.item_3')}
-                                subtitle={t('ecosystem.sub_item_3')}
-                                subtitle={t('ecosystem.desc_3')}
-                            />
-
-                            {/* Inbound Logistics */}
-                            <LogisticsItem
-                                title={t('ecosystem.item_4')}
-                                subtitle={t('ecosystem.sub_item_4')}
-                                subtitle={t('ecosystem.desc_4')}
+                                title="Inbound Logistics"
+                                subtitle="Supplier"
                                 items={[
-                                    t('ecosystem.items_item_4.item_1'),
-                                    t('ecosystem.items_item_4.item_2'),
-                                    t('ecosystem.items_item_4.item_3'),
+                                    'Import Freight: Air, Ocean (FLC & LCL),customs Clearance',
+                                    'Storage Service: PVMI (bonded warehouse,CFS..), Factory fulfillment center',
+                                    'Land trucking'
                                 ]}
                             />
 
                             {/* E-commerce */}
                             <LogisticsItem
-                                title={t('ecosystem.item_5')}
+                                title="E-commerce"
                                 items={[
-                                    t('ecosystem.items_item_5.item_1'),
-                                    t('ecosystem.items_item_5.item_2'),
-                                    t('ecosystem.items_item_5.item_3'),
+                                    'E-commerce, B2C delivery',
+                                    'COD',
+                                    'E-commerce platform'
                                 ]}
                             />
 
@@ -261,43 +224,43 @@ const Ecosystem: React.FC = (initialLocale?: Locale) => {
                                     ))}
                                 </div>
                                 <div className="circle-tts">
-                                    <div className="circle-tt">{t('ecosystem.Retailer')}</div>
-                                    <div className="circle-tt">{t('ecosystem.Manufacturer')}</div>
+                                    <div className="circle-tt">Retailer</div>
+                                    <div className="circle-tt">Manufacturer</div>
                                 </div>
                             </div>
 
                             {/* Supply Chain Finance */}
                             <LogisticsItem
-                                title={t('ecosystem.item_6')}
-                                description={t('ecosystem.desc_6')}
+                                title="Supply Chain Finance"
+                                description="Optimize cash flow for supplier or buyer"
                             />
 
                             {/* Last-miles Delivery */}
                             <LogisticsItem
-                                title={t('ecosystem.item_7')}
+                                title="Last-miles Delivery"
                                 items={[
-                                    t('ecosystem.items_item_7.item_1'),
-                                    t('ecosystem.items_item_7.item_2'),
-                                    t('ecosystem.items_item_7.item_3'),
+                                    'Nation wide Hub & transport network',
+                                    'Land trucking',
+                                    'Air shipment'
                                 ]}
                             />
 
                             {/* Distribution Service */}
                             <LogisticsItem
-                                title={t('ecosystem.item_8')}
-                                subtitle={t('ecosystem.sub_item_8')}
-                                description={t('ecosystem.desc_8')}
+                                title="Distribution Service"
+                                subtitle="Distributors"
+                                description="VNP is deploying modern distribution strateg by using nationwide networl"
                             />
 
                             {/* Outbound Logistics */}
                             <LogisticsItem
-                                title={t('ecosystem.item_9')}
+                                title="Outbound Logistics"
                                 items={[
-                                    t('ecosystem.items_item_9.item_1'),
-                                    t('ecosystem.items_item_9.item_2'),
-                                    t('ecosystem.items_item_9.item_3'),
-                                    t('ecosystem.items_item_9.item_4'),
-                                    t('ecosystem.items_item_9.item_5'),
+                                    'Distribution center',
+                                    'Fulfillment center',
+                                    'Land trucking',
+                                    'Air, Ocean freight',
+                                    'VAS'
                                 ]}
                                 twoColumns={true}
                             />
