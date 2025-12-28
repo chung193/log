@@ -7,14 +7,20 @@
   --black: #000000;
 }
 
+@font-face {
+  font-family: 'SVN-Gotham';
+  src: url('/fonts/SVN-Gotham Light.otf');
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'SVN-Gotham' !important;
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'SVN-Gotham';
   color: var(--text-color);
   overflow-x: hidden;
 }
