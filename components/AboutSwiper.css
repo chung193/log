@@ -1,0 +1,12 @@
+/* Thêm vào file CSS của bạn */
+.ab-first-slide .swiper-slide {
+    width: auto !important;
+    /* Không cố định width */
+    flex-shrink: 0;
+    /* Ngăn không co lại */
+}
+
+.ab-first-slide .swiper-wrapper {
+    justify-content: flex-start;
+    /* Căn trái */
+}

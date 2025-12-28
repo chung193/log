@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import { Swiper as SwiperType } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-
+import './AboutSwiper.css';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -15,27 +15,27 @@ const AboutSwiper = () => {
 
     const slides = [
         {
-            src: "https://vietnampostlogistics.com/wp-content/uploads/2025/04/Group-2144769120-1.png",
-            width: 1000,
-            height: 1000,
+            src: "/images/abf1.jpg",
+            width: 307,
+            height: 307,
             alt: ""
         },
         {
-            src: "https://vietnampostlogistics.com/wp-content/uploads/2025/04/Group-2144769121.png",
-            width: 596,
-            height: 389,
+            src: "/images/abf2.jpg",
+            width: 496,
+            height: 307,
             alt: ""
         },
         {
-            src: "https://vietnampostlogistics.com/wp-content/uploads/2025/04/Group-2144769119-1.png",
+            src: "/images/abf3.jpg",
             width: 803,
-            height: 389,
+            height: 307,
             alt: ""
         },
         {
-            src: "https://vietnampostlogistics.com/wp-content/uploads/2025/04/Group-2144769122.png",
-            width: 596,
-            height: 389,
+            src: "/images/abf4.jpg",
+            width: 632,
+            height: 307,
             alt: ""
         }
     ];
@@ -47,7 +47,6 @@ const AboutSwiper = () => {
                 spaceBetween={0}
                 slidesPerView={3}
                 navigation
-                //pagination={{ clickable: true }}
                 autoplay={{
                     delay: 3000,
                     disableOnInteraction: false,
