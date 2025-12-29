@@ -13,29 +13,16 @@ export default function RootLayout({ children }) {
     <html lang="vi-VN">
       <head>
         <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width" />
-        {/* Google Tag Manager */}
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-596M43V3');
-          `
-        }} />
-        {/* End Google Tag Manager */}
-
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-F973DG4SGV"></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-F973DG4SGV');
-          `
-        }} />
-
+        <meta charSet="UTF-8" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="keywords" content="vận chuyển quốc tế, kho vận, xuất nhập khẩu, thương mại điện tử quốc tế, giải pháp logistics, dịch vụ logistics cho doanh nghiệp" />
+        <meta name="author" content="Vietnam Post Logistics" />
+        <meta name="copyright" content="Vietnam Post Logistics" />
+        <meta name="language" content="Vietnamese" />
+        <meta name="revisit-after" content="1 days" />
+        <meta name="distribution" content="Global" />
+        <meta name="rating" content="General" />
         {/* CSS Files */}
         {/* <link rel="stylesheet" href="/css/style.min.css" /> */}
         <link rel="stylesheet" href="/css/styles.css" />
@@ -46,16 +33,15 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="/css/update.css" />
 
         {/* Favicon */}
-        <link rel="icon" href="https://vietnampostlogistics.com/wp-content/uploads/2025/07/cropped-logo-web-32x32.png" sizes="32x32" />
-        <link rel="icon" href="https://vietnampostlogistics.com/wp-content/uploads/2025/07/cropped-logo-web-192x192.png" sizes="192x192" />
-        <link rel="apple-touch-icon" href="https://vietnampostlogistics.com/wp-content/uploads/2025/07/cropped-logo-web-180x180.png" />
+        <link rel="icon" href="/images/cropped-logo-web-32x32.png" sizes="32x32" />
+        <link rel="icon" href="/images/cropped-logo-web-192x192.png" sizes="192x192" />
+        <link rel="apple-touch-icon" href="/images/cropped-logo-web-180x180.png" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
       </head>
       <body className="home page-template page-template-page-template page-template-home-template page-template-page-templatehome-template-php page page-id-8 wp-custom-logo desktop-detect">
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-596M43V3" height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe>
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
 
         <Header />
         {children}

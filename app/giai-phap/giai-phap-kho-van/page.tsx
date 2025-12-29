@@ -5,7 +5,22 @@ import Breadcrumb from '@/components/SiteBreadcrumb';
 import WhyChoose from '@/components/WhyChoose';
 import WareHouse from '@/components/WareHouse';
 import WareHouseEXP from '@/components/WareHouseEXP';
-const ContractLogisticsWarehousingPage = () => {
+import SiteBreadcrumb from '@/components/SiteBreadcrumb';
+import StoreSwiper from '@/components/StoreSwiper';
+import StoreTime from '@/components/StoreTime';
+import StoreSolution from '@/components/StoreSolution';
+
+const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
+    const breadcrumbItems = {
+        'vi': [
+            { text: "Giải pháp", link: "/giai-phap" },
+            { text: "Giải pháp Kho vận", link: "/giai-phap/giai-phap-kho-van", isActive: true }
+        ],
+        'en': [
+            { text: "Solutions", link: "/solutions" },
+            { text: "Warehouse Solutions", link: "/solutions/warehouse", isActive: true }
+        ]
+    };
     return (
         <main className="main page-storage hd-sticky">
             <div className="bn-big white">
@@ -23,7 +38,13 @@ const ContractLogisticsWarehousingPage = () => {
                 </div>
                 <div className="container">
                     <div className="bn-big-ctn">
-                        <Breadcrumb />
+                        <SiteBreadcrumb
+                            initialLocale={initialLocale}
+                            className=''
+                            items={breadcrumbItems[initialLocale as 'vi' | 'en']}
+                            currentPage="Giải pháp Kho vận"
+                        />
+
                         <h1 className="bn-big-tt add-class text-verti mb-24 is-inview">
                             GIẢI PHÁP KHO VẬN
                         </h1>
@@ -115,154 +136,16 @@ const ContractLogisticsWarehousingPage = () => {
                             <div className="store-ser-des">
                                 <p>Với kinh nghiệm lâu năm trong ngành cùng hệ thống kho bãi rộng lớn, lên tới 500.000 m2 sàn đặt tại các vị trí đắc địa, thuận lợi cho việc vận chuyển và các hoạt động Logistics như: Hà Nam, Vĩnh Phúc, Hà Nội, Hải Phòng, TP. Hồ Chí Minh,…</p>
                             </div>
-                            <div className="swiper row rows-4 gap-res swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
-                                <div className="swiper-wrapper" id="swiper-wrapper-1000de476b8818929" aria-live="polite">
-                                    <div className="swiper-slide col swiper-slide-visible swiper-slide-active" role="group" aria-label="1 / 4">
-                                        <div className="store-ser-swiper-it">
-                                            <div className="inner">
-                                                <div className="img">
-                                                    <a className="img-inner" href="https://vietnampostlogistics.com/dich-vu-cho-thue-kho-bai-uy-tin-chat-luong-hang-dau-viet-nam/">
-                                                        <img width="286" height="346" src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage1.jpg" className="attachment-full size-full" alt="" decoding="async" loading="lazy" srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage1.jpg 286w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage1-248x300.jpg 248w" />
-                                                    </a>
-                                                </div>
-                                                <div className="info">
-                                                    <a className="btn-circle" href="https://vietnampostlogistics.com/dich-vu-cho-thue-kho-bai-uy-tin-chat-luong-hang-dau-viet-nam/">
-                                                        <img src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg" alt="" />
-                                                    </a>
-                                                    <p className="info-des">Dịch vụ cho thuê kho bãi</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="swiper-slide col swiper-slide-visible swiper-slide-next" role="group" aria-label="2 / 4">
-                                        <div className="store-ser-swiper-it">
-                                            <div className="inner">
-                                                <div className="img">
-                                                    <a className="img-inner" href="https://vietnampostlogistics.com/dich-vu-gia-tri-gia-tang/">
-                                                        <img width="286" height="346" src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage2.jpg" className="attachment-full size-full" alt="" decoding="async" loading="lazy" srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage2.jpg 286w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage2-248x300.jpg 248w" />
-                                                    </a>
-                                                </div>
-                                                <div className="info">
-                                                    <a className="btn-circle" href="https://vietnampostlogistics.com/dich-vu-gia-tri-gia-tang/">
-                                                        <img src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg" alt="" />
-                                                    </a>
-                                                    <p className="info-des">Dịch vụ gia tăng: phân loại, chia chọn và soạn theo đơn hàng, in, dán tem.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="swiper-slide col swiper-slide-visible" role="group" aria-label="3 / 4">
-                                        <div className="store-ser-swiper-it">
-                                            <div className="inner">
-                                                <div className="img">
-                                                    <a className="img-inner" href="https://vietnampostlogistics.com/giai-phap-xuat-nhap-khau-tai-kho-va-quan-ly-hang-hoa/">
-                                                        <img width="286" height="346" src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage3.jpg" className="attachment-full size-full" alt="" decoding="async" loading="lazy" srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage3.jpg 286w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage3-248x300.jpg 248w" />
-                                                    </a>
-                                                </div>
-                                                <div className="info">
-                                                    <a className="btn-circle" href="https://vietnampostlogistics.com/giai-phap-xuat-nhap-khau-tai-kho-va-quan-ly-hang-hoa/">
-                                                        <img src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg" alt="" />
-                                                    </a>
-                                                    <p className="info-des">Dịch vụ xuất nhập khẩu tại kho và quản lý hàng hóa.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="swiper-slide col swiper-slide-visible" role="group" aria-label="4 / 4">
-                                        <div className="store-ser-swiper-it">
-                                            <div className="inner">
-                                                <div className="img">
-                                                    <a className="img-inner" href="https://vietnampostlogistics.com/dich-vu-hai-quan-cua-vietnam-post-logistics/">
-                                                        <img width="286" height="346" src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage4.jpg" className="attachment-full size-full" alt="" decoding="async" loading="lazy" srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage4.jpg 286w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage4-248x300.jpg 248w" />
-                                                    </a>
-                                                </div>
-                                                <div className="info">
-                                                    <a className="btn-circle" href="https://vietnampostlogistics.com/dich-vu-hai-quan-cua-vietnam-post-logistics/">
-                                                        <img src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg" alt="" />
-                                                    </a>
-                                                    <p className="info-des">Dịch vụ hải quan: thông quan và giám sát hải quan nhập kho.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <span className="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-                            </div>
-                            <div className="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal swiper-pagination-lock">
-                                <span className="swiper-pagination-bullet swiper-pagination-bullet-active" tabIndex={0} role="button" aria-label="Go to slide 1" aria-current="true"></span>
-                            </div>
+
+                            <StoreSwiper />
                         </div>
                     </div>
 
-                    <div className="store-ser-time ss-pd-b">
-                        <div className="container">
-                            <div className="store-ser-time-top">
-                                <div className="head-verti mb-32">
-                                    <div className="title-head text-verti">
-                                        <h3 className="title title-40 add-class text-hori is-inview">
-                                            Thời gian xử lý thủ tục hải <br />quan tại kho nhanh nhất thị trường
-                                        </h3>
-                                    </div>
-                                    <div className="line aos-init aos-animate" data-aos="fade-up-cus" data-aos-delay="400">
-                                        <div className="desc">
-                                            Đảm bảo hàng hóa từ các quốc gia khác về Việt Nam <br />nhanh chóng, thuận tiện.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="minibox aos-init aos-animate" data-aos="fade-up-cus" data-aos-delay="600">
-                                    <div className="icon">
-                                        <img width="48" height="48" src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-1.svg" className="attachment-full size-full" alt="Hàng hóa" decoding="async" loading="lazy" />
-                                    </div>
-                                    <p className="desc">Dưới 16 giờ</p>
-                                </div>
-                            </div>
-                            <div className="store-ser-time-bot aos-init aos-animate" data-aos="fade-right-cus">
-                                <div className="img">
-                                    <img width="651" height="502" src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/car.png" className="attachment-full size-full" alt="Xe chở container" decoding="async" loading="lazy" srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/car.png 651w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/car-300x231.png 300w" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <StoreTime />
                 </div>
             </section>
 
-            <section className="sec-store-cus">
-                <div className="store-cus bg-pri ss-pd">
-                    <div className="container">
-                        <div className="head-verti mb-32 center white">
-                            <h1 className="title title-48 add-class text-verti is-inview">Giải pháp toàn diện dành cho</h1>
-                        </div>
-                        <div className="store-cus-row row">
-                            <div className="store-cus-l col">
-                                <div className="wrapper">
-                                    <div className="store-cus-it">
-                                        <img src="https://vietnampostlogistics.com/template/assets/images/sao.svg" alt="" />
-                                        <p className="txt">Các nhà phân phối, bán lẻ.</p>
-                                    </div>
-                                    <div className="store-cus-it">
-                                        <img src="https://vietnampostlogistics.com/template/assets/images/sao.svg" alt="" />
-                                        <p className="txt">Các doanh nghiệp sản xuất, xuất nhập khẩu.</p>
-                                    </div>
-                                    <div className="store-cus-it">
-                                        <img src="https://vietnampostlogistics.com/template/assets/images/sao.svg" alt="" />
-                                        <p className="txt">Các doanh nghiệp logistics.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="store-cus-r col">
-                                <div className="wrapper">
-                                    <div className="img">
-                                        <div className="img-inner">
-                                            <img width="864" height="748" src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/pallet.png" className="attachment-full size-full" alt="" decoding="async" loading="lazy" srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/pallet.png 864w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/pallet-300x260.png 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/pallet-768x665.png 768w" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+            <StoreSolution />
             <WhyChoose />
             <WareHouseEXP />
 

@@ -6,12 +6,23 @@ import Ecosystem from '@/components/Ecosystem';
 import PartnersSection from '@/components/PartnersSection';
 import AboutQuote from '@/components/AboutQuote';
 import AboutViewContainer from '@/components/AboutViewContainer';
+import SiteBreadcrumb from '@/components/SiteBreadcrumb';
 
 interface AboutPageProps {
     initialLocale?: string;
 }
 
 const AboutPage: React.FC<AboutPageProps> = ({ initialLocale = 'en' }) => {
+    const breadcrumbItems = {
+        vi: [
+            { text: "Giải pháp", link: "/solutions" },
+            { text: "Giải pháp Kho vận", link: "/solutions/warehouse", isActive: true }
+        ],
+        en: [
+            { text: "Solutions", link: "/solutions" },
+            { text: "Warehouse Solutions", link: "/solutions/warehouse", isActive: true }
+        ]
+    };
     return (
         <div id="primary" className="content-area">
             <main className="main page-ab">
@@ -21,7 +32,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ initialLocale = 'en' }) => {
                             <img
                                 width="1728"
                                 height="500"
-                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/bn4.jpg"
+                                src="/images/bn4.webp"
                                 className="attachment-full size-full"
                                 alt="Kho ngoại quan chất lượng cao"
                                 decoding="async"
@@ -29,25 +40,18 @@ const AboutPage: React.FC<AboutPageProps> = ({ initialLocale = 'en' }) => {
                             />
                         </div>
                     </div>
+
                     <div className="bn-bread">
                         <div className="container">
-                            <div className="breadcrumb">
-                                <div className="breadcrumb-wrapper">
-                                    <ul className="breadcrumb-list">
-                                        <li className="breadcrumb-item aos-init aos-animate" data-aos="fade-left">
-                                            <a href="https://vietnampostlogistics.com/en/" className="breadcrumb-link">Home</a>
-                                        </li>
-                                        <li className="breadcrumb-item aos-init aos-animate" data-aos="fade-left">
-                                            <a href="https://vietnampostlogistics.com/en/company/" className="breadcrumb-link">Company</a>
-                                        </li>
-                                        <li className="breadcrumb-item aos-init aos-animate" data-aos="fade-left">
-                                            <a href="" className="breadcrumb-link">About us</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <SiteBreadcrumb
+                                initialLocale={initialLocale}
+                                className=''
+                                items={breadcrumbItems[initialLocale as 'vi' | 'en']}
+                                currentPage="About us"
+                            />
                         </div>
                     </div>
+
                 </div>
 
 
@@ -76,7 +80,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ initialLocale = 'en' }) => {
 
                         <AboutSwiper />
 
-                        <div className="ab-first-bottom ss-pd">
+                        <div className="ab-first-bottom ss-pd pb-4">
                             <div className="container">
                                 <div className="head-verti center white">
                                     <div className="line aos-init aos-animate" data-aos="fade-up-cus" data-aos-delay="400">
@@ -88,7 +92,8 @@ const AboutPage: React.FC<AboutPageProps> = ({ initialLocale = 'en' }) => {
                                     </div>
                                 </div>
                             </div>
-
+                        </div>
+                        <div className="ab-first-bottom ss-pd pb-4">
                             <SolutionCarousel />
                         </div>
                     </div>

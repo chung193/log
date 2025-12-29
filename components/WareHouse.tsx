@@ -17,7 +17,7 @@ const WareHouse = () => {
             link: "https://vietnampostlogistics.com/kho-ngoai-quan-xuat-nhap-khau-tai-cho-vietnam-post-logistics/",
             image: "https://vietnampostlogistics.com/wp-content/uploads/2025/03/store2.png",
             description: "Kinh nghiệm lâu năm trong ngành cùng hệ thống kho bãi rộng lớn",
-            width: 279,
+            width: 278,
             height: 190
         },
         {
@@ -35,7 +35,7 @@ const WareHouse = () => {
             link: "https://vietnampostlogistics.com/kho-fulfillment-giai-phap-toi-uu-cho-thuong-mai-dien-tu/",
             image: "https://vietnampostlogistics.com/wp-content/uploads/2025/03/store4.png",
             description: "Kinh nghiệm lâu năm trong ngành cùng hệ thống kho bãi rộng lớn",
-            width: 279,
+            width: 278,
             height: 190
         },
         {
@@ -68,12 +68,12 @@ const WareHouse = () => {
 
     const slideStyles: React.CSSProperties = {
         flex: '0 0 auto', // Không co giãn, không thu nhỏ
-        width: '300px', // Điều chỉnh chiều rộng mỗi slide
+        width: '20%', // Điều chỉnh chiều rộng mỗi slide
         marginRight: '0px', // Khoảng cách giữa các slide
     };
 
     return (
-        <>
+        <div className="w-100">
             <style>{hideScrollbarStyles}</style>
             <div className="store-ser-slide" style={{ overflow: 'hidden' }}>
                 <div className="swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
@@ -139,7 +139,7 @@ const WareHouse = () => {
                     <span className="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

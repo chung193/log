@@ -16,7 +16,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'SVN-Gotham' !important;
+  font-family: 'SVN-Gotham';
 }
 
 body {
@@ -137,4 +137,14 @@ body {
   .title-48 {
     font-size: 28px;
   }
+}
+
+.breadcrumb-item:not(:first-child)::before,
+.fa-circle-plus:before,
+.fa-plus-circle:before {
+  font-weight: 600;
+}
+
+.breadcrumb-item:not(:first-child)::before:hover {
+  font-weight: 600;
 }

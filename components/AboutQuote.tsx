@@ -24,6 +24,10 @@ const AboutQuote = () => {
                             data-aos="fade-up"
                             data-aos-duration="800"
                             data-aos-delay="200"
+                            style={{
+                                textAlign: 'justify',
+                                margin: 0,
+                            }}
                         >
                             <p className="des">
                                 At Vietnam Post Logistics, we are committed to delivering reliable, fast, and innovative logistics solutions that meet the diverse needs of our customers. Guided by trust, efficiency, and sustainability, we aim to connect communities and businesses across Vietnam and globally.
@@ -38,7 +42,7 @@ const AboutQuote = () => {
                             <p className="des">
                                 <span className="second">
                                     Business Philosophy Statement
-                                </span>
+                                </span>&nbsp;
                                 of Vietnam Post Logistics
                             </p>
                         </div>
