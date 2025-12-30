@@ -1,6 +1,20 @@
 import React from 'react';
+import SiteBreadcrumb from '@/components/SiteBreadcrumb';
+import EXPTrustSlide from '@/components/EXPTrustSlide';
+import PartnersSection from '@/components/PartnersSection';
+import ContactFormSection from '@/components/ContactFormSection';
 
-const ImportExportSolution = () => {
+const ImportExportSolution = ({ initialLocale = 'en' }) => {
+    const breadcrumbItems = {
+        'vi': [
+            { text: "Giải pháp", link: "/giai-phap" },
+            { text: "Giải pháp Kho vận", link: "/giai-phap/giai-phap-kho-van", isActive: true }
+        ],
+        'en': [
+            { text: "Solutions", link: "/solutions" },
+            { text: "Warehouse Solutions", link: "/solutions/warehouse", isActive: true }
+        ]
+    }
     return (
         <main className="main page-exp">
             {/* Banner Section */}
@@ -20,35 +34,12 @@ const ImportExportSolution = () => {
                 <div className="container">
                     <div className="bn-big-ctn">
                         {/* Breadcrumb */}
-                        <div className="breadcrumb">
-                            <div className="breadcrumb-wrapper">
-                                <ul className="breadcrumb-list">
-                                    <li className="breadcrumb-item aos-init aos-animate" data-aos="fade-left">
-                                        <a href="https://vietnampostlogistics.com/" className="breadcrumb-link">
-                                            Trang chủ
-                                        </a>
-                                    </li>
-                                    <li className="breadcrumb-item aos-init aos-animate" data-aos="fade-left">
-                                        <a href="" className="breadcrumb-link">
-                                            Giải pháp
-                                        </a>
-                                    </li>
-                                    <li className="breadcrumb-item aos-init aos-animate" data-aos="fade-left">
-                                        <a
-                                            href="https://vietnampostlogistics.com/danh-muc-giai-phap/xuat-nhat-khau/"
-                                            className="breadcrumb-link"
-                                        >
-                                            Xuất nhật khẩu
-                                        </a>
-                                    </li>
-                                    <li className="breadcrumb-item aos-init aos-animate" data-aos="fade-left">
-                                        <a href="" className="breadcrumb-link">
-                                            Ủy thác xuất nhập khẩu
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        <SiteBreadcrumb
+                            initialLocale={initialLocale}
+                            className=''
+                            items={breadcrumbItems[initialLocale as 'vi' | 'en']}
+                            currentPage="Giải pháp Kho vận"
+                        />
 
                         <h1 className="bn-big-tt add-class text-verti mb-24 is-inview">
                             Giải pháp Xuất - nhập khẩu
@@ -143,143 +134,7 @@ const ImportExportSolution = () => {
                         <div className="head-verti mb-32 center">
                             <h1 className="title title-48 add-class text-verti">Ủy thác xuất nhập khẩu</h1>
                         </div>
-                        <div className="exp-entrust-slide">
-                            <div className="swiper row rows-4 gap-res swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
-                                <div className="swiper-wrapper" id="swiper-wrapper-134ef8a7f42c4e44" aria-live="polite" style={{ transform: 'translate3d(0px, 0px, 0px)' }}>
-                                    {/* Import Service */}
-                                    <div className="swiper-slide col swiper-slide-visible swiper-slide-active" role="group" aria-label="1 / 4">
-                                        <div className="entrust-item">
-                                            <div className="inner">
-                                                <div className="img hover-img-rotate">
-                                                    <a className="img-inner" href="https://vietnampostlogistics.com/uy-thac-nhap-khau-vietnam-post-logistics/">
-                                                        <img
-                                                            width="274"
-                                                            height="296"
-                                                            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/exp1.jpg"
-                                                            className="attachment-full size-full"
-                                                            alt="Bãi containers"
-                                                            decoding="async"
-                                                            loading="lazy"
-                                                        />
-                                                    </a>
-                                                    <a className="btn-circle" href="https://vietnampostlogistics.com/uy-thac-nhap-khau-vietnam-post-logistics/">
-                                                        <img src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg" alt="" />
-                                                    </a>
-                                                </div>
-                                                <div className="info">
-                                                    <h4>
-                                                        <a className="info-tt" href="https://vietnampostlogistics.com/uy-thac-nhap-khau-vietnam-post-logistics/">
-                                                            Ủy thác nhập khẩu
-                                                        </a>
-                                                    </h4>
-                                                    <p className="info-des">Đảm bảo hàng hóa từ các quốc gia khác về Việt Nam nhanh chóng, thuận tiện.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Export Service */}
-                                    <div className="swiper-slide col swiper-slide-visible swiper-slide-next" role="group" aria-label="2 / 4">
-                                        <div className="entrust-item">
-                                            <div className="inner">
-                                                <div className="img hover-img-rotate">
-                                                    <a className="img-inner" href="https://vietnampostlogistics.com/uy-thac-xuat-khau-vietnam-post-logistics/">
-                                                        <img
-                                                            width="274"
-                                                            height="296"
-                                                            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/exp2.jpg"
-                                                            className="attachment-full size-full"
-                                                            alt="thùng hàng carton và pallet"
-                                                            decoding="async"
-                                                            loading="lazy"
-                                                        />
-                                                    </a>
-                                                    <a className="btn-circle" href="https://vietnampostlogistics.com/uy-thac-xuat-khau-vietnam-post-logistics/">
-                                                        <img src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg" alt="" />
-                                                    </a>
-                                                </div>
-                                                <div className="info">
-                                                    <h4>
-                                                        <a className="info-tt" href="https://vietnampostlogistics.com/uy-thac-xuat-khau-vietnam-post-logistics/">
-                                                            Ủy thác xuất khẩu
-                                                        </a>
-                                                    </h4>
-                                                    <p className="info-des">Hỗ trợ đưa sản phẩm của bạn đến tay khách hàng quốc tế một cách chuyên nghiệp.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Customs Support */}
-                                    <div className="swiper-slide col swiper-slide-visible" role="group" aria-label="3 / 4">
-                                        <div className="entrust-item">
-                                            <div className="inner">
-                                                <div className="img hover-img-rotate">
-                                                    <a className="img-inner" href="https://vietnampostlogistics.com/ho-tro-khai-bao-hai-quan-vietnam-post-logistics/">
-                                                        <img
-                                                            width="274"
-                                                            height="296"
-                                                            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/exp3.jpg"
-                                                            className="attachment-full size-full"
-                                                            alt="Bê thùng hàng"
-                                                            decoding="async"
-                                                            loading="lazy"
-                                                        />
-                                                    </a>
-                                                    <a className="btn-circle" href="https://vietnampostlogistics.com/ho-tro-khai-bao-hai-quan-vietnam-post-logistics/">
-                                                        <img src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg" alt="" />
-                                                    </a>
-                                                </div>
-                                                <div className="info">
-                                                    <h4>
-                                                        <a className="info-tt" href="https://vietnampostlogistics.com/ho-tro-khai-bao-hai-quan-vietnam-post-logistics/">
-                                                            Hỗ trợ khai báo hải quan
-                                                        </a>
-                                                    </h4>
-                                                    <p className="info-des">Chuẩn bị và xử lý hồ sơ chính xác, giảm thiểu rủi ro sai sót.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Policy Consultation */}
-                                    <div className="swiper-slide col swiper-slide-visible" role="group" aria-label="4 / 4">
-                                        <div className="entrust-item">
-                                            <div className="inner">
-                                                <div className="img hover-img-rotate">
-                                                    <a className="img-inner" href="https://vietnampostlogistics.com/tu-van-chinh-sach-xuat-nhap-khau-vietnam-post-logistics/">
-                                                        <img
-                                                            width="274"
-                                                            height="296"
-                                                            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/exp4.jpg"
-                                                            className="attachment-full size-full"
-                                                            alt="sân bay"
-                                                            decoding="async"
-                                                            loading="lazy"
-                                                        />
-                                                    </a>
-                                                    <a className="btn-circle" href="https://vietnampostlogistics.com/tu-van-chinh-sach-xuat-nhap-khau-vietnam-post-logistics/">
-                                                        <img src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg" alt="" />
-                                                    </a>
-                                                </div>
-                                                <div className="info">
-                                                    <h4>
-                                                        <a className="info-tt" href="https://vietnampostlogistics.com/tu-van-chinh-sach-xuat-nhap-khau-vietnam-post-logistics/">
-                                                            Tư vấn chính sách xuất nhập khẩu
-                                                        </a>
-                                                    </h4>
-                                                    <p className="info-des">Giải đáp mọi thắc mắc và cập nhật thông tin mới nhất.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal swiper-pagination-lock">
-                                    <span className="swiper-pagination-bullet swiper-pagination-bullet-active" tabIndex={0} role="button" aria-label="Go to slide 1" aria-current="true"></span>
-                                </div>
-                                <span className="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-                            </div>
-                        </div>
+                        <EXPTrustSlide />
                     </div>
                 </div>
             </section>
@@ -480,121 +335,8 @@ const ImportExportSolution = () => {
                 </div>
             </div>
 
-            {/* Associations Section */}
-            <section className="sec-homes-splide">
-                <div className="homes-splide ss-pd">
-                    <div className="homes-splide-block">
-                        <div className="container">
-                            <div className="head-verti center">
-                                <div className="line aos-init" data-aos="fade-up-cus">
-                                    <h2 className="title title-48 add-class text-verti">Các hiệp hội tham gia</h2>
-                                </div>
-                            </div>
-                        </div>
-                        {/* Associations Carousel */}
-                        <div className="logoSplide">
-                            {/* Carousel structure - simplified for TSX */}
-                            <div className="splide splide--loop splide--ltr splide--draggable is-active is-initialized" id="splide01" role="region" aria-roledescription="carousel">
-                                <div className="splide__arrows splide__arrows--ltr">
-                                    <button className="splide__arrow splide__arrow--prev" type="button" aria-label="Previous slide" aria-controls="splide01-track">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false">
-                                            <path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path>
-                                        </svg>
-                                    </button>
-                                    <button className="splide__arrow splide__arrow--next" type="button" aria-label="Next slide" aria-controls="splide01-track">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false">
-                                            <path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <div className="splide__track splide__track--loop splide__track--ltr splide__track--draggable" id="splide01-track" style={{ paddingLeft: 0, paddingRight: 0 } as React.CSSProperties} aria-live="off" aria-atomic="true">
-                                    <div className="splide__list" id="splide01-list" role="presentation" style={{ transform: 'translateX(-2669.47px)' } as React.CSSProperties}>
-                                        {/* Association logos would go here */}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Contact Section */}
-            <section className="sec-homes-contact">
-                <div className="homes-contact">
-                    <div className="recontainer">
-                        <div className="homes-contact-flex">
-                            <div className="homes-contact-ctn ss-pd">
-                                <div className="wrapper">
-                                    <div className="head-verti white mb-32">
-                                        <div className="line aos-init" data-aos="fade-up-cus">
-                                            <h2 className="title title-48 add-class text-verti">Liên hệ với Vietnam Post Logistics</h2>
-                                        </div>
-                                    </div>
-                                    <div className="mainForm">
-                                        <form action="/giai-phap/uy-thac-xuat-nhap-khau/#wpcf7-f785-p1008-o1" method="post" className="wpcf7-form init" aria-label="Contact form" noValidate>
-                                            <div style={{ display: 'none' }}>
-                                                <input type="hidden" name="_wpcf7" value="785" />
-                                                <input type="hidden" name="_wpcf7_version" value="5.9.8" />
-                                                <input type="hidden" name="_wpcf7_locale" value="vi" />
-                                                <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f785-p1008-o1" />
-                                                <input type="hidden" name="_wpcf7_container_post" value="1008" />
-                                                <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
-                                            </div>
-                                            <div className="form-list row">
-                                                <label className="form-ip col per5">
-                                                    <span className="text spe">Tên của bạn</span>
-                                                    <input size={40} maxLength={400} className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Nhập Tên của bạn" type="text" name="your-name" />
-                                                </label>
-                                                <label className="form-ip col per5">
-                                                    <span className="text spe">Tên công ty</span>
-                                                    <input size={40} maxLength={400} className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Tên công ty" type="text" name="text-679" />
-                                                </label>
-                                                <label className="form-ip col per5">
-                                                    <span className="text spe">Email</span>
-                                                    <input size={40} maxLength={400} className="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email" type="email" name="your-email" />
-                                                </label>
-                                                <label className="form-ip col per5">
-                                                    <span className="text spe">Số điện thoại</span>
-                                                    <input size={40} maxLength={400} className="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="Số điện thoại" type="tel" name="tel-328" />
-                                                </label>
-                                                <label className="form-ip col" htmlFor="id_f_contact_global">
-                                                    <div className="btn-box">
-                                                        <div className="btn pri">
-                                                            <input className="wpcf7-form-control wpcf7-submit has-spinner hidden" id="id_f_contact_global" type="submit" value="Send" />
-                                                            <span className="txt">
-                                                                <span className="txt-inner">Liên hệ tư vấn</span>
-                                                                <span className="txt-icon">
-                                                                    <img src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg" alt="" />
-                                                                </span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="homes-contact-img ParaBlock">
-                                <div className="img ParaScroll" style={{ translate: 'none', rotate: 'none', scale: 'none', transform: 'translate(0px, 300px)' } as React.CSSProperties}>
-                                    <div className="img-inner">
-                                        <img
-                                            width="1229"
-                                            height="615"
-                                            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/fly.png"
-                                            className="attachment-full size-full"
-                                            alt="Máy bay, containers"
-                                            decoding="async"
-                                            loading="lazy"
-                                            srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/fly.png 1229w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/fly-300x150.png 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/fly-1024x512.png 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/fly-768x384.png 768w"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <PartnersSection />
+            <ContactFormSection />
         </main>
     );
 };
