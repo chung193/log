@@ -2,6 +2,10 @@
 
 import Breadcrumb from '@/components/SiteBreadcrumb';
 import React from 'react';
+import ContactFormSection from '@/components/ContactFormSection';
+import Partners from '@/components/Partners';
+import TopStrong from '@/components/TopStrong';
+import PartnersSection from '@/components/PartnersSection';
 
 const InternationalAirCargoPage = () => {
     return (
@@ -370,138 +374,7 @@ const InternationalAirCargoPage = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="inter-solve-top">
-                                        <div className="head-verti mb-32">
-                                            <div className="title-head text-verti">
-                                                <h3 className="title title-40 add-class text-hori words chars splitting" data-spl="data-spl" style={{ '--word-total': 4, '--char-total': 14 } as React.CSSProperties}>
-                                                    Lĩnh vực thế mạnh
-                                                </h3>
-                                            </div>
-                                            <div className="line aos-init" data-aos="fade-up-cus">
-                                                <p className="desc">
-                                                    Chúng tôi kết hợp với các hàng không hàng đầu thế giới để kết nối hàng hóa giữa Việt Nam với khắp toàn cầu.
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div className="inter-solve-top-slide">
-                                            <div className="swiper row rows-4 gap-res swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
-                                                <div className="swiper-wrapper" id="swiper-wrapper-6a608d210b910263e7" aria-live="polite">
-                                                    <div className="swiper-slide col swiper-slide-visible swiper-slide-active" role="group" aria-label="1 / 4">
-                                                        <div className="inter-solve-top-it">
-                                                            <div className="inner">
-                                                                <div className="img">
-                                                                    <a className="img-inner" href="">
-                                                                        <img
-                                                                            width="605"
-                                                                            height="412"
-                                                                            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/Screenshot_2025-04-24_141744-removebg-preview.png"
-                                                                            className="attachment-full size-full"
-                                                                            alt=""
-                                                                            decoding="async"
-                                                                            loading="lazy"
-                                                                            srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/Screenshot_2025-04-24_141744-removebg-preview.png 605w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/Screenshot_2025-04-24_141744-removebg-preview-300x204.png 300w"
-                                                                        />
-                                                                    </a>
-                                                                </div>
-                                                                <div className="info">
-                                                                    <h4>
-                                                                        <a className="info-tt" href="">Sản phẩm công nghệ</a>
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="swiper-slide col swiper-slide-visible swiper-slide-next" role="group" aria-label="2 / 4">
-                                                        <div className="inter-solve-top-it">
-                                                            <div className="inner">
-                                                                <div className="img">
-                                                                    <a className="img-inner" href="">
-                                                                        <img
-                                                                            width="601"
-                                                                            height="415"
-                                                                            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/loose_diamonds-removebg-preview.png"
-                                                                            className="attachment-full size-full"
-                                                                            alt=""
-                                                                            decoding="async"
-                                                                            loading="lazy"
-                                                                            srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/loose_diamonds-removebg-preview.png 601w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/loose_diamonds-removebg-preview-300x207.png 300w"
-                                                                        />
-                                                                    </a>
-                                                                </div>
-                                                                <div className="info">
-                                                                    <h4>
-                                                                        <a className="info-tt" href="">Hàng giá trị cao</a>
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="swiper-slide col swiper-slide-visible" role="group" aria-label="3 / 4">
-                                                        <div className="inter-solve-top-it">
-                                                            <div className="inner">
-                                                                <div className="img">
-                                                                    <a className="img-inner" href="">
-                                                                        <img
-                                                                            width="612"
-                                                                            height="408"
-                                                                            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/546a9a80eb981c7f0aabcaeb34d9514e-1714725364437568154831-removebg-preview.png"
-                                                                            className="attachment-full size-full"
-                                                                            alt=""
-                                                                            decoding="async"
-                                                                            loading="lazy"
-                                                                            srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/546a9a80eb981c7f0aabcaeb34d9514e-1714725364437568154831-removebg-preview.png 612w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/546a9a80eb981c7f0aabcaeb34d9514e-1714725364437568154831-removebg-preview-300x200.png 300w"
-                                                                        />
-                                                                    </a>
-                                                                </div>
-                                                                <div className="info">
-                                                                    <h4>
-                                                                        <a className="info-tt" href="">Hàng y tế</a>
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="swiper-slide col swiper-slide-visible" role="group" aria-label="4 / 4">
-                                                        <div className="inter-solve-top-it">
-                                                            <div className="inner">
-                                                                <div className="img">
-                                                                    <a className="img-inner" href="">
-                                                                        <img
-                                                                            width="427"
-                                                                            height="427"
-                                                                            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/dil5516ac4-3-removebg-preview.png"
-                                                                            className="attachment-full size-full"
-                                                                            alt=""
-                                                                            decoding="async"
-                                                                            loading="lazy"
-                                                                            srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/dil5516ac4-3-removebg-preview.png 427w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/dil5516ac4-3-removebg-preview-300x300.png 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/dil5516ac4-3-removebg-preview-150x150.png 150w"
-                                                                        />
-                                                                    </a>
-                                                                </div>
-                                                                <div className="info">
-                                                                    <h4>
-                                                                        <a className="info-tt" href="">Hàng nguy hiểm</a>
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <span className="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-                                            </div>
-                                            <div className="swiper-control posi midle">
-                                                <div className="swiper-control-btn swiper-prev swiper-button-disabled swiper-button-lock" tabIndex={-1} role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-6a608d210b910263e7" aria-disabled="true">
-                                                    <i className="fa-solid fa-arrow-left"></i>
-                                                </div>
-                                                <div className="swiper-control-btn swiper-next swiper-button-disabled swiper-button-lock" tabIndex={-1} role="button" aria-label="Next slide" aria-controls="swiper-wrapper-6a608d210b910263e7" aria-disabled="true">
-                                                    <i className="fa-solid fa-arrow-right"></i>
-                                                </div>
-                                            </div>
-                                            <div className="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal swiper-pagination-lock">
-                                                <span className="swiper-pagination-bullet swiper-pagination-bullet-active" tabIndex={0} role="button" aria-label="Go to slide 1" aria-current="true"></span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <TopStrong />
                                 </div>
                             </div>
                         </div>
@@ -509,69 +382,8 @@ const InternationalAirCargoPage = () => {
                 </div>
             </section>
 
-            <section className="sec-homes-splide">
-                <div className="homes-splide ss-pd">
-                    <div className="homes-splide-block">
-                        <div className="container">
-                            <div className="head-verti center">
-                                <div className="line aos-init" data-aos="fade-up-cus">
-                                    <h2 className="title title-48 add-class text-verti">Các hiệp hội tham gia</h2>
-                                </div>
-                            </div>
-                        </div>
-                        {/* Splide carousel sections giữ nguyên cấu trúc */}
-                    </div>
-                    <div className="homes-splide-block">
-                        <div className="container">
-                            <div className="head-verti center">
-                                <div className="line aos-init" data-aos="fade-up-cus">
-                                    <h2 className="title title-48 add-class text-verti">Mạng lưới đối tác</h2>
-                                </div>
-                            </div>
-                        </div>
-                        {/* Splide carousel sections giữ nguyên cấu trúc */}
-                    </div>
-                </div>
-            </section>
-
-            <section className="sec-homes-contact">
-                <div className="homes-contact">
-                    <div className="recontainer">
-                        <div className="homes-contact-flex">
-                            <div className="homes-contact-ctn ss-pd">
-                                <div className="wrapper">
-                                    <div className="head-verti white mb-32">
-                                        <div className="line aos-init" data-aos="fade-up-cus">
-                                            <h2 className="title title-48 add-class text-verti">Liên hệ với Vietnam Post Logistics</h2>
-                                        </div>
-                                    </div>
-                                    <div className="mainForm">
-                                        <div className="wpcf7 js" id="wpcf7-f785-p961-o1" lang="vi" dir="ltr">
-                                            {/* Form giữ nguyên cấu trúc */}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="homes-contact-img ParaBlock">
-                                <div className="img ParaScroll" style={{ translate: 'none', rotate: 'none', scale: 'none', transform: 'translate(0px, 300px)' } as React.CSSProperties}>
-                                    <div className="img-inner">
-                                        <img
-                                            width="1229"
-                                            height="615"
-                                            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/fly.png"
-                                            className="attachment-full size-full"
-                                            alt="Máy bay, containers"
-                                            decoding="async"
-                                            loading="lazy"
-                                            srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/fly.png 1229w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/fly-300x150.png 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/fly-1024x512.png 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/fly-768x384.png 768w"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <PartnersSection />
+            <ContactFormSection />
         </main>
     );
 };

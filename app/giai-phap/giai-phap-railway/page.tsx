@@ -1,36 +1,7 @@
 import React from 'react';
-
-// Component cho Breadcrumb
-const Breadcrumb = () => {
-    const breadcrumbItems = [
-        { label: 'Trang chủ', href: 'https://vietnampostlogistics.com/' },
-        { label: 'Giải pháp', href: '' },
-        { label: 'Logistics Quốc tế', href: 'https://vietnampostlogistics.com/danh-muc-giai-phap/logistics-quoc-te/' },
-        { label: 'Vận tải đường sắt', href: '' }
-    ];
-
-    return (
-        <div className="breadcrumb">
-            <div className="breadcrumb-wrapper">
-                <ul className="breadcrumb-list">
-                    {breadcrumbItems.map((item, index) => (
-                        <li
-                            key={index}
-                            className="breadcrumb-item aos-init aos-animate"
-                            data-aos="fade-left"
-                        >
-                            <a href={item.href} className="breadcrumb-link">
-                                {item.label}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        </div>
-    );
-};
-
-// Component cho Benefits Box
+import ContactFormSection from '@/components/ContactFormSection'
+import PartnersSection from '@/components/PartnersSection';
+import SiteBreadcrumb from '@/components/SiteBreadcrumb';
 const BenefitsBox = () => {
     const benefits = [
         {
@@ -420,7 +391,17 @@ const ContactForm = () => {
 };
 
 // Main Component
-const RailwaySolutionPage: React.FC = () => {
+const RailwaySolutionPage: React.FC = ({ initialLocale = 'en' }) => {
+    const breadcrumbItems = {
+        'vi': [
+            { text: "Giải pháp", link: "/giai-phap" },
+            { text: "Giải pháp Kho vận", link: "/giai-phap/giai-phap-kho-van", isActive: true }
+        ],
+        'en': [
+            { text: "Solutions", link: "/solutions" },
+            { text: "Warehouse Solutions", link: "/solutions/warehouse", isActive: true }
+        ]
+    };
     return (
         <main className="main page-inter">
             {/* Hero Banner Section */}
@@ -439,7 +420,12 @@ const RailwaySolutionPage: React.FC = () => {
                 </div>
                 <div className="container">
                     <div className="bn-big-ctn">
-                        <Breadcrumb />
+                        <SiteBreadcrumb
+                            initialLocale={initialLocale}
+                            className=''
+                            items={breadcrumbItems[initialLocale as 'vi' | 'en']}
+                            currentPage="Giải pháp Kho vận"
+                        />
 
                         <h1 className="bn-big-tt add-class text-verti mb-24 is-inview">
                             Giải pháp <br />
@@ -495,45 +481,8 @@ const RailwaySolutionPage: React.FC = () => {
                 </div>
             </section>
 
-            {/* Associations and Partners Section */}
-            <section className="sec-homes-splide">
-                <div className="homes-splide ss-pd">
-                    {/* Associations */}
-                    <div className="homes-splide-block">
-                        <div className="container">
-                            <div className="head-verti center">
-                                <div className="line aos-init" data-aos="fade-up-cus">
-                                    <h2 className="title title-48 add-class text-verti">
-                                        Các hiệp hội tham gia
-                                    </h2>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Note: Carousel components are omitted for brevity */}
-                        {/* You would need to implement Splide carousel separately */}
-                    </div>
-
-                    {/* Partners */}
-                    <div className="homes-splide-block">
-                        <div className="container">
-                            <div className="head-verti center">
-                                <div className="line aos-init" data-aos="fade-up-cus">
-                                    <h2 className="title title-48 add-class text-verti">
-                                        Mạng lưới đối tác
-                                    </h2>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Note: Carousel components are omitted for brevity */}
-                        {/* You would need to implement Splide carousel separately */}
-                    </div>
-                </div>
-            </section>
-
-            {/* Contact Section */}
-            <ContactForm />
+            <PartnersSection />
+            <ContactFormSection />
         </main>
     );
 };

@@ -9,6 +9,7 @@ import SiteBreadcrumb from '@/components/SiteBreadcrumb';
 import StoreSwiper from '@/components/StoreSwiper';
 import StoreTime from '@/components/StoreTime';
 import StoreSolution from '@/components/StoreSolution';
+import StoreImportant from '@/components/StoreImportant';
 
 const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
     const breadcrumbItems = {
@@ -148,78 +149,8 @@ const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
             <StoreSolution />
             <WhyChoose />
             <WareHouseEXP />
+            <StoreImportant />
 
-            <section className="sec-store-imp">
-                <div className="store-imp ss-pd">
-                    <div className="container">
-                        <div className="head-verti mb-32 center">
-                            <h1 className="title title-48 add-class text-verti is-inview">Các ngành trọng điểm</h1>
-                        </div>
-                        <div className="store-imp-img">
-                            <img width="1500" height="657" src="https://vietnampostlogistics.com/wp-content/uploads/2025/04/Hinh-anh-gia-tri-gia-tang-e1745555544903.jpg" className="attachment-full size-full" alt="Quy trình hoạt động kho ngoại quan tại Vietnam Post Logistics" decoding="async" loading="lazy" srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/04/Hinh-anh-gia-tri-gia-tang-e1745555544903.jpg 1500w, https://vietnampostlogistics.com/wp-content/uploads/2025/04/Hinh-anh-gia-tri-gia-tang-e1745555544903-300x131.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/04/Hinh-anh-gia-tri-gia-tang-e1745555544903-1024x449.jpg 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/04/Hinh-anh-gia-tri-gia-tang-e1745555544903-768x336.jpg 768w" />
-                        </div>
-                        <div className="store-imp-row row gap-res">
-                            <div className="col">
-                                <div className="store-imp-it">
-                                    <div className="inner">
-                                        <div className="img">
-                                            <div className="icon">
-                                                <img width="100" height="100" src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-import1.svg" className="attachment-full size-full" alt="Công nghệ" decoding="async" loading="lazy" />
-                                            </div>
-                                            <p className="txt">Technology</p>
-                                        </div>
-                                        <div className="info">
-                                            <div className="desc">
-                                                <div className="mona-content">
-                                                    {/* Nội dung giữ nguyên */}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col">
-                                <div className="store-imp-it">
-                                    <div className="inner">
-                                        <div className="img">
-                                            <div className="icon">
-                                                <img width="100" height="100" src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-import2.svg" className="attachment-full size-full" alt="Hang thực phẩm" decoding="async" loading="lazy" />
-                                            </div>
-                                            <p className="txt">FMCG</p>
-                                        </div>
-                                        <div className="info">
-                                            <div className="desc">
-                                                <div className="mona-content">
-                                                    {/* Nội dung giữ nguyên */}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col">
-                                <div className="store-imp-it">
-                                    <div className="inner">
-                                        <div className="img">
-                                            <div className="icon">
-                                                <img width="100" height="100" src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-import1.svg" className="attachment-full size-full" alt="Công nghệ" decoding="async" loading="lazy" />
-                                            </div>
-                                            <p className="txt">Ecommerce</p>
-                                        </div>
-                                        <div className="info">
-                                            <div className="desc">
-                                                <div className="mona-content">
-                                                    {/* Nội dung giữ nguyên */}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </main>
     );
 };

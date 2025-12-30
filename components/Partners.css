@@ -1,0 +1,75 @@
+.solv-our-slide {
+    position: relative;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.solv-our-slide .swiper {
+    width: 100%;
+    height: 100%;
+    padding: 10px 0;
+}
+
+.solv-our-slide .swiper-wrapper {
+    display: flex;
+    align-items: center;
+    transition-timing-function: linear !important;
+    /* Chuyển động mượt */
+}
+
+.solv-our-slide .swiper-slide {
+    flex-shrink: 0;
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.solv-our-slide .solv-our {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.solv-our-slide .solv-our .img {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+
+.solv-our-slide .solv-our .img:hover {
+    border-color: #FBAE17;
+}
+
+.solv-our-slide .solv-our img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+
+}
+
+
+.solv-our-slide .solv-our img:hover {
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .solv-our-slide .solv-our .img {
+        max-width: 150px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .solv-our-slide .solv-our .img {
+        max-width: 120px;
+        padding: 8px;
+    }
+}

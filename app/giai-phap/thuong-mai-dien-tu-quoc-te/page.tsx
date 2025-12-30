@@ -1,309 +1,1048 @@
-'use client'
-
-import React, { useState } from 'react'
-
-export default function EcommercePage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    company: '',
-    email: '',
-    phone: ''
-  })
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log('Form data:', formData)
-    // Gửi form data tại đây
-  }
+import React from 'react';
+import './page.css'; // Import CSS tương ứng
+import SiteBreadcrumb from '@/components/SiteBreadcrumb';
+const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
+  const breadcrumbItems = {
+    'vi': [
+      { text: "Giải pháp", link: "/giai-phap" },
+      { text: "Giải pháp Kho vận", link: "/giai-phap/giai-phap-kho-van", isActive: true }
+    ],
+    'en': [
+      { text: "Solutions", link: "/solutions" },
+      { text: "Warehouse Solutions", link: "/solutions/warehouse", isActive: true }
+    ]
+  };
 
   return (
     <main className="main page-inland">
       {/* Hero Banner */}
-      <section className="bn-big white">
+      <div className="bn-big white">
         <div className="bn-big-bg">
-          <img 
-            width="2000" 
-            height="1000" 
-            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/tmdt1-min.jpg" 
-            alt="E-commerce"
-            className="w-full h-auto"
+          <img
+            width="2000"
+            height="1000"
+            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/tmdt1-min.jpg"
+            className="attachment-full size-full"
+            alt="Thương mại điện tử quốc tế"
+            decoding="async"
+            fetchpriority="high"
+            srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/tmdt1-min.jpg 2000w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/tmdt1-min-300x150.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/tmdt1-min-1024x512.jpg 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/tmdt1-min-768x384.jpg 768w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/tmdt1-min-1536x768.jpg 1536w"
           />
         </div>
-        
         <div className="container">
           <div className="bn-big-ctn">
             {/* Breadcrumb */}
-            <div className="breadcrumb">
-              <ul className="breadcrumb-list flex gap-4">
-                <li><a href="/">Trang chủ</a></li>
-                <li><a href="/solutions">Giải pháp</a></li>
-                <li><a href="/solutions/ecommerce">Thương mại điện tử Quốc tế</a></li>
-              </ul>
-            </div>
+            <SiteBreadcrumb
+              initialLocale={initialLocale}
+              className=''
+              items={breadcrumbItems[initialLocale as 'vi' | 'en']}
+              currentPage="Giải pháp Kho vận"
+            />
 
-            {/* Title */}
-            <h1 className="text-5xl font-bold mb-6">
+            {/* Main Title */}
+            <h1 className="bn-big-tt add-class text-verti mb-24 is-inview">
               Giải pháp <br />
               Thương mại điện tử quốc tế
             </h1>
 
             {/* Description */}
-            <p className="text-lg mb-8">
+            <p className="bn-big-des aos-init aos-animate" data-aos="fade-up-cus">
               Cung cấp giải pháp toàn diện từ khâu lấy hàng, xử lý hàng hóa, đóng <br />
               gói đến giao hàng đích danh tại các quốc gia trên thế giới.
             </p>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 gap-8 mb-8">
-              <div>
-                <div className="text-4xl font-bold">150<span className="text-2xl">+</span></div>
-                <p>Tấn hàng mỗi tháng được xử lý và giao hàng Quốc tế.</p>
-              </div>
-              <div>
-                <div className="text-4xl font-bold">99<span className="text-2xl">%</span></div>
-                <p>Lô hàng được giao hàng theo đúng cam kết.</p>
+            {/* Statistics */}
+            <div className="bn-count aos-init aos-animate" data-aos="fade-up-cus" data-aos-delay="400">
+              <div className="bn-count-row row gap-res">
+                <div className="bn-count-it col">
+                  <div className="inner">
+                    <div className="num">
+                      <span className="num-txt countNum is-inview">150</span>
+                      <span className="num-sym">+</span>
+                    </div>
+                    <p className="txt">
+                      Tấn hàng mỗi tháng được xử lý và giao hàng Quốc tế.
+                    </p>
+                  </div>
+                </div>
+                <div className="bn-count-it col">
+                  <div className="inner">
+                    <div className="num">
+                      <span className="num-txt countNum is-inview">99</span>
+                      <span className="num-sym">%</span>
+                    </div>
+                    <p className="txt">
+                      Lô hàng được giao hàng theo đúng cam kết.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Features */}
-            <div className="grid grid-cols-4 gap-4">
-              {[
-                { icon: 'ic-bn1.svg', title: 'Tăng cơ hội bán hàng ở các thị trường quốc tế.' },
-                { icon: 'ic-bn2.svg', title: 'Tiết kiệm chi phí nhờ quy trình tối ưu hoá.' },
-                { icon: 'ic-bn3.svg', title: 'Đảm bảo sự hài lòng với dịch vụ đáng tin cậy.' },
-                { icon: 'ic-bn4.svg', title: 'Sự an toàn và bảo mật của khách hàng là ưu tiên hàng đầu.' }
-              ].map((feature, idx) => (
-                <div key={idx} className="flex flex-col gap-3">
-                  <img 
-                    src={`https://vietnampostlogistics.com/wp-content/uploads/2025/03/${feature.icon}`}
-                    alt={feature.title}
-                    width="24"
-                    height="24"
+            {/* Benefits */}
+            <div className="bn-box aos-init aos-animate" data-aos="fade-up-cus" data-aos-delay="600">
+              <div className="bn-box-row row gap-res">
+                <div className="bn-box-it col">
+                  <div className="inner">
+                    <div className="icon">
+                      <img
+                        width="24"
+                        height="24"
+                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn1.svg"
+                        className="attachment-full size-full"
+                        alt="Icon TMĐT"
+                        decoding="async"
+                      />
+                    </div>
+                    <p className="des">
+                      Tăng cơ hội bán hàng ở các thị trường quốc tế.
+                    </p>
+                  </div>
+                </div>
+                <div className="bn-box-it col">
+                  <div className="inner">
+                    <div className="icon">
+                      <img
+                        width="24"
+                        height="24"
+                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn2.svg"
+                        className="attachment-full size-full"
+                        alt="KẾT NỐI HÀNH TRÌNH"
+                        decoding="async"
+                      />
+                    </div>
+                    <p className="des">
+                      Tiết kiệm chi phí nhờ quy trình tối ưu hoá.
+                    </p>
+                  </div>
+                </div>
+                <div className="bn-box-it col">
+                  <div className="inner">
+                    <div className="icon">
+                      <img
+                        width="24"
+                        height="24"
+                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn3.svg"
+                        className="attachment-full size-full"
+                        alt="LIÊN KẾT"
+                        decoding="async"
+                        loading="lazy"
+                      />
+                    </div>
+                    <p className="des">
+                      Đảm bảo sự hài lòng với dịch vụ đáng tin cậy.
+                    </p>
+                  </div>
+                </div>
+                <div className="bn-box-it col">
+                  <div className="inner">
+                    <div className="icon">
+                      <img
+                        width="24"
+                        height="24"
+                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn4.svg"
+                        className="attachment-full size-full"
+                        alt="tmđt"
+                        decoding="async"
+                        loading="lazy"
+                      />
+                    </div>
+                    <p className="des">
+                      Sự an toàn và bảo mật của khách hàng là ưu tiên hàng đầu.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Section 1: Giải pháp toàn diện */}
+      <section className="sec-solv-ecom">
+        <div className="solv-ecom ss-pd">
+          <div className="container">
+            <div className="head-verti center mb-32">
+              <h1 className="title title-48 add-class text-verti is-inview">
+                Cung cấp giải pháp toàn diện
+              </h1>
+            </div>
+
+            {/* Filter Buttons */}
+            <div className="cpn-faq-filter scrollContainer">
+              <a className="cpn-faq-filter-it buttons" href=" ">
+                Việt Nam - Mỹ
+              </a>
+              <a className="cpn-faq-filter-it buttons" href=" ">
+                Việt Nam - Châu Âu
+              </a>
+              <a className="cpn-faq-filter-it buttons" href=" ">
+                Việt Nam - Canada
+              </a>
+              <a className="cpn-faq-filter-it buttons" href=" ">
+                Việt Nam – Úc
+              </a>
+              <a className="cpn-faq-filter-it buttons" href=" ">
+                Trung Quốc – Việt Nam
+              </a>
+            </div>
+
+            <div className="head-verti center mb-32">
+              <div className="line aos-init aos-animate" data-aos="fade-up-cus">
+                <div className="desc">
+                  <p><strong>Cung cấp giải pháp toàn diện từ khâu lấy hàng, xử lý hàng hóa, đóng gói đến giao hàng đích danh tại các quốc gia trên thế giới.</strong></p>
+                  <p>&nbsp;</p>
+                  <p>Chúng tôi kết hợp với các hàng không hàng đầu thế giới để vận chuyển hàng hóa từ Việt Nam đi khắp thế giới, đặc biệt là Korean Air.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Solution Slider */}
+            <div className="store-ser-swiper">
+              <div className="swiper row rows-4 gap-res swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+                <div className="swiper-wrapper" id="swiper-wrapper-93438bdf91ba55ec" aria-live="polite">
+                  {/* Slide 1 */}
+                  <div className="swiper-slide col swiper-slide-visible swiper-slide-active" role="group" aria-label="1 / 3">
+                    <div className="store-ser-swiper-it">
+                      <div className="inner">
+                        <div className="img">
+                          <a className="img-inner" href="https://vietnampostlogistics.com/giai-phap-thuong-mai-dien-tu-t86/">
+                            <img
+                              width="286"
+                              height="346"
+                              src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage1.jpg"
+                              className="attachment-full size-full"
+                              alt="Vận chuyển T11/T01"
+                              decoding="async"
+                              loading="lazy"
+                              srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage1.jpg 286w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage1-248x300.jpg 248w"
+                            />
+                          </a>
+                        </div>
+                        <div className="info">
+                          <a className="btn-circle" href="https://vietnampostlogistics.com/giai-phap-thuong-mai-dien-tu-t86/">
+                            <img src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg" alt="Chi tiết" />
+                          </a>
+                          <p className="info-des">
+                            Vận chuyển qua hình thức T11/T01
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Slide 2 */}
+                  <div className="swiper-slide col swiper-slide-visible swiper-slide-next" role="group" aria-label="2 / 3">
+                    <div className="store-ser-swiper-it">
+                      <div className="inner">
+                        <div className="img">
+                          <a className="img-inner" href="https://vietnampostlogistics.com/giai-phap-van-chuyen-thuong-mai-dien-tu-quoc-te/">
+                            <img
+                              width="286"
+                              height="346"
+                              src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage2.jpg"
+                              className="attachment-full size-full"
+                              alt="Vận chuyển FEDEX/UPS/DHL"
+                              decoding="async"
+                              loading="lazy"
+                              srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage2.jpg 286w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage2-248x300.jpg 248w"
+                            />
+                          </a>
+                        </div>
+                        <div className="info">
+                          <a className="btn-circle" href="https://vietnampostlogistics.com/giai-phap-van-chuyen-thuong-mai-dien-tu-quoc-te/">
+                            <img src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg" alt="Chi tiết" />
+                          </a>
+                          <p className="info-des">
+                            Vận chuyến qua các đơn vị chuyển phát nhanh toàn cầu FEDEX/UPS/DHL
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Slide 3 */}
+                  <div className="swiper-slide col swiper-slide-visible" role="group" aria-label="3 / 3">
+                    <div className="store-ser-swiper-it">
+                      <div className="inner">
+                        <div className="img">
+                          <a className="img-inner" href="https://vietnampostlogistics.com/van-chuyen-eccf/">
+                            <img
+                              width="286"
+                              height="346"
+                              src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage3.jpg"
+                              className="attachment-full size-full"
+                              alt="Vận chuyển ECCF"
+                              decoding="async"
+                              loading="lazy"
+                              srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage3.jpg 286w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage3-248x300.jpg 248w"
+                            />
+                          </a>
+                        </div>
+                        <div className="info">
+                          <a className="btn-circle" href="https://vietnampostlogistics.com/van-chuyen-eccf/">
+                            <img src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg" alt="Chi tiết" />
+                          </a>
+                          <p className="info-des">
+                            Vận chuyển qua hình thức ECCF.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <span className="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+              </div>
+              <div className="swiper-control posi midle">
+                <div className="swiper-control-btn swiper-prev swiper-button-disabled swiper-button-lock" tabIndex={-1} role="button" aria-label="Previous slide">
+                  <i className="fa-solid fa-arrow-left"></i>
+                </div>
+                <div className="swiper-control-btn swiper-next swiper-button-disabled swiper-button-lock" tabIndex={-1} role="button" aria-label="Next slide">
+                  <i className="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2: Kinh nghiệm sàn TMĐT */}
+      <section className="sec-solv-our">
+        <div className="solv-our ss-pd-b">
+          <div className="container">
+            <div className="head-verti center mb-32">
+              <h1 className="title title-48 add-class text-verti is-inview">
+                Kinh nghiệm sâu rộng trên các sàn TMĐT
+              </h1>
+              <div className="line aos-init aos-animate" data-aos="fade-up-cus">
+                <p className="desc">
+                  Chúng tôi có kinh nghiệm sâu rộng trong việc quản lý và vận chuyển hàng hóa cho nhiều sàn thương mại điện tử xuyên Quốc gia lớn trên Thế giới như:
+                </p>
+              </div>
+            </div>
+
+            {/* E-commerce Platform Logos */}
+            <div className="solv-our-slide">
+              <div className="swiper row gap-res swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+                <div className="swiper-wrapper" id="swiper-wrapper-3fc1c108a6259d924" aria-live="polite">
+                  {/* Etsy */}
+                  <div className="swiper-slide col swiper-slide-visible swiper-slide-active" role="group" aria-label="1 / 6">
+                    <div className="solv-our-it">
+                      <a className="img" href="javascript:void(0)">
+                        <img
+                          width="182"
+                          height="116"
+                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/br1.jpg"
+                          className="attachment-full size-full"
+                          alt="Logo etsy"
+                          decoding="async"
+                          loading="lazy"
+                        />
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Amazon */}
+                  <div className="swiper-slide col swiper-slide-visible swiper-slide-next" role="group" aria-label="2 / 6">
+                    <div className="solv-our-it">
+                      <a className="img" href="javascript:void(0)">
+                        <img
+                          width="182"
+                          height="116"
+                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/br2.jpg"
+                          className="attachment-full size-full"
+                          alt="amazon"
+                          decoding="async"
+                          loading="lazy"
+                        />
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Temu */}
+                  <div className="swiper-slide col swiper-slide-visible" role="group" aria-label="3 / 6">
+                    <div className="solv-our-it">
+                      <a className="img" href="javascript:void(0)">
+                        <img
+                          width="182"
+                          height="116"
+                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/br3.jpg"
+                          className="attachment-full size-full"
+                          alt="temu"
+                          decoding="async"
+                          loading="lazy"
+                        />
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Logo TQ */}
+                  <div className="swiper-slide col swiper-slide-visible" role="group" aria-label="4 / 6">
+                    <div className="solv-our-it">
+                      <a className="img" href="javascript:void(0)">
+                        <img
+                          width="182"
+                          height="116"
+                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/br4.jpg"
+                          className="attachment-full size-full"
+                          alt="Logo TQ"
+                          decoding="async"
+                          loading="lazy"
+                        />
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Tiktok */}
+                  <div className="swiper-slide col swiper-slide-visible" role="group" aria-label="5 / 6">
+                    <div className="solv-our-it">
+                      <a className="img" href="javascript:void(0)">
+                        <img
+                          width="182"
+                          height="116"
+                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/br5.jpg"
+                          className="attachment-full size-full"
+                          alt="Tiktok"
+                          decoding="async"
+                          loading="lazy"
+                        />
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Taobao */}
+                  <div className="swiper-slide col swiper-slide-visible" role="group" aria-label="6 / 6">
+                    <div className="solv-our-it">
+                      <a className="img" href="javascript:void(0)">
+                        <img
+                          width="182"
+                          height="116"
+                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/br6.jpg"
+                          className="attachment-full size-full"
+                          alt="Taobao"
+                          decoding="async"
+                          loading="lazy"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <span className="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+              </div>
+              <div className="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal swiper-pagination-lock">
+                <span className="swiper-pagination-bullet swiper-pagination-bullet-active" tabIndex={0} role="button" aria-label="Go to slide 1" aria-current="true"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: Giải pháp toàn diện dành cho */}
+      <section className="sec-solv-cus">
+        <div className="solv-cus bg-pri ss-pd">
+          <div className="container">
+            <div className="head-verti center mb-48 white">
+              <h1 className="title title-48 add-class text-verti is-inview">
+                Giải pháp toàn diện dành cho
+              </h1>
+            </div>
+            <div className="solv-cus-list row gap-res">
+              {/* Target Customer 1 */}
+              <div className="solv-cus-it col">
+                <div className="inner">
+                  <img src="https://vietnampostlogistics.com/template/assets/images/sao.svg" alt="icon" />
+                  <p className="des">
+                    <strong>Các doanh nghiệp sản xuất tại Việt Nam </strong>muốn đưa hàng hóa ra thế giới.
+                  </p>
+                </div>
+              </div>
+
+              {/* Target Customer 2 */}
+              <div className="solv-cus-it col">
+                <div className="inner">
+                  <img src="https://vietnampostlogistics.com/template/assets/images/sao.svg" alt="icon" />
+                  <p className="des">
+                    <strong>Doanh nghiệp thương mại điện tử</strong> quy mô vừa và lớn.
+                  </p>
+                </div>
+              </div>
+
+              {/* Target Customer 3 */}
+              <div className="solv-cus-it col">
+                <div className="inner">
+                  <img src="https://vietnampostlogistics.com/template/assets/images/sao.svg" alt="icon" />
+                  <p className="des">
+                    Các cá nhân, doanh nghiệp có <strong>nhu cầu vận chuyển hàng hóa từ Trung Quốc về Việt Nam.</strong>
+                  </p>
+                </div>
+              </div>
+
+              {/* Target Customer 4 */}
+              <div className="solv-cus-it col">
+                <div className="inner">
+                  <img src="https://vietnampostlogistics.com/template/assets/images/sao.svg" alt="icon" />
+                  <p className="des">
+                    <strong>Các cá nhân bán hàng trên nền tảng e-commerce</strong> như Amazon, eBay, Etsy tại thị trường Châu Mỹ &amp; Châu Âu.
+                  </p>
+                </div>
+              </div>
+
+              {/* Image */}
+              <div className="solv-cus-img col">
+                <div className="img">
+                  <img
+                    width="526"
+                    height="652"
+                    src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/solv-cus.png"
+                    className="attachment-full size-full"
+                    alt="Khách hàng giải pháp TMĐT"
+                    decoding="async"
+                    loading="lazy"
+                    srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/solv-cus.png 526w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/solv-cus-242x300.png 242w"
                   />
-                  <p className="text-sm">{feature.title}</p>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Solution Details Section */}
-      <section className="py-16">
-        <div className="container">
-          <h2 className="text-4xl font-bold text-center mb-8">Cung cấp giải pháp toàn diện</h2>
-
-          {/* Filter Buttons */}
-          <div className="flex gap-4 mb-8 overflow-x-auto">
-            {['Việt Nam - Mỹ', 'Việt Nam - Châu Âu', 'Việt Nam - Canada', 'Việt Nam – Úc', 'Trung Quốc – Việt Nam'].map((route) => (
-              <button key={route} className="px-6 py-2 border rounded-lg whitespace-nowrap hover:bg-gray-100">
-                {route}
-              </button>
-            ))}
-          </div>
-
-          <p className="text-center mb-12 max-w-2xl mx-auto">
-            <strong>Cung cấp giải pháp toàn diện từ khâu lấy hàng, xử lý hàng hóa, đóng gói đến giao hàng đích danh tại các quốc gia trên thế giới.</strong>
-            <br /><br />
-            Chúng tôi kết hợp với các hàng không hàng đầu thế giới để vận chuyển hàng hóa từ Việt Nam đi khắp thế giới, đặc biệt là Korean Air.
-          </p>
-
-          {/* Services Grid */}
-          <div className="grid grid-cols-3 gap-6">
-            {[
-              { title: 'Vận chuyển qua hình thức T11/T01', img: 'storage1.jpg' },
-              { title: 'Vận chuyến qua các đơn vị chuyển phát nhanh toàn cầu FEDEX/UPS/DHL', img: 'storage2.jpg' },
-              { title: 'Vận chuyển qua hình thức ECCF.', img: 'storage3.jpg' }
-            ].map((service, idx) => (
-              <div key={idx} className="bg-gray-100 rounded-lg overflow-hidden">
-                <img 
-                  src={`https://vietnampostlogistics.com/wp-content/uploads/2025/03/${service.img}`}
-                  alt={service.title}
-                  width="286"
-                  height="346"
-                  className="w-full h-64 object-cover"
+      {/* Section 4: Ưu điểm của giải pháp */}
+      <section className="sec-solv-inland">
+        <div className="solv-inland">
+          <div className="inland-xo">
+            <div className="imgFull">
+              <div className="imgFull-inner">
+                <img
+                  width="1728"
+                  height="600"
+                  src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/inland-fly.jpg"
+                  className="attachment-full size-full"
+                  alt="Ưu điểm giải pháp"
+                  decoding="async"
+                  loading="lazy"
+                  srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/inland-fly.jpg 1728w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/inland-fly-300x104.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/inland-fly-1024x356.jpg 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/inland-fly-768x267.jpg 768w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/inland-fly-1536x533.jpg 1536w"
                 />
-                <div className="p-4">
-                  <p className="font-semibold">{service.title}</p>
+              </div>
+            </div>
+            <div className="container">
+              <div className="inland-xo-wrap">
+                <div className="head-verti mb-32 center white">
+                  <div className="title-head text-verti">
+                    <h3 className="title title-40 add-class text-hori words chars splitting is-inview">
+                      Ưu điểm của giải pháp
+                    </h3>
+                  </div>
+                </div>
+
+                {/* Advantages List */}
+                <div className="inland-xo-list row gap-res rows-3 listEven">
+                  {/* Advantage 1 */}
+                  <div className="inland-xo-it col itemEven even">
+                    <div className="inner">
+                      <div className="icon">
+                        <img
+                          width="32"
+                          height="32"
+                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-il1.svg"
+                          className="attachment-full size-full"
+                          alt="Nhanh chóng"
+                          decoding="async"
+                          loading="lazy"
+                        />
+                      </div>
+                      <p className="text">Giao hàng nhanh chóng</p>
+                      <div className="des">
+                        Thời gian giao hàng nhanh chóng nhờ mạng lưới vận chuyển trên toàn cầu.
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Advantage 2 */}
+                  <div className="inland-xo-it col itemEven odd">
+                    <div className="inner">
+                      <div className="icon">
+                        <img
+                          width="24"
+                          height="24"
+                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn1.svg"
+                          className="attachment-full size-full"
+                          alt="Icon TMĐT"
+                          decoding="async"
+                          loading="lazy"
+                        />
+                      </div>
+                      <p className="text">Hỗ trợ hải quan</p>
+                      <div className="des">
+                        Hỗ trợ khai báo hải quan và chính sách thuế tối ưu.
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Advantage 3 */}
+                  <div className="inland-xo-it col itemEven even">
+                    <div className="inner">
+                      <div className="icon">
+                        <img
+                          width="32"
+                          height="32"
+                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-il3.svg"
+                          className="attachment-full size-full"
+                          alt="Đa dạng"
+                          decoding="async"
+                          loading="lazy"
+                        />
+                      </div>
+                      <p className="text">Linh hoạt mọi quy mô</p>
+                      <div className="des">
+                        Đáp ứng linh hoạt với nhiều quy mô lô hàng khác nhau.
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Advantage 4 */}
+                  <div className="inland-xo-it col itemEven odd">
+                    <div className="inner">
+                      <div className="icon">
+                        <img
+                          width="24"
+                          height="24"
+                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn2.svg"
+                          className="attachment-full size-full"
+                          alt="KẾT NỐI HÀNH TRÌNH"
+                          decoding="async"
+                          loading="lazy"
+                        />
+                      </div>
+                      <p className="text">Hợp tác cùng đối tác lớn</p>
+                      <div className="des">
+                        Hợp tác với các đơn vị chuyển phát nhanh uy tín nhất như FEDEX, UPS, DHL, giúp gia tăng độ tin cậy.
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Advantage 5 */}
+                  <div className="inland-xo-it col itemEven even">
+                    <div className="inner">
+                      <div className="icon">
+                        <img
+                          width="32"
+                          height="32"
+                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-il5.svg"
+                          className="attachment-full size-full"
+                          alt="An toàn"
+                          decoding="async"
+                          loading="lazy"
+                        />
+                      </div>
+                      <p className="text">Hệ thống quản lý tập trung</p>
+                      <div className="des">
+                        Sở hữu hệ thống quản lý tập trung giúp nhà bán hàng quản lý tracking, trạng thái đơn hàng, các thông tin trên cùng một nền tảng dễ dàng và minh bạch.
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Advantage 6 */}
+                  <div className="inland-xo-it col itemEven odd">
+                    <div className="inner">
+                      <div className="icon">
+                        <img
+                          width="24"
+                          height="24"
+                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn3.svg"
+                          className="attachment-full size-full"
+                          alt="LIÊN KẾT"
+                          decoding="async"
+                          loading="lazy"
+                        />
+                      </div>
+                      <p className="text">Đội ngũ nhân viên chuyên nghiệp</p>
+                      <div className="des">
+                        Đội ngũ nhân viên chuyên nghiệp, có kiến thức chuyên sâu về thị trường TMĐT, thông quan và vận chuyển hàng hóa, sẵn sàng hỗ trợ khách hàng 24/7.
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Experience Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container">
-          <h2 className="text-4xl font-bold text-center mb-12">Kinh nghiệm sâu rộng trên các sàn TMĐT</h2>
-          <p className="text-center mb-8 max-w-2xl mx-auto">
-            Chúng tôi có kinh nghiệm sâu rộng trong việc quản lý và vận chuyển hàng hóa cho nhiều sàn thương mại điện tử xuyên Quốc gia lớn trên Thế giới như:
-          </p>
-
-          {/* Brands Carousel */}
-          <div className="grid grid-cols-6 gap-4">
-            {['br1.jpg', 'br2.jpg', 'br3.jpg', 'br4.jpg', 'br5.jpg', 'br6.jpg'].map((brand, idx) => (
-              <div key={idx} className="bg-white p-4 rounded-lg">
-                <img 
-                  src={`https://vietnampostlogistics.com/wp-content/uploads/2025/03/${brand}`}
-                  alt={`Brand ${idx + 1}`}
-                  width="182"
-                  height="116"
-                  className="w-full h-auto"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Target Customers Section */}
-      <section className="py-16 bg-blue-900 text-white">
-        <div className="container">
-          <h2 className="text-4xl font-bold text-center mb-12">Giải pháp toàn diện dành cho</h2>
-
-          <div className="grid grid-cols-2 gap-8">
-            {[
-              'Các doanh nghiệp sản xuất tại Việt Nam muốn đưa hàng hóa ra thế giới.',
-              'Doanh nghiệp thương mại điện tử quy mô vừa và lớn.',
-              'Các cá nhân, doanh nghiệp có nhu cầu vận chuyển hàng hóa từ Trung Quốc về Việt Nam.',
-              'Các cá nhân bán hàng trên nền tảng e-commerce như Amazon, eBay, Etsy tại thị trường Châu Mỹ & Châu Âu.'
-            ].map((item, idx) => (
-              <div key={idx} className="flex gap-3">
-                <span className="text-2xl">★</span>
-                <p>{item}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Advantages Section */}
-      <section className="py-16 bg-gray-100">
-        <div className="container">
-          <h2 className="text-4xl font-bold text-center mb-12">Ưu điểm của giải pháp</h2>
-
-          <div className="grid grid-cols-3 gap-6">
-            {[
-              { title: 'Giao hàng nhanh chóng', desc: 'Thời gian giao hàng nhanh chóng nhờ mạng lưới vận chuyển trên toàn cầu.' },
-              { title: 'Hỗ trợ hải quan', desc: 'Hỗ trợ khai báo hải quan và chính sách thuế tối ưu.' },
-              { title: 'Linh hoạt mọi quy mô', desc: 'Đáp ứng linh hoạt với nhiều quy mô lô hàng khác nhau.' },
-              { title: 'Hợp tác cùng đối tác lớn', desc: 'Hợp tác với các đơn vị chuyển phát nhanh uy tín nhất như FEDEX, UPS, DHL.' },
-              { title: 'Hệ thống quản lý tập trung', desc: 'Sở hữu hệ thống quản lý tập trung giúp nhà bán hàng quản lý tracking.' },
-              { title: 'Đội ngũ nhân viên chuyên nghiệp', desc: 'Đội ngũ nhân viên chuyên nghiệp, sẵn sàng hỗ trợ khách hàng 24/7.' }
-            ].map((item, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-lg shadow">
-                <h3 className="font-bold mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-600">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Comparison Table */}
-      <section className="py-16">
-        <div className="container">
-          <h3 className="text-2xl font-bold text-center mb-8">
-            Chúng tôi luôn sẵn sàng đem đến cho khách hàng những <span className="text-blue-600">giải pháp hoàn hảo</span> nhất
-          </h3>
-
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
-              <thead>
-                <tr className="bg-gray-100">
-                  <th className="border p-4 text-left">Hạng mục</th>
-                  <th className="border p-4 text-left">Ưu điểm</th>
-                  <th className="border p-4 text-left">Lợi ích cho khách hàng</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { category: 'Giá', advantage: 'Cạnh tranh', benefit: 'Tiết kiệm chi phí cho khách hàng.' },
-                  { category: 'Thời gian giao', advantage: 'Tốc độ nhanh nhất thị trường (5-7days)', benefit: 'Đảm bảo việc kinh doanh của khách trơn tru.' },
-                  { category: 'Tem nhãn', advantage: 'Tem chuẩn Global Direct Entry của USPS', benefit: 'Tỉ lệ 100% phát hàng thành công.' },
-                  { category: 'Tải bay', advantage: 'Đối tác chính thức của nhiều hãng hàng không lớn', benefit: 'Đảm bảo tải bay ngay cả trong mùa cao điểm.' }
-                ].map((row, idx) => (
-                  <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                    <td className="border p-4">{row.category}</td>
-                    <td className="border p-4">{row.advantage}</td>
-                    <td className="border p-4">{row.benefit}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
-        <div className="container">
-          <div className="grid grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-4xl font-bold mb-8">Liên hệ với Vietnam Post Logistics</h2>
-
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Nhập Tên của bạn"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-2 rounded text-black"
-                />
-                <input
-                  type="text"
-                  name="company"
-                  placeholder="Tên công ty"
-                  value={formData.company}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-2 rounded text-black"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-2 rounded text-black"
-                />
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Số điện thoại"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-2 rounded text-black"
-                />
-                <button
-                  type="submit"
-                  className="w-full bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded font-bold"
-                >
-                  Liên hệ tư vấn →
-                </button>
-              </form>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="flex items-center justify-center">
-              <img 
-                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/fly.png"
-                alt="Logistics"
-                width="400"
-                className="w-full h-auto"
-              />
+      {/* Section 5: Bảng so sánh */}
+      <section className="sec-solv-table">
+        <div className="solv-table ss-pd">
+          <div className="container">
+            <div className="mona-content ses-table">
+              <h3 className="solv-table-tt center">
+                Chúng tôi luôn sẵn sàng đem đến cho khách hàng những&nbsp;
+                <span className="second">giải pháp hoàn hảo&nbsp;</span>
+                nhất
+              </h3>
+              <div className="table-scroll-x">
+                <table style={{ width: '100%' }}>
+                  <thead>
+                    <tr>
+                      <th style={{ width: '14.2857%' }}>Hạng mục</th>
+                      <th style={{ width: '44.2322%' }}>Ưu điểm</th>
+                      <th style={{ width: '40.7181%' }}>Lợi ích cho khách hàng</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style={{ width: '14.2857%' }}>Giá</td>
+                      <td style={{ width: '44.2322%' }}>Cạnh tranh</td>
+                      <td style={{ width: '40.7181%' }}>Tiết kiệm chi phí cho khách hàng.</td>
+                    </tr>
+                    <tr>
+                      <td style={{ width: '14.2857%' }}>Thời gian giao</td>
+                      <td style={{ width: '44.2322%' }}>Tốc độ nhanh nhất thị trường (5-7days)</td>
+                      <td style={{ width: '40.7181%' }}>Đảm bảo việc kinh doanh của khách trơn tru.</td>
+                    </tr>
+                    <tr>
+                      <td style={{ width: '14.2857%' }}>Tem nhãn</td>
+                      <td style={{ width: '44.2322%' }}>
+                        Tem chuẩn Global Direct Entry của USPS Cung cấp đủ loại tem Prority, Ground Advantage, Parcel Select. Đặc biệt tem Parcel Select đấu chạy nối thẳng USPS, không qua đại lý trung gian.
+                      </td>
+                      <td style={{ width: '40.7181%' }}>Tỉ lệ 100% phát hàng thành công.</td>
+                    </tr>
+                    <tr>
+                      <td style={{ width: '14.2857%' }}>Tải bay</td>
+                      <td style={{ width: '44.2322%' }}>Chúng tôi là đối tác chính thức của nhiều hãng hàng không lớn.</td>
+                      <td style={{ width: '40.7181%' }}>Đảm bảo tải bay ngay cả trong mùa cao điểm.</td>
+                    </tr>
+                    <tr>
+                      <td style={{ width: '14.2857%' }}>Cập nhật thông tin</td>
+                      <td style={{ width: '44.2322%' }}>Đội ngũ CS người Việt cập nhật liên tục thông tin.</td>
+                      <td style={{ width: '40.7181%' }}>Luôn nắm bắt tình trạng hàng hóa chi tiết, dễ dàng giao tiếp.</td>
+                    </tr>
+                    <tr>
+                      <td style={{ width: '14.2857%' }}>Đảm bảo chất lượng giao nhận hai đầu</td>
+                      <td style={{ width: '44.2322%' }}>
+                        Là đối tác chính thức của USPS và nhiều tập đoàn bưu chính lớn trên Thế giới, trực tiếp liên hệ và giám sát chất lượng vận chuyển tại điểm đích.
+                      </td>
+                      <td style={{ width: '40.7181%' }}>Trạng thái Intransit sớm, minh bạch, rõ ràng, tiết kiệm.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6: Lĩnh vực thế mạnh */}
+      <section className="sec-solv-top">
+        <div className="solv-top ss-pd">
+          <div className="container">
+            <div className="inter-solve-top">
+              <div className="head-verti mb-32">
+                <div className="title-head text-verti">
+                  <h3 className="title title-40 add-class text-hori words chars splitting is-inview">
+                    Lĩnh vực thế mạnh
+                  </h3>
+                </div>
+                <div className="line aos-init aos-animate" data-aos="fade-up-cus">
+                  <p className="desc">
+                    Với kinh nghiệm sâu rộng trên thị trường thương mại điện tử Quốc tế, chúng tôi tự tin chinh phục các lĩnh vực:
+                  </p>
+                </div>
+              </div>
+
+              {/* Strong Areas Slider */}
+              <div className="inter-solve-top-slide">
+                <div className="swiper row rows-4 gap-res swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+                  <div className="swiper-wrapper" id="swiper-wrapper-f9f6343f1781a1093" aria-live="polite">
+                    {/* Mỹ phẩm */}
+                    <div className="swiper-slide col swiper-slide-visible swiper-slide-active" role="group" aria-label="1 / 5">
+                      <div className="inter-solve-top-it">
+                        <div className="inner">
+                          <div className="img">
+                            <a className="img-inner" href="">
+                              <img
+                                width="217"
+                                height="174"
+                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/inter1.png"
+                                className="attachment-full size-full"
+                                alt="Mỹ phẩm"
+                                decoding="async"
+                                loading="lazy"
+                              />
+                            </a>
+                          </div>
+                          <div className="info">
+                            <h4>
+                              <a className="info-tt" href="">Mỹ phẩm</a>
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* May mặc */}
+                    <div className="swiper-slide col swiper-slide-visible swiper-slide-next" role="group" aria-label="2 / 5">
+                      <div className="inter-solve-top-it">
+                        <div className="inner">
+                          <div className="img">
+                            <a className="img-inner" href="">
+                              <img
+                                width="218"
+                                height="174"
+                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/inter2.png"
+                                className="attachment-full size-full"
+                                alt="May mặc"
+                                decoding="async"
+                                loading="lazy"
+                              />
+                            </a>
+                          </div>
+                          <div className="info">
+                            <h4>
+                              <a className="info-tt" href="">May mặc</a>
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Chăm sóc sức khoẻ */}
+                    <div className="swiper-slide col swiper-slide-visible" role="group" aria-label="3 / 5">
+                      <div className="inter-solve-top-it">
+                        <div className="inner">
+                          <div className="img">
+                            <a className="img-inner" href="">
+                              <img
+                                width="217"
+                                height="174"
+                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/inter3.png"
+                                className="attachment-full size-full"
+                                alt="Chăm sóc sức khoẻ"
+                                decoding="async"
+                                loading="lazy"
+                              />
+                            </a>
+                          </div>
+                          <div className="info">
+                            <h4>
+                              <a className="info-tt" href="">Chăm sóc sức khoẻ</a>
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Đồ gia dụng */}
+                    <div className="swiper-slide col swiper-slide-visible" role="group" aria-label="4 / 5">
+                      <div className="inter-solve-top-it">
+                        <div className="inner">
+                          <div className="img">
+                            <a className="img-inner" href="">
+                              <img
+                                width="217"
+                                height="174"
+                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/inter4.png"
+                                className="attachment-full size-full"
+                                alt="Đồ gia dụng"
+                                decoding="async"
+                                loading="lazy"
+                              />
+                            </a>
+                          </div>
+                          <div className="info">
+                            <h4>
+                              <a className="info-tt" href="">Đồ gia dụng</a>
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Mỹ phẩm (duplicate) */}
+                    <div className="swiper-slide col" role="group" aria-label="5 / 5">
+                      <div className="inter-solve-top-it">
+                        <div className="inner">
+                          <div className="img">
+                            <a className="img-inner" href="">
+                              <img
+                                width="217"
+                                height="174"
+                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/inter1.png"
+                                className="attachment-full size-full"
+                                alt="Mỹ phẩm"
+                                decoding="async"
+                                loading="lazy"
+                              />
+                            </a>
+                          </div>
+                          <div className="info">
+                            <h4>
+                              <a className="info-tt" href="">Mỹ phẩm</a>
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <span className="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                </div>
+
+                <div className="swiper-control posi midle">
+                  <div className="swiper-control-btn swiper-prev swiper-button-disabled" tabIndex={-1} role="button" aria-label="Previous slide">
+                    <i className="fa-solid fa-arrow-left"></i>
+                  </div>
+                  <div className="swiper-control-btn swiper-next" tabIndex={0} role="button" aria-label="Next slide">
+                    <i className="fa-solid fa-arrow-right"></i>
+                  </div>
+                </div>
+                <div className="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+                  <span className="swiper-pagination-bullet swiper-pagination-bullet-active" tabIndex={0} role="button" aria-label="Go to slide 1" aria-current="true"></span>
+                  <span className="swiper-pagination-bullet" tabIndex={0} role="button" aria-label="Go to slide 2"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 7: Hiệp hội & Đối tác */}
+      <section className="sec-homes-splide">
+        <div className="homes-splide ss-pd">
+          {/* Hiệp hội tham gia */}
+          <div className="homes-splide-block">
+            <div className="container">
+              <div className="head-verti center">
+                <div className="line aos-init aos-animate" data-aos="fade-up-cus">
+                  <h2 className="title title-48 add-class text-verti is-inview">Các hiệp hội tham gia</h2>
+                </div>
+              </div>
+            </div>
+            {/* Association Logos Slider */}
+            <div className="logoSplide">
+              {/* Slider content - bạn có thể tích hợp thư viện Splide tại đây */}
+              <div className="splide__track">
+                {/* Slider items sẽ được thêm bằng JavaScript */}
+              </div>
+            </div>
+          </div>
+
+          {/* Mạng lưới đối tác */}
+          <div className="homes-splide-block">
+            <div className="container">
+              <div className="head-verti center">
+                <div className="line aos-init aos-animate" data-aos="fade-up-cus">
+                  <h2 className="title title-48 add-class text-verti is-inview">Mạng lưới đối tác</h2>
+                </div>
+              </div>
+            </div>
+            {/* Partner Logos Slider */}
+            <div className="logoSplide">
+              {/* Slider content - bạn có thể tích hợp thư viện Splide tại đây */}
+              <div className="splide__track">
+                {/* Slider items sẽ được thêm bằng JavaScript */}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 8: Contact Form */}
+      <section className="sec-homes-contact">
+        <div className="homes-contact">
+          <div className="recontainer">
+            <div className="homes-contact-flex">
+              <div className="homes-contact-ctn ss-pd">
+                <div className="wrapper">
+                  <div className="head-verti white mb-32">
+                    <div className="line aos-init aos-animate" data-aos="fade-up-cus">
+                      <h2 className="title title-48 add-class text-verti is-inview">
+                        Liên hệ với Vietnam Post Logistics
+                      </h2>
+                    </div>
+                  </div>
+                  <div className="mainForm">
+                    <form className="wpcf7-form" action="#" method="post">
+                      <div className="form-list row">
+                        <label className="form-ip col per5">
+                          <span className="text spe">Tên của bạn</span>
+                          <input
+                            className="wpcf7-form-control wpcf7-text"
+                            aria-required="true"
+                            placeholder="Nhập Tên của bạn"
+                            type="text"
+                            name="your-name"
+                          />
+                        </label>
+                        <label className="form-ip col per5">
+                          <span className="text spe">Tên công ty</span>
+                          <input
+                            className="wpcf7-form-control wpcf7-text"
+                            aria-required="true"
+                            placeholder="Tên công ty"
+                            type="text"
+                            name="company-name"
+                          />
+                        </label>
+                        <label className="form-ip col per5">
+                          <span className="text spe">Email</span>
+                          <input
+                            className="wpcf7-form-control wpcf7-email"
+                            aria-required="true"
+                            placeholder="Email"
+                            type="email"
+                            name="your-email"
+                          />
+                        </label>
+                        <label className="form-ip col per5">
+                          <span className="text spe">Số điện thoại</span>
+                          <input
+                            className="wpcf7-form-control wpcf7-tel"
+                            aria-required="true"
+                            placeholder="Số điện thoại"
+                            type="tel"
+                            name="your-phone"
+                          />
+                        </label>
+                        <label className="form-ip col" htmlFor="id_f_contact_global">
+                          <div className="btn-box">
+                            <div className="btn pri">
+                              <button className="wpcf7-form-control wpcf7-submit" type="submit">
+                                <span className="txt">
+                                  <span className="txt-inner">Liên hệ tư vấn</span>
+                                  <span className="txt-icon">
+                                    <img src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg" alt="Gửi" />
+                                  </span>
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </label>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div className="homes-contact-img ParaBlock">
+                <div className="img ParaScroll">
+                  <div className="img-inner">
+                    <img
+                      width="1229"
+                      height="615"
+                      src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/fly.png"
+                      className="attachment-full size-full"
+                      alt="Máy bay, containers"
+                      decoding="async"
+                      loading="lazy"
+                      srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/fly.png 1229w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/fly-300x150.png 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/fly-1024x512.png 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/fly-768x384.png 768w"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </main>
-  )
-}
+  );
+};
+
+export default ECommerceSolutionsPage;

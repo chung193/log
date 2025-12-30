@@ -3,6 +3,7 @@ import { useSearchParams } from 'next/navigation';
 import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
 import FindMoreButton from "./FindMoreButton";
+import './SolutionCarousel.css';
 
 const SolutionCarousel: React.FC = ({ initialLocale = 'en' }) => {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -113,7 +114,6 @@ const SolutionCarousel: React.FC = ({ initialLocale = 'en' }) => {
                                 className="test"
                                 style={{
                                     position: 'absolute',
-                                    bottom: '0 !important',
                                     left: 0,
                                     width: '100%',
                                     top: 'auto !important',

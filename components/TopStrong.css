@@ -1,0 +1,180 @@
+/* CSS cho swiper */
+.inter-solve-top-slide {
+    position: relative;
+    padding: 0;
+    /* Để chỗ cho navigation buttons */
+}
+
+.inter-solve-top-slide .swiper {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.inter-solve-top-slide .swiper-wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+.inter-solve-top-slide .swiper-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: auto;
+}
+
+.inter-solve-top-slide .swiper-slide-active {
+    opacity: 1;
+}
+
+.inter-solve-top-slide .inter-solve-top-it {
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.inter-solve-top-slide .inter-solve-top-it:hover {}
+
+.inter-solve-top-slide .inter-solve-top-it .inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.inter-solve-top-slide .inter-solve-top-it .img {
+    height: 165px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inter-solve-top-slide .inter-solve-top-it .img-inner {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.inter-solve-top-slide .inter-solve-top-it img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 0;
+    transition: transform 0.5s ease;
+}
+
+.inter-solve-top-slide .inter-solve-top-it:hover img {
+    transform: scale(1.05);
+}
+
+.inter-solve-top-slide .inter-solve-top-it .info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.inter-solve-top-slide .inter-solve-top-it .info-tt {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.inter-solve-top-slide .inter-solve-top-it:hover .info-tt {
+    color: #0070f3;
+}
+
+/* Navigation Buttons */
+.inter-solve-top-slide .swiper-control {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.inter-solve-top-slide .swiper-control-btn {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    pointer-events: auto;
+    transition: all 0.3s ease;
+}
+
+.inter-solve-top-slide .swiper-control-btn:hover {
+    background: #0070f3;
+    color: white;
+    transform: scale(1.1);
+}
+
+.inter-solve-top-slide .swiper-control-btn.swiper-button-disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.inter-solve-top-slide .swiper-control-btn i {
+    font-size: 18px;
+}
+
+/* Pagination */
+.inter-solve-top-slide .swiper-pagination {
+    position: relative;
+    margin-top: 30px;
+    bottom: 0 !important;
+}
+
+.inter-solve-top-slide .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: #ccc;
+    opacity: 1;
+    margin: 0 6px;
+}
+
+.inter-solve-top-slide .swiper-pagination-bullet-active {
+    background: #0070f3;
+    transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .inter-solve-top-slide {
+        padding: 0 15px;
+    }
+
+    .inter-solve-top-slide .inter-solve-top-it .img {
+        height: 200px;
+    }
+
+    .inter-solve-top-slide .swiper-control-btn {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .inter-solve-top-slide .inter-solve-top-it .img {
+        height: 180px;
+    }
+
+    .inter-solve-top-slide .inter-solve-top-it .info {
+        padding: 15px;
+    }
+
+    .inter-solve-top-slide .inter-solve-top-it .info-tt {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,40 @@
+/* Thêm vào CSS của anh */
+.exp-entrust-slide .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+    /* Điều chỉnh theo gap-res của anh */
+}
+
+.exp-entrust-slide .col {
+    flex: 0 0 50%;
+    /* Mỗi col chiếm 50% */
+    max-width: 50%;
+    /* Đảm bảo không vượt quá 50% */
+    padding: 0 15px;
+    /* Điều chỉnh theo gap-res của anh */
+    box-sizing: border-box;
+}
+
+/* Hoặc nếu dùng grid */
+.exp-entrust-slide .row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 cột bằng nhau */
+    gap: 30px;
+    /* Điều chỉnh gap */
+}
+
+/* Responsive nếu cần */
+@media (max-width: 768px) {
+    .exp-entrust-slide .col {
+        flex: 0 0 100%;
+        /* Trên mobile hiển thị 1 cột */
+        max-width: 100%;
+    }
+
+    /* Hoặc với grid */
+    .exp-entrust-slide .row {
+        grid-template-columns: 1fr;
+    }
+}
