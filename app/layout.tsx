@@ -1,8 +1,10 @@
-import './globals.css'
-import '@/lib/fontawesome'
-import Footer from '@/components/Footer'
-import BackToTop from '@/components/BackToTop'
-import Header from '@/components/Header'
+import './globals.css';
+import '@/lib/fontawesome';
+import Footer from '@/components/Footer';
+import BackToTop from '@/components/BackToTop';
+import Header from '@/components/Header';
+import ReduxProvider from '@/redux/ReduxProvider';
+
 export const metadata = {
   title: 'Vietnam Post Logistics - Giải pháp cho doanh nghiệp',
   description: 'Vietnam Post Logistics - Cung cấp các giải pháp toàn trình, vận chuyển Quốc tế, kho vận, TMĐT Quốc tế và Xuất Nhập khẩu cho doanh nghiệp.',
@@ -42,12 +44,12 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="home page-template page-template-page-template page-template-home-template page-template-page-templatehome-template-php page page-id-8 wp-custom-logo desktop-detect">
-
-        <Header />
-        {children}
-        <Footer />
-        <BackToTop />
-
+        <ReduxProvider>
+          <Header />
+          {children}
+          <Footer />
+          <BackToTop />
+        </ReduxProvider>
         {/* JS Files */}
         <script src="/js/language-cookie.js" defer></script>
         <script src="/js/jquery.js"></script>
