@@ -31,7 +31,7 @@ const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
                         height="800"
                         src="/images/banner2.jpg"
                         className="attachment-full size-full"
-                        alt="Containers xuất nhập khẩu - Vietnam Post Logistics"
+                        alt="Containers xuất nhập khẩu - EXPEDITORS GLOBAL"
                         decoding="async"
                         fetchPriority="high"
                         srcSet="/images/banner2.jpg 1728w, /images/banner2-300x139.jpg 300w, /images/banner2-1024x474.jpg 1024w, /images/banner2-768x356.jpg 768w, /images/banner2-1536x711.jpg 1536w"
@@ -125,7 +125,7 @@ const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
                     <div className="container">
                         <div className="store-ser-para ss-pd">
                             <div className="store-ser-para-wrap">
-                                <p>Mang trong mình vị thế, tầm vóc và khả năng của một <strong>đơn vị Logistics đứng đầu thị trường tại Việt Nam</strong> hiện nay, Vietnam Post Logistics đã và đang mang đến cho Qúy khách hàng những giải pháp kho vận<strong> chất lượng, chuyên nghiệp và đa dạng</strong>.</p>
+                                <p>Mang trong mình vị thế, tầm vóc và khả năng của một <strong>đơn vị Logistics đứng đầu thị trường tại Việt Nam</strong> hiện nay, EXPEDITORS GLOBAL đã và đang mang đến cho Qúy khách hàng những giải pháp kho vận<strong> chất lượng, chuyên nghiệp và đa dạng</strong>.</p>
                             </div>
                         </div>
                     </div>

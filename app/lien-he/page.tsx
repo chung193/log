@@ -23,7 +23,7 @@ const ContactPage = ({ initialLocale = 'en' }) => {
                                 height="500"
                                 src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner.jpg"
                                 className="attachment-full size-full"
-                                alt="Vận tải đường bộ - Vietnam Post Logistics"
+                                alt="Vận tải đường bộ - EXPEDITORS GLOBAL"
                                 decoding="async"
                                 fetchPriority="high"
                                 srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner.jpg 1728w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner-300x87.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner-1024x296.jpg 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner-768x222.jpg 768w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner-1536x444.jpg 1536w"

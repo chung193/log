@@ -13,7 +13,7 @@ const ExportImportPage: React.FC = () => {
                         height="800"
                         src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner2.jpg"
                         className="attachment-full size-full"
-                        alt="Containers xuất nhập khẩu - Vietnam Post Logistics"
+                        alt="Containers xuất nhập khẩu - EXPEDITORS GLOBAL"
                         decoding="async"
                         fetchpriority="high"
                         srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner2.jpg 1728w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner2-300x139.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner2-1024x474.jpg 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner2-768x356.jpg 768w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner2-1536x711.jpg 1536w"
@@ -182,7 +182,7 @@ const ExportImportPage: React.FC = () => {
                                                 <div className="exp-fin-it aos-init" data-aos="fade-up-cus">
                                                     <img src="https://vietnampostlogistics.com/template/assets/images/sao.svg" alt="" />
                                                     <h4 className="tt">Ưu tiên đối tác tin cậy</h4>
-                                                    <p className="des">Chúng tôi ưu tiên đối tác tin cậy mà Vietnam Post Logistics đang phục vụ dịch vụ logistics.</p>
+                                                    <p className="des">Chúng tôi ưu tiên đối tác tin cậy mà EXPEDITORS GLOBAL đang phục vụ dịch vụ logistics.</p>
                                                 </div>
                                             </div>
 

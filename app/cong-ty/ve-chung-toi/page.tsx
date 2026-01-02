@@ -63,14 +63,14 @@ const AboutPage: React.FC<AboutPageProps> = ({ initialLocale = 'en' }) => {
                                     <div className="line aos-init aos-animate" data-aos="fade-up-cus">
                                         <div className="title-head text-verti">
                                             <h3 className="title title-40 add-className text-hori is-inview">
-                                                <span className="second">Vietnam Post Logistics </span><br />
+                                                <span className="second">EXPEDITORS GLOBAL </span><br />
                                                 comprehensive logistics ecosystem
                                             </h3>
                                         </div>
                                     </div>
                                     <div className="line aos-init aos-animate" data-aos="fade-up-cus" data-aos-delay="400">
                                         <div className="desc">
-                                            Vietnam Post Logistics is a member unit of Vietnam Post Corporation - the leading prestigious brand in Vietnam. We provide diverse, comprehensive and optimal logistics solutions for customers from domestic to international.
+                                            EXPEDITORS GLOBAL is a member unit of Vietnam Post Corporation - the leading prestigious brand in Vietnam. We provide diverse, comprehensive and optimal logistics solutions for customers from domestic to international.
                                         </div>
                                     </div>
                                 </div>
@@ -85,9 +85,9 @@ const AboutPage: React.FC<AboutPageProps> = ({ initialLocale = 'en' }) => {
                                 <div className="head-verti center white">
                                     <div className="line aos-init aos-animate" data-aos="fade-up-cus" data-aos-delay="400">
                                         <div className="desc">
-                                            <strong>Vietnam Post Logistics has been effectively fulfilling its role in transportation, operating the supply chain, and connecting trade between Vietnam and the world, contributing significantly to the country's economic development.</strong><br />
+                                            <strong>EXPEDITORS GLOBAL has been effectively fulfilling its role in transportation, operating the supply chain, and connecting trade between Vietnam and the world, contributing significantly to the country's economic development.</strong><br />
                                             <br />
-                                            At the same time, thanks to outstanding achievements and relentless efforts, Vietnam Post Logistics has affirmed its position by becoming the official partner of many major enterprises such as USPS, DHL, Korean Air, Vietnam Airlines, Vietjet Air, Cargolux, and is an official member of many large logistics associations worldwide, such as JCtrans and WCA.
+                                            At the same time, thanks to outstanding achievements and relentless efforts, EXPEDITORS GLOBAL has affirmed its position by becoming the official partner of many major enterprises such as USPS, DHL, Korean Air, Vietnam Airlines, Vietjet Air, Cargolux, and is an official member of many large logistics associations worldwide, such as JCtrans and WCA.
                                         </div>
                                     </div>
                                 </div>

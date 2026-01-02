@@ -14,7 +14,7 @@ const WhyChoose = () => {
                                         <img width="101" height="100" src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-home.svg" className="attachment-full size-full" alt="Nhà kho" decoding="async" loading="lazy" />
                                     </div>
                                     <div className="ctn">
-                                        <p className="tt">Tổng diện tích kho bãi của Vietnam Post Logistics là 500.000 m2.</p>
+                                        <p className="tt">Tổng diện tích kho bãi của EXPEDITORS GLOBAL là 500.000 m2.</p>
                                     </div>
                                 </div>
                             </div>

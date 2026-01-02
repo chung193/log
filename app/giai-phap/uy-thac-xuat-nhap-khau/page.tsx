@@ -25,7 +25,7 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                         height="800"
                         src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner2.jpg"
                         className="attachment-full size-full"
-                        alt="Containers xuất nhập khẩu - Vietnam Post Logistics"
+                        alt="Containers xuất nhập khẩu - EXPEDITORS GLOBAL"
                         decoding="async"
                         fetchPriority="high"
                         srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner2.jpg 1728w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner2-300x139.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner2-1024x474.jpg 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner2-768x356.jpg 768w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner2-1536x711.jpg 1536w"

@@ -6,8 +6,8 @@ import Header from '@/components/Header';
 import ReduxProvider from '@/redux/ReduxProvider';
 
 export const metadata = {
-  title: 'Vietnam Post Logistics - Giải pháp cho doanh nghiệp',
-  description: 'Vietnam Post Logistics - Cung cấp các giải pháp toàn trình, vận chuyển Quốc tế, kho vận, TMĐT Quốc tế và Xuất Nhập khẩu cho doanh nghiệp.',
+  title: 'EXPEDITORS GLOBAL - Giải pháp cho doanh nghiệp',
+  description: 'EXPEDITORS GLOBAL - Cung cấp các giải pháp toàn trình, vận chuyển Quốc tế, kho vận, TMĐT Quốc tế và Xuất Nhập khẩu cho doanh nghiệp.',
 }
 
 export default function RootLayout({ children }) {
@@ -19,8 +19,8 @@ export default function RootLayout({ children }) {
         <meta name="robots" content="index, follow" />
         <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta name="keywords" content="vận chuyển quốc tế, kho vận, xuất nhập khẩu, thương mại điện tử quốc tế, giải pháp logistics, dịch vụ logistics cho doanh nghiệp" />
-        <meta name="author" content="Vietnam Post Logistics" />
-        <meta name="copyright" content="Vietnam Post Logistics" />
+        <meta name="author" content="EXPEDITORS GLOBAL" />
+        <meta name="copyright" content="EXPEDITORS GLOBAL" />
         <meta name="language" content="Vietnamese" />
         <meta name="revisit-after" content="1 days" />
         <meta name="distribution" content="Global" />

@@ -11,7 +11,7 @@ const AboutQuote = () => {
                         height="800"
                         src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ab-quote.jpg"
                         className="attachment-full size-full"
-                        alt="Ảnh Vận chuyển đường biển (Sea Freight) - Vietnam Post Logistics"
+                        alt="Ảnh Vận chuyển đường biển (Sea Freight) - EXPEDITORS GLOBAL"
                         decoding="async"
                         loading="lazy"
                     />
@@ -30,7 +30,7 @@ const AboutQuote = () => {
                             }}
                         >
                             <p className="des">
-                                At Vietnam Post Logistics, we are committed to delivering reliable, fast, and innovative logistics solutions that meet the diverse needs of our customers. Guided by trust, efficiency, and sustainability, we aim to connect communities and businesses across Vietnam and globally.
+                                At EXPEDITORS GLOBAL, we are committed to delivering reliable, fast, and innovative logistics solutions that meet the diverse needs of our customers. Guided by trust, efficiency, and sustainability, we aim to connect communities and businesses across Vietnam and globally.
                             </p>
                         </div>
                         <div
@@ -43,7 +43,7 @@ const AboutQuote = () => {
                                 <span className="second">
                                     Business Philosophy Statement
                                 </span>&nbsp;
-                                of Vietnam Post Logistics
+                                of EXPEDITORS GLOBAL
                             </p>
                         </div>
                     </div>

@@ -9,7 +9,7 @@ const StoreImportant = () => {
                         <h1 className="title title-48 add-class text-verti is-inview">Các ngành trọng điểm</h1>
                     </div>
                     <div className="store-imp-img">
-                        <img width="1500" height="657" src="https://vietnampostlogistics.com/wp-content/uploads/2025/04/Hinh-anh-gia-tri-gia-tang-e1745555544903.jpg" className="attachment-full size-full" alt="Quy trình hoạt động kho ngoại quan tại Vietnam Post Logistics" decoding="async" loading="lazy" srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/04/Hinh-anh-gia-tri-gia-tang-e1745555544903.jpg 1500w, https://vietnampostlogistics.com/wp-content/uploads/2025/04/Hinh-anh-gia-tri-gia-tang-e1745555544903-300x131.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/04/Hinh-anh-gia-tri-gia-tang-e1745555544903-1024x449.jpg 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/04/Hinh-anh-gia-tri-gia-tang-e1745555544903-768x336.jpg 768w" />
+                        <img width="1500" height="657" src="https://vietnampostlogistics.com/wp-content/uploads/2025/04/Hinh-anh-gia-tri-gia-tang-e1745555544903.jpg" className="attachment-full size-full" alt="Quy trình hoạt động kho ngoại quan tại EXPEDITORS GLOBAL" decoding="async" loading="lazy" srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/04/Hinh-anh-gia-tri-gia-tang-e1745555544903.jpg 1500w, https://vietnampostlogistics.com/wp-content/uploads/2025/04/Hinh-anh-gia-tri-gia-tang-e1745555544903-300x131.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/04/Hinh-anh-gia-tri-gia-tang-e1745555544903-1024x449.jpg 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/04/Hinh-anh-gia-tri-gia-tang-e1745555544903-768x336.jpg 768w" />
                     </div>
                     <div className="store-imp-row row gap-res">
                         <div className="col">
@@ -64,7 +64,7 @@ const StoreImportant = () => {
                                             <div className="mona-content">
                                                 <p>
                                                     <b>
-                                                        Hệ thống trung tâm phân phối tại các trung tâm kinh tế lớn: Hà Nội, Hải Phòng, Nghệ An, Đà Nẵng, Bình Dương, TP.HCM, Cần Thơ Hệ thống trung tâm tại tất cả các tỉnh thành trên cả nước. Vietnam Post Logistics có thế mạnh trong quản lý kho hàng FMCG:
+                                                        Hệ thống trung tâm phân phối tại các trung tâm kinh tế lớn: Hà Nội, Hải Phòng, Nghệ An, Đà Nẵng, Bình Dương, TP.HCM, Cần Thơ Hệ thống trung tâm tại tất cả các tỉnh thành trên cả nước. EXPEDITORS GLOBAL có thế mạnh trong quản lý kho hàng FMCG:
                                                     </b>
                                                 </p>
                                                 <p>
@@ -94,7 +94,7 @@ const StoreImportant = () => {
                                             <div className="mona-content">
                                                 <p>
                                                     <b>
-                                                        Hệ thống kho tập trung, nằm trong các trung tâm hoạt động bưu chính lớn của Vietnam Post Logistics tại Hà Nội, Thành phố Hồ Chí Minh, Đà Nẵng và Nghệ An, đảm bảo an ninh, rút ​​ngắn thời gian giao hàng và tối ưu hóa chi phí.
+                                                        Hệ thống kho tập trung, nằm trong các trung tâm hoạt động bưu chính lớn của EXPEDITORS GLOBAL tại Hà Nội, Thành phố Hồ Chí Minh, Đà Nẵng và Nghệ An, đảm bảo an ninh, rút ​​ngắn thời gian giao hàng và tối ưu hóa chi phí.
                                                     </b>
                                                 </p>
                                                 <ul className="m-0">

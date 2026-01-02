@@ -204,7 +204,7 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                             </div>
                             <div className="line aos-init aos-animate" data-aos="fade-up-cus" data-aos-delay="400">
                                 <div className="desc">
-                                    <p>Hiện tại, Vietnam Post Logistics đang cung cấp các tuyến vận chuyển nội địa khắp Việt Nam với khả năng xử lý nhanh chóng, an toàn bằng đội xe container và xa tải hiện đại đáp ứng mọi nhu cầu vận chuyển của khách hàng.</p>
+                                    <p>Hiện tại, EXPEDITORS GLOBAL đang cung cấp các tuyến vận chuyển nội địa khắp Việt Nam với khả năng xử lý nhanh chóng, an toàn bằng đội xe container và xa tải hiện đại đáp ứng mọi nhu cầu vận chuyển của khách hàng.</p>
                                 </div>
                             </div>
                         </div>

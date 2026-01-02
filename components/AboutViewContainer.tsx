@@ -112,7 +112,7 @@ const AboutViewContainer = ({ initialLocale = 'en' }) => {
                                     <div className="name">Core Value</div>
                                     <div className="ctn">
                                         <div className="des">
-                                            <p className="des">reflect its commitment to delivering quality and reliability in logistics services. These values are encapsulated by the principles of <strong>challenge, commitment, integrity, responsibility, and respect</strong>. The company emphasizes continuous improvement and strives to connect people and businesses through efficient logistics solutions. With these values, Vietnam Post Logistics aims to become a leading logistics provider in Vietnam, leveraging its vast network and infrastructure to offer comprehensive supply chain solutions.</p>
+                                            <p className="des">reflect its commitment to delivering quality and reliability in logistics services. These values are encapsulated by the principles of <strong>challenge, commitment, integrity, responsibility, and respect</strong>. The company emphasizes continuous improvement and strives to connect people and businesses through efficient logistics solutions. With these values, EXPEDITORS GLOBAL aims to become a leading logistics provider in Vietnam, leveraging its vast network and infrastructure to offer comprehensive supply chain solutions.</p>
                                         </div>
                                     </div>
                                 </div>

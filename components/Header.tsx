@@ -81,6 +81,7 @@ export default function Header({ initialLocale = 'en' }) {
             href: '/',
             isCurrent: true
         },
+
         {
             id: 'company',
             name: 'Công ty',
@@ -95,34 +96,7 @@ export default function Header({ initialLocale = 'en' }) {
                     href: '/cong-ty/ve-chung-toi/',
                     hasChildren: true
                 },
-                {
-                    id: 'company-profile',
-                    name: 'Giới thiệu công ty',
-                    nameEn: 'Company Profile',
-                    href: '/cong-ty/gioi-thieu-cong-ty/',
-                    hasChildren: false
-                },
-                {
-                    id: 'vision-mission',
-                    name: 'Tầm nhìn - Sứ mệnh',
-                    nameEn: 'Vision - Mission',
-                    href: '/cong-ty/tam-nhin-su-menh/',
-                    hasChildren: false
-                },
-                {
-                    id: 'core-values',
-                    name: 'Giá trị cốt lõi',
-                    nameEn: 'Core Values',
-                    href: '/cong-ty/gia-tri-cot-loi/',
-                    hasChildren: false
-                },
-                {
-                    id: 'certificates',
-                    name: 'Chứng chỉ & Giải thưởng',
-                    nameEn: 'Certificates & Awards',
-                    href: '/cong-ty/chung-chi-giai-thuong/',
-                    hasChildren: false
-                }
+
             ]
         },
         {
@@ -133,22 +107,50 @@ export default function Header({ initialLocale = 'en' }) {
             hasChildren: true,
             submenu: [
                 {
-                    id: 'warehouse-management',
+                    id: 'warehouse',
                     name: 'Kho vận',
-                    nameEn: 'Warehouse Management',
-                    href: '/giai-phap/giai-phap-kho-van/',
+                    nameEn: 'Warehouse',
+                    href: '/giai-phap/kho-van/',
+                    hasChildren: false
+                },
+                {
+                    id: 'logistics',
+                    name: 'Logistics quốc tế',
+                    nameEn: 'Logistics quốc tế',
+                    href: 'javascript:;',
                     hasChildren: true,
                     submenu: [
                         {
                             id: 'distribution-center',
-                            name: 'Trung tâm phân phối',
+                            name: 'Vận tải đường biển',
                             nameEn: 'Distribution Center',
                             href: '/giai-phap/trung-tam-phan-phoi/',
                             hasChildren: false
                         },
                         {
                             id: 'fulfillment-service',
-                            name: 'Dịch vụ fulfillment',
+                            name: 'Chuyển phát nhanh quốc tế',
+                            nameEn: 'Fulfillment Service',
+                            href: '/giai-phap/dich-vu-fulfillment/',
+                            hasChildren: false
+                        },
+                        {
+                            id: 'fulfillment-service',
+                            name: 'Vận tải hàng không',
+                            nameEn: 'Fulfillment Service',
+                            href: '/giai-phap/dich-vu-fulfillment/',
+                            hasChildren: false
+                        },
+                        {
+                            id: 'fulfillment-service',
+                            name: 'Đường bộ xuyên biên giới',
+                            nameEn: 'Fulfillment Service',
+                            href: '/giai-phap/dich-vu-fulfillment/',
+                            hasChildren: false
+                        },
+                        {
+                            id: 'fulfillment-service',
+                            name: 'Vận tải đường sắt',
                             nameEn: 'Fulfillment Service',
                             href: '/giai-phap/dich-vu-fulfillment/',
                             hasChildren: false
@@ -157,214 +159,41 @@ export default function Header({ initialLocale = 'en' }) {
                 },
                 {
                     id: 'international-logistics',
-                    name: 'Logistics quốc tế',
+                    name: 'TMĐT quốc tế',
                     nameEn: 'International Logistics',
+                    href: 'javascript:;',
+                    hasChildren: false
+                },
+                {
+                    id: 'international-logistics',
+                    name: 'Logistics nội địa',
+                    nameEn: 'International Logistics',
+                    href: 'javascript:;',
+                    hasChildren: false
+                },
+                {
+                    id: 'ecommerce-international',
+                    name: 'Xuất nhập khẩu',
+                    nameEn: 'International E-commerce',
                     href: 'javascript:;',
                     hasChildren: true,
                     submenu: [
                         {
-                            id: 'sea-freight',
-                            name: 'Vận tải đường biển',
-                            nameEn: 'Sea Freight',
-                            href: '/giai-phap/giai-phap-sea-freight/',
-                            hasChildren: true
-                        },
-                        {
-                            id: 'air-express',
-                            name: 'Chuyển phát nhanh Quốc tế',
-                            nameEn: 'International Express',
-                            href: '/giai-phap/giai-phap-air-express/',
-                            hasChildren: true
-                        },
-                        {
-                            id: 'air-cargo',
-                            name: 'Vận tải hàng không',
-                            nameEn: 'Air Cargo',
-                            href: '/giai-phap/giai-phap-air-cargo/',
-                            hasChildren: true
-                        },
-                        {
-                            id: 'cross-border-trucking',
-                            name: 'Đường bộ xuyên biên giới',
-                            nameEn: 'Cross-border Trucking',
-                            href: '/giai-phap/giai-phap-cross-border-trucking/',
-                            hasChildren: true
-                        },
-                        {
-                            id: 'railway-transport',
-                            name: 'Vận tải đường sắt',
-                            nameEn: 'Railway Transport',
-                            href: '/giai-phap/giai-phap-railway/',
-                            hasChildren: true
-                        },
-                    ]
-                },
-                {
-                    id: 'ecommerce-international',
-                    name: 'TMĐT quốc tế',
-                    nameEn: 'International E-commerce',
-                    href: '/giai-phap/thuong-mai-dien-tu-quoc-te/',
-                    hasChildren: true,
-                    submenu: [
-                        {
                             id: 'ecommerce-solutions',
-                            name: 'Giải pháp TMĐT',
+                            name: 'Tài chính chuỗi cung ứng',
                             nameEn: 'E-commerce Solutions',
                             href: '/giai-phap/giai-phap-thuong-mai-dien-tu/',
                             hasChildren: false
                         },
                         {
                             id: 'last-mile-delivery',
-                            name: 'Giao hàng chặng cuối',
+                            name: 'Ủy thác xuất nhập khẩu',
                             nameEn: 'Last Mile Delivery',
                             href: '/giai-phap/giao-hang-chang-cuoi/',
                             hasChildren: false
                         }
                     ]
                 },
-                {
-                    id: 'domestic-logistics',
-                    name: 'Logistics nội địa',
-                    nameEn: 'Domestic Logistics',
-                    href: '/giai-phap/logistics-noi-dia/',
-                    hasChildren: true,
-                    submenu: [
-                        {
-                            id: 'domestic-express',
-                            name: 'Chuyển phát nhanh nội địa',
-                            nameEn: 'Domestic Express',
-                            href: '/giai-phap/chuyen-phat-nhanh-noi-dia/',
-                            hasChildren: false
-                        },
-                        {
-                            id: 'b2b-logistics',
-                            name: 'Logistics B2B',
-                            nameEn: 'B2B Logistics',
-                            href: '/giai-phap/logistics-b2b/',
-                            hasChildren: false
-                        }
-                    ]
-                },
-                {
-                    id: 'import-export',
-                    name: 'Xuất nhập khẩu',
-                    nameEn: 'Import & Export',
-                    href: '/giai-phap/uy-thac-xuat-nhap-khau/',
-                    hasChildren: true,
-                    submenu: [
-                        {
-                            id: 'supply-chain-finance',
-                            name: 'Tài chính chuỗi cung ứng',
-                            nameEn: 'Supply Chain Finance',
-                            href: '/giai-phap/tai-chinh-chuoi-cung-ung/',
-                            hasChildren: true
-                        },
-                        {
-                            id: 'import-export-entrustment',
-                            name: 'Ủy thác xuất nhập khẩu',
-                            nameEn: 'Import & Export Entrustment',
-                            href: '/giai-phap/uy-thac-xuat-nhap-khau/',
-                            hasChildren: true
-                        },
-                        {
-                            id: 'customs-clearance',
-                            name: 'Thông quan hải quan',
-                            nameEn: 'Customs Clearance',
-                            href: '/giai-phap/thong-quan-hai-quan/',
-                            hasChildren: false
-                        }
-                    ]
-                },
-                {
-                    id: 'digital-solutions',
-                    name: 'Giải pháp số',
-                    nameEn: 'Digital Solutions',
-                    href: '/giai-phap/giai-phap-so/',
-                    hasChildren: true,
-                    submenu: [
-                        {
-                            id: 'tracking-system',
-                            name: 'Hệ thống tracking',
-                            nameEn: 'Tracking System',
-                            href: '/giai-phap/he-thong-tracking/',
-                            hasChildren: false
-                        },
-                        {
-                            id: 'order-management',
-                            name: 'Quản lý đơn hàng',
-                            nameEn: 'Order Management',
-                            href: '/giai-phap/quan-ly-don-hang/',
-                            hasChildren: false
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            id: 'network',
-            name: 'Mạng lưới',
-            nameEn: 'Network',
-            href: 'javascript:;',
-            hasChildren: true,
-            submenu: [
-                {
-                    id: 'global-network',
-                    name: 'Mạng lưới toàn cầu',
-                    nameEn: 'Global Network',
-                    href: '/mang-luoi/mang-luoi-toan-cau/',
-                    hasChildren: false
-                },
-                {
-                    id: 'vietnam-network',
-                    name: 'Mạng lưới tại Việt Nam',
-                    nameEn: 'Vietnam Network',
-                    href: '/mang-luoi/mang-luoi-tai-viet-nam/',
-                    hasChildren: false
-                },
-                {
-                    id: 'partners',
-                    name: 'Đối tác',
-                    nameEn: 'Partners',
-                    href: '/mang-luoi/doi-tac/',
-                    hasChildren: false
-                }
-            ]
-        },
-        {
-            id: 'resources',
-            name: 'Tài nguyên',
-            nameEn: 'Resources',
-            href: 'javascript:;',
-            hasChildren: true,
-            submenu: [
-                {
-                    id: 'news',
-                    name: 'Tin tức',
-                    nameEn: 'News',
-                    href: '/tai-nguyen/tin-tuc/',
-                    hasChildren: true
-                },
-                {
-                    id: 'blog',
-                    name: 'Blog',
-                    nameEn: 'Blog',
-                    href: '/tai-nguyen/blog/',
-                    hasChildren: true
-                },
-                {
-                    id: 'faq',
-                    name: 'Câu hỏi thường gặp',
-                    nameEn: 'FAQ',
-                    href: '/tai-nguyen/cau-hoi-thuong-gap/',
-                    hasChildren: false
-                },
-                {
-                    id: 'downloads',
-                    name: 'Tải xuống',
-                    nameEn: 'Downloads',
-                    href: '/tai-nguyen/tai-xuong/',
-                    hasChildren: false
-                }
             ]
         },
         {

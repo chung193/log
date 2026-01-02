@@ -290,7 +290,7 @@ const ContactForm = () => {
                                 <div className="head-verti white mb-32">
                                     <div className="line aos-init" data-aos="fade-up-cus">
                                         <h2 className="title title-48 add-class text-verti">
-                                            Liên hệ với Vietnam Post Logistics
+                                            Liên hệ với EXPEDITORS GLOBAL
                                         </h2>
                                     </div>
                                 </div>
@@ -466,7 +466,7 @@ const RailwaySolutionPage: React.FC = ({ initialLocale = 'en' }) => {
                                     </h1>
 
                                     <p className="inter-solve-des">
-                                        Vietnam Post Logistics cung cấp các giải pháp vận chuyển hàng hóa bằng đường sắt Bắc Nam, cũng như các tuyến đường sắt Quốc tế. Chúng tôi xử lý và vận chuyển nhiều loại hàng hóa khác nhau với nhiều dịch vụ linh hoạt cho khách hàng.
+                                        EXPEDITORS GLOBAL cung cấp các giải pháp vận chuyển hàng hóa bằng đường sắt Bắc Nam, cũng như các tuyến đường sắt Quốc tế. Chúng tôi xử lý và vận chuyển nhiều loại hàng hóa khác nhau với nhiều dịch vụ linh hoạt cho khách hàng.
                                     </p>
 
                                     <StatisticsBox />

@@ -11,7 +11,7 @@ const InternationalLogisticsPage: React.FC = () => {
                         height="800"
                         src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4.jpg"
                         className="attachment-full size-full"
-                        alt="Sea Freight Vietnam Post Logistics"
+                        alt="Sea Freight EXPEDITORS GLOBAL"
                         decoding="async"
                         fetchPriority="high"
                         srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4.jpg 1728w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4-300x139.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4-1024x474.jpg 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4-768x356.jpg 768w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4-1536x711.jpg 1536w"
@@ -216,7 +216,7 @@ const InternationalLogisticsPage: React.FC = () => {
                                         <div className="mona-content">
                                             <p>
                                                 <strong>
-                                                    Hiện nay, Vietnam Post Logistics đang cung cấp giải pháp chuyển phát nhanh quốc tế uy tín, chất lượng và kết nối khách hàng đến 230 quốc gia và vùng lãnh thổ trên thế giới.{' '}
+                                                    Hiện nay, EXPEDITORS GLOBAL đang cung cấp giải pháp chuyển phát nhanh quốc tế uy tín, chất lượng và kết nối khách hàng đến 230 quốc gia và vùng lãnh thổ trên thế giới.{' '}
                                                 </strong>
                                             </p>
                                             <p>Chúng tôi mang đến giải pháp chuyển phát nhanh quốc tế (Express) nhanh chóng, an toàn và linh hoạt cho các loại hàng hóa chuyên biệt như: Thư tín, hàng mẫu, chứng từ, quà tặng,…</p>
@@ -245,7 +245,7 @@ const InternationalLogisticsPage: React.FC = () => {
                                                     height="188"
                                                     src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/homes-ab2.jpg"
                                                     className="attachment-full size-full"
-                                                    alt="Logo Vietnam Post Logistics"
+                                                    alt="Logo EXPEDITORS GLOBAL"
                                                     decoding="async"
                                                     loading="lazy"
                                                     srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/homes-ab2.jpg 188w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/homes-ab2-150x150.jpg 150w"
@@ -441,7 +441,7 @@ const InternationalLogisticsPage: React.FC = () => {
                                                     </div>
                                                     <div className="inner-back">
                                                         <p className="tt">Giá cả tốt nhất</p>
-                                                        <p className="des">Vietnam Post Logistics cam kết cung cấp mức giá cạnh tranh nhất thị trường, giúp doanh nghiệp bạn tiết kiệm chi phí vận chuyển tối đa.</p>
+                                                        <p className="des">EXPEDITORS GLOBAL cam kết cung cấp mức giá cạnh tranh nhất thị trường, giúp doanh nghiệp bạn tiết kiệm chi phí vận chuyển tối đa.</p>
                                                     </div>
                                                 </div>
                                             </div>

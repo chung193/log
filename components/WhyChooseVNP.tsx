@@ -95,7 +95,7 @@ const why_choose_us = ({ initialLocale = 'en' }) => {
                         margin: 0,
                         lineHeight: '1.2'
                     }}>
-                        Vietnam Post Logistics
+                        EXPEDITORS GLOBAL
                     </h2>
                 </div>
 

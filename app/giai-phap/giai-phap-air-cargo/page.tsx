@@ -17,7 +17,7 @@ const InternationalAirCargoPage = () => {
                         height="800"
                         src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4.jpg"
                         className="attachment-full size-full"
-                        alt="Sea Freight Vietnam Post Logistics"
+                        alt="Sea Freight EXPEDITORS GLOBAL"
                         decoding="async"
                         fetchPriority="high"
                         srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4.jpg 1728w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4-300x139.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4-1024x474.jpg 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4-768x356.jpg 768w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4-1536x711.jpg 1536w"
@@ -201,7 +201,7 @@ const InternationalAirCargoPage = () => {
                                         </div>
                                     </div>
                                     <p className="inter-solve-des">
-                                        Với kinh nghiệm sâu rộng và chuyên môn trong lĩnh vực vận tải hàng không, Vietnam Post Logistics có thể đáp ứng nhu cầu vận chuyển hàng hóa nhanh chóng và hiệu quả cho nhiều doanh nghiệp, đặc biệt là các doanh nghiệp FDI.
+                                        Với kinh nghiệm sâu rộng và chuyên môn trong lĩnh vực vận tải hàng không, EXPEDITORS GLOBAL có thể đáp ứng nhu cầu vận chuyển hàng hóa nhanh chóng và hiệu quả cho nhiều doanh nghiệp, đặc biệt là các doanh nghiệp FDI.
                                     </p>
                                     <div className="inter-solve-box">
                                         <div className="row">
