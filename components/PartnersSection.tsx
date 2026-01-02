@@ -1,8 +1,19 @@
 'use client';
 
 import React from 'react';
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
+const PartnersSection = ({ initialLocale = 'en' }) => {
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
 
-const PartnersSection = () => {
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
     // Danh sách logo đối tác hiệp hội
     const associations = [
         { id: 1, name: 'VCCI', logo: '/images/logo-bamboo-airways-inkythuatso-1.png' },
@@ -57,7 +68,7 @@ const PartnersSection = () => {
                         textAlign: 'center',
                         marginBottom: '50px'
                     }}>
-                        Các hiệp hội tham gia
+                        {t("components.partner.title")}
                     </h2>
 
                     {/* Swiper Container */}
@@ -126,7 +137,7 @@ const PartnersSection = () => {
                         textAlign: 'center',
                         marginBottom: '50px'
                     }}>
-                        Mạng lưới đối tác
+                        {t("components.associations.title")}
                     </h2>
 
                     {/* Swiper Container */}

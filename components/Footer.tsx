@@ -4,7 +4,7 @@ import React from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
-const Footer = (initialLocale = "en") => {
+const Footer = ({ initialLocale = "en" }) => {
     const searchParams = useSearchParams();
     const langParam = searchParams.get('lang');
 
@@ -41,20 +41,20 @@ const Footer = (initialLocale = "en") => {
                             color: '#1a3b5c',
                             marginBottom: '20px'
                         }}>
-                            {t('footer.office_hp')}
+                            {t('components.footer.office_hp')}
                         </h3>
                         <div style={{ fontSize: '1.8rem', color: '#4a5568', lineHeight: '1.8' }}>
                             <p style={{ margin: '0 0 15px 0' }}>
-                                <p style={{ color: '#1a3b5c', fontWeight: 700, fontSize: '1.8rem' }}>Trụ sở chính:</p>
-                                {t('footer.office_hp_detail')}
+                                <p style={{ color: '#1a3b5c', fontWeight: 700, fontSize: '1.8rem' }}>{t('components.footer.office_head')}</p>
+                                {t('components.footer.office_head_detail')}
                             </p>
                             <p style={{ margin: '0 0 15px 0' }}>
-                                <p style={{ color: '#1a3b5c', fontWeight: 700, fontSize: '1.8rem' }}>Văn phòng Hải Phòng:</p>
-                                {t('footer.office_hn')}
+                                <p style={{ color: '#1a3b5c', fontWeight: 700, fontSize: '1.8rem' }}>{t('components.footer.office_hp')}</p>
+                                {t('components.footer.office_hp_detail')}
                             </p>
                             <p style={{ margin: '0' }}>
-                                <p style={{ color: '#1a3b5c', fontWeight: 700, fontSize: '1.8rem' }}>Văn phòng HCM:</p>
-                                {t('footer.office_hn_detail')}
+                                <p style={{ color: '#1a3b5c', fontWeight: 700, fontSize: '1.8rem' }}>{t('components.footer.office_hn')}</p>
+                                {t('components.footer.office_hn_detail')}
                             </p>
                         </div>
                     </div>
@@ -67,22 +67,22 @@ const Footer = (initialLocale = "en") => {
                             color: '#1a3b5c',
                             marginBottom: '20px'
                         }}>
-                            {t('footer.contact')}
+                            {t('components.footer.contact')}
                         </h3>
                         <div style={{ fontSize: '1.8rem', color: '#4a5568', lineHeight: '1.8' }}>
                             <p style={{ margin: '0 0 10px 0' }}>
                                 <p style={{ color: '#1a3b5c', fontWeight: 700, fontSize: '1.8rem' }}>Hotline:</p>
-                                {t('footer.phone')}
+                                {t('components.footer.phone')}
                             </p>
                             <p style={{ margin: '0' }}>
                                 <p style={{ color: '#1a3b5c', fontWeight: 700, fontSize: '1.8rem' }}>
-                                    {t('footer.email')}
+                                    {t('components.footer.email')}
                                 </p>
                                 <a href="mailto:marketinglogistics@vnpost.vn" style={{
                                     color: '#4a5568',
                                     textDecoration: 'none'
                                 }}>
-                                    {t('footer.email_address')}
+                                    {t('components.footer.email_address')}
                                 </a>
                             </p>
                         </div>
@@ -96,7 +96,7 @@ const Footer = (initialLocale = "en") => {
                             color: '#1a3b5c',
                             marginBottom: '20px'
                         }}>
-                            {t('footer.company')}
+                            {t('components.footer.company')}
                         </h3>
                         <ul style={{
                             listStyle: 'none',
@@ -114,7 +114,7 @@ const Footer = (initialLocale = "en") => {
                                     onMouseEnter={(e) => e.currentTarget.style.color = '#0A5A99'}
                                     onMouseLeave={(e) => e.currentTarget.style.color = '#4a5568'}
                                 >
-                                    {t('footer.about_us')}
+                                    {t('components.footer.about_us')}
                                 </a>
                             </li>
                             <li>
@@ -126,7 +126,7 @@ const Footer = (initialLocale = "en") => {
                                     onMouseEnter={(e) => e.currentTarget.style.color = '#0A5A99'}
                                     onMouseLeave={(e) => e.currentTarget.style.color = '#4a5568'}
                                 >
-                                    {t('footer.careers')}
+                                    {t('components.footer.careers')}
                                 </a>
                             </li>
                             <li>
@@ -138,7 +138,7 @@ const Footer = (initialLocale = "en") => {
                                     onMouseEnter={(e) => e.currentTarget.style.color = '#0A5A99'}
                                     onMouseLeave={(e) => e.currentTarget.style.color = '#4a5568'}
                                 >
-                                    {t('footer.recruitment')}
+                                    {t('components.footer.recruitment')}
                                 </a>
                             </li>
 
@@ -152,7 +152,7 @@ const Footer = (initialLocale = "en") => {
                                     onMouseEnter={(e) => e.currentTarget.style.color = '#0A5A99'}
                                     onMouseLeave={(e) => e.currentTarget.style.color = '#4a5568'}
                                 >
-                                    {t('footer.contact')}
+                                    {t('components.footer.contact')}
                                 </a>
                             </li>
                         </ul>
@@ -166,7 +166,7 @@ const Footer = (initialLocale = "en") => {
                             color: '#1a3b5c',
                             marginBottom: '20px'
                         }}>
-                            {t('footer.solution')}
+                            {t('components.footer.solution')}
                         </h3>
                         <ul style={{
                             listStyle: 'none',
@@ -184,7 +184,7 @@ const Footer = (initialLocale = "en") => {
                                     onMouseEnter={(e) => e.currentTarget.style.color = '#0A5A99'}
                                     onMouseLeave={(e) => e.currentTarget.style.color = '#4a5568'}
                                 >
-                                    {t('footer.services.ocean_freight')}
+                                    {t('components.footer.international')}
                                 </a>
                             </li>
                             <li>
@@ -196,7 +196,7 @@ const Footer = (initialLocale = "en") => {
                                     onMouseEnter={(e) => e.currentTarget.style.color = '#0A5A99'}
                                     onMouseLeave={(e) => e.currentTarget.style.color = '#4a5568'}
                                 >
-                                    {t('footer.services.air_freight')}
+                                    {t('components.footer.sea-freight')}
                                 </a>
                             </li>
                             <li>
@@ -208,7 +208,7 @@ const Footer = (initialLocale = "en") => {
                                     onMouseEnter={(e) => e.currentTarget.style.color = '#0A5A99'}
                                     onMouseLeave={(e) => e.currentTarget.style.color = '#4a5568'}
                                 >
-                                    {t('footer.services.customers_partner')}
+                                    {t('components.footer.domestic-logistics')}
                                 </a>
                             </li>
                             <li>
@@ -220,7 +220,7 @@ const Footer = (initialLocale = "en") => {
                                     onMouseEnter={(e) => e.currentTarget.style.color = '#0A5A99'}
                                     onMouseLeave={(e) => e.currentTarget.style.color = '#4a5568'}
                                 >
-                                    {t('footer.services.contract_logistics_warehousing')}
+                                    {t('components.footer.contract-logistics')}
                                 </a>
                             </li>
                             <li>
@@ -232,7 +232,7 @@ const Footer = (initialLocale = "en") => {
                                     onMouseEnter={(e) => e.currentTarget.style.color = '#0A5A99'}
                                     onMouseLeave={(e) => e.currentTarget.style.color = '#4a5568'}
                                 >
-                                    {t('footer.services.customers_partner')}
+                                    {t('components.footer.export-solution')}
                                 </a>
                             </li>
                         </ul>

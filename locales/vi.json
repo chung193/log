@@ -1,7 +1,8 @@
 {
     "components": {
         "button": {
-            "find-more": "Tìm hiểu thêm"
+            "find-more": "Tìm hiểu thêm",
+            "contact-us": "Liên hệ tư vấn"
         },
         "home-banner": {
             "banner-1-caption": "",
@@ -65,6 +66,8 @@
             "desc-4": "m2 kho bãi"
         },
         "why_choose_us": {
+            "title-1": "Tại sao nên chọn",
+            "title-2": "Vietnam Post Logistics",
             "reason_1_title": "Thương hiệu uy tín",
             "reason_1_description": "Kế thừa thương hiệu uy tín Quốc gia của Tổng Công ty Bưu điện Việt Nam, Vietnam Post Logistics xứng đáng là người bạn đồng hành đáng tin cậy của mọi khách hàng.",
             "reason_2_title": "Nhân sự chuyên nghiệp",
@@ -77,6 +80,42 @@
             "reason_5_description": "Tại Vietnam Post Logistics, khách hàng được trải nghiệm đa dạng dịch vụ Logistics từ đó giúp bạn tối ưu chi phí, thiết kế những giải pháp phù hợp nhất với doanh nghiệp.",
             "reason_6_title": "An toàn - bảo mật",
             "reason_6_description": "Chúng tôi cũng tuân thủ các tiêu chuẩn và quy định về bảo mật thông tin khách hàng và hàng hóa, đảm bảo sự tin cậy và an tâm cho người sử dụng dịch vụ."
+        },
+        "contact": {
+            "title": "Liên hệ với Vietnam Post Logistics",
+            "name": "Tên của bạn",
+            "email": "Email",
+            "company": "Tên công ty",
+            "phone": "Số điện thoại"
+        },
+        "footer": {
+            "office": "Văn phòng",
+            "office_head": "Trụ sở chính:",
+            "office_head_detail": "Số 5 Phạm Hùng, Phường Cầu Giấy, Hà Nội",
+            "office_hp": "Văn phòng Hải Phòng:",
+            "office_hp_detail": "Số 5 Đường Nguyễn Tri Phương, Phường Hồng Bàng, TP. Hải Phòng",
+            "office_hn": "Văn phòng HCM:",
+            "office_hn_detail": "Số 8 Phan Đình Giót, Phường Tân Sơn Hòa, TP. Hồ Chí Minh",
+            "phone": "024 3685 5333",
+            "email": "Email:",
+            "email_address": "marketinglogistics@vnpost.vn",
+            "company": "Công ty",
+            "about_us": "Về chúng tôi",
+            "careers": "",
+            "recruitment": "",
+            "contact": "Liên Hệ",
+            "solution": "Giải pháp",
+            "international": "TMĐT quốc tế",
+            "sea-freight": "Logistics quốc tế",
+            "domestic-logistics": "Logistics nội địa",
+            "contract-logistics": "Kho vận",
+            "export-solution": "Xuất nhập khẩu"
+        },
+        "partner": {
+            "title": "Mạng lưới đối tác"
+        },
+        "associations": {
+            "title": "Các hiệp hội tham gia"
         }
     }
 }

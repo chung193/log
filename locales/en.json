@@ -1,7 +1,8 @@
 {
     "components": {
         "button": {
-            "find-more": "Find more"
+            "find-more": "Find more",
+            "contact-us": "Contact for Consultation"
         },
         "home-banner": {
             "banner-1-caption": "Local Trust, Global Solutions",
@@ -65,7 +66,9 @@
             "desc-4": "m2 warehouse"
         },
         "why_choose_us": {
-            "reason_1_title": "reputation",
+            "title-1": "Why choose",
+            "title-2": "Vietnam Post Logistics",
+            "reason_1_title": "Reputation",
             "reason_1_description": "Inheriting the prestigious national brand of Vietnam Post Corporation, Vietnam Post Logistics deserves to be a reliable companion of every customer.",
             "reason_2_title": "Professional staff",
             "reason_2_description": "Vietnam Post Logistics owns a team of elite, professional and dedicated human resources, always ready to serve and answer all needs of customers and partners 24/7.",
@@ -77,6 +80,42 @@
             "reason_5_description": "At Vietnam Post Logistics, customers can experience a variety of Logistics services, thereby helping you optimize costs and choose the most suitable solutions for your business.",
             "reason_6_title": "Safety - Security",
             "reason_6_description": "At Vietnam Post Logisitcs, we comply with standards and regulations on customer and goods information security, ensuring trust and peace of mind for service users."
+        },
+        "contact": {
+            "title": "Contact Us Now",
+            "name": "Your Name",
+            "email": "Email",
+            "company": "Company Name",
+            "phone": "Phone Number"
+        },
+        "footer": {
+            "office": "Office",
+            "office_head": "Head office",
+            "office_head_detail": "No. 5 Pham Hung Street, Cau Giay Ward, Hanoi",
+            "office_hp": "Hai Phong Office",
+            "office_hp_detail": "No. 5, Nguyen Tri Phuong Street, Hong Bang Ward, TP. Hai Phong",
+            "office_hn": "Head office",
+            "office_hn_detail": "No. 5 Pham Hung Street, Cau Giay Ward, Hanoi",
+            "phone": "024 3685 5333",
+            "email": "Email:",
+            "email_address": "marketinglogistics@vnpost.vn",
+            "company": "Company",
+            "about_us": "About us",
+            "careers": "",
+            "recruitment": "",
+            "contact": "Contact",
+            "solution": "Solution",
+            "international": "International e-commerce",
+            "sea-freight": "Sea Freight",
+            "domestic-logistics": "Domestic Logistics",
+            "contract-logistics": "Contract Logistics",
+            "export-solution": "Import – Export Solution"
+        },
+        "partner": {
+            "title": "Our Partners"
+        },
+        "associations": {
+            "title": "Logistics Associations"
         }
     }
 }

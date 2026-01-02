@@ -2,23 +2,15 @@
 
 import { useState, useCallback, useMemo, useEffect } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useSearchParams } from 'next/navigation'
 import LanguageSwitcher from './LanguageSwitcher'
 import { useSelector, useDispatch } from 'react-redux'
 import type { RootState } from '@/redux/store'
 import { setMenuActive } from '@/redux/commonSlice'
 import './Header.css';
-import menuItems from '@/data/menu'
-
-interface MenuItem {
-    id: string
-    name: string
-    nameEn: string
-    href: string
-    hasChildren?: boolean
-    submenu?: MenuItem[]
-    isCurrent?: boolean
-}
+import menuData, { getMenuByLocale, MenuItem } from '@/data/menu'
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
 
 export default function Header({ initialLocale = 'en' }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -29,6 +21,15 @@ export default function Header({ initialLocale = 'en' }) {
     const activeItem = useSelector((state: RootState) => state.common.menu.active)
     const dispatch = useDispatch()
     const pathname = usePathname()
+    const searchParams = useSearchParams()
+
+    const langParam = searchParams.get('lang')
+    const locale: Locale = (langParam === 'en' || langParam === 'vi') ? langParam : initialLocale
+
+    const { t } = useTranslations(locale)
+
+    // Lấy menu items theo locale
+    const menuItems = useMemo(() => getMenuByLocale(locale), [locale])
 
     // Load active menu từ localStorage khi component mount
     useEffect(() => {
@@ -72,9 +73,7 @@ export default function Header({ initialLocale = 'en' }) {
         if (activeId && activeItem !== activeId) {
             dispatch(setMenuActive(activeId))
         }
-    }, [pathname, dispatch])
-
-
+    }, [pathname, dispatch, menuItems, activeItem])
 
     const socialLinks = useMemo(() => [
         {

@@ -6,9 +6,10 @@ import { useSearchParams } from 'next/navigation';
 import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
 
-const StatCard = ({ value, prefix = '', suffix = '', delay = 0 }: { value: number; prefix?: string; suffix?: string; delay?: number }) => {
+const StatCard = ({ value, prefix = '', suffix = '', delay = 0 }: { value: number; prefix?: string; suffix?: string; delay?: number; }) => {
     const countUpRef = useRef(null);
     const [hasStarted, setHasStarted] = useState(false);
+
 
 
     useEffect(() => {
@@ -46,7 +47,7 @@ const StatCard = ({ value, prefix = '', suffix = '', delay = 0 }: { value: numbe
 
 const LogisticsStats = ({ initialLocale = 'en' }) => {
     const searchParams = useSearchParams();
-    const langParam = searchParams.get('components.lang');
+    const langParam = searchParams.get('lang');
 
     const locale: Locale =
         langParam === 'en' || langParam === 'vi'

@@ -2,11 +2,25 @@
 
 import React, { useEffect, useRef } from "react";
 import './Partners.css';
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
+
 const Partners = () => {
     const swiperRef1 = useRef<HTMLDivElement>(null);
     const swiperRef2 = useRef<HTMLDivElement>(null);
     const swiperInstance1 = useRef<any>(null);
     const swiperInstance2 = useRef<any>(null);
+
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
+
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
 
     useEffect(() => {
         const initializeSwipers = async () => {
@@ -95,7 +109,9 @@ const Partners = () => {
     return (
         <div className="solv-freight-partner">
             <div className="head-verti center mb-32">
-                <h1 className="title title-48 add-class text-verti">Đối tác chiến lược</h1>
+                <h1 className="title title-48 add-class text-verti">
+                    {t("components.partner.title")}
+                </h1>
             </div>
 
             {/* Swiper 1 */}

@@ -67,7 +67,7 @@ const ContactHeroSection = ({ initialLocale = 'en' }) => {
                 }}
             >
                 <h2 style={{ fontSize: 48, fontWeight: 700, marginBottom: 40 }}>
-                    {t('contact.title')}
+                    {t('components.contact.title')}
                 </h2>
 
                 <div
@@ -77,14 +77,14 @@ const ContactHeroSection = ({ initialLocale = 'en' }) => {
                         gap: 20,
                         maxWidth: 700
                     }}>
-                    <Input label={t('contact.name')} placeholder={t('contact.name')} />
-                    <Input label={t('contact.company')} placeholder={t('contact.company')} />
-                    <Input label={t('contact.email')} placeholder={t('contact.email')} />
-                    <Input label={t('contact.phone')} placeholder={t('contact.phone')} />
+                    <Input label={t('components.contact.name')} placeholder={t('components.contact.name')} />
+                    <Input label={t('components.contact.company')} placeholder={t('components.contact.company')} />
+                    <Input label={t('components.contact.email')} placeholder={t('components.contact.email')} />
+                    <Input label={t('components.contact.phone')} placeholder={t('components.contact.phone')} />
                 </div>
 
                 <div style={{ marginTop: 40 }}>
-                    <FindMoreButton label={t('button.contact_us')} />
+                    <FindMoreButton label={t('components.button.contact-us')} />
                 </div>
             </div>
 

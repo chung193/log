@@ -6,8 +6,9 @@ import { Locale } from '@/lib/i18n';
 
 const why_choose_us = ({ initialLocale = 'en' }) => {
     const [hoveredId, setHoveredId] = useState<number | null>(null);
+
     const searchParams = useSearchParams();
-    const langParam = searchParams.get('components.lang');
+    const langParam = searchParams.get('lang');
 
     const locale: Locale =
         langParam === 'en' || langParam === 'vi'
@@ -15,6 +16,7 @@ const why_choose_us = ({ initialLocale = 'en' }) => {
             : initialLocale;
 
     const { t } = useTranslations(locale);
+
     const reasons = [
         {
             id: 1,
@@ -86,7 +88,7 @@ const why_choose_us = ({ initialLocale = 'en' }) => {
                         margin: '0 0 10px 0',
                         lineHeight: '1.2'
                     }}>
-                        Tại sao nên chọn
+                        {t('components.why_choose_us.title-1')}
                     </h2>
                     <h2 style={{
                         fontSize: '48px',
@@ -95,7 +97,7 @@ const why_choose_us = ({ initialLocale = 'en' }) => {
                         margin: 0,
                         lineHeight: '1.2'
                     }}>
-                        EXPEDITORS GLOBAL
+                        {t('components.why_choose_us.title-2')}
                     </h2>
                 </div>
 

@@ -1,5 +1,16 @@
+// data/menu.ts
+export interface MenuItem {
+    id: string
+    name: string
+    nameEn: string
+    href: string
+    hasChildren?: boolean
+    submenu?: MenuItem[]
+    isCurrent?: boolean
+}
+
 // Menu data với ID và English names
-const menuItems = [
+const menuData: MenuItem[] = [
     {
         id: 'home',
         name: 'Trang chủ',
@@ -7,7 +18,6 @@ const menuItems = [
         href: '/',
         isCurrent: true
     },
-
     {
         id: 'company',
         name: 'Công ty',
@@ -22,7 +32,6 @@ const menuItems = [
                 href: '/cong-ty/ve-chung-toi/',
                 hasChildren: true
             },
-
         ]
     },
     {
@@ -40,81 +49,81 @@ const menuItems = [
                 hasChildren: false
             },
             {
-                id: 'logistics',
+                id: 'international-logistics',
                 name: 'Logistics quốc tế',
-                nameEn: 'Logistics quốc tế',
+                nameEn: 'International Logistics',
                 href: 'javascript:;',
                 hasChildren: true,
                 submenu: [
                     {
-                        id: 'distribution-center',
+                        id: 'sea-freight',
                         name: 'Vận tải đường biển',
-                        nameEn: 'Distribution Center',
+                        nameEn: 'Sea Freight',
                         href: '/giai-phap/giai-phap-sea-freight',
                         hasChildren: false
                     },
                     {
-                        id: 'fulfillment-service',
+                        id: 'international-express',
                         name: 'Chuyển phát nhanh quốc tế',
-                        nameEn: 'Fulfillment Service',
+                        nameEn: 'International Express',
                         href: '/giai-phap/giai-phap-air-express/',
                         hasChildren: false
                     },
                     {
-                        id: 'fulfillment-service',
+                        id: 'air-cargo',
                         name: 'Vận tải hàng không',
-                        nameEn: 'Fulfillment Service',
+                        nameEn: 'Air Cargo',
                         href: '/giai-phap/giai-phap-air-cargo/',
                         hasChildren: false
                     },
                     {
-                        id: 'fulfillment-service',
+                        id: 'cross-border-trucking',
                         name: 'Đường bộ xuyên biên giới',
-                        nameEn: 'Fulfillment Service',
+                        nameEn: 'Cross-border Trucking',
                         href: '/giai-phap/giai-phap-cross-border-trucking',
                         hasChildren: false
                     },
                     {
-                        id: 'fulfillment-service',
+                        id: 'railway-transport',
                         name: 'Vận tải đường sắt',
-                        nameEn: 'Fulfillment Service',
+                        nameEn: 'Railway Transport',
                         href: '/giai-phap/giai-phap-railway/',
                         hasChildren: false
                     }
                 ]
             },
             {
-                id: 'international-logistics',
+                id: 'ecommerce-international',
                 name: 'TMĐT quốc tế',
-                nameEn: 'International Logistics',
+                nameEn: 'International E-commerce',
                 href: '/giai-phap/thuong-mai-dien-tu-quoc-te',
                 hasChildren: false
             },
             {
-                id: 'international-logistics',
+                id: 'domestic-logistics',
                 name: 'Logistics nội địa',
-                nameEn: 'International Logistics',
+                nameEn: 'Domestic Logistics',
                 href: '/giai-phap/logistics-noi-dia/',
                 hasChildren: false
             },
             {
-                id: 'ecommerce-international',
+                id: 'import-export',
                 name: 'Xuất nhập khẩu',
-                nameEn: 'International E-commerce',
+                nameEn: 'Import-Export',
                 href: 'javascript:;',
                 hasChildren: true,
                 submenu: [
                     {
-                        id: 'ecommerce-solutions',
+                        id: 'supply-chain-finance',
                         name: 'Tài chính chuỗi cung ứng',
-                        nameEn: 'E-commerce Solutions',
+                        nameEn: 'Supply Chain Finance',
                         href: '/giai-phap/tai-chinh-chuoi-cung-ung/',
                         hasChildren: false
                     },
                     {
-                        id: 'last-mile-delivery',
+                        id: 'import-export-trust',
                         name: 'Ủy thác xuất nhập khẩu',
-                        nameEn: 'Last Mile Delivery',
+                        nameEn: 'Import-Export Trust',
                         href: '/giai-phap/uy-thac-xuat-nhap-khau/',
                         hasChildren: false
                     }
@@ -131,4 +140,20 @@ const menuItems = [
     },
 ]
 
-export default menuItems
+// Hàm để lấy menu theo locale
+export const getMenuByLocale = (locale: Locale): MenuItem[] => {
+    return menuData.map(item => ({
+        ...item,
+        name: locale === 'en' ? item.nameEn : item.name,
+        submenu: item.submenu?.map(subItem => ({
+            ...subItem,
+            name: locale === 'en' ? subItem.nameEn : subItem.name,
+            submenu: subItem.submenu?.map(subSubItem => ({
+                ...subSubItem,
+                name: locale === 'en' ? subSubItem.nameEn : subSubItem.name
+            }))
+        }))
+    }));
+}
+
+export default menuData;
