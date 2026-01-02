@@ -1,155 +1,82 @@
 {
-    "menu": {
-        "home": "Home",
-        "about": "About Us",
-        "solutions": "Solutions",
-        "services": "Services",
-        "contact": "Contact"
-    },
-    "footer": {
-        "office": "Hai Phong Office",
-        "office_hp": "Hai Phong Office",
-        "office_hp_detail": "Hai Phong Office",
-        "office_hn": "Hai Phong Office",
-        "office_hn_detail": "Hai Phong Office",
-        "contact": "Contact",
-        "phone": "0123456789",
-        "email": "Email",
-        "email_address": "test@gmail.com",
-        "about_us": "About Us",
-        "careers": "Facilities",
-        "recruitment": "Recruitment",
-        "company": "Company",
-        "solution": "Solutions",
-        "services": {
-            "ocean_freight": "Ocean Freight",
-            "air_freight": "Air Freight",
-            "customers_partner": "Customs Services",
-            "road_rail_transportation": "Road & Rail Transportation",
-            "contract_logistics_warehousing": "Contract Logistics"
+    "components": {
+        "button": {
+            "find-more": "Find more"
         },
-        "working_hours": "Monday – Friday | 8:00 – 17:00",
-        "address_detail": "Bach Dang Building, 268 Tran Nguyen Han, Niem Nghia Ward, Le Chan District, Hai Phong, Vietnam",
-        "copyright": "© Copyright 2025 Expeditors Global, All rights reserved.",
-        "footer_slogan": "At EXPEDITORS GLOBAL, trust, professionalism, and dedication are the foundation of our service. We always deliver on our promises and bring added value to customers and partners."
-    },
-    "banner": {
-        "slide_1_caption": "Comprehensive logistics solutions for your business",
-        "slide_2_caption": "Premium transportation services with a global network",
-        "slide_3_caption": "Optimize your supply chain with advanced technology"
-    },
-    "button": {
-        "find_more": "READ MORE",
-        "contact_us": "CONTACT"
-    },
-    "about": {
-        "title": "About us",
-        "sub_title": "About us",
-        "content": "Expeditors Global"
-    },
-    "ecosystem": {
-        "title": "Logistics Ecosystem",
-        "item_1": "Extensive global network",
-        "sub_item_1": "Close connections with major carriers, seaports, and logistics centers to expand international operational capabilities.",
-        "desc_1": "A network of branches and partners spanning numerous countries, enabling fast and flexible global cargo connectivity.",
-        "item_2": "Advanced management-support technology",
-        "sub_item_2": "Process automation minimizes manual errors and increases accuracy in warehouse, transportation, and documentation management.",
-        "desc_2": "Application of digital platforms and modern tracking systems enables real-time control over orders, routes, and data.",
-        "item_3": "Team of experienced experts",
-        "desc_3": "A team with deep expertise in logistics, customs, and supply chain, ready to advise optimal solutions for each client.",
-        "sub_item_3": "Hands-on experience across multiple sectors enables the team to quickly adapt and handle complex situations.",
-        "item_4": "Dedicated customer service",
-        "desc_4": "Always available 24/7 to accompany and support customers, ensuring all inquiries and issues are resolved quickly and effectively.",
-        "sub_item_4": "Committed to delivering a friendly, transparent, and reliable service experience for every customer.",
-        "items_item_4": {
-            "item_1": "Extensive global network",
-            "item_2": "Advanced management-support technology",
-            "item_3": "Team of experienced experts"
+        "home-banner": {
+            "banner-1-caption": "Local Trust, Global Solutions",
+            "banner-2-caption": "Ecosystem",
+            "banner-3-caption": "Solutions"
         },
-        "item_5": "Extensive global network",
-        "items_item_5": {
-            "item_1": "Extensive global network",
-            "item_2": "Advanced management-support technology",
-            "item_3": "Team of experienced experts"
+        "home-about": {
+            "title": "Logistics for Enterprises",
+            "sub-title": "Vietnam Post Logistics is proud to be a comprehensive logistics ecosystem for businesses.",
+            "content": "Vietnam Post Logistics is trusted and chosen by many leading domestic and international corporations thanks to its outstanding competitive advantages. Not only a state-owned enterprise with a prestigious national brand, at Vietnam Post Logistics, we have a team of highly qualified, young, professional, dedicated, and responsible staff. We also own an extensive network of bonded warehouses and distribution centers across the country."
         },
-        "desc_5": "Close connections with major carriers, seaports, and logistics centers to expand international operational capabilities.",
-        "sub_item_5": "A network of branches and partners spanning numerous countries, enabling fast and flexible global cargo connectivity.",
-        "item_6": "Advanced management-support technology",
-        "desc_6": "Process automation minimizes manual errors and increases accuracy in warehouse, transportation, and documentation management.",
-        "sub_item_6": "Application of digital platforms and modern tracking systems enables real-time control over orders, routes, and data.",
-        "item_7": "Team of experienced experts",
-        "desc_7": "Hands-on experience across multiple sectors enables the team to quickly adapt and handle complex situations.",
-        "sub_item_7": "A team with deep expertise in logistics, customs, and supply chain, ready to advise optimal solutions for each client.",
-        "items_item_7": {
-            "item_1": "Extensive global network",
-            "item_2": "Advanced management-support technology",
-            "item_3": "Team of experienced experts"
+        "ecosystem": {
+            "title": "Our Ecosystem",
+            "communication": "Communication",
+            "consumer": "Consumer",
+            "procurement": "Procurement",
+            "raw-materiala": "Raw Materiala",
+            "inbound-logistics": "Inbound Logistics",
+            "supplier": "Supplier",
+            "inbound-logistics-content": "<ul><li>Import Freight: Air, Ocean (FLC & LCL),customs Clearance</li><li>Storage Service: PVMI (bonded warehouse,CFS..), Factory fulfillment center</li><li>Land trucking</li></ul>",
+            "e-commerce": "E-commerce",
+            "e-commerce-content": "<ul><li>E-commerce, B2C delivery</li><li>COD</li><li>E-commerce platform</li></ul>",
+            "supply-chain": "Supply Chain Finance",
+            "supply-chain-content": "Optimize cash flow for supplier or buyer",
+            "last-miles": "Last-miles Delivery",
+            "last-miles-content": "<ul><li>Nation wide Hub & transport network</li><li>Land trucking</li><li>Air shipment</li></ul>",
+            "distribution-service": "Distribution Service",
+            "distributors": "Distributors",
+            "distribution-service-content": "VNP is deploying modern distribution strateg by using nationwide network",
+            "outbound-logistics": "Outbound Logistics",
+            "outbound-logistics-content": "<ul><li>Distribution center</li><li>Fulfillment center</li><li>Land trucking</li><li>Air, Ocean freight</li><li>VAS</li></ul>"
         },
-        "item_8": "Dedicated customer service",
-        "sub_item_8": "Always available 24/7 to accompany and support customers, ensuring all inquiries and issues are resolved quickly and effectively.",
-        "desc_8": "Committed to delivering a friendly, transparent, and reliable service experience for every customer.",
-        "item_9": "Dedicated customer service",
-        "sub_item_9": "Always available 24/7 to accompany and support customers, ensuring all inquiries and issues are resolved quickly and effectively.",
-        "desc_9": "Committed to delivering a friendly, transparent, and reliable service experience for every customer.",
-        "items_item_9": {
-            "item_1": "Extensive global network",
-            "item_2": "Advanced management-support technology",
-            "item_3": "Team of experienced experts",
-            "item_4": "Team of experienced experts",
-            "item_5": "Team of experienced experts"
+        "solution": {
+            "title": "Comprehensive Solutions",
+            "content": "As one of the leading logistics companies in Vietnam today, we always focus on professionalism, speed, and convenience, in order to provide our customers with the highest quality services. Vietnam Post Logistics has been and is bringing a logistics ecosystem that includes 5 comprehensive solutions for customers ranging from domestic to international, and from B2B to B2C.",
+            "slides": {
+                "slide_1_title": "Contract Logistics",
+                "slide_1_desc": "Efficient warehouse &amp; contract logistics solutions for optimal storage.",
+                "slide_2_title": "Global Logistics",
+                "slide_2_desc": "Providing comprehensive logistics solutions from air, sea, railway, cross-border trucking &amp; more...",
+                "slide_3_title": "Global E-commerce Solution",
+                "slide_3_desc": "Accompanying sellers who want to conquer the international e-commerce market",
+                "slide_4_title": "Domestic Logistics",
+                "slide_4_desc": "Demonstrate responsibility, ensure accurate and correct delivery.",
+                "slide_5_title": "Import-Export Solution",
+                "slide_5_desc": "Comprehensive import-export solutions to streamline your global trade."
+            }
         },
-        "Retailer": "Retail",
-        "Manufacturer": "Manufacturer"
-    },
-    "solution": {
-        "title": "Our Solutions",
-        "description": "Multimodal Transportation",
-        "slides": {
-            "slide_1_title": "Multimodal Transportation",
-            "slide_1_desc": "Combining multiple transportation modes to optimize costs and delivery times.",
-            "slide_2_title": "Modern Warehouse Management",
-            "slide_2_desc": "Automated warehouse systems with advanced technology for efficient inventory management.",
-            "slide_3_title": "Comprehensive Customs Services",
-            "slide_3_desc": "Support for fast customs clearance, minimizing risks and associated costs.",
-            "slide_4_title": "Comprehensive Customs Services",
-            "slide_4_desc": "Support for fast customs clearance, minimizing risks and associated costs."
+        "stats": {
+            "title-1": "Transport to",
+            "stat-1": "230",
+            "desc-1": "Countries & Territories",
+            "title-2": "Transporting",
+            "stat-2": "50000",
+            "desc-2": "containers per month",
+            "title-3": "Exporting",
+            "stat-3": "1200000",
+            "desc-3": "tons each month",
+            "title-4": "Total area",
+            "stat-4": "500000",
+            "desc-4": "m2 warehouse"
+        },
+        "why_choose_us": {
+            "reason_1_title": "reputation",
+            "reason_1_description": "Inheriting the prestigious national brand of Vietnam Post Corporation, Vietnam Post Logistics deserves to be a reliable companion of every customer.",
+            "reason_2_title": "Professional staff",
+            "reason_2_description": "Vietnam Post Logistics owns a team of elite, professional and dedicated human resources, always ready to serve and answer all needs of customers and partners 24/7.",
+            "reason_3_title": "Diverse solutions",
+            "reason_3_description": "Vietnam Post Logistics provides a comprehensive Logistics ecosystem including: Warehousing, International Logistics, International E-commerce, Domestic Logistics and Import-Export.",
+            "reason_4_title": "Fast and flexible",
+            "reason_4_description": "With a network covering and spanning 230 countries and territories, we are committed to providing fast and flexible shipping solutions to customers.",
+            "reason_5_title": "Cost optimization",
+            "reason_5_description": "At Vietnam Post Logistics, customers can experience a variety of Logistics services, thereby helping you optimize costs and choose the most suitable solutions for your business.",
+            "reason_6_title": "Safety - Security",
+            "reason_6_description": "At Vietnam Post Logisitcs, we comply with standards and regulations on customer and goods information security, ensuring trust and peace of mind for service users."
         }
-    },
-    "stats": {
-        "title_1": "Our Achievements",
-        "stat_1": "100+",
-        "desc_1": "Countries served",
-        "stat_2": "5000+",
-        "desc_2": "Satisfied customers",
-        "title_2": "Our Achievements",
-        "stat_3": "20000+",
-        "desc_3": "Shipments per year",
-        "title_3": "Our Achievements",
-        "stat_4": "99.9%",
-        "desc_4": "On-time delivery rate",
-        "title_4": "Our Achievements"
-    },
-    "why_choose_us": {
-        "title": "Why Choose Us",
-        "reason_1_title": "Customized solutions based on customer needs",
-        "reason_1_desciption": "We understand that each business has unique requirements. Our team will work closely with you to design the most suitable logistics solutions, helping to optimize costs and improve operational efficiency.",
-        "reason_2_title": "Modern technology for supply chain management support",
-        "reason_2_description": "We apply advanced technologies such as Warehouse Management Systems (WMS), real-time shipment tracking, and data analytics to ensure your supply chain is always tightly controlled and transparent.",
-        "reason_3_title": "Team of industry-experienced experts",
-        "reason_3_description": "With years of experience in logistics, our team of experts possesses extensive knowledge and skills to handle complex situations, ensuring your goods are always transported safely and on schedule.",
-        "reason_4_title": "Dedicated customer service and 24/7 support",
-        "reason_4_description": "We are committed to providing excellent customer service with a support team always ready to answer any inquiries and handle issues at any time, ensuring you have peace of mind regarding your supply chain.",
-        "reason_5_title": "Team of industry-experienced experts",
-        "reason_5_description": "With years of experience in logistics, our team of experts possesses extensive knowledge and skills to handle complex situations, ensuring your goods are always transported safely and on schedule.",
-        "reason_6_title": "Dedicated customer service and 24/7 support",
-        "reason_6_description": "We are committed to providing excellent customer service with a support team always ready to answer any inquiries and handle issues at any time, ensuring you have peace of mind regarding your supply chain."
-    },
-    "contact": {
-        "title": "Contact Us",
-        "address": "Address",
-        "company": "Company Name",
-        "phone": "Phone Number",
-        "email": "Email",
-        "name": "Full Name"
     }
 }

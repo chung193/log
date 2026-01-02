@@ -1,155 +1,82 @@
 {
-    "menu": {
-        "home": "Trang chủ",
-        "about": "Về chúng tôi",
-        "solutions": "Giải pháp",
-        "services": "Dịch vụ",
-        "contact": "Liên hệ"
-    },
-    "footer": {
-        "office": "Văn phòng Hải Phòng",
-        "office_hp": "Văn phòng Hải Phòng",
-        "office_hp_detail": "Văn phòng Hải Phòng",
-        "office_hn": "Văn phòng Hải Phòng",
-        "office_hn_detail": "Văn phòng Hải Phòng",
-        "contact": "Liên hệ",
-        "phone": "0123456789",
-        "email": "Email",
-        "email_address": "test@gmail.com",
-        "about_us": "Về chúng tôi",
-        "careers": "Cơ sở vật chất",
-        "recruitment": "Tuyển dụng",
-        "company": "Công ty",
-        "solution": "Giải pháp",
-        "services": {
-            "ocean_freight": "Vận tải biển",
-            "air_freight": "Vận tải hàng không",
-            "customers_partner": "Dịch vụ hải quan",
-            "road_rail_transportation": "Vận tải đường bộ & đường sắt",
-            "contract_logistics_warehousing": "Hợp đồng logistics"
+    "components": {
+        "button": {
+            "find-more": "Tìm hiểu thêm"
         },
-        "working_hours": "Thứ Hai – Thứ Sáu | 8:00 – 17:00",
-        "address_detail": "Tòa nhà Bạch Đằng, 268 Trần Nguyên Hãn, Phường Niệm Nghĩa, Quận Lê Chân, Hải Phòng, Việt Nam",
-        "copyright": "© Bản quyền 2025 thuộc về Expeditors Global, Mọi quyền được bảo lưu.",
-        "footer_slogan": "Tại EXPEDITORS GLOBAL, niềm tin, tính chuyên nghiệp và sự tận tâm là nền tảng dịch vụ của chúng tôi. Chúng tôi luôn thực hiện đúng cam kết và mang lại giá trị gia tăng cho khách hàng và đối tác."
-    },
-    "banner": {
-        "slide_1_caption": "Giải pháp logistics toàn diện cho doanh nghiệp của bạn",
-        "slide_2_caption": "Dịch vụ vận tải hàng đầu với mạng lưới toàn cầu",
-        "slide_3_caption": "Tối ưu hóa chuỗi cung ứng với công nghệ tiên tiến"
-    },
-    "button": {
-        "find_more": "READ MORE",
-        "contact_us": "CONTACT"
-    },
-    "about": {
-        "title": "About us",
-        "sub_title": "About us",
-        "content": "Expeditors Global"
-    },
-    "ecosystem": {
-        "title": "Hệ Sinh Thái Logistics vi",
-        "item_1": "Mạng lưới toàn cầu rộng khắp",
-        "sub_item_1": "Kết nối chặt chẽ với các hãng vận chuyển, cảng biển và trung tâm logistics lớn giúp mở rộng khả năng vận hành quốc tế.",
-        "desc_1": "Hệ thống chi nhánh và đối tác phủ khắp nhiều quốc gia, giúp kết nối hàng hóa nhanh chóng và linh hoạt trên toàn thế giới.",
-        "item_2": "Công nghệ tiên tiến hỗ trợ quản lý",
-        "sub_item_2": "Tự động hóa quy trình, giảm thiểu sai sót thủ công và tăng độ chính xác trong quản lý kho bãi, vận tải và chứng từ.",
-        "desc_2": "Ứng dụng các nền tảng số và hệ thống theo dõi hiện đại giúp kiểm soát đơn hàng, lộ trình và dữ liệu theo thời gian thực.",
-        "item_3": "Đội ngũ chuyên gia giàu kinh nghiệm",
-        "desc_3": "Đội ngũ nhân sự am hiểu sâu về logistics, hải quan và chuỗi cung ứng, sẵn sàng tư vấn giải pháp tối ưu cho từng khách hàng.",
-        "sub_item_3": "Kinh nghiệm thực chiến trong nhiều lĩnh vực giúp đội ngũ nhanh chóng thích nghi và xử lý các tình huống phức tạp.",
-        "item_4": "Dịch vụ khách hàng tận tâm",
-        "desc_4": "Luôn đồng hành và hỗ trợ khách hàng 24/7, đảm bảo mọi thắc mắc và sự cố đều được xử lý nhanh chóng và hiệu quả.",
-        "sub_item_4": "Cam kết mang lại trải nghiệm dịch vụ thân thiện, minh bạch và đáng tin cậy cho mọi khách hàng.",
-        "items_item_4": {
-            "item_1": "Mạng lưới toàn cầu rộng khắp",
-            "item_2": "Công nghệ tiên tiến hỗ trợ quản lý",
-            "item_3": "Đội ngũ chuyên gia giàu kinh nghiệm"
+        "home-banner": {
+            "banner-1-caption": "",
+            "banner-2-caption": "Hệ sinh thái",
+            "banner-3-caption": "Giải pháp"
         },
-        "item_5": "Mạng lưới toàn cầu rộng khắp",
-        "items_item_5": {
-            "item_1": "Mạng lưới toàn cầu rộng khắp",
-            "item_2": "Công nghệ tiên tiến hỗ trợ quản lý",
-            "item_3": "Đội ngũ chuyên gia giàu kinh nghiệm"
+        "home-about": {
+            "title": "Lựa chọn tối ưu cho Doanh nghiệp",
+            "sub-title": "Vietnam Post Logistics tự hào là Hệ sinh thái Logistics toàn diện dành cho doanh nghiệp.",
+            "content": "Vietnam Post Logistics được nhiều tập đoàn lớn trong nước và thế giới lựa chọn sử dụng dịch vụ bởi những lợi thế cạnh tranh vượt trội. Không chỉ là một doanh nghiệp nhà nước có thương hiệu uy tín hàng đầu quốc gia, ở Vietnam Post Logistics, chúng tôi có đội ngũ nhân sự chất lượng cao, trẻ trung, chuyên nghiệp, nhiệt tình, trách nhiệm. Chúng tôi sở hữu mạng lưới kho ngoại quan và trung tâm phân phối rộng khắp toàn quốc."
         },
-        "desc_5": "Kết nối chặt chẽ với các hãng vận chuyển, cảng biển và trung tâm logistics lớn giúp mở rộng khả năng vận hành quốc tế.",
-        "sub_item_5": "Hệ thống chi nhánh và đối tác phủ khắp nhiều quốc gia, giúp kết nối hàng hóa nhanh chóng và linh hoạt trên toàn thế giới.",
-        "item_6": "Công nghệ tiên tiến hỗ trợ quản lý",
-        "desc_6": "Tự động hóa quy trình, giảm thiểu sai sót thủ công và tăng độ chính xác trong quản lý kho bãi, vận tải và chứng từ.",
-        "sub_item_6": "Ứng dụng các nền tảng số và hệ thống theo dõi hiện đại giúp kiểm soát đơn hàng, lộ trình và dữ liệu theo thời gian thực.",
-        "item_7": "Đội ngũ chuyên gia giàu kinh nghiệm",
-        "desc_7": "Kinh nghiệm thực chiến trong nhiều lĩnh vực giúp đội ngũ nhanh chóng thích nghi và xử lý các tình huống phức tạp.",
-        "sub_item_7": "Đội ngũ nhân sự am hiểu sâu về logistics, hải quan và chuỗi cung ứng, sẵn sàng tư vấn giải pháp tối ưu cho từng khách hàng.",
-        "items_item_7": {
-            "item_1": "Mạng lưới toàn cầu rộng khắp",
-            "item_2": "Công nghệ tiên tiến hỗ trợ quản lý",
-            "item_3": "Đội ngũ chuyên gia giàu kinh nghiệm"
+        "ecosystem": {
+            "title": "Our Ecosystem",
+            "communication": "Communication",
+            "consumer": "Consumer",
+            "procurement": "Procurement",
+            "raw-materiala": "Raw Materiala",
+            "inbound-logistics": "Inbound Logistics",
+            "supplier": "Supplier",
+            "inbound-logistics-content": "<ul><li>Import Freight: Air, Ocean (FLC & LCL),customs Clearance</li><li>Storage Service: PVMI (bonded warehouse,CFS..), Factory fulfillment center</li><li>Land trucking</li></ul>",
+            "e-commerce": "E-commerce",
+            "e-commerce-content": "<ul><li>E-commerce, B2C delivery</li><li>COD</li><li>E-commerce platform</li></ul>",
+            "supply-chain": "Supply Chain Finance",
+            "supply-chain-content": "Optimize cash flow for supplier or buyer",
+            "last-miles": "Last-miles Delivery",
+            "last-miles-content": "<ul><li>Nation wide Hub & transport network</li><li>Land trucking</li><li>Air shipment</li></ul>",
+            "distribution-service": "Distribution Service",
+            "distributors": "Distributors",
+            "distribution-service-content": "VNP is deploying modern distribution strateg by using nationwide network",
+            "outbound-logistics": "Outbound Logistics",
+            "outbound-logistics-content": "<ul><li>Distribution center</li><li>Fulfillment center</li><li>Land trucking</li><li>Air, Ocean freight</li><li>VAS</li></ul>"
         },
-        "item_8": "Dịch vụ khách hàng tận tâm",
-        "sub_item_8": "Luôn đồng hành và hỗ trợ khách hàng 24/7, đảm bảo mọi thắc mắc và sự cố đều được xử lý nhanh chóng và hiệu quả.",
-        "desc_8": "Cam kết mang lại trải nghiệm dịch vụ thân thiện, minh bạch và đáng tin cậy cho mọi khách hàng.",
-        "item_9": "Dịch vụ khách hàng tận tâm",
-        "sub_item_9": "Luôn đồng hành và hỗ trợ khách hàng 24/7, đảm bảo mọi thắc mắc và sự cố đều được xử lý nhanh chóng và hiệu quả.",
-        "desc_9": "Cam kết mang lại trải nghiệm dịch vụ thân thiện, minh bạch và đáng tin cậy cho mọi khách hàng.",
-        "items_item_9": {
-            "item_1": "Mạng lưới toàn cầu rộng khắp",
-            "item_2": "Công nghệ tiên tiến hỗ trợ quản lý",
-            "item_3": "Đội ngũ chuyên gia giàu kinh nghiệm",
-            "item_4": "Đội ngũ chuyên gia giàu kinh nghiệm",
-            "item_5": "Đội ngũ chuyên gia giàu kinh nghiệm"
+        "solution": {
+            "title": "Giải pháp toàn diện",
+            "content": "Là hệ sinh thái Logistics toàn diện hàng đầu Việt Nam, chúng tôi luôn tập trung hướng đến sự chuyên nghiệp, nhanh chóng và tiện lợi, nhằm cung cấp cho khách hàng những dịch vụ chất lượng nhất. Vietnam Post Logistics đã và đang mang đến một hệ sinh thái Logistics bao gồm 5 giải pháp toàn diện dành cho khách hàng từ nội địa đến Quốc tế.",
+            "slides": {
+                "slide_1_title": "Kho vận",
+                "slide_1_desc": "Giải pháp kho vận thông minh, giúp doanh nghiệp tối ưu hoạt động và nguồn vốn.",
+                "slide_2_title": "Logistics Quốc tế",
+                "slide_2_desc": "Cung cấp giải pháp Logistics toàn diện từ đường biển, hàng không, đường bộ, đường sắt và hơn thế nữa.",
+                "slide_3_title": "Thương mại điện tử Quốc tế",
+                "slide_3_desc": "Nhanh chóng và uy tín, đảm bảo chất lượng giao nhận hai đầu.",
+                "slide_4_title": "Logistics Nội địa",
+                "slide_4_desc": "Đội ngũ xe chuyên nghiệp và chất lượng cao.",
+                "slide_5_title": "Xuất - Nhập khẩu",
+                "slide_5_desc": "Giải pháp xuất nhập khẩu và tài chính chuỗi cung ứng."
+            }
         },
-        "Retailer": "Bán lẻ",
-        "Manufacturer": "Nhà sản xuất"
-    },
-    "solution": {
-        "title": "Giải Pháp Của Chúng Tôi",
-        "description": "Vận Tải Đa Phương Thức",
-        "slides": {
-            "slide_1_title": "Vận Tải Đa Phương Thức",
-            "slide_1_desc": "Kết hợp nhiều phương thức vận tải để tối ưu chi phí và thời gian giao hàng.",
-            "slide_2_title": "Quản Lý Kho Bãi Hiện Đại",
-            "slide_2_desc": "Hệ thống kho bãi tự động với công nghệ tiên tiến giúp quản lý hàng tồn kho hiệu quả.",
-            "slide_3_title": "Dịch Vụ Hải Quan Toàn Diện",
-            "slide_3_desc": "Hỗ trợ thủ tục hải quan nhanh chóng, giảm thiểu rủi ro và chi phí phát sinh.",
-            "slide_4_title": "Dịch Vụ Hải Quan Toàn Diện",
-            "slide_4_desc": "Hỗ trợ thủ tục hải quan nhanh chóng, giảm thiểu rủi ro và chi phí phát sinh."
+        "stats": {
+            "title-1": "Vận chuyển tới",
+            "stat-1": "230",
+            "desc-1": "Quốc gia & vùng lãnh thổ",
+            "title-2": "Vận chuyển",
+            "stat-2": "50000",
+            "desc-2": "Container mỗi tháng",
+            "title-3": "Xuất khẩu",
+            "stat-3": "1200000",
+            "desc-3": "Tấn hàng mỗi tháng",
+            "title-4": "Tổng diện tích",
+            "stat-4": "500000",
+            "desc-4": "m2 kho bãi"
+        },
+        "why_choose_us": {
+            "reason_1_title": "Thương hiệu uy tín",
+            "reason_1_description": "Kế thừa thương hiệu uy tín Quốc gia của Tổng Công ty Bưu điện Việt Nam, Vietnam Post Logistics xứng đáng là người bạn đồng hành đáng tin cậy của mọi khách hàng.",
+            "reason_2_title": "Nhân sự chuyên nghiệp",
+            "reason_2_description": "Sở hữu một đội ngũ nhân lực tinh nhuệ, chuyên nghiệp và tận tâm, luôn sẵn sàng phục vụ, giải đáp mọi nhu cầu khách hàng và đối tác 24/7.",
+            "reason_3_title": "Dịch vụ đa dạng",
+            "reason_3_description": "Chúng tôi cung cấp hệ sinh thái Logistics toàn diện bao gồm: Kho vận, Logistics quốc tế, Thương mại điện tử quốc tế, Logistics nội địa và giải pháp xuất nhập khẩu.",
+            "reason_4_title": "Nhanh chóng linh hoạt",
+            "reason_4_description": "Với mạng lưới phủ sóng toàn quốc và năng lực vận chuyển lên tới 230 Quốc gia và vùng lãnh thổ, chúng tôi cam kết mang đến những giải pháp vận chuyển nhanh chóng, linh hoạt.",
+            "reason_5_title": "Tối ưu chi phí",
+            "reason_5_description": "Tại Vietnam Post Logistics, khách hàng được trải nghiệm đa dạng dịch vụ Logistics từ đó giúp bạn tối ưu chi phí, thiết kế những giải pháp phù hợp nhất với doanh nghiệp.",
+            "reason_6_title": "An toàn - bảo mật",
+            "reason_6_description": "Chúng tôi cũng tuân thủ các tiêu chuẩn và quy định về bảo mật thông tin khách hàng và hàng hóa, đảm bảo sự tin cậy và an tâm cho người sử dụng dịch vụ."
         }
-    },
-    "stats": {
-        "title_1": "Thành Tựu Của Chúng Tôi",
-        "stat_1": "100+",
-        "desc_1": "Quốc gia phục vụ",
-        "stat_2": "5000+",
-        "desc_2": "Khách hàng hài lòng",
-        "title_2": "Thành Tựu Của Chúng Tôi",
-        "stat_3": "20000+",
-        "desc_3": "Lô hàng mỗi năm",
-        "title_3": "Thành Tựu Của Chúng Tôi",
-        "stat_4": "99.9%",
-        "desc_4": "Tỷ lệ giao hàng đúng hẹn",
-        "title_4": "Thành Tựu Của Chúng Tôi"
-    },
-    "why_choose_us": {
-        "title": "Tại Sao Chọn Chúng Tôi",
-        "reason_1_title": "Giải pháp tùy chỉnh theo nhu cầu khách hàng",
-        "reason_1_desciption": "Chúng tôi hiểu rằng mỗi doanh nghiệp có những yêu cầu riêng biệt. Đội ngũ của chúng tôi sẽ làm việc chặt chẽ với bạn để thiết kế các giải pháp logistics phù hợp nhất, giúp tối ưu hóa chi phí và nâng cao hiệu quả vận hành.",
-        "reason_2_title": "Công nghệ hiện đại hỗ trợ quản lý chuỗi cung ứng",
-        "reason_2_description": "Chúng tôi áp dụng các công nghệ tiên tiến như hệ thống quản lý kho (WMS), theo dõi vận đơn thời gian thực và phân tích dữ liệu để đảm bảo rằng chuỗi cung ứng của bạn luôn được kiểm soát chặt chẽ và minh bạch.",
-        "reason_3_title": "Đội ngũ chuyên gia giàu kinh nghiệm trong ngành",
-        "reason_3_description": "Với nhiều năm kinh nghiệm trong lĩnh vực logistics, đội ngũ chuyên gia của chúng tôi có kiến thức sâu rộng và kỹ năng xử lý các tình huống phức tạp, đảm bảo rằng hàng hóa của bạn luôn được vận chuyển an toàn và đúng hạn.",
-        "reason_4_title": "Dịch vụ khách hàng tận tâm và hỗ trợ 24/7",
-        "reason_4_description": "Chúng tôi cam kết cung cấp dịch vụ khách hàng xuất sắc với đội ngũ hỗ trợ luôn sẵn sàng giải đáp mọi thắc mắc và xử lý các vấn đề phát sinh bất cứ lúc nào, đảm bảo bạn luôn yên tâm về chuỗi cung ứng của mình.",
-        "reason_5_title": "Đội ngũ chuyên gia giàu kinh nghiệm trong ngành",
-        "reason_5_description": "Với nhiều năm kinh nghiệm trong lĩnh vực logistics, đội ngũ chuyên gia của chúng tôi có kiến thức sâu rộng và kỹ năng xử lý các tình huống phức tạp, đảm bảo rằng hàng hóa của bạn luôn được vận chuyển an toàn và đúng hạn.",
-        "reason_6_title": "Dịch vụ khách hàng tận tâm và hỗ trợ 24/7",
-        "reason_6_description": "Chúng tôi cam kết cung cấp dịch vụ khách hàng xuất sắc với đội ngũ hỗ trợ luôn sẵn sàng giải đáp mọi thắc mắc và xử lý các vấn đề phát sinh bất cứ lúc nào, đảm bảo bạn luôn yên tâm về chuỗi cung ứng của mình."
-    },
-    "contact": {
-        "title": "Liên Hệ Với Chúng Tôi",
-        "address": "Địa chỉ",
-        "company": "Tên công ty",
-        "phone": "Số điện thoại",
-        "email": "Email",
-        "name": "Họ và tên"
     }
 }

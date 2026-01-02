@@ -1,0 +1,57 @@
+/* Fix cho icon và layout */
+.menu-link {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    position: relative;
+}
+
+.menu-link b {
+    display: inline-flex !important;
+    align-items: center;
+    line-height: 1;
+}
+
+.menu-link i.fa-chevron-down {
+    font-size: 12px !important;
+    margin-left: 2px !important;
+    position: relative;
+    z-index: 10 !important;
+    /* Đảm bảo icon trên submenu */
+}
+
+/* Fix submenu z-index thấp hơn icon */
+.menu-list .menu-list,
+.sub-sub-menu {
+    z-index: 5 !important;
+}
+
+/* Hiệu ứng xoay khi hover */
+.menu-item:hover .fa-chevron-down {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+/* Mobile menu icons */
+.mobile-menu-toggle {
+    cursor: pointer;
+}
+
+/* Đảm bảo thẻ b không gây xuống dòng */
+.menu-item b {
+    display: inline-block !important;
+    vertical-align: middle;
+}
+
+.menu-link {
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon-chevron,
+.icon-chevron-hover {
+    pointer-events: auto;
+    flex-shrink: 0;
+}

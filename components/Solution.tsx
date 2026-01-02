@@ -29,12 +29,12 @@ const Solution: React.FC<SolutionProps> = ({ initialLocale = 'en' }) => {
                     <div className="head-verti center mb-32" style={{ textAlign: 'center', marginBottom: '32px' }}>
                         <div className="line">
                             <h2 className="title title-48" style={{ fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: '700', marginBottom: '20px' }}>
-                                {t('solution.title')}
+                                {t('components.solution.title')}
                             </h2>
                         </div>
                         <div className="line">
                             <p className="desc" style={{ fontSize: '16px', lineHeight: '1.6', maxWidth: '800px', margin: '0 auto', color: '#666' }}>
-                                {t('solution.description')}
+                                {t('components.solution.content')}
                             </p>
                         </div>
                     </div>

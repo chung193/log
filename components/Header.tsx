@@ -7,6 +7,8 @@ import LanguageSwitcher from './LanguageSwitcher'
 import { useSelector, useDispatch } from 'react-redux'
 import type { RootState } from '@/redux/store'
 import { setMenuActive } from '@/redux/commonSlice'
+import './Header.css';
+import menuItems from '@/data/menu'
 
 interface MenuItem {
     id: string
@@ -72,138 +74,7 @@ export default function Header({ initialLocale = 'en' }) {
         }
     }, [pathname, dispatch])
 
-    // Menu data với ID và English names
-    const menuItems = useMemo<MenuItem[]>(() => [
-        {
-            id: 'home',
-            name: 'Trang chủ',
-            nameEn: 'Home',
-            href: '/',
-            isCurrent: true
-        },
 
-        {
-            id: 'company',
-            name: 'Công ty',
-            nameEn: 'Company',
-            href: 'javascript:;',
-            hasChildren: true,
-            submenu: [
-                {
-                    id: 'about-us',
-                    name: 'Về chúng tôi',
-                    nameEn: 'About Us',
-                    href: '/cong-ty/ve-chung-toi/',
-                    hasChildren: true
-                },
-
-            ]
-        },
-        {
-            id: 'solutions',
-            name: 'Giải pháp',
-            nameEn: 'Solutions',
-            href: 'javascript:;',
-            hasChildren: true,
-            submenu: [
-                {
-                    id: 'warehouse',
-                    name: 'Kho vận',
-                    nameEn: 'Warehouse',
-                    href: '/giai-phap/kho-van/',
-                    hasChildren: false
-                },
-                {
-                    id: 'logistics',
-                    name: 'Logistics quốc tế',
-                    nameEn: 'Logistics quốc tế',
-                    href: 'javascript:;',
-                    hasChildren: true,
-                    submenu: [
-                        {
-                            id: 'distribution-center',
-                            name: 'Vận tải đường biển',
-                            nameEn: 'Distribution Center',
-                            href: '/giai-phap/trung-tam-phan-phoi/',
-                            hasChildren: false
-                        },
-                        {
-                            id: 'fulfillment-service',
-                            name: 'Chuyển phát nhanh quốc tế',
-                            nameEn: 'Fulfillment Service',
-                            href: '/giai-phap/dich-vu-fulfillment/',
-                            hasChildren: false
-                        },
-                        {
-                            id: 'fulfillment-service',
-                            name: 'Vận tải hàng không',
-                            nameEn: 'Fulfillment Service',
-                            href: '/giai-phap/dich-vu-fulfillment/',
-                            hasChildren: false
-                        },
-                        {
-                            id: 'fulfillment-service',
-                            name: 'Đường bộ xuyên biên giới',
-                            nameEn: 'Fulfillment Service',
-                            href: '/giai-phap/dich-vu-fulfillment/',
-                            hasChildren: false
-                        },
-                        {
-                            id: 'fulfillment-service',
-                            name: 'Vận tải đường sắt',
-                            nameEn: 'Fulfillment Service',
-                            href: '/giai-phap/dich-vu-fulfillment/',
-                            hasChildren: false
-                        }
-                    ]
-                },
-                {
-                    id: 'international-logistics',
-                    name: 'TMĐT quốc tế',
-                    nameEn: 'International Logistics',
-                    href: 'javascript:;',
-                    hasChildren: false
-                },
-                {
-                    id: 'international-logistics',
-                    name: 'Logistics nội địa',
-                    nameEn: 'International Logistics',
-                    href: 'javascript:;',
-                    hasChildren: false
-                },
-                {
-                    id: 'ecommerce-international',
-                    name: 'Xuất nhập khẩu',
-                    nameEn: 'International E-commerce',
-                    href: 'javascript:;',
-                    hasChildren: true,
-                    submenu: [
-                        {
-                            id: 'ecommerce-solutions',
-                            name: 'Tài chính chuỗi cung ứng',
-                            nameEn: 'E-commerce Solutions',
-                            href: '/giai-phap/giai-phap-thuong-mai-dien-tu/',
-                            hasChildren: false
-                        },
-                        {
-                            id: 'last-mile-delivery',
-                            name: 'Ủy thác xuất nhập khẩu',
-                            nameEn: 'Last Mile Delivery',
-                            href: '/giai-phap/giao-hang-chang-cuoi/',
-                            hasChildren: false
-                        }
-                    ]
-                },
-            ]
-        },
-        {
-            id: 'contact',
-            name: 'Liên hệ',
-            nameEn: 'Contact',
-            href: '/lien-he/',
-            hasChildren: false
-        },
-    ], [])
 
     const socialLinks = useMemo(() => [
         {
@@ -267,18 +138,20 @@ export default function Header({ initialLocale = 'en' }) {
         return (
             <li
                 key={`${item.id}-${level}`}
+                style={{ cursor: 'pointer' }}
                 className={`parent fz16 menu-item ${hasChildren ? 'menu-item-has-children dropdown' : ''} ${isCurrentPage ? 'current-menu-item' : ''}`}
                 onMouseEnter={() => hasChildren && handleDesktopMenuItemHover(item.id)}
                 onMouseLeave={() => hasChildren && handleDesktopMenuItemHover(null)}
             >
                 {hasChildren && item.href === 'javascript:;' ? (
-                    // Dropdown parent không clickable
+                    // Dropdown parent không clickable - ICON NẰM TRONG CÙNG
                     <span className="menu-link">
                         {item.name}
-                        {hasChildren && <i className="fa-solid fa-circle-plus"></i>}
+                        {hasChildren && <b><i className="fa-solid fa-circle-plus"></i></b>}
+                        {hasChildren && <b><i className="fa fa-solid fa-chevron-down"></i></b>}
                     </span>
                 ) : (
-                    // Real link với Next.js Link
+                    // Real link với Next.js Link - ICON NẰM TRONG CÙNG
                     <Link
                         href={item.href}
                         className="menu-link"
@@ -286,14 +159,14 @@ export default function Header({ initialLocale = 'en' }) {
                         scroll={false}
                     >
                         {item.name}
-                        {hasChildren && <i className="fa-solid fa-circle-plus"></i>}
+                        {hasChildren && <b><i className="fa-solid fa-circle-plus"></i></b>}
+                        {hasChildren && <b><i className="fa fa-solid fa-chevron-down"></i></b>}
                     </Link>
                 )}
-                {hasChildren && <i className="bx bxs-chevron-down"></i>}
 
                 {/* Show submenu on hover or active */}
                 {showSubmenu && item.submenu && (
-                    <ul className={`menu-list ${level > 0 ? 'sub-sub-menu' : ''}`}>
+                    <ul className={`menu-list ${level > 0 ? 'sub-sub-menu' : ''}`} style={{ zIndex: 5 }}>
                         {item.submenu.map((subItem, subIndex) => {
                             const isSubCurrent = pathname === subItem.href
                             return (
@@ -305,7 +178,8 @@ export default function Header({ initialLocale = 'en' }) {
                                         // Dropdown parent không clickable
                                         <span className="menu-link">
                                             {subItem.name}
-                                            {subItem.hasChildren && <i className="fa-solid fa-circle-plus"></i>}
+                                            {subItem.hasChildren && <b><i className="fa-solid fa-circle-plus"></i></b>}
+                                            {subItem.hasChildren && <b><i className="fa fa-solid fa-chevron-down"></i></b>}
                                         </span>
                                     ) : (
                                         // Real link
@@ -316,13 +190,13 @@ export default function Header({ initialLocale = 'en' }) {
                                             scroll={false}
                                         >
                                             {subItem.name}
-                                            {subItem.hasChildren && <i className="fa-solid fa-circle-plus"></i>}
+                                            {subItem.hasChildren && <b><i className="fas fa-solid fa-circle-plus"></i></b>}
+                                            {subItem.hasChildren && <b><i className="fa fa-solid fa-chevron-down"></i></b>}
                                         </Link>
                                     )}
-                                    {subItem.submenu && <i className="bx bxs-chevron-down"></i>}
 
                                     {subItem.submenu && (
-                                        <ul className="menu-list">
+                                        <ul className="menu-list" style={{ zIndex: 4 }}>
                                             {subItem.submenu.map((subSubItem, subSubIndex) => {
                                                 const isSubSubCurrent = pathname === subSubItem.href
                                                 return (
@@ -337,7 +211,7 @@ export default function Header({ initialLocale = 'en' }) {
                                                             scroll={false}
                                                         >
                                                             {subSubItem.name}
-                                                            {subSubItem.hasChildren && <i className="fa-solid fa-circle-plus"></i>}
+                                                            {subSubItem.hasChildren && <b><i className="fa-solid fa-circle-plus"></i></b>}
                                                         </Link>
                                                     </li>
                                                 )
@@ -366,7 +240,7 @@ export default function Header({ initialLocale = 'en' }) {
                 className={`parent fz16 menu-item ${hasChildren ? 'menu-item-has-children dropdown' : ''} ${isCurrentPage ? 'current-menu-item' : ''}`}
             >
                 {hasChildren && item.href === 'javascript:;' ? (
-                    // Dropdown parent chỉ để toggle
+                    // Dropdown parent chỉ để toggle - ICON NẰM TRONG CÙNG
                     <span
                         className="menu-link"
                         onClick={(e) => {
@@ -376,20 +250,23 @@ export default function Header({ initialLocale = 'en' }) {
                     >
                         {item.name}
                         {hasChildren && (
-                            <i
-                                className={`fa-solid ${isOpen ? 'fa-circle-minus' : 'fa-circle-plus'} mobile-menu-toggle`}
-                                onClick={(e) => {
-                                    if (hasChildren) {
-                                        e.preventDefault()
-                                        e.stopPropagation()
-                                        toggleMobileMenu(menuKey)
-                                    }
-                                }}
-                            ></i>
+                            <>
+                                <b><i
+                                    className={`fa-solid ${isOpen ? 'fa-circle-minus' : 'fa-circle-plus'} mobile-menu-toggle`}
+                                    onClick={(e) => {
+                                        if (hasChildren) {
+                                            e.preventDefault()
+                                            e.stopPropagation()
+                                            toggleMobileMenu(menuKey)
+                                        }
+                                    }}
+                                ></i></b>
+                                <b><i className="fa fa-solid fa-chevron-down"></i></b>
+                            </>
                         )}
                     </span>
                 ) : (
-                    // Real link với Next.js Link
+                    // Real link với Next.js Link - ICON NẰM TRONG CÙNG
                     <Link
                         href={item.href}
                         className="menu-link"
@@ -401,20 +278,22 @@ export default function Header({ initialLocale = 'en' }) {
                     >
                         {item.name}
                         {hasChildren && (
-                            <i
-                                className={`fa-solid ${isOpen ? 'fa-circle-minus' : 'fa-circle-plus'} mobile-menu-toggle`}
-                                onClick={(e) => {
-                                    if (hasChildren && item.href === 'javascript:;') {
-                                        e.preventDefault()
-                                        e.stopPropagation()
-                                        toggleMobileMenu(menuKey)
-                                    }
-                                }}
-                            ></i>
+                            <>
+                                <b><i
+                                    className={`fa-solid ${isOpen ? 'fa-circle-minus' : 'fa-circle-plus'} mobile-menu-toggle`}
+                                    onClick={(e) => {
+                                        if (hasChildren && item.href === 'javascript:;') {
+                                            e.preventDefault()
+                                            e.stopPropagation()
+                                            toggleMobileMenu(menuKey)
+                                        }
+                                    }}
+                                ></i></b>
+                                <b><i className="fa fa-solid fa-chevron-down"></i></b>
+                            </>
                         )}
                     </Link>
                 )}
-                {hasChildren && <i className="bx bxs-chevron-down"></i>}
 
                 {hasChildren && item.submenu && isOpen && (
                     <ul className="menu-list">
@@ -429,7 +308,7 @@ export default function Header({ initialLocale = 'en' }) {
                                     className={`parent fz16 menu-item ${subItem.submenu ? 'menu-item-has-children dropdown' : ''} ${isSubCurrent ? 'current-menu-item' : ''}`}
                                 >
                                     {subItem.submenu && subItem.href === 'javascript:;' ? (
-                                        // Dropdown parent
+                                        // Dropdown parent - ICON NẰM TRONG CÙNG
                                         <span
                                             className="menu-link"
                                             onClick={(e) => {
@@ -439,20 +318,23 @@ export default function Header({ initialLocale = 'en' }) {
                                         >
                                             {subItem.name}
                                             {subItem.hasChildren && (
-                                                <i
-                                                    className={`fa-solid ${isSubOpen ? 'fa-circle-minus' : 'fa-circle-plus'} mobile-menu-toggle`}
-                                                    onClick={(e) => {
-                                                        if (subItem.hasChildren) {
-                                                            e.preventDefault()
-                                                            e.stopPropagation()
-                                                            toggleMobileMenu(subMenuKey)
-                                                        }
-                                                    }}
-                                                ></i>
+                                                <>
+                                                    <b><i
+                                                        className={`fa-solid ${isSubOpen ? 'fa-circle-minus' : 'fa-circle-plus'} mobile-menu-toggle`}
+                                                        onClick={(e) => {
+                                                            if (subItem.hasChildren) {
+                                                                e.preventDefault()
+                                                                e.stopPropagation()
+                                                                toggleMobileMenu(subMenuKey)
+                                                            }
+                                                        }}
+                                                    ></i></b>
+                                                    <b><i className="fa fa-solid fa-chevron-down"></i></b>
+                                                </>
                                             )}
                                         </span>
                                     ) : (
-                                        // Real link
+                                        // Real link - ICON NẰM TRONG CÙNG
                                         <Link
                                             href={subItem.href}
                                             className="menu-link"
@@ -464,20 +346,22 @@ export default function Header({ initialLocale = 'en' }) {
                                         >
                                             {subItem.name}
                                             {subItem.hasChildren && (
-                                                <i
-                                                    className={`fa-solid ${isSubOpen ? 'fa-circle-minus' : 'fa-circle-plus'} mobile-menu-toggle`}
-                                                    onClick={(e) => {
-                                                        if (subItem.hasChildren && subItem.href === 'javascript:;') {
-                                                            e.preventDefault()
-                                                            e.stopPropagation()
-                                                            toggleMobileMenu(subMenuKey)
-                                                        }
-                                                    }}
-                                                ></i>
+                                                <>
+                                                    <b><i
+                                                        className={`fa-solid ${isSubOpen ? 'fa-circle-minus' : 'fa-circle-plus'} mobile-menu-toggle`}
+                                                        onClick={(e) => {
+                                                            if (subItem.hasChildren && subItem.href === 'javascript:;') {
+                                                                e.preventDefault()
+                                                                e.stopPropagation()
+                                                                toggleMobileMenu(subMenuKey)
+                                                            }
+                                                        }}
+                                                    ></i></b>
+                                                    <b><i className="fa fa-solid fa-chevron-down"></i></b>
+                                                </>
                                             )}
                                         </Link>
                                     )}
-                                    {subItem.submenu && <i className="bx bxs-chevron-down"></i>}
 
                                     {subItem.submenu && isSubOpen && (
                                         <ul className="menu-list">
@@ -498,7 +382,7 @@ export default function Header({ initialLocale = 'en' }) {
                                                             scroll={false}
                                                         >
                                                             {subSubItem.name}
-                                                            {subSubItem.hasChildren && <i className="fa-solid fa-circle-plus"></i>}
+                                                            {subSubItem.hasChildren && <b><i className="fa-solid fa-circle-plus"></i></b>}
                                                         </Link>
                                                     </li>
                                                 )

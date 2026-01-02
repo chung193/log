@@ -17,7 +17,6 @@ const commonSlice = createSlice({
     initialState,
     reducers: {
         setMenuActive: (state, action: PayloadAction<string>) => {
-            debugger
             state.menu.active = action.payload
         },
     },

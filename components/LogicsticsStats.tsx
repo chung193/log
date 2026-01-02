@@ -46,7 +46,7 @@ const StatCard = ({ value, prefix = '', suffix = '', delay = 0 }: { value: numbe
 
 const LogisticsStats = ({ initialLocale = 'en' }) => {
     const searchParams = useSearchParams();
-    const langParam = searchParams.get('lang');
+    const langParam = searchParams.get('components.lang');
 
     const locale: Locale =
         langParam === 'en' || langParam === 'vi'
@@ -116,7 +116,7 @@ const LogisticsStats = ({ initialLocale = 'en' }) => {
                                     color: '#FFF',
                                     opacity: 0.95
                                 }}>
-                                    {t('stats.title_1')}
+                                    {t('components.stats.title-1')}
                                 </p>
                                 <h2 style={{
                                     margin: '0 0 15px 0',
@@ -126,7 +126,7 @@ const LogisticsStats = ({ initialLocale = 'en' }) => {
                                     lineHeight: '1',
                                     letterSpacing: '-2px'
                                 }}>
-                                    <StatCard value={t('stats.stat_1')} delay={0} />
+                                    <StatCard value={parseInt(t('components.stats.stat-1'))} delay={0} />
                                 </h2>
                                 <p style={{
                                     margin: 0,
@@ -135,7 +135,7 @@ const LogisticsStats = ({ initialLocale = 'en' }) => {
                                     color: '#FFF',
                                     opacity: 0.95
                                 }}>
-                                    {t('stats.desc_1')}
+                                    {t('components.stats.desc-1')}
                                 </p>
                             </div>
                         </div>
@@ -175,7 +175,7 @@ const LogisticsStats = ({ initialLocale = 'en' }) => {
                                     color: '#FFF',
                                     opacity: 0.95
                                 }}>
-                                    {t('stats.title_2')}
+                                    {t('components.stats.title-2')}
                                 </p>
                                 <h2 style={{
                                     margin: '0 0 10px 0',
@@ -185,7 +185,7 @@ const LogisticsStats = ({ initialLocale = 'en' }) => {
                                     lineHeight: '1',
                                     letterSpacing: '-1px'
                                 }}>
-                                    <StatCard value={t('stats.stat_2')} delay={200} />
+                                    <StatCard value={parseInt(t('components.stats.stat-2'))} delay={200} />
                                 </h2>
                                 <p style={{
                                     margin: 0,
@@ -194,7 +194,7 @@ const LogisticsStats = ({ initialLocale = 'en' }) => {
                                     color: '#FFF',
                                     opacity: 0.95
                                 }}>
-                                    {t('stats.desc_2')}
+                                    {t('components.stats.desc-2')}
                                 </p>
                             </div>
                         </div>
@@ -242,7 +242,7 @@ const LogisticsStats = ({ initialLocale = 'en' }) => {
                                     opacity: 0.95,
                                     textAlign: 'right'
                                 }}>
-                                    {t('stats.title_2')}
+                                    {t('components.stats.title-2')}
                                 </p>
                                 <h2 style={{
                                     margin: '0 0 10px 0',
@@ -253,7 +253,7 @@ const LogisticsStats = ({ initialLocale = 'en' }) => {
                                     textAlign: 'right',
                                     letterSpacing: '-1px'
                                 }}>
-                                    <StatCard value={t('stats.stat_2')} delay={400} />
+                                    <StatCard value={parseInt(t('components.stats.stat-2'))} delay={400} />
                                 </h2>
                                 <p style={{
                                     margin: 0,
@@ -263,7 +263,7 @@ const LogisticsStats = ({ initialLocale = 'en' }) => {
                                     opacity: 0.95,
                                     textAlign: 'right'
                                 }}>
-                                    {t('stats.desc_2')}
+                                    {t('components.stats.desc-2')}
                                 </p>
                             </div>
                         </div>
@@ -302,7 +302,7 @@ const LogisticsStats = ({ initialLocale = 'en' }) => {
                                     color: '#FFF',
                                     opacity: 0.95
                                 }}>
-                                    {t('stats.title_4')}
+                                    {t('components.stats.title-4')}
                                 </p>
                                 <h2 style={{
                                     margin: '0 0 10px 0',
@@ -312,7 +312,7 @@ const LogisticsStats = ({ initialLocale = 'en' }) => {
                                     lineHeight: '1',
                                     letterSpacing: '-1px'
                                 }}>
-                                    <StatCard value={t('stats.stat_4')} delay={600} />
+                                    <StatCard value={parseInt(t('components.stats.stat-4'))} delay={600} />
                                 </h2>
                                 <p style={{
                                     margin: 0,
@@ -321,7 +321,7 @@ const LogisticsStats = ({ initialLocale = 'en' }) => {
                                     color: '#FFF',
                                     opacity: 0.95
                                 }}>
-                                    {t('stats.desc_4')}
+                                    {t('components.stats.desc-4')}
                                 </p>
                             </div>
                         </div>

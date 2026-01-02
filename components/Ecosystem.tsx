@@ -1,44 +1,26 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
 import './Ecosystem.css';
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
 
 interface LogisticsItemProps {
     title: string;
     subtitle?: string;
     description?: string;
-    items?: string[];
+    content?: string;
     twoColumns?: boolean;
 }
 
-const LogisticsItem: React.FC<LogisticsItemProps> = ({ title, subtitle, description, items, twoColumns }) => {
+const LogisticsItem: React.FC<LogisticsItemProps> = ({ title, subtitle, description, content, twoColumns }) => {
     return (
         <div className="homes-logis-item col">
             <div className="inner">
                 <div className="des">
                     <p className="des">{title}</p>
                     {description && <p className="sub">{description}</p>}
-                    {items && items.length > 0 && (
-                        twoColumns ? (
-                            <div className="two-column-list">
-                                <ul>
-                                    {items.slice(0, Math.ceil(items.length / 2)).map((item, idx) => (
-                                        <li key={idx}>{item}</li>
-                                    ))}
-                                </ul>
-                                <ul>
-                                    {items.slice(Math.ceil(items.length / 2)).map((item, idx) => (
-                                        <li key={idx}>{item}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ) : (
-                            <ul>
-                                {items.map((item, idx) => (
-                                    <li key={idx}>{item}</li>
-                                ))}
-                            </ul>
-                        )
-                    )}
+                    <div dangerouslySetInnerHTML={{ __html: content }} />
                 </div>
                 {subtitle && <p className="tt">{subtitle}</p>}
             </div>
@@ -115,7 +97,16 @@ const CircleIcon: React.FC<CircleIconProps> = ({ src, alt, angle }) => {
     );
 };
 
-const Ecosystem: React.FC = () => {
+const Ecosystem: React.FC = ({ initialLocale = 'en' }) => {
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
+
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
     const circleIcons: CircleIconProps[] = [
         {
             src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-1.svg',
@@ -156,7 +147,7 @@ const Ecosystem: React.FC = () => {
                     <div className="head-verti center mb-32">
                         <div className="line aos-init aos-animate" data-aos="fade-up-cus">
                             <h2 className="title title-48 add-className text-verti is-inview">
-                                Hệ sinh thái Logistics
+                                {t('components.ecosystem.title')}
                             </h2>
                         </div>
                     </div>
@@ -164,35 +155,27 @@ const Ecosystem: React.FC = () => {
                         <div className="homes-logis-list row gap-res">
                             {/* Communication */}
                             <LogisticsItem
-                                title="Communication"
-                                subtitle="Consumer"
+                                title={t('components.ecosystem.communication')}
+                                subtitle={t('components.ecosystem.consumer')}
                             />
 
                             {/* Procurement */}
                             <LogisticsItem
-                                title="Procurement"
-                                subtitle="Raw Materiala"
+                                title={t('components.ecosystem.procurement')}
+                                subtitle={t('components.ecosystem.raw-materiala')}
                             />
 
                             {/* Inbound Logistics */}
                             <LogisticsItem
-                                title="Inbound Logistics"
-                                subtitle="Supplier"
-                                items={[
-                                    'Import Freight: Air, Ocean (FLC & LCL),customs Clearance',
-                                    'Storage Service: PVMI (bonded warehouse,CFS..), Factory fulfillment center',
-                                    'Land trucking'
-                                ]}
+                                title={t('components.ecosystem.inbound-logistics')}
+                                subtitle={t('components.ecosystem.supplier')}
+                                content={t('components.ecosystem.inbound-logistics-content')}
                             />
 
                             {/* E-commerce */}
                             <LogisticsItem
-                                title="E-commerce"
-                                items={[
-                                    'E-commerce, B2C delivery',
-                                    'COD',
-                                    'E-commerce platform'
-                                ]}
+                                title={t('components.ecosystem.e-commerce')}
+                                content={t('components.ecosystem.e-commerce-content')}
                             />
 
                             {/* Circle Center */}
@@ -231,37 +214,27 @@ const Ecosystem: React.FC = () => {
 
                             {/* Supply Chain Finance */}
                             <LogisticsItem
-                                title="Supply Chain Finance"
-                                description="Optimize cash flow for supplier or buyer"
+                                title={t('components.ecosystem.supply-chain')}
+                                description={t('components.ecosystem.supply-chain-content')}
                             />
 
                             {/* Last-miles Delivery */}
                             <LogisticsItem
-                                title="Last-miles Delivery"
-                                items={[
-                                    'Nation wide Hub & transport network',
-                                    'Land trucking',
-                                    'Air shipment'
-                                ]}
+                                title={t('components.ecosystem.last-miles')}
+                                content={t('components.ecosystem.last-miles-content')}
                             />
 
                             {/* Distribution Service */}
                             <LogisticsItem
-                                title="Distribution Service"
-                                subtitle="Distributors"
-                                description="VNP is deploying modern distribution strateg by using nationwide networl"
+                                title={t('components.ecosystem.distribution-service')}
+                                subtitle={t('components.ecosystem.distributors')}
+                                content={t('components.ecosystem.distribution-service-content')}
                             />
 
                             {/* Outbound Logistics */}
                             <LogisticsItem
-                                title="Outbound Logistics"
-                                items={[
-                                    'Distribution center',
-                                    'Fulfillment center',
-                                    'Land trucking',
-                                    'Air, Ocean freight',
-                                    'VAS'
-                                ]}
+                                title={t('components.ecosystem.outbound-logistics')}
+                                content={t('components.ecosystem.outbound-logistics-content')}
                                 twoColumns={true}
                             />
                         </div>

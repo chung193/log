@@ -7,7 +7,7 @@ import { Locale } from '@/lib/i18n';
 const why_choose_us = ({ initialLocale = 'en' }) => {
     const [hoveredId, setHoveredId] = useState<number | null>(null);
     const searchParams = useSearchParams();
-    const langParam = searchParams.get('lang');
+    const langParam = searchParams.get('components.lang');
 
     const locale: Locale =
         langParam === 'en' || langParam === 'vi'
@@ -19,43 +19,43 @@ const why_choose_us = ({ initialLocale = 'en' }) => {
         {
             id: 1,
             icon: '⚡',
-            title: t('why_choose_us.reason_1_title'),
-            description: t('why_choose_us.reason_1_description'),
+            title: t('components.why_choose_us.reason_1_title'),
+            description: t('components.why_choose_us.reason_1_description'),
             hasArrow: true
         },
         {
             id: 2,
             icon: '✱',
-            title: t('why_choose_us.reason_2_title'),
-            description: t('why_choose_us.reason_2_description'),
+            title: t('components.why_choose_us.reason_2_title'),
+            description: t('components.why_choose_us.reason_2_description'),
             hasArrow: true
         },
         {
             id: 3,
             icon: '🎁',
-            title: t('why_choose_us.reason_3_title'),
-            description: t('why_choose_us.reason_3_description'),
+            title: t('components.why_choose_us.reason_3_title'),
+            description: t('components.why_choose_us.reason_3_description'),
             hasArrow: true
         },
         {
             id: 4,
             icon: '⚡',
-            title: t('why_choose_us.reason_4_title'),
-            description: t('why_choose_us.reason_4_description'),
+            title: t('components.why_choose_us.reason_4_title'),
+            description: t('components.why_choose_us.reason_4_description'),
             hasArrow: true
         },
         {
             id: 5,
             icon: '💰',
-            title: t('why_choose_us.reason_5_title'),
-            description: t('why_choose_us.reason_5_description'),
+            title: t('components.why_choose_us.reason_5_title'),
+            description: t('components.why_choose_us.reason_5_description'),
             hasArrow: true
         },
         {
             id: 6,
             icon: '🔒',
-            title: t('why_choose_us.reason_6_title'),
-            description: t('why_choose_us.reason_6_description'),
+            title: t('components.why_choose_us.reason_6_title'),
+            description: t('components.why_choose_us.reason_6_description'),
             hasArrow: true
         },
     ];

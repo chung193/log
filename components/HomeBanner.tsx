@@ -26,19 +26,19 @@ export default function HomeBanner({ initialLocale = 'en' }) {
         {
             id: 1,
             image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&h=900&fit=crop',
-            title: t('banner.slide_1_caption'),
+            title: t('components.home-banner.banner-1-caption'),
             link: '/giai-phap/giai-phap-cross-border-truck/'
         },
         {
             id: 2,
             image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1600&h=900&fit=crop',
-            title: t('banner.slide_2_caption'),
+            title: t('components.home-banner.banner-2-caption'),
             link: '/giai-phap/giai-phap-cross-border-truck/'
         },
         {
             id: 3,
             image: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1600&h=900&fit=crop',
-            title: t('banner.slide_3_caption'),
+            title: t('components.home-banner.banner-3-caption'),
             link: '/giai-phap/thuong-mai-dien-tu-quoc-te/'
         }
     ]
@@ -81,7 +81,7 @@ export default function HomeBanner({ initialLocale = 'en' }) {
                         <div className="find-more-button">
                             <FindMoreButton
                                 href={slides[activeIndex].link}
-                                label={t('button.find_more')}
+                                label={t('components.button.find-more')}
                             />
                         </div>
                     </div>

@@ -28,11 +28,11 @@ const HomeAbout: React.FC<HomeAboutProps> = ({
     return (
         <section className="business-section">
             <div className="business-content">
-                <h2 className="business-title">{t('about.title')}</h2>
-                <p className="business-subtitle">{t('about.sub_title')}</p>
-                <p className="business-description">{t('about.content')}</p>
+                <h2 className="business-title">{t('components.home-about.title')}</h2>
+                <p className="business-subtitle">{t('components.home-about.sub-title')}</p>
+                <p className="business-description">{t('components.home-about.content')}</p>
 
-                <FindMoreButton onClick={onButtonClick} label={t('button.find_more')} />
+                <FindMoreButton onClick={onButtonClick} label={t('components.button.find-more')} />
             </div>
         </section>
     );

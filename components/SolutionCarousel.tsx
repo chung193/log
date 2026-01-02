@@ -18,32 +18,32 @@ const SolutionCarousel: React.FC = ({ initialLocale = 'en' }) => {
     const { t } = useTranslations(locale);
     const slides = [
         {
-            title: t('solution.slides.slide_1_title'),
-            description: t('solution.slides.slide_1_desc'),
+            title: t('components.solution.slides.slide_1_title'),
+            description: t('components.solution.slides.slide_1_desc'),
             image: 'https://vietnampostlogistics.com/wp-content/uploads/2025/04/kv.jpg',
             link: 'https://vietnampostlogistics.com/giai-phap/giai-phap-kho-van/'
         },
         {
-            title: t('solution.slides.slide_2_title'),
-            description: t('solution.slides.slide_2_desc'),
+            title: t('components.solution.slides.slide_2_title'),
+            description: t('components.solution.slides.slide_2_desc'),
             image: 'https://vietnampostlogistics.com/wp-content/uploads/2025/04/Untitled-1-1.jpg',
             link: 'https://vietnampostlogistics.com/giai-phap/giai-phap-sea-freight/'
         },
         {
-            title: t('solution.slides.slide_3_title'),
-            description: t('solution.slides.slide_3_desc'),
+            title: t('components.solution.slides.slide_3_title'),
+            description: t('components.solution.slides.slide_3_desc'),
             image: 'https://vietnampostlogistics.com/wp-content/uploads/2025/04/Untitled-1-1.jpg',
             link: 'https://vietnampostlogistics.com/giai-phap/giai-phap-sea-freight/'
         },
         {
-            title: t('solution.slides.slide_4_title'),
-            description: t('solution.slides.slide_4_desc'),
+            title: t('components.solution.slides.slide_4_title'),
+            description: t('components.solution.slides.slide_4_desc'),
             image: 'https://vietnampostlogistics.com/wp-content/uploads/2025/04/Untitled-1-1.jpg',
             link: 'https://vietnampostlogistics.com/giai-phap/giai-phap-sea-freight/'
         },
         {
-            title: t('solution.slides.slide_4_title'),
-            description: t('solution.slides.slide_4_desc'),
+            title: t('components.solution.slides.slide_5_title'),
+            description: t('components.solution.slides.slide_5_desc'),
             image: 'https://vietnampostlogistics.com/wp-content/uploads/2025/04/Untitled-1-1.jpg',
             link: 'https://vietnampostlogistics.com/giai-phap/giai-phap-sea-freight/'
         }
@@ -75,6 +75,7 @@ const SolutionCarousel: React.FC = ({ initialLocale = 'en' }) => {
                     <div
                         className="homes-solv-it"
                         style={{
+
                             position: 'relative',
                             height: '600px',
                             borderRadius: '12px',
@@ -141,45 +142,28 @@ const SolutionCarousel: React.FC = ({ initialLocale = 'en' }) => {
                                 <p
                                     className="info-des"
                                     style={{
+                                        display: activeIndex === index ? 'block' : 'none',
+                                        maxHeight: activeIndex === index ? '7rem' : '0',
                                         margin: '0 0 20px 0',
                                         fontSize: '15px',
                                         lineHeight: '1.6',
-                                        //opacity: activeIndex === index ? 1 : 0,
-                                        // maxHeight: activeIndex === index ? '200px' : '0',
+                                        color: 'white',
+                                        opacity: activeIndex === index ? 1 : 0,
                                         overflow: 'hidden',
-                                        transition: 'all 0.5s ease'
                                     }}
                                 >
                                     {slide.description}
                                 </p>
 
-                                <FindMoreButton link={slide.link} />
+                                <FindMoreButton link={slide.link} label={t("components.button.find-more")} />
                             </div>
 
-                            {/* Title cho col nhỏ */}
-                            {/* {activeIndex !== index && (
-                                    <div
-                                        style={{
-                                            position: 'absolute',
-                                            bottom: '30px',
-                                            left: '50%',
-                                            transform: 'translateX(-50%) rotate(-90deg)',
-                                            transformOrigin: 'center',
-                                            whiteSpace: 'nowrap',
-                                            color: 'white',
-                                            fontSize: '18px',
-                                            fontWeight: '700',
-                                            textShadow: '0 2px 4px rgba(0,0,0,0.5)'
-                                        }}
-                                    >
-                                        {slide.title}
-                                    </div>
-                                )} */}
                         </div>
                     </div>
                 </div>
-            ))}
-        </div>
+            ))
+            }
+        </div >
     );
 }
 
