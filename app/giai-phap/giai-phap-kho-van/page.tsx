@@ -10,8 +10,21 @@ import StoreSwiper from '@/components/StoreSwiper';
 import StoreTime from '@/components/StoreTime';
 import StoreSolution from '@/components/StoreSolution';
 import StoreImportant from '@/components/StoreImportant';
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
 
 const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
+
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
+
     const breadcrumbItems = {
         'vi': [
             { text: "Giải pháp", link: "/giai-phap" },
@@ -19,7 +32,9 @@ const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
         ],
         'en': [
             { text: "Solutions", link: "/solutions" },
-            { text: "Warehouse Solutions", link: "/solutions/warehouse", isActive: true }
+            {
+                text: "Contract Logistics", link: "/solutions/warehouse", isActive: true
+            }
         ]
     };
     return (
@@ -42,12 +57,13 @@ const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
                         <SiteBreadcrumb
                             initialLocale={initialLocale}
                             className=''
+                            language={initialLocale}
                             items={breadcrumbItems[initialLocale as 'vi' | 'en']}
                             currentPage="Giải pháp Kho vận"
                         />
 
                         <h1 className="bn-big-tt add-class text-verti mb-24 is-inview">
-                            GIẢI PHÁP KHO VẬN
+                            {t("pages.warehouse.title")}
                         </h1>
                         <div className="bn-count aos-init aos-animate" data-aos="fade-up-cus" data-aos-delay="400">
                             <div className="bn-count-row row gap-res">
@@ -57,7 +73,9 @@ const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
                                             <span className="num-txt countNum is-inview">500</span>
                                             <span className="num-sym">K+</span>
                                         </div>
-                                        <p className="txt">M2 tổng diện tích kho bãi</p>
+                                        <p className="txt">
+                                            {t("pages.warehouse.total-area")}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="bn-count-it col">
@@ -66,7 +84,9 @@ const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
                                             <span className="num-txt countNum is-inview">5</span>
                                             <span className="num-sym">K+</span>
                                         </div>
-                                        <p className="txt">Tấn hàng được xử lý trong một ngày</p>
+                                        <p className="txt">
+                                            {t("pages.warehouse.total-cargo")}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="bn-count-it col">
@@ -75,7 +95,9 @@ const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
                                             <span className="num-txt countNum is-inview">16</span>
                                             <span className="num-sym">h</span>
                                         </div>
-                                        <p className="txt">Thời gian tối đa xử lý thủ tục hải quan</p>
+                                        <p className="txt">
+                                            {t("pages.warehouse.time")}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -87,7 +109,9 @@ const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
                                         <div className="icon">
                                             <img width="24" height="24" src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn1.svg" className="attachment-full size-full" alt="Icon TMĐT" decoding="async" />
                                         </div>
-                                        <p className="des">Mô hình quản lý kho vận thông minh.</p>
+                                        <p className="des">
+                                            {t("pages.warehouse.item-1")}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="bn-box-it col">
@@ -95,7 +119,9 @@ const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
                                         <div className="icon">
                                             <img width="24" height="24" src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn2.svg" className="attachment-full size-full" alt="KẾT NỐI HÀNH TRÌNH" decoding="async" />
                                         </div>
-                                        <p className="des">Tiết kiệm chi phí nhờ quy trình tối ưu hoá.</p>
+                                        <p className="des">
+                                            {t("pages.warehouse.item-2")}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="bn-box-it col">
@@ -103,7 +129,9 @@ const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
                                         <div className="icon">
                                             <img width="24" height="24" src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn3.svg" className="attachment-full size-full" alt="LIÊN KẾT" decoding="async" loading="lazy" />
                                         </div>
-                                        <p className="des">Đảm bảo sự hài lòng với dịch vụ đáng tin cậy.</p>
+                                        <p className="des">
+                                            {t("pages.warehouse.item-3")}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="bn-box-it col">
@@ -111,7 +139,9 @@ const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
                                         <div className="icon">
                                             <img width="24" height="24" src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn4.svg" className="attachment-full size-full" alt="tmđt" decoding="async" loading="lazy" />
                                         </div>
-                                        <p className="des">Sự an toàn và bảo mật của khách hàng là ưu tiên hàng đầu.</p>
+                                        <p className="des">
+                                            {t("pages.warehouse.item-4")}
+                                        </p>
                                     </div>
                                 </div>
                             </div>

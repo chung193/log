@@ -116,6 +116,38 @@
         },
         "associations": {
             "title": "Logistics Associations"
+        },
+        "about-quote": {
+            "content": "At Vietnam Post Logistics, we are committed to delivering reliable, fast, and innovative logistics solutions that meet the diverse needs of our customers. Guided by trust, efficiency, and sustainability, we aim to connect communities and businesses across Vietnam and globally.",
+            "des": "Business Philosophy Statement",
+            "second-des": "of Vietnam Post Logistics"
+        },
+        "about-container": {
+            "vision": "Vision",
+            "vision-des": "To become the leading logistics & <b>supply chain solution provider connecting Vietnam with the world,</b> empowering businesses and consumers through seamless, innovative and sustanable logistics solutions",
+            "mission": "Mission",
+            "mission-des": "Our mission is to seamlessly <b>connect</b> businesses and individuals across Vietnam with the world. We are committed to driving growth by providing innovative, reliable, and efficient logistics solutions that foster global trade and communication. With a focus on customer satisfaction, sustainable practices, and advanced technologies, we aim to bridge distances, empower communities, and become a trusted partner in the global supply chain. Together, we deliver opportunities, strengthen connections, and unlock new possibilities for Vietnam and beyond.",
+            "core-value-des": "reflect its commitment to delivering quality and reliability in logistics services. These values are encapsulated by the principles of <b>challenge, commitment, integrity, responsibility, and respect.</b> The company emphasizes continuous improvement and strives to connect people and businesses through efficient logistics solutions. With these values, Vietnam Post Logistics aims to become a leading logistics provider in Vietnam, leveraging its vast network and infrastructure to offer comprehensive supply chain solutions.",
+            "core-value": "Core Value"
+        }
+    },
+    "pages": {
+        "about-us": {
+            "title": "Vietnam Post Logistics",
+            "second-title": "comprehensive logistics ecosystem",
+            "content": "Vietnam Post Logistics is a member unit of Vietnam Post Corporation - the leading prestigious brand in Vietnam. We provide diverse. comprehensive and optimal logistics solutions for customers from domestic to international.",
+            "intro": "Vietnam Post Logistics has been effectively fulfilling its role in transportation, operating the supply chain, and connecting trade between Vietnam and the world, contributing significantly to the country's economic development.",
+            "second-intro": "At the same time, thanks to outstanding achievements and relentless efforts, Vietnam Post Logistics has affirmed its position by becoming the official partner of many major enterprises such as USPS, DHL, Korean Air, Vietnam Airlines, Vietjet Air, Cargolux, and is an official member of many large logistics associations worldwide, such as JCtrans and WCA."
+        },
+        "warehouse": {
+            "title": "CONTRACT LOGISTICS",
+            "total-area": "Total warehouse area",
+            "total-cargo": "Tons of cargo handled per day",
+            "time": "Customs clearance time",
+            "item-1": "Satisfaction guaranteed with reliable service.",
+            "item-2": "Save costs through process optimization.",
+            "item-3": "A specialized design supply model suitable for each business.",
+            "item-4": "Safety and security are our top priorities."
         }
     }
 }

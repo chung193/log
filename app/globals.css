@@ -10,6 +10,20 @@
 @font-face {
   font-family: 'SVN-Gotham';
   src: url('/fonts/SVN-Gotham Light.otf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SVN-Gotham';
+  src: url('/fonts/SVN-Gotham Bold.otf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+b,
+strong {
+  font-weight: 600 !important;
 }
 
 * {

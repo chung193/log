@@ -1,11 +1,23 @@
 'use client';
-
 import React, { useEffect, useRef } from "react";
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
 
 const AboutViewContainer = ({ initialLocale = 'en' }) => {
     const imageRef = useRef<HTMLDivElement>(null);
     const rafId = useRef<number | null>(null);
     const lastScrollY = useRef(0);
+
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
+
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -93,26 +105,38 @@ const AboutViewContainer = ({ initialLocale = 'en' }) => {
                         <div className="ab-view-content ss-pd">
                             <div className="ab-view-lines">
                                 <div className="ab-view-line">
-                                    <div className="name">Vision</div>
+                                    <div className="name">
+                                        {t("components.about-container.vision")}
+                                    </div>
                                     <div className="ctn">
                                         <div className="des">
-                                            <p>To become the leading logistics & <strong>supply chain solution provider connecting Vietnam with the world</strong>, empowering businesses and consumers through seamless, innovative and sustainable logistics solutions</p>
+                                            <p>
+                                                <div dangerouslySetInnerHTML={{ __html: t("components.about-container.vision-des") }} />
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="ab-view-line">
-                                    <div className="name">Mission</div>
+                                    <div className="name">
+                                        {t("components.about-container.mission")}
+                                    </div>
                                     <div className="ctn">
                                         <div className="des">
-                                            <p>Our mission is to seamlessly <strong>connect</strong> businesses and individuals across Vietnam with the world. We are committed to driving growth by providing innovative, reliable, and efficient logistics solutions that foster global trade and communication. With a focus on customer satisfaction, sustainable practices, and advanced technologies, we aim to bridge distances, empower communities, and become a trusted partner in the global supply chain. Together, we deliver opportunities, strengthen connections, and unlock new possibilities for Vietnam and beyond.</p>
+                                            <p>
+                                                <div dangerouslySetInnerHTML={{ __html: t("components.about-container.mission-des") }} />
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="ab-view-line">
-                                    <div className="name">Core Value</div>
+                                    <div className="name">
+                                        {t("components.about-container.core-value")}
+                                    </div>
                                     <div className="ctn">
                                         <div className="des">
-                                            <p className="des">reflect its commitment to delivering quality and reliability in logistics services. These values are encapsulated by the principles of <strong>challenge, commitment, integrity, responsibility, and respect</strong>. The company emphasizes continuous improvement and strives to connect people and businesses through efficient logistics solutions. With these values, EXPEDITORS GLOBAL aims to become a leading logistics provider in Vietnam, leveraging its vast network and infrastructure to offer comprehensive supply chain solutions.</p>
+                                            <p className="des">
+                                                <div dangerouslySetInnerHTML={{ __html: t("components.about-container.core-value-des") }} />
+                                            </p>
                                         </div>
                                     </div>
                                 </div>

@@ -7,20 +7,32 @@ import PartnersSection from '@/components/PartnersSection';
 import AboutQuote from '@/components/AboutQuote';
 import AboutViewContainer from '@/components/AboutViewContainer';
 import SiteBreadcrumb from '@/components/SiteBreadcrumb';
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
 
 interface AboutPageProps {
     initialLocale?: string;
 }
 
 const AboutPage: React.FC<AboutPageProps> = ({ initialLocale = 'en' }) => {
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
+
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
     const breadcrumbItems = {
         vi: [
-            { text: "Giải pháp", link: "/solutions" },
-            { text: "Giải pháp Kho vận", link: "/solutions/warehouse", isActive: true }
+            { text: "Công ty", link: "javascript:;" },
+            { text: "Về chúng tôi", link: "/cong-ty/ve-chung-toi", isActive: true }
         ],
         en: [
-            { text: "Solutions", link: "/solutions" },
-            { text: "Warehouse Solutions", link: "/solutions/warehouse", isActive: true }
+            { text: "Company", link: "javascript:;" },
+            { text: "About us", link: "/cong-ty/ve-chung-toi", isActive: true }
         ]
     };
     return (
@@ -46,7 +58,8 @@ const AboutPage: React.FC<AboutPageProps> = ({ initialLocale = 'en' }) => {
                             <SiteBreadcrumb
                                 initialLocale={initialLocale}
                                 className=''
-                                items={breadcrumbItems[initialLocale as 'vi' | 'en']}
+                                language={langParam}
+                                items={breadcrumbItems[locale]}
                                 currentPage="About us"
                             />
                         </div>
@@ -63,14 +76,17 @@ const AboutPage: React.FC<AboutPageProps> = ({ initialLocale = 'en' }) => {
                                     <div className="line aos-init aos-animate" data-aos="fade-up-cus">
                                         <div className="title-head text-verti">
                                             <h3 className="title title-40 add-className text-hori is-inview">
-                                                <span className="second">EXPEDITORS GLOBAL </span><br />
-                                                comprehensive logistics ecosystem
+                                                <span className="second">
+                                                    {t("pages.about-us.title")}
+                                                </span>
+                                                <br />
+                                                {t("pages.about-us.second-title")}
                                             </h3>
                                         </div>
                                     </div>
                                     <div className="line aos-init aos-animate" data-aos="fade-up-cus" data-aos-delay="400">
                                         <div className="desc">
-                                            EXPEDITORS GLOBAL is a member unit of Vietnam Post Corporation - the leading prestigious brand in Vietnam. We provide diverse, comprehensive and optimal logistics solutions for customers from domestic to international.
+                                            {t("pages.about-us.content")}
                                         </div>
                                     </div>
                                 </div>
@@ -78,17 +94,17 @@ const AboutPage: React.FC<AboutPageProps> = ({ initialLocale = 'en' }) => {
                         </div>
 
 
-                        <AboutSwiper />
+                        <AboutSwiper lang={locale} />
 
                         <div className="ab-first-bottom ss-pd pb-4">
                             <div className="container">
                                 <div className="head-verti center white">
                                     <div className="line aos-init aos-animate" data-aos="fade-up-cus" data-aos-delay="400">
                                         <div className="desc">
-                                            <strong>EXPEDITORS GLOBAL has been effectively fulfilling its role in transportation, operating the supply chain, and connecting trade between Vietnam and the world, contributing significantly to the country's economic development.</strong><br />
+                                            <strong>
+                                                {t("pages.about-us.intro")}                                                </strong><br />
                                             <br />
-                                            At the same time, thanks to outstanding achievements and relentless efforts, EXPEDITORS GLOBAL has affirmed its position by becoming the official partner of many major enterprises such as USPS, DHL, Korean Air, Vietnam Airlines, Vietjet Air, Cargolux, and is an official member of many large logistics associations worldwide, such as JCtrans and WCA.
-                                        </div>
+                                            {t("pages.about-us.second-intro")}                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -99,8 +115,8 @@ const AboutPage: React.FC<AboutPageProps> = ({ initialLocale = 'en' }) => {
                     </div>
                 </section>
 
-                <AboutQuote />
-                <AboutViewContainer />
+                <AboutQuote language={locale} />
+                <AboutViewContainer language={locale} />
                 <Ecosystem />
                 <PartnersSection />
 

@@ -116,6 +116,28 @@
         },
         "associations": {
             "title": "Các hiệp hội tham gia"
+        },
+        "about-quote": {
+            "content": "Cung cấp các giải pháp logistics đáng tin cậy, nhanh chóng và đổi mới, đáp ứng nhu cầu đa dạng của khách hàng. Hướng đến mục tiêu kết nối cộng đồng và doanh nghiệp trên khắp Việt Nam và toàn cầu.",
+            "des": "Triết lý kinh doanh",
+            "second-des": "của Vietnam Post Logistics"
+        },
+        "about-container": {
+            "vision": "Tầm nhìn",
+            "vision-des": "Trở thành nhà cung cấp giải pháp logistics và <b>chuỗi cung ứng hàng đầu kết nối Việt Nam với thế giới,</b>nâng cao năng lực cho doanh nghiệp và người tiêu dùng thông qua các giải pháp logistics liền mạch, sáng tạo và bền vững.",
+            "mission": "Sứ mệnh",
+            "mission-des": "Vietnam Post Logistics <b>kết nối</b> doanh nghiệp và cá nhân Việt Nam với thế giới bằng các giải pháp logistics <b>sáng tạo, đáng tin cậy và hiệu quả.</b> Với trọng tâm là <b>sự hài lòng</b> của khách hàng, chúng tôi hướng đến mục tiêu trở thành <b>đối tác đáng tin cậy</b> trong chuỗi cung ứng toàn cầu.",
+            "core-value-des": "Chúng tôi cam kết cung cấp dịch vụ logistics chất lượng, đáng tin cậy dựa trên các giá trị cốt lõi: <b>thử thách, cam kết, chính trực, trách nhiệm và tôn trọng.</b> Với nền tảng vững chắc, chúng tôi hướng đến mục tiêu trở thành nhà cung cấp logistics hàng đầu Việt Nam.",
+            "core-value": "Giá trị cốt lõi"
+        }
+    },
+    "pages": {
+        "about-us": {
+            "title": "Vietnam Post Logistics",
+            "second-title": "Hệ sinh thái Logistics toàn diện hàng đầu Việt Nam",
+            "content": "Vietnam Post Logistics tự hào là thành viên của Tổng công ty Bưu điện Việt Nam - thương hiệu hàng đầu quốc gia với lịch sử hình thành và phát triển gần 80 năm, chuyên cung cấp các giải pháp dịch vụ logistics đa dạng, toàn diện và tiện lợi cho khách hàng doanh nghiệp từ nội địa đến khắp Thế giới.",
+            "intro": "Đến nay, Vietnam Post Logistics đã và đang thực hiện hiệu quả vai trò vận chuyển, quản lý chuỗi cung ứng, kết nối giao thương giữa Việt Nam với Thế giới, đóng góp không nhỏ vào sự phát triển kinh tế đất nước.",
+            "second-intro": "Đồng thời, nhờ những thành tựu nổi bật và sự cố gắng không ngừng nghỉ, Vietnam Post Logistics đã khẳng định được vị thế khi trở thành đối tác chính thức của nhiều doanh nghiệp tầm cỡ như: USPS, DHL, Korean Air, Vietnam Airlines, Vietjet Air, Cargolux,... và là thành viên chính thức của nhiều hiệp hội logistics lớn trên thế giới như JCtrans, WCA…"
         }
     }
 }

@@ -15,7 +15,7 @@ interface BreadcrumbProps {
 
 const SiteBreadcrumb: React.FC<BreadcrumbProps> = ({
     items = [], // Giá trị mặc định là mảng rỗng
-    language = 'vi',
+    language = 'en',
     className = '',
     showAnimation = true
 }) => {

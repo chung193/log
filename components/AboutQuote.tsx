@@ -1,7 +1,20 @@
 import React from "react";
 import './AboutQuote.css'; // Tạo file CSS riêng
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
 
 const AboutQuote = () => {
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
+
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
+
     return (
         <section className="sec-ab-quote">
             <div className="ab-quote">
@@ -30,7 +43,7 @@ const AboutQuote = () => {
                             }}
                         >
                             <p className="des">
-                                At EXPEDITORS GLOBAL, we are committed to delivering reliable, fast, and innovative logistics solutions that meet the diverse needs of our customers. Guided by trust, efficiency, and sustainability, we aim to connect communities and businesses across Vietnam and globally.
+                                {t("components.about-quote.content")}
                             </p>
                         </div>
                         <div
@@ -41,9 +54,9 @@ const AboutQuote = () => {
                         >
                             <p className="des">
                                 <span className="second">
-                                    Business Philosophy Statement
+                                    {t("components.about-quote.des")}
                                 </span>&nbsp;
-                                of EXPEDITORS GLOBAL
+                                {t("components.about-quote.second-des")}
                             </p>
                         </div>
                     </div>
