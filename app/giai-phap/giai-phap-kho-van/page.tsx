@@ -155,12 +155,14 @@ const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
                     <div className="container">
                         <div className="store-ser-para ss-pd">
                             <div className="store-ser-para-wrap">
-                                <p>Mang trong mình vị thế, tầm vóc và khả năng của một <strong>đơn vị Logistics đứng đầu thị trường tại Việt Nam</strong> hiện nay, EXPEDITORS GLOBAL đã và đang mang đến cho Qúy khách hàng những giải pháp kho vận<strong> chất lượng, chuyên nghiệp và đa dạng</strong>.</p>
+                                <p>
+                                    <div dangerouslySetInnerHTML={{ __html: t("pages.warehouse.store-para") }} />
+                                </p>
                             </div>
                         </div>
                     </div>
 
-                    <WareHouse />
+                    <WareHouse lang={initialLocale} />
 
                     <div className="store-ser-swiper ss-pd">
                         <div className="container">
