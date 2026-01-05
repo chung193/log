@@ -65,11 +65,11 @@ const InternationalAirCargoPage = ({ initialLocale = 'en' }) => {
                             homeLink={initialLocale === 'vi' ? '/' : '/en'}
                         />
                         <h1 className="bn-big-tt add-class text-verti mb-24 is-inview">
-                            Giải pháp <br />
-                            Logistics Quốc tế
+                            {t("pages.air.title")} <br />
+                            {t("pages.air.second-title")}
                         </h1>
                         <p className="bn-big-des aos-init aos-animate" data-aos="fade-up-cus">
-                            Cung cấp dịch vụ Door to Door<br /><br />
+                            {t("pages.air.des")}<br /><br />
                         </p>
                         <BoxHeader initialLocale={'en'} />
                     </div>

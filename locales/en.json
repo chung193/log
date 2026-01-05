@@ -211,6 +211,11 @@
         }
     },
     "pages": {
+        "air": {
+            "title": "Global Logistics",
+            "second-title": "Solution",
+            "des": "We provide Door-door service"
+        },
         "in-log": {
             "title": "Global Logistics",
             "second-title": "Solutions",
