@@ -109,32 +109,32 @@ const Ecosystem: React.FC = ({ initialLocale = 'en' }) => {
     const { t } = useTranslations(locale);
     const circleIcons: CircleIconProps[] = [
         {
-            src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-1.svg',
+            src: 'ic-1.svg',
             alt: 'Hàng hóa',
             angle: 0  // Trên bên phải
         },
         {
-            src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-2.svg',
+            src: 'ic-2.svg',
             alt: 'Kho',
             angle: 60   // Dưới bên phải
         },
         {
-            src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-3.svg',
+            src: 'ic-3.svg',
             alt: 'Building',
             angle: 120   // Dưới cùng
         },
         {
-            src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-4.svg',
+            src: 'ic-4.svg',
             alt: 'Trucking',
             angle: 180  // Dưới bên trái
         },
         {
-            src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-5.svg',
+            src: 'ic-5.svg',
             alt: 'cửa hàng',
             angle: 240  // Trên bên trái
         },
         {
-            src: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-6.svg',
+            src: 'ic-6.svg',
             alt: 'Khách hàng',
             angle: 300  // Trên cùng (vì circle đã rotate -90deg)
         }
@@ -182,7 +182,7 @@ const Ecosystem: React.FC = ({ initialLocale = 'en' }) => {
                             <div className="homes-logis-circle col">
                                 <div className="circle-text">
                                     <img
-                                        src="https://vietnampostlogistics.com/template/assets/images/text.png"
+                                        src="/template/assets/images/text.png"
                                         alt="Logistics text"
                                     />
                                 </div>
@@ -190,7 +190,7 @@ const Ecosystem: React.FC = ({ initialLocale = 'en' }) => {
                                     <div className="img">
                                         <div className="img-inner">
                                             <img
-                                                src="https://vietnampostlogistics.com/template/assets/images/car.jpg"
+                                                src="/template/assets/images/car.jpg"
                                                 alt="Logistics truck"
                                             />
                                         </div>

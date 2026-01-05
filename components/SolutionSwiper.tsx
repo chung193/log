@@ -15,22 +15,22 @@ const SolutionSwiper = () => {
         {
             id: 1,
             title: "Vận chuyển nội địa",
-            image: "https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage1.jpg",
-            link: "https://vietnampostlogistics.com/dich-vu-van-chuyen-noi-dia/",
+            image: "storage1.jpg",
+            link: "/dich-vu-van-chuyen-noi-dia/",
             description: "Vận chuyển hàng hóa từ kho đến các điểm giao hàng trong nước."
         },
         {
             id: 2,
             title: "Vận chuyển xuyên biên giới ASEAN",
-            image: "https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage2.jpg",
-            link: "https://vietnampostlogistics.com/van-chuyen-xuyen-bien-gioi-asean/",
+            image: "storage2.jpg",
+            link: "/van-chuyen-xuyen-bien-gioi-asean/",
             description: "Vận chuyển xuyên biên giới qua các nước trong khu vực ASEAN."
         },
         {
             id: 3,
             title: "Vận tải đường bộ",
-            image: "https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage3.jpg",
-            link: "https://vietnampostlogistics.com/giai-phap-van-tai-duong-bo-da-dang-linh-hoat-theo-yeu-cau/",
+            image: "storage3.jpg",
+            link: "/giai-phap-van-tai-duong-bo-da-dang-linh-hoat-theo-yeu-cau/",
             description: "Cung cấp giải pháp vận tải đường bộ đa dạng, linh hoạt theo yêu cầu của khách hàng."
         }
     ];
@@ -94,7 +94,7 @@ const SolutionSwiper = () => {
                                 <div className="info">
                                     <a className="btn-circle" href={slide.link}>
                                         <img
-                                            src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg"
+                                            src="/template/assets/images/ic-arrow.svg"
                                             alt={slide.title}
                                         />
                                     </a>

@@ -15,32 +15,32 @@ const EXPTrustSlide = () => {
         {
             id: 1,
             title: "Ủy thác nhập khẩu",
-            image: "https://vietnampostlogistics.com/wp-content/uploads/2025/03/exp1.jpg",
-            link: "https://vietnampostlogistics.com/uy-thac-nhap-khau-vietnam-post-logistics/",
+            image: "exp1.jpg",
+            link: "/uy-thac-nhap-khau-vietnam-post-logistics/",
             alt: "Bãi containers",
             description: "Đảm bảo hàng hóa từ các quốc gia khác về Việt Nam nhanh chóng, thuận tiện."
         },
         {
             id: 2,
             title: "Ủy thác xuất khẩu",
-            image: "https://vietnampostlogistics.com/wp-content/uploads/2025/03/exp2.jpg",
-            link: "https://vietnampostlogistics.com/uy-thac-xuat-khau-vietnam-post-logistics/",
+            image: "exp2.jpg",
+            link: "/uy-thac-xuat-khau-vietnam-post-logistics/",
             alt: "thùng hàng carton và pallet",
             description: "Hỗ trợ đưa sản phẩm của bạn đến tay khách hàng quốc tế một cách chuyên nghiệp."
         },
         {
             id: 3,
             title: "Hỗ trợ khai báo hải quan",
-            image: "https://vietnampostlogistics.com/wp-content/uploads/2025/03/exp3.jpg",
-            link: "https://vietnampostlogistics.com/ho-tro-khai-bao-hai-quan-vietnam-post-logistics/",
+            image: "exp3.jpg",
+            link: "/ho-tro-khai-bao-hai-quan-vietnam-post-logistics/",
             alt: "Bê thùng hàng",
             description: "Chuẩn bị và xử lý hồ sơ chính xác, giảm thiểu rủi ro sai sót."
         },
         {
             id: 4,
             title: "Tư vấn chính sách xuất nhập khẩu",
-            image: "https://vietnampostlogistics.com/wp-content/uploads/2025/03/exp4.jpg",
-            link: "https://vietnampostlogistics.com/tu-van-chinh-sach-xuat-nhap-khau-vietnam-post-logistics/",
+            image: "exp4.jpg",
+            link: "/tu-van-chinh-sach-xuat-nhap-khau-vietnam-post-logistics/",
             alt: "sân bay",
             description: "Giải đáp mọi thắc mắc và cập nhật thông tin mới nhất."
         }
@@ -106,7 +106,7 @@ const EXPTrustSlide = () => {
                                     </a>
                                     <a className="btn-circle" href={slide.link}>
                                         <img
-                                            src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg"
+                                            src="/template/assets/images/ic-arrow.svg"
                                             alt={`Xem chi tiết ${slide.title}`}
                                         />
                                     </a>

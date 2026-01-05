@@ -25,12 +25,12 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
           <img
             width="2000"
             height="1000"
-            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/tmdt1-min.jpg"
+            src="tmdt1-min.jpg"
             className="attachment-full size-full"
             alt="Thương mại điện tử quốc tế"
             decoding="async"
             fetchpriority="high"
-            srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/tmdt1-min.jpg 2000w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/tmdt1-min-300x150.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/tmdt1-min-1024x512.jpg 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/tmdt1-min-768x384.jpg 768w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/tmdt1-min-1536x768.jpg 1536w"
+            srcSet="tmdt1-min.jpg 2000w, tmdt1-min-300x150.jpg 300w, tmdt1-min-1024x512.jpg 1024w, tmdt1-min-768x384.jpg 768w, tmdt1-min-1536x768.jpg 1536w"
           />
         </div>
         <div className="container">
@@ -92,7 +92,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                       <img
                         width="24"
                         height="24"
-                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn1.svg"
+                        src="ic-bn1.svg"
                         className="attachment-full size-full"
                         alt="Icon TMĐT"
                         decoding="async"
@@ -109,7 +109,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                       <img
                         width="24"
                         height="24"
-                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn2.svg"
+                        src="ic-bn2.svg"
                         className="attachment-full size-full"
                         alt="KẾT NỐI HÀNH TRÌNH"
                         decoding="async"
@@ -126,7 +126,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                       <img
                         width="24"
                         height="24"
-                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn3.svg"
+                        src="ic-bn3.svg"
                         className="attachment-full size-full"
                         alt="LIÊN KẾT"
                         decoding="async"
@@ -144,7 +144,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                       <img
                         width="24"
                         height="24"
-                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn4.svg"
+                        src="ic-bn4.svg"
                         className="attachment-full size-full"
                         alt="tmđt"
                         decoding="async"
@@ -190,7 +190,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="182"
                           height="116"
-                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/br1.jpg"
+                          src="br1.jpg"
                           className="attachment-full size-full"
                           alt="Logo etsy"
                           decoding="async"
@@ -207,7 +207,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="182"
                           height="116"
-                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/br2.jpg"
+                          src="br2.jpg"
                           className="attachment-full size-full"
                           alt="amazon"
                           decoding="async"
@@ -224,7 +224,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="182"
                           height="116"
-                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/br3.jpg"
+                          src="br3.jpg"
                           className="attachment-full size-full"
                           alt="temu"
                           decoding="async"
@@ -241,7 +241,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="182"
                           height="116"
-                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/br4.jpg"
+                          src="br4.jpg"
                           className="attachment-full size-full"
                           alt="Logo TQ"
                           decoding="async"
@@ -258,7 +258,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="182"
                           height="116"
-                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/br5.jpg"
+                          src="br5.jpg"
                           className="attachment-full size-full"
                           alt="Tiktok"
                           decoding="async"
@@ -275,7 +275,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="182"
                           height="116"
-                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/br6.jpg"
+                          src="br6.jpg"
                           className="attachment-full size-full"
                           alt="Taobao"
                           decoding="async"
@@ -308,7 +308,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
               {/* Target Customer 1 */}
               <div className="solv-cus-it col">
                 <div className="inner">
-                  <img src="https://vietnampostlogistics.com/template/assets/images/sao.svg" alt="icon" />
+                  <img src="/template/assets/images/sao.svg" alt="icon" />
                   <p className="des">
                     <strong>Các doanh nghiệp sản xuất tại Việt Nam </strong>muốn đưa hàng hóa ra thế giới.
                   </p>
@@ -318,7 +318,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
               {/* Target Customer 2 */}
               <div className="solv-cus-it col">
                 <div className="inner">
-                  <img src="https://vietnampostlogistics.com/template/assets/images/sao.svg" alt="icon" />
+                  <img src="/template/assets/images/sao.svg" alt="icon" />
                   <p className="des">
                     <strong>Doanh nghiệp thương mại điện tử</strong> quy mô vừa và lớn.
                   </p>
@@ -328,7 +328,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
               {/* Target Customer 3 */}
               <div className="solv-cus-it col">
                 <div className="inner">
-                  <img src="https://vietnampostlogistics.com/template/assets/images/sao.svg" alt="icon" />
+                  <img src="/template/assets/images/sao.svg" alt="icon" />
                   <p className="des">
                     Các cá nhân, doanh nghiệp có <strong>nhu cầu vận chuyển hàng hóa từ Trung Quốc về Việt Nam.</strong>
                   </p>
@@ -338,7 +338,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
               {/* Target Customer 4 */}
               <div className="solv-cus-it col">
                 <div className="inner">
-                  <img src="https://vietnampostlogistics.com/template/assets/images/sao.svg" alt="icon" />
+                  <img src="/template/assets/images/sao.svg" alt="icon" />
                   <p className="des">
                     <strong>Các cá nhân bán hàng trên nền tảng e-commerce</strong> như Amazon, eBay, Etsy tại thị trường Châu Mỹ &amp; Châu Âu.
                   </p>
@@ -351,12 +351,12 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                   <img
                     width="526"
                     height="652"
-                    src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/solv-cus.png"
+                    src="solv-cus.png"
                     className="attachment-full size-full"
                     alt="Khách hàng giải pháp TMĐT"
                     decoding="async"
                     loading="lazy"
-                    srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/solv-cus.png 526w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/solv-cus-242x300.png 242w"
+                    srcSet="solv-cus.png 526w, solv-cus-242x300.png 242w"
                   />
                 </div>
               </div>
@@ -374,12 +374,12 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                 <img
                   width="1728"
                   height="600"
-                  src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/inland-fly.jpg"
+                  src="inland-fly.jpg"
                   className="attachment-full size-full"
                   alt="Ưu điểm giải pháp"
                   decoding="async"
                   loading="lazy"
-                  srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/inland-fly.jpg 1728w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/inland-fly-300x104.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/inland-fly-1024x356.jpg 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/inland-fly-768x267.jpg 768w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/inland-fly-1536x533.jpg 1536w"
+                  srcSet="inland-fly.jpg 1728w, inland-fly-300x104.jpg 300w, inland-fly-1024x356.jpg 1024w, inland-fly-768x267.jpg 768w, inland-fly-1536x533.jpg 1536w"
                 />
               </div>
             </div>
@@ -402,7 +402,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="32"
                           height="32"
-                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-il1.svg"
+                          src="ic-il1.svg"
                           className="attachment-full size-full"
                           alt="Nhanh chóng"
                           decoding="async"
@@ -423,7 +423,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="24"
                           height="24"
-                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn1.svg"
+                          src="ic-bn1.svg"
                           className="attachment-full size-full"
                           alt="Icon TMĐT"
                           decoding="async"
@@ -444,7 +444,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="32"
                           height="32"
-                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-il3.svg"
+                          src="ic-il3.svg"
                           className="attachment-full size-full"
                           alt="Đa dạng"
                           decoding="async"
@@ -465,7 +465,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="24"
                           height="24"
-                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn2.svg"
+                          src="ic-bn2.svg"
                           className="attachment-full size-full"
                           alt="KẾT NỐI HÀNH TRÌNH"
                           decoding="async"
@@ -486,7 +486,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="32"
                           height="32"
-                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-il5.svg"
+                          src="ic-il5.svg"
                           className="attachment-full size-full"
                           alt="An toàn"
                           decoding="async"
@@ -507,7 +507,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="24"
                           height="24"
-                          src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn3.svg"
+                          src="ic-bn3.svg"
                           className="attachment-full size-full"
                           alt="LIÊN KẾT"
                           decoding="async"
@@ -620,7 +620,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                               <img
                                 width="217"
                                 height="174"
-                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/inter1.png"
+                                src="inter1.png"
                                 className="attachment-full size-full"
                                 alt="Mỹ phẩm"
                                 decoding="async"
@@ -646,7 +646,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                               <img
                                 width="218"
                                 height="174"
-                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/inter2.png"
+                                src="inter2.png"
                                 className="attachment-full size-full"
                                 alt="May mặc"
                                 decoding="async"
@@ -672,7 +672,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                               <img
                                 width="217"
                                 height="174"
-                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/inter3.png"
+                                src="inter3.png"
                                 className="attachment-full size-full"
                                 alt="Chăm sóc sức khoẻ"
                                 decoding="async"
@@ -698,7 +698,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                               <img
                                 width="217"
                                 height="174"
-                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/inter4.png"
+                                src="inter4.png"
                                 className="attachment-full size-full"
                                 alt="Đồ gia dụng"
                                 decoding="async"
@@ -724,7 +724,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                               <img
                                 width="217"
                                 height="174"
-                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/inter1.png"
+                                src="inter1.png"
                                 className="attachment-full size-full"
                                 alt="Mỹ phẩm"
                                 decoding="async"

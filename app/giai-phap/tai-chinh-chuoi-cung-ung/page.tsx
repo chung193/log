@@ -11,12 +11,12 @@ const ExportImportPage: React.FC = () => {
                     <img
                         width="1728"
                         height="800"
-                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner2.jpg"
+                        src="banner2.jpg"
                         className="attachment-full size-full"
                         alt="Containers xuất nhập khẩu - EXPEDITORS GLOBAL"
                         decoding="async"
                         fetchpriority="high"
-                        srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner2.jpg 1728w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner2-300x139.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner2-1024x474.jpg 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner2-768x356.jpg 768w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner2-1536x711.jpg 1536w"
+                        srcSet="banner2.jpg 1728w, banner2-300x139.jpg 300w, banner2-1024x474.jpg 1024w, banner2-768x356.jpg 768w, banner2-1536x711.jpg 1536w"
                     />
                 </div>
                 <div className="container">
@@ -26,13 +26,13 @@ const ExportImportPage: React.FC = () => {
                             <div className="breadcrumb-wrapper">
                                 <ul className="breadcrumb-list">
                                     <li className="breadcrumb-item aos-init aos-animate" data-aos="fade-left">
-                                        <a href="https://vietnampostlogistics.com/" className="breadcrumb-link">Trang chủ</a>
+                                        <a href="/" className="breadcrumb-link">Trang chủ</a>
                                     </li>
                                     <li className="breadcrumb-item aos-init aos-animate" data-aos="fade-left">
                                         <a href="" className="breadcrumb-link">Giải pháp</a>
                                     </li>
                                     <li className="breadcrumb-item aos-init aos-animate" data-aos="fade-left">
-                                        <a href="https://vietnampostlogistics.com/danh-muc-giai-phap/xuat-nhat-khau/" className="breadcrumb-link">Xuất nhật khẩu</a>
+                                        <a href="/danh-muc-giai-phap/xuat-nhat-khau/" className="breadcrumb-link">Xuất nhật khẩu</a>
                                     </li>
                                     <li className="breadcrumb-item aos-init aos-animate" data-aos="fade-left">
                                         <a href="" className="breadcrumb-link">Tài chính chuỗi cung ứng</a>
@@ -56,7 +56,7 @@ const ExportImportPage: React.FC = () => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn1.svg"
+                                                src="ic-bn1.svg"
                                                 className="attachment-full size-full"
                                                 alt="Icon TMĐT"
                                                 decoding="async"
@@ -73,7 +73,7 @@ const ExportImportPage: React.FC = () => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn2.svg"
+                                                src="ic-bn2.svg"
                                                 className="attachment-full size-full"
                                                 alt="KẾT NỐI HÀNH TRÌNH"
                                                 decoding="async"
@@ -90,7 +90,7 @@ const ExportImportPage: React.FC = () => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn3.svg"
+                                                src="ic-bn3.svg"
                                                 className="attachment-full size-full"
                                                 alt="LIÊN KẾT"
                                                 decoding="async"
@@ -108,7 +108,7 @@ const ExportImportPage: React.FC = () => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn4.svg"
+                                                src="ic-bn4.svg"
                                                 className="attachment-full size-full"
                                                 alt="tmđt"
                                                 decoding="async"
@@ -129,10 +129,10 @@ const ExportImportPage: React.FC = () => {
                 {/* Tab Links */}
                 <div className="exp-tabLink ss-pd-t">
                     <div className="cpn-faq-filter scrollContainer">
-                        <a className="cpn-faq-filter-it buttons active" href="https://vietnampostlogistics.com/giai-phap/tai-chinh-chuoi-cung-ung/">
+                        <a className="cpn-faq-filter-it buttons active" href="/giai-phap/tai-chinh-chuoi-cung-ung/">
                             Tài chính chuỗi cung ứng
                         </a>
-                        <a className="cpn-faq-filter-it buttons" href="https://vietnampostlogistics.com/giai-phap/uy-thac-xuat-nhap-khau/">
+                        <a className="cpn-faq-filter-it buttons" href="/giai-phap/uy-thac-xuat-nhap-khau/">
                             Ủy thác xuất nhập khẩu
                         </a>
                     </div>
@@ -144,12 +144,12 @@ const ExportImportPage: React.FC = () => {
                         <img
                             width="1728"
                             height="700"
-                            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/imgFull2.jpg"
+                            src="imgFull2.jpg"
                             className="attachment-full size-full"
                             alt=""
                             decoding="async"
                             loading="lazy"
-                            srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/imgFull2.jpg 1728w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/imgFull2-300x122.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/imgFull2-1024x415.jpg 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/imgFull2-768x311.jpg 768w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/imgFull2-1536x622.jpg 1536w"
+                            srcSet="imgFull2.jpg 1728w, imgFull2-300x122.jpg 300w, imgFull2-1024x415.jpg 1024w, imgFull2-768x311.jpg 768w, imgFull2-1536x622.jpg 1536w"
                         />
                     </div>
                     <div className="container">
@@ -171,7 +171,7 @@ const ExportImportPage: React.FC = () => {
                                             {/* Feature 1 */}
                                             <div className="col">
                                                 <div className="exp-fin-it aos-init" data-aos="fade-up-cus">
-                                                    <img src="https://vietnampostlogistics.com/template/assets/images/sao.svg" alt="" />
+                                                    <img src="/template/assets/images/sao.svg" alt="" />
                                                     <h4 className="tt">Cung cấp dịch vụ tài chính chuỗi cung ứng</h4>
                                                     <p className="des">Dựa trên đối tác và dự án chọn lọc, để hỗ trợ hoạt động kinh doanh của đối tác trong việc tối ưu hoá dòng tiền.</p>
                                                 </div>
@@ -180,7 +180,7 @@ const ExportImportPage: React.FC = () => {
                                             {/* Feature 2 */}
                                             <div className="col">
                                                 <div className="exp-fin-it aos-init" data-aos="fade-up-cus">
-                                                    <img src="https://vietnampostlogistics.com/template/assets/images/sao.svg" alt="" />
+                                                    <img src="/template/assets/images/sao.svg" alt="" />
                                                     <h4 className="tt">Ưu tiên đối tác tin cậy</h4>
                                                     <p className="des">Chúng tôi ưu tiên đối tác tin cậy mà EXPEDITORS GLOBAL đang phục vụ dịch vụ logistics.</p>
                                                 </div>
@@ -189,7 +189,7 @@ const ExportImportPage: React.FC = () => {
                                             {/* Feature 3 */}
                                             <div className="col">
                                                 <div className="exp-fin-it aos-init" data-aos="fade-up-cus">
-                                                    <img src="https://vietnampostlogistics.com/template/assets/images/sao.svg" alt="" />
+                                                    <img src="/template/assets/images/sao.svg" alt="" />
                                                     <h4 className="tt">Liên quan đến tín dụng</h4>
                                                     <p className="des">Quá trình này sẽ liên quan đến việc xác nhận và bảo lãnh tín dụng từ ngân hàng ưu đãi của chúng tôi</p>
                                                 </div>
@@ -198,7 +198,7 @@ const ExportImportPage: React.FC = () => {
                                             {/* Feature 4 */}
                                             <div className="col">
                                                 <div className="exp-fin-it aos-init" data-aos="fade-up-cus">
-                                                    <img src="https://vietnampostlogistics.com/template/assets/images/sao.svg" alt="" />
+                                                    <img src="/template/assets/images/sao.svg" alt="" />
                                                     <h4 className="tt">Hỗ trợ trả trước</h4>
                                                     <p className="des">Mô hình này sẽ hỗ trợ đối tác được trả trước để tái chế vốn vào hoạt động tốt hơn.</p>
                                                 </div>
@@ -226,7 +226,7 @@ const ExportImportPage: React.FC = () => {
                                 <img
                                     width="1281"
                                     height="498"
-                                    src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/sodoquytrinh.svg"
+                                    src="sodoquytrinh.svg"
                                     className="attachment-full size-full"
                                     alt=""
                                     decoding="async"
@@ -245,12 +245,12 @@ const ExportImportPage: React.FC = () => {
                         <img
                             width="1728"
                             height="600"
-                            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/inland-fly.jpg"
+                            src="inland-fly.jpg"
                             className="attachment-full size-full"
                             alt=""
                             decoding="async"
                             loading="lazy"
-                            srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/inland-fly.jpg 1728w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/inland-fly-300x104.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/inland-fly-1024x356.jpg 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/inland-fly-768x267.jpg 768w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/inland-fly-1536x533.jpg 1536w"
+                            srcSet="inland-fly.jpg 1728w, inland-fly-300x104.jpg 300w, inland-fly-1024x356.jpg 1024w, inland-fly-768x267.jpg 768w, inland-fly-1536x533.jpg 1536w"
                         />
                     </div>
                 </div>
@@ -308,7 +308,7 @@ const ExportImportPage: React.FC = () => {
                                             <img
                                                 width="32"
                                                 height="32"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-il1.svg"
+                                                src="ic-il1.svg"
                                                 className="attachment-full size-full"
                                                 alt="Nhanh chóng"
                                                 decoding="async"
@@ -327,7 +327,7 @@ const ExportImportPage: React.FC = () => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn1.svg"
+                                                src="ic-bn1.svg"
                                                 className="attachment-full size-full"
                                                 alt="Icon TMĐT"
                                                 decoding="async"
@@ -346,7 +346,7 @@ const ExportImportPage: React.FC = () => {
                                             <img
                                                 width="32"
                                                 height="32"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-il3.svg"
+                                                src="ic-il3.svg"
                                                 className="attachment-full size-full"
                                                 alt="Đa dạng"
                                                 decoding="async"
@@ -365,7 +365,7 @@ const ExportImportPage: React.FC = () => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn2.svg"
+                                                src="ic-bn2.svg"
                                                 className="attachment-full size-full"
                                                 alt="KẾT NỐI HÀNH TRÌNH"
                                                 decoding="async"
@@ -384,7 +384,7 @@ const ExportImportPage: React.FC = () => {
                                             <img
                                                 width="32"
                                                 height="32"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-il5.svg"
+                                                src="ic-il5.svg"
                                                 className="attachment-full size-full"
                                                 alt="An toàn"
                                                 decoding="async"
@@ -403,7 +403,7 @@ const ExportImportPage: React.FC = () => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn3.svg"
+                                                src="ic-bn3.svg"
                                                 className="attachment-full size-full"
                                                 alt="LIÊN KẾT"
                                                 decoding="async"

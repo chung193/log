@@ -21,12 +21,12 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                     <img
                         width="1728"
                         height="800"
-                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4.jpg"
+                        src="banner4.jpg"
                         className="attachment-full size-full"
                         alt="Sea Freight EXPEDITORS GLOBAL"
                         decoding="async"
                         fetchPriority="high"
-                        srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4.jpg 1728w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4-300x139.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4-1024x474.jpg 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4-768x356.jpg 768w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4-1536x711.jpg 1536w"
+                        srcSet="banner4.jpg 1728w, banner4-300x139.jpg 300w, banner4-1024x474.jpg 1024w, banner4-768x356.jpg 768w, banner4-1536x711.jpg 1536w"
                     />
                 </div>
                 <div className="container">
@@ -55,7 +55,7 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn1.svg"
+                                                src="ic-bn1.svg"
                                                 className="attachment-full size-full"
                                                 alt="Icon TMĐT"
                                                 decoding="async"
@@ -70,7 +70,7 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn2.svg"
+                                                src="ic-bn2.svg"
                                                 className="attachment-full size-full"
                                                 alt="KẾT NỐI HÀNH TRÌNH"
                                                 decoding="async"
@@ -85,7 +85,7 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn3.svg"
+                                                src="ic-bn3.svg"
                                                 className="attachment-full size-full"
                                                 alt="LIÊN KẾT"
                                                 decoding="async"
@@ -101,7 +101,7 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn4.svg"
+                                                src="ic-bn4.svg"
                                                 className="attachment-full size-full"
                                                 alt="tmđt"
                                                 decoding="async"
@@ -126,11 +126,11 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                     <div className="side-fixed-wrap">
                                         <div className="wrapper">
                                             <div className="inter-solve-menu">
-                                                <a className="inter-solve-menu-link " href="https://vietnampostlogistics.com/giai-phap/giai-phap-sea-freight/">
+                                                <a className="inter-solve-menu-link " href="/giai-phap/giai-phap-sea-freight/">
                                                     <img
                                                         width="24"
                                                         height="24"
-                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/menu1.svg"
+                                                        src="menu1.svg"
                                                         className="attachment-full size-full wp-post-image"
                                                         alt=""
                                                         decoding="async"
@@ -138,11 +138,11 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                                     />
                                                     <span className="txt">Vận tải đường biển</span>
                                                 </a>
-                                                <a className="inter-solve-menu-link " href="https://vietnampostlogistics.com/giai-phap/giai-phap-air-express/">
+                                                <a className="inter-solve-menu-link " href="/giai-phap/giai-phap-air-express/">
                                                     <img
                                                         width="24"
                                                         height="25"
-                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/menu2.svg"
+                                                        src="menu2.svg"
                                                         className="attachment-full size-full wp-post-image"
                                                         alt=""
                                                         decoding="async"
@@ -150,11 +150,11 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                                     />
                                                     <span className="txt">Chuyển phát nhanh Quốc tế</span>
                                                 </a>
-                                                <a className="inter-solve-menu-link " href="https://vietnampostlogistics.com/giai-phap/giai-phap-air-cargo/">
+                                                <a className="inter-solve-menu-link " href="/giai-phap/giai-phap-air-cargo/">
                                                     <img
                                                         width="24"
                                                         height="25"
-                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/menu3.svg"
+                                                        src="menu3.svg"
                                                         className="attachment-full size-full wp-post-image"
                                                         alt=""
                                                         decoding="async"
@@ -162,11 +162,11 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                                     />
                                                     <span className="txt">Vận tải hàng không</span>
                                                 </a>
-                                                <a className="inter-solve-menu-link active" href="https://vietnampostlogistics.com/giai-phap/giai-phap-cross-border-trucking/">
+                                                <a className="inter-solve-menu-link active" href="/giai-phap/giai-phap-cross-border-trucking/">
                                                     <img
                                                         width="24"
                                                         height="24"
-                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/menu4.svg"
+                                                        src="menu4.svg"
                                                         className="attachment-full size-full wp-post-image"
                                                         alt=""
                                                         decoding="async"
@@ -174,11 +174,11 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                                     />
                                                     <span className="txt">Đường bộ xuyên biên giới</span>
                                                 </a>
-                                                <a className="inter-solve-menu-link " href="https://vietnampostlogistics.com/giai-phap/giai-phap-railway/">
+                                                <a className="inter-solve-menu-link " href="/giai-phap/giai-phap-railway/">
                                                     <img
                                                         width="24"
                                                         height="24"
-                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/menu5.svg"
+                                                        src="menu5.svg"
                                                         className="attachment-full size-full wp-post-image"
                                                         alt=""
                                                         decoding="async"
@@ -206,7 +206,7 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                     <h1 className="title title-48 add-class text-verti mb-32">Đường bộ xuyên biên giới</h1>
                                     <div className="inter-solve-usr">
                                         <div className="name">
-                                            <img src="https://vietnampostlogistics.com/template/assets/images/ic-usr-black.svg" alt="" />
+                                            <img src="/template/assets/images/ic-usr-black.svg" alt="" />
                                             <div className="txt">Dành cho đối tượng:</div>
                                         </div>
                                         <div className="ctn">
@@ -263,12 +263,12 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                                 <img
                                                     width="1920"
                                                     height="825"
-                                                    src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/IMG_2842-e1745555200414.jpg"
+                                                    src="IMG_2842-e1745555200414.jpg"
                                                     className="attachment-full size-full"
                                                     alt=""
                                                     decoding="async"
                                                     loading="lazy"
-                                                    srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/IMG_2842-e1745555200414.jpg 1920w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/IMG_2842-e1745555200414-300x129.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/IMG_2842-e1745555200414-1024x440.jpg 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/IMG_2842-e1745555200414-768x330.jpg 768w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/IMG_2842-e1745555200414-1536x660.jpg 1536w"
+                                                    srcSet="IMG_2842-e1745555200414.jpg 1920w, IMG_2842-e1745555200414-300x129.jpg 300w, IMG_2842-e1745555200414-1024x440.jpg 1024w, IMG_2842-e1745555200414-768x330.jpg 768w, IMG_2842-e1745555200414-1536x660.jpg 1536w"
                                                 />
                                             </div>
                                         </div>
@@ -354,7 +354,7 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                                                     <img
                                                                         width="32"
                                                                         height="32"
-                                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-il1.svg"
+                                                                        src="ic-il1.svg"
                                                                         className="attachment-full size-full"
                                                                         alt="Nhanh chóng"
                                                                         decoding="async"
@@ -371,7 +371,7 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                                                     <img
                                                                         width="24"
                                                                         height="24"
-                                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn1.svg"
+                                                                        src="ic-bn1.svg"
                                                                         className="attachment-full size-full"
                                                                         alt="Icon TMĐT"
                                                                         decoding="async"
@@ -388,7 +388,7 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                                                     <img
                                                                         width="24"
                                                                         height="24"
-                                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn2.svg"
+                                                                        src="ic-bn2.svg"
                                                                         className="attachment-full size-full"
                                                                         alt="KẾT NỐI HÀNH TRÌNH"
                                                                         decoding="async"
@@ -402,7 +402,7 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                                         <div className="inland-xo-it col itemEven">
                                                             <div className="inner">
                                                                 <div className="icon">
-                                                                    <img width="40" height="40" src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/Group-6.png" className="attachment-full size-full" alt="" decoding="async" loading="lazy" />
+                                                                    <img width="40" height="40" src="Group-6.png" className="attachment-full size-full" alt="" decoding="async" loading="lazy" />
                                                                 </div>
                                                                 <p className="text">KHÁM PHÁ THÊM</p>
                                                                 <div className="des"></div>

@@ -22,7 +22,7 @@ const AboutQuote = () => {
                     <img
                         width="1728"
                         height="800"
-                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ab-quote.jpg"
+                        src="ab-quote.jpg"
                         className="attachment-full size-full"
                         alt="Ảnh Vận chuyển đường biển (Sea Freight) - EXPEDITORS GLOBAL"
                         decoding="async"

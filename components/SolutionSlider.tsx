@@ -15,24 +15,24 @@ const SolutionSlider = () => {
         {
             id: 1,
             title: "Vận chuyển T11/T01",
-            image: "https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage1.jpg",
-            link: "https://vietnampostlogistics.com/giai-phap-thuong-mai-dien-tu-t86/",
+            image: "storage1.jpg",
+            link: "/giai-phap-thuong-mai-dien-tu-t86/",
             alt: "Vận chuyển T11/T01",
             description: "Vận chuyển qua hình thức T11/T01"
         },
         {
             id: 2,
             title: "Vận chuyển FEDEX/UPS/DHL",
-            image: "https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage2.jpg",
-            link: "https://vietnampostlogistics.com/giai-phap-van-chuyen-thuong-mai-dien-tu-quoc-te/",
+            image: "storage2.jpg",
+            link: "/giai-phap-van-chuyen-thuong-mai-dien-tu-quoc-te/",
             alt: "Vận chuyển FEDEX/UPS/DHL",
             description: "Vận chuyến qua các đơn vị chuyển phát nhanh toàn cầu FEDEX/UPS/DHL"
         },
         {
             id: 3,
             title: "Vận chuyển ECCF",
-            image: "https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage3.jpg",
-            link: "https://vietnampostlogistics.com/van-chuyen-eccf/",
+            image: "storage3.jpg",
+            link: "/van-chuyen-eccf/",
             alt: "Vận chuyển ECCF",
             description: "Vận chuyển qua hình thức ECCF."
         }
@@ -133,7 +133,7 @@ const SolutionSlider = () => {
                                             <div className="info">
                                                 <a className="btn-circle" href={slide.link}>
                                                     <img
-                                                        src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg"
+                                                        src="/template/assets/images/ic-arrow.svg"
                                                         alt="Chi tiết"
                                                     />
                                                 </a>

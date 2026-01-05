@@ -21,12 +21,12 @@ const ContactPage = ({ initialLocale = 'en' }) => {
                             <img
                                 width="1728"
                                 height="500"
-                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner.jpg"
+                                src="banner.jpg"
                                 className="attachment-full size-full"
                                 alt="Vận tải đường bộ - EXPEDITORS GLOBAL"
                                 decoding="async"
                                 fetchPriority="high"
-                                srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner.jpg 1728w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner-300x87.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner-1024x296.jpg 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner-768x222.jpg 768w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner-1536x444.jpg 1536w"
+                                srcSet="banner.jpg 1728w, banner-300x87.jpg 300w, banner-1024x296.jpg 1024w, banner-768x222.jpg 768w, banner-1536x444.jpg 1536w"
                             />
                         </div>
                     </div>
@@ -49,11 +49,11 @@ const ContactPage = ({ initialLocale = 'en' }) => {
                                 <div className="contact-l col">
                                     <div className="wrapper">
                                         <div className="contact-logo">
-                                            <a href="https://vietnampostlogistics.com/" className="custom-logo-link" rel="home">
+                                            <a href="/" className="custom-logo-link" rel="home">
                                                 <img
                                                     width="146"
                                                     height="49"
-                                                    src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/logo.svg"
+                                                    src="logo.svg"
                                                     className="custom-logo"
                                                     alt="Việt Nam Post Logistics"
                                                     decoding="async"
@@ -100,13 +100,13 @@ const ContactPage = ({ initialLocale = 'en' }) => {
                                         <div className="social">
                                             <div className="social-list">
                                                 <a href="https://www.facebook.com/VietnamPostLogisticsCompany" target="_blank" rel="noopener noreferrer" className="social-link">
-                                                    <img src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-fb.svg" alt="Facebook" />
+                                                    <img src="ic-fb.svg" alt="Facebook" />
                                                 </a>
                                                 <a href="https://www.linkedin.com/company/vietnam-post-logistics/" target="_blank" rel="noopener noreferrer" className="social-link">
-                                                    <img src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-ins.svg" alt="LinkedIn" />
+                                                    <img src="ic-ins.svg" alt="LinkedIn" />
                                                 </a>
                                                 <a href="https://www.tiktok.com/@vietnampostlogistics" target="_blank" rel="noopener noreferrer" className="social-link">
-                                                    <img src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-tiktok.svg" alt="TikTok" />
+                                                    <img src="ic-tiktok.svg" alt="TikTok" />
                                                 </a>
                                             </div>
                                         </div>

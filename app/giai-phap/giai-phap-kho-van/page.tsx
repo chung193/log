@@ -107,7 +107,7 @@ const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
                                 <div className="bn-box-it col">
                                     <div className="inner">
                                         <div className="icon">
-                                            <img width="24" height="24" src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn1.svg" className="attachment-full size-full" alt="Icon TMĐT" decoding="async" />
+                                            <img width="24" height="24" src="ic-bn1.svg" className="attachment-full size-full" alt="Icon TMĐT" decoding="async" />
                                         </div>
                                         <p className="des">
                                             {t("pages.warehouse.item-1")}
@@ -117,7 +117,7 @@ const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
                                 <div className="bn-box-it col">
                                     <div className="inner">
                                         <div className="icon">
-                                            <img width="24" height="24" src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn2.svg" className="attachment-full size-full" alt="KẾT NỐI HÀNH TRÌNH" decoding="async" />
+                                            <img width="24" height="24" src="ic-bn2.svg" className="attachment-full size-full" alt="KẾT NỐI HÀNH TRÌNH" decoding="async" />
                                         </div>
                                         <p className="des">
                                             {t("pages.warehouse.item-2")}
@@ -127,7 +127,7 @@ const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
                                 <div className="bn-box-it col">
                                     <div className="inner">
                                         <div className="icon">
-                                            <img width="24" height="24" src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn3.svg" className="attachment-full size-full" alt="LIÊN KẾT" decoding="async" loading="lazy" />
+                                            <img width="24" height="24" src="ic-bn3.svg" className="attachment-full size-full" alt="LIÊN KẾT" decoding="async" loading="lazy" />
                                         </div>
                                         <p className="des">
                                             {t("pages.warehouse.item-3")}
@@ -137,7 +137,7 @@ const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
                                 <div className="bn-box-it col">
                                     <div className="inner">
                                         <div className="icon">
-                                            <img width="24" height="24" src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn4.svg" className="attachment-full size-full" alt="tmđt" decoding="async" loading="lazy" />
+                                            <img width="24" height="24" src="ic-bn4.svg" className="attachment-full size-full" alt="tmđt" decoding="async" loading="lazy" />
                                         </div>
                                         <p className="des">
                                             {t("pages.warehouse.item-4")}
@@ -167,21 +167,22 @@ const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
                     <div className="store-ser-swiper ss-pd">
                         <div className="container">
                             <div className="store-ser-des">
-                                <p>Với kinh nghiệm lâu năm trong ngành cùng hệ thống kho bãi rộng lớn, lên tới 500.000 m2 sàn đặt tại các vị trí đắc địa, thuận lợi cho việc vận chuyển và các hoạt động Logistics như: Hà Nam, Vĩnh Phúc, Hà Nội, Hải Phòng, TP. Hồ Chí Minh,…</p>
+                                <p>
+                                    {t("pages.warehouse.store-ser-des")}                                    </p>
                             </div>
 
-                            <StoreSwiper />
+                            <StoreSwiper initialLocale={initialLocale} />
                         </div>
                     </div>
 
-                    <StoreTime />
+                    <StoreTime initialLocale={initialLocale} />
                 </div>
             </section>
 
-            <StoreSolution />
-            <WhyChoose />
-            <WareHouseEXP />
-            <StoreImportant />
+            <StoreSolution initialLocale={initialLocale} />
+            <WhyChoose initialLocale={initialLocale} />
+            <WareHouseEXP initialLocale={initialLocale} />
+            <StoreImportant initialLocale={initialLocale} />
 
         </main>
     );

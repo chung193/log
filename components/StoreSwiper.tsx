@@ -7,9 +7,21 @@ import './StoreSwiper.css';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
 
-const StoreSwiper = () => {
+const StoreSwiper = ({ initialLocale = 'en' }) => {
     const swiperRef = useRef(null);
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
+
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
 
     useEffect(() => {
         // Khởi tạo Swiper sau khi component mount
@@ -63,20 +75,22 @@ const StoreSwiper = () => {
                         <div className="store-ser-swiper-it">
                             <div className="inner">
                                 <div className="img">
-                                    <a className="img-inner" href="https://vietnampostlogistics.com/dich-vu-cho-thue-kho-bai-uy-tin-chat-luong-hang-dau-viet-nam/">
+                                    <a className="img-inner" href="/dich-vu-cho-thue-kho-bai-uy-tin-chat-luong-hang-dau-viet-nam/">
                                         <img
                                             width="286"
                                             height="346"
-                                            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage1.jpg"
+                                            src="storage1.jpg"
                                             alt="Dịch vụ cho thuê kho bãi"
                                         />
                                     </a>
                                 </div>
                                 <div className="info">
-                                    <a className="btn-circle" href="https://vietnampostlogistics.com/dich-vu-cho-thue-kho-bai-uy-tin-chat-luong-hang-dau-viet-nam/">
-                                        <img src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg" alt="arrow" />
+                                    <a className="btn-circle" href="/dich-vu-cho-thue-kho-bai-uy-tin-chat-luong-hang-dau-viet-nam/">
+                                        <img src="/template/assets/images/ic-arrow.svg" alt="arrow" />
                                     </a>
-                                    <p className="info-des">Dịch vụ cho thuê kho bãi</p>
+                                    <p className="info-des">
+                                        {t("components.store-swiper.item1-title")}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -87,20 +101,22 @@ const StoreSwiper = () => {
                         <div className="store-ser-swiper-it">
                             <div className="inner">
                                 <div className="img">
-                                    <a className="img-inner" href="https://vietnampostlogistics.com/dich-vu-gia-tri-gia-tang/">
+                                    <a className="img-inner" href="/dich-vu-gia-tri-gia-tang/">
                                         <img
                                             width="286"
                                             height="346"
-                                            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage2.jpg"
+                                            src="storage2.jpg"
                                             alt="Dịch vụ gia tăng"
                                         />
                                     </a>
                                 </div>
                                 <div className="info">
-                                    <a className="btn-circle" href="https://vietnampostlogistics.com/dich-vu-gia-tri-gia-tang/">
-                                        <img src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg" alt="arrow" />
+                                    <a className="btn-circle" href="/dich-vu-gia-tri-gia-tang/">
+                                        <img src="/template/assets/images/ic-arrow.svg" alt="arrow" />
                                     </a>
-                                    <p className="info-des">Dịch vụ gia tăng: phân loại, chia chọn và soạn theo đơn hàng, in, dán tem.</p>
+                                    <p className="info-des">
+                                        {t("components.store-swiper.item2-title")}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -111,20 +127,22 @@ const StoreSwiper = () => {
                         <div className="store-ser-swiper-it">
                             <div className="inner">
                                 <div className="img">
-                                    <a className="img-inner" href="https://vietnampostlogistics.com/giai-phap-xuat-nhap-khau-tai-kho-va-quan-ly-hang-hoa/">
+                                    <a className="img-inner" href="/giai-phap-xuat-nhap-khau-tai-kho-va-quan-ly-hang-hoa/">
                                         <img
                                             width="286"
                                             height="346"
-                                            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage3.jpg"
+                                            src="storage3.jpg"
                                             alt="Dịch vụ xuất nhập khẩu"
                                         />
                                     </a>
                                 </div>
                                 <div className="info">
-                                    <a className="btn-circle" href="https://vietnampostlogistics.com/giai-phap-xuat-nhap-khau-tai-kho-va-quan-ly-hang-hoa/">
-                                        <img src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg" alt="arrow" />
+                                    <a className="btn-circle" href="/giai-phap-xuat-nhap-khau-tai-kho-va-quan-ly-hang-hoa/">
+                                        <img src="/template/assets/images/ic-arrow.svg" alt="arrow" />
                                     </a>
-                                    <p className="info-des">Dịch vụ xuất nhập khẩu tại kho và quản lý hàng hóa.</p>
+                                    <p className="info-des">
+                                        {t("components.store-swiper.item3-title")}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -135,20 +153,22 @@ const StoreSwiper = () => {
                         <div className="store-ser-swiper-it">
                             <div className="inner">
                                 <div className="img">
-                                    <a className="img-inner" href="https://vietnampostlogistics.com/dich-vu-hai-quan-cua-vietnam-post-logistics/">
+                                    <a className="img-inner" href="/dich-vu-hai-quan-cua-vietnam-post-logistics/">
                                         <img
                                             width="286"
                                             height="346"
-                                            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/storage4.jpg"
+                                            src="storage4.jpg"
                                             alt="Dịch vụ hải quan"
                                         />
                                     </a>
                                 </div>
                                 <div className="info">
-                                    <a className="btn-circle" href="https://vietnampostlogistics.com/dich-vu-hai-quan-cua-vietnam-post-logistics/">
-                                        <img src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg" alt="arrow" />
+                                    <a className="btn-circle" href="/dich-vu-hai-quan-cua-vietnam-post-logistics/">
+                                        <img src="/template/assets/images/ic-arrow.svg" alt="arrow" />
                                     </a>
-                                    <p className="info-des">Dịch vụ hải quan: thông quan và giám sát hải quan nhập kho.</p>
+                                    <p className="info-des">
+                                        {t("components.store-swiper.item4-title")}
+                                    </p>
                                 </div>
                             </div>
                         </div>

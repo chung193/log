@@ -5,22 +5,22 @@ import SiteBreadcrumb from '@/components/SiteBreadcrumb';
 const BenefitsBox = () => {
     const benefits = [
         {
-            icon: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn1.svg',
+            icon: 'ic-bn1.svg',
             alt: 'Icon TMĐT',
             text: 'Đảm bảo sự hài lòng với dịch vụ đáng tin cậy.'
         },
         {
-            icon: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn2.svg',
+            icon: 'ic-bn2.svg',
             alt: 'KẾT NỐI HÀNH TRÌNH',
             text: 'Tiết kiệm chi phí nhờ quy trình tối ưu hoá.'
         },
         {
-            icon: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn3.svg',
+            icon: 'ic-bn3.svg',
             alt: 'LIÊN KẾT',
             text: 'Đội ngũ nhân sự năng động và giàu kinh nghiệm.'
         },
         {
-            icon: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn4.svg',
+            icon: 'ic-bn4.svg',
             alt: 'tmđt',
             text: 'Sự an toàn và bảo mật của khách hàng là ưu tiên hàng đầu.'
         }
@@ -56,33 +56,33 @@ const BenefitsBox = () => {
 const SolutionMenu = () => {
     const menuItems = [
         {
-            icon: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/menu1.svg',
+            icon: 'menu1.svg',
             label: 'Vận tải đường biển',
-            href: 'https://vietnampostlogistics.com/giai-phap/giai-phap-sea-freight/',
+            href: '/giai-phap/giai-phap-sea-freight/',
             active: false
         },
         {
-            icon: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/menu2.svg',
+            icon: 'menu2.svg',
             label: 'Chuyển phát nhanh Quốc tế',
-            href: 'https://vietnampostlogistics.com/giai-phap/giai-phap-air-express/',
+            href: '/giai-phap/giai-phap-air-express/',
             active: false
         },
         {
-            icon: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/menu3.svg',
+            icon: 'menu3.svg',
             label: 'Vận tải hàng không',
-            href: 'https://vietnampostlogistics.com/giai-phap/giai-phap-air-cargo/',
+            href: '/giai-phap/giai-phap-air-cargo/',
             active: false
         },
         {
-            icon: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/menu4.svg',
+            icon: 'menu4.svg',
             label: 'Đường bộ xuyên biên giới',
-            href: 'https://vietnampostlogistics.com/giai-phap/giai-phap-cross-border-trucking/',
+            href: '/giai-phap/giai-phap-cross-border-trucking/',
             active: false
         },
         {
-            icon: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/menu5.svg',
+            icon: 'menu5.svg',
             label: 'Vận tải đường sắt',
-            href: 'https://vietnampostlogistics.com/giai-phap/giai-phap-railway/',
+            href: '/giai-phap/giai-phap-railway/',
             active: true
         }
     ];
@@ -149,19 +149,19 @@ const StatisticsBox = () => {
 const AdvantagesSection = () => {
     const advantages = [
         {
-            icon: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-il1.svg',
+            icon: 'ic-il1.svg',
             description: 'Khả năng vận chuyển hàng hóa khối lượng lớn với chi phí phải chăng.'
         },
         {
-            icon: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn1.svg',
+            icon: 'ic-bn1.svg',
             description: 'Giảm thiểu tác động đến môi trường nhờ hiệu quả năng lượng của đường sắt'
         },
         {
-            icon: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn2.svg',
+            icon: 'ic-bn2.svg',
             description: 'Độ an toàn cao, hạn chế các rủi ro hư hỏng hoặc mất mát hàng hóa.'
         },
         {
-            icon: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-il3.svg',
+            icon: 'ic-il3.svg',
             description: 'Dễ dàng kết nối với các hệ thống vận tải khác để giao hàng nhanh chóng.'
         }
     ];
@@ -173,12 +173,12 @@ const AdvantagesSection = () => {
                     <img
                         width="1950"
                         height="788"
-                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ds-min.jpg"
+                        src="ds-min.jpg"
                         className="attachment-full size-full"
                         alt=""
                         decoding="async"
                         loading="lazy"
-                        srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ds-min.jpg 1950w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/ds-min-300x121.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/ds-min-1024x414.jpg 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/ds-min-768x310.jpg 768w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/ds-min-1536x621.jpg 1536w"
+                        srcSet="ds-min.jpg 1950w, ds-min-300x121.jpg 300w, ds-min-1024x414.jpg 1024w, ds-min-768x310.jpg 768w, ds-min-1536x621.jpg 1536w"
                     />
                 </div>
             </div>
@@ -227,19 +227,19 @@ const AdvantagesSection = () => {
 const ServiceBenefits = () => {
     const benefits = [
         {
-            icon: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-tag.svg',
+            icon: 'ic-tag.svg',
             title: 'Tiết kiệm chi phí vận chuyển'
         },
         {
-            icon: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-increase.svg',
+            icon: 'ic-increase.svg',
             title: 'Tăng khả năng lập kế hoạch chính xác nhờ lịch trình ổn định'
         },
         {
-            icon: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-trip.svg',
+            icon: 'ic-trip.svg',
             title: 'Tăng cường độ tin cậy và an toàn'
         },
         {
-            icon: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-hand.svg',
+            icon: 'ic-hand.svg',
             title: 'Giảm thiểu tác động môi trường'
         }
     ];
@@ -354,7 +354,7 @@ const ContactForm = () => {
                                                             <span className="txt-inner">Liên hệ tư vấn</span>
                                                             <span className="txt-icon">
                                                                 <img
-                                                                    src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg"
+                                                                    src="/template/assets/images/ic-arrow.svg"
                                                                     alt=""
                                                                 />
                                                             </span>
@@ -373,12 +373,12 @@ const ContactForm = () => {
                                     <img
                                         width="1229"
                                         height="615"
-                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/fly.png"
+                                        src="fly.png"
                                         className="attachment-full size-full"
                                         alt="Máy bay, containers"
                                         decoding="async"
                                         loading="lazy"
-                                        srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/fly.png 1229w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/fly-300x150.png 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/fly-1024x512.png 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/fly-768x384.png 768w"
+                                        srcSet="fly.png 1229w, fly-300x150.png 300w, fly-1024x512.png 1024w, fly-768x384.png 768w"
                                     />
                                 </div>
                             </div>
@@ -410,12 +410,12 @@ const RailwaySolutionPage: React.FC = ({ initialLocale = 'en' }) => {
                     <img
                         width="2000"
                         height="1121"
-                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/coverrw-min.jpg"
+                        src="coverrw-min.jpg"
                         className="attachment-full size-full"
                         alt=""
                         decoding="async"
                         fetchPriority="high"
-                        srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/coverrw-min.jpg 2000w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/coverrw-min-300x168.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/coverrw-min-1024x574.jpg 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/coverrw-min-768x430.jpg 768w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/coverrw-min-1536x861.jpg 1536w"
+                        srcSet="coverrw-min.jpg 2000w, coverrw-min-300x168.jpg 300w, coverrw-min-1024x574.jpg 1024w, coverrw-min-768x430.jpg 768w, coverrw-min-1536x861.jpg 1536w"
                     />
                 </div>
                 <div className="container">

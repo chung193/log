@@ -9,12 +9,12 @@ const ExpEntrustSection = () => {
                             <div className="img hover-img-rotate">
                                 <a
                                     className="img-inner"
-                                    href="https://vietnampostlogistics.com/tat-tan-tat-ve-fcl-full-container-load-trong-logistics/"
+                                    href="/tat-tan-tat-ve-fcl-full-container-load-trong-logistics/"
                                 >
                                     <img
                                         width="274"
                                         height="296"
-                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/exp1.jpg"
+                                        src="/images/exp1.jpg"
                                         className="attachment-full size-full"
                                         alt="Bãi containers"
                                         decoding="async"
@@ -23,10 +23,10 @@ const ExpEntrustSection = () => {
                                 </a>
                                 <a
                                     className="btn-circle"
-                                    href="https://vietnampostlogistics.com/tat-tan-tat-ve-fcl-full-container-load-trong-logistics/"
+                                    href="/tat-tan-tat-ve-fcl-full-container-load-trong-logistics/"
                                 >
                                     <img
-                                        src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg"
+                                        src="/images/ic-arrow.svg"
                                         alt="arrow icon"
                                     />
                                 </a>
@@ -35,7 +35,7 @@ const ExpEntrustSection = () => {
                                 <h4>
                                     <a
                                         className="info-tt"
-                                        href="https://vietnampostlogistics.com/tat-tan-tat-ve-fcl-full-container-load-trong-logistics/"
+                                        href="/tat-tan-tat-ve-fcl-full-container-load-trong-logistics/"
                                     >
                                         FCL - Full container load
                                     </a>
@@ -55,12 +55,12 @@ const ExpEntrustSection = () => {
                             <div className="img hover-img-rotate">
                                 <a
                                     className="img-inner"
-                                    href="https://vietnampostlogistics.com/lcl-giai-phap-van-chuyen-gom-hang-toi-uu-cho-doanh-nghiep/"
+                                    href="/lcl-giai-phap-van-chuyen-gom-hang-toi-uu-cho-doanh-nghiep/"
                                 >
                                     <img
                                         width="274"
                                         height="296"
-                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/exp2.jpg"
+                                        src="/images/exp2.jpg"
                                         className="attachment-full size-full"
                                         alt="thùng hàng carton và pallet"
                                         decoding="async"
@@ -69,10 +69,10 @@ const ExpEntrustSection = () => {
                                 </a>
                                 <a
                                     className="btn-circle"
-                                    href="https://vietnampostlogistics.com/lcl-giai-phap-van-chuyen-gom-hang-toi-uu-cho-doanh-nghiep/"
+                                    href="/lcl-giai-phap-van-chuyen-gom-hang-toi-uu-cho-doanh-nghiep/"
                                 >
                                     <img
-                                        src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg"
+                                        src="/images/ic-arrow.svg"
                                         alt="arrow icon"
                                     />
                                 </a>
@@ -81,7 +81,7 @@ const ExpEntrustSection = () => {
                                 <h4>
                                     <a
                                         className="info-tt"
-                                        href="https://vietnampostlogistics.com/lcl-giai-phap-van-chuyen-gom-hang-toi-uu-cho-doanh-nghiep/"
+                                        href="/lcl-giai-phap-van-chuyen-gom-hang-toi-uu-cho-doanh-nghiep/"
                                     >
                                         LCL - Less than container load
                                     </a>

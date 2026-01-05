@@ -1,4 +1,7 @@
 {
+    "common": {
+        "unit": "TEU/month"
+    },
     "components": {
         "button": {
             "find-more": "Find more",
@@ -129,9 +132,116 @@
             "mission-des": "Our mission is to seamlessly <b>connect</b> businesses and individuals across Vietnam with the world. We are committed to driving growth by providing innovative, reliable, and efficient logistics solutions that foster global trade and communication. With a focus on customer satisfaction, sustainable practices, and advanced technologies, we aim to bridge distances, empower communities, and become a trusted partner in the global supply chain. Together, we deliver opportunities, strengthen connections, and unlock new possibilities for Vietnam and beyond.",
             "core-value-des": "reflect its commitment to delivering quality and reliability in logistics services. These values are encapsulated by the principles of <b>challenge, commitment, integrity, responsibility, and respect.</b> The company emphasizes continuous improvement and strives to connect people and businesses through efficient logistics solutions. With these values, Vietnam Post Logistics aims to become a leading logistics provider in Vietnam, leveraging its vast network and infrastructure to offer comprehensive supply chain solutions.",
             "core-value": "Core Value"
+        },
+        "warehouse": {
+            "item1-title": "VMI Bonded Warehouse",
+            "item1-des": "Many years of experience in the industry with a large warehouse system.",
+            "item2-title": "On-site Import - Export Bonded Warehouse",
+            "item2-des": "Save time and optimize cash flow for your business.",
+            "item3-title": "Distribution Warehouse",
+            "item3-des": "Design optimal solutions for each business.",
+            "item4-title": "Fulfillment Warehouse",
+            "item4-des": "Professional and dedicated operation.",
+            "item5-title": "Raw Material Warehouse",
+            "item5-des": "Many years of experience in the industry with a large warehouse system."
+        },
+        "store-swiper": {
+            "item1-title": "Warehouse rental services",
+            "item2-title": "Value added services: sorting, selecting and preparing according to orders, printing and labeling.",
+            "item3-title": "On-site import and export services and cargo management.",
+            "item4-title": "Customs services: customs clearance and customs supervision of warehousing."
+        },
+        "store-time": {
+            "title": "Fastest customs clearance time",
+            "second-title": "at warehouse in Vietnam market",
+            "sub-title": "Ensure goods from other countries to Vietnam",
+            "second-sub-title": "quickly and conveniently.",
+            "time": "Under 16 hours"
+        },
+        "store-solu": {
+            "title": "Comprehensive Solution For",
+            "item1": "Distributors, retailers.",
+            "item2": "Manufacturing and import-export businesses.",
+            "item3": "Logistics companies."
+        },
+        "why-choose": {
+            "title": "Why choose us?",
+            "item1": "The total warehouse area of ​​Vietnam Post Logistics is 500,000 m2.",
+            "item2": "VMI Supply Model",
+            "item3": "Security management system: TAPA - A certified",
+            "item4": "Automatic fire protection system.",
+            "item5": "CCTV cameras and 24/7 perimeter security.",
+            "item6": "Advanced lifting, cargo handling equipment, leveler docks."
+        },
+        "warehouse-exp": {
+            "title": "Warehouse system",
+            "title-des": "With many years of experience in the industry and a large warehouse system, up to 500,000 m2 of floor space located in prime locations, convenient for transportation and logistics activities such as: Ha Nam, Vinh Phuc, Hanoi, Hai Phong, Ho Chi Minh City,…",
+            "vi": "VietNam",
+            "ci": "China",
+            "address1": "Vinh Phuc Bonded Warehouse",
+            "address1-des": "<b>Địa chỉ :</b> Lot F4A, Thang Long Vinh Phuc Industrial Park, Binh Xuyen Commune, Phu Tho Province.<br/><b>Diện tích :</b> 18,<br/>272 m2",
+            "address2": "Vinh Phuc 2 Bonded Warehouse",
+            "address2-des": "<b>Địa chỉ :</b>  Factory 5, Lot 122, Ba Thien Industrial Park – Sub-area I, Binh Xuyen Commune, Phu Tho Province.<br/><b>Diện tích :</b> 4,<br/>185 m2",
+            "address3": "China Logistics Center",
+            "address3-des": "<b>Địa chỉ :</b> Nanning City, Guangxi Province, China"
+        },
+        "so-important": {
+            "title": "Key industries",
+            "item1": "Technology",
+            "item1-des": " <p><b>Modern and leading KNQ system in Vietnam in Vinh Phuc, Ha Nam, Hai Phong, Hung Yen, Bac Ninh, HCM.</b></p><p><b>Regular warehouse system, EPE warehouse in Hai Phong, Hanoi, Nghe An, Binh Duong, HCM.</b></p><br /><ul><li>DELL</li><li>Quantas</li><li>Compal</li><li>Wistron</li><li>WNC</li><li>Tachibana</li><li>Qisda</li><li>Lenovo</li><li>Tecapro</li></ul>",
+            "item2": "FMCG",
+            "item2-des": "<p><b>Distribution center system in major economic hubs: Hanoi, Haiphong, Nghe An, Danang, Binh Duong, Ho Chi Minh City, Can Tho Hub system in all provinces and cities nationwide. Vietnam Post Logistics has strengths in FMCG warehouse management:</b></p><p>Modern warehouse system: Ensure efficient storage and product quality.</p><p>Flexible supply chain management: Optimize the process from import to distribution.</p><p>Centralized warehouse system, located within VNPL’s major postal operations centers in Hanoi, Ho Chi Minh City, Da Nang, and Nghe An, ensures security, reduces de-livery times, and optimizes costs.Dedicated customer service: Support good tracking and management of goods.</p>",
+            "item3": "E-commerce",
+            "item3-des": "<p><b>Centralized warehouse system, located within VNPL’s major postal operations centers in Hanoi, Ho Chi Minh City, Da Nang, and Nghe An, ensures security, reduces de-livery times, and optimizes costs.</b></p><ul><li>Etsy</li><li>Amazon</li><li>Tiktok</li><li>Ebay</li><li>1688</li><li>TEMU</li><li>Alibaba</li></ul>"
+        },
+        "strong": {
+            "title": "Area of Streangth",
+            "second-title": "With extensive experience and a team of professional staff, we are confident in conquering the most demanding customers in the following areas:",
+            "item1": "Technology",
+            "item2": "Industrial Equipment",
+            "item3": "Medical equipment",
+            "item4": "Construcution Materials"
+        },
+        "services": {
+            "item1": "SEA FREIGHT",
+            "item2": "AIR EXPRESS",
+            "item3": "AIR CARGO",
+            "item4": "CROSS-BORDER TRUCKING",
+            "item5": "RAILWAY"
         }
     },
     "pages": {
+        "in-log": {
+            "title": "Global Logistics",
+            "second-title": "Solutions",
+            "des": "Fastest shipping speed and best price on the market",
+            "item1": "Excellent solutions for dangerous goods.",
+            "item2": "24/7 companionship.",
+            "item3": "Full customs declaration & clearance support.",
+            "item4": "Absolutely safe transportation.",
+            "text": "Air Express",
+            "second-text": "Vietnam Post Logistics is providing prestigious and quality international express delivery solutions and connecting customers to 230 countries and territories around the world.",
+            "text-des": "We provide fast, safe and flexible international express delivery solutions for specialized goods such as: Letters, samples, documents, gifts,…",
+            "speed": "Fastest shipping speed on the market",
+            "advantages": "Advantages",
+            "item1-title": "Best price",
+            "item1-des": "Vietnam Post Logistics is committed to providing the most competitive prices in the market, helping your business save maximum shipping costs.",
+            "item2-title": "Customs declaration",
+            "item2-des": "Support customs declaration and optimal tax policy.",
+            "item3-title": "Worldwide Shipping",
+            "item3-des": "Shipping to 230 countries and territories.",
+            "item4-title": "Super Fast Shipping",
+            "item4-des": "Save maximum time for customers.",
+            "why-choose": "Why choose us?",
+            "why-item1": "Trusted Partner",
+            "why-item1-des": "The only joint venture partner with DHL Express in Vietnam since 2007.",
+            "why-item2": "Top market share",
+            "why-item2-des": "Top international shipping market share for over 15 years.",
+            "why-item3": "Authority",
+            "why-item3-des": "Authorized to deploy express delivery service with DDP terms, pay taxes on behalf of customers.",
+            "why-item4": "Commitment",
+            "why-item4-des": "Committed to quality and accompanying customers 24/7."
+        },
         "about-us": {
             "title": "Vietnam Post Logistics",
             "second-title": "comprehensive logistics ecosystem",
@@ -148,7 +258,33 @@
             "item-2": "Save costs through process optimization.",
             "item-3": "A specialized design supply model suitable for each business.",
             "item-4": "Safety and security are our top priorities.",
-            "store-para": "With the <b>position, stature and capability</b> of a leading Logistics unit in the market in Vietnam today, Vietnam Post Logistics has been providing customers with <b>quality, professional and diverse</> logistics solutions."
+            "store-para": "With the <b>position, stature and capability</b> of a leading Logistics unit in the market in Vietnam today, Vietnam Post Logistics has been providing customers with <b>quality, professional and diverse</> logistics solutions.",
+            "store-ser-des": "With many years of experience in the industry and a large warehouse system, up to 500,000 m2 of floor space located in prime locations, convenient for transportation and logistics activities such as: Ha Nam, Vinh Phuc, Hanoi, Hai Phong, Ho Chi Minh City,…",
+            "": ""
+        },
+        "sea-freight": {
+            "title": "Global Logistics",
+            "second-title": "Solution",
+            "sub-title": "We provide Door-door service",
+            "item1": "Satisfaction guaranteed with reliable service.",
+            "item2": "Save costs through process optimization.",
+            "item3": "Dynamic and experienced employees.",
+            "item4": "Information security and safety are always top priorities.",
+            "main-title": "Sea Freight",
+            "main-des": "With the increasing demand for international ship-ping and the transport of oversized and overweight goods from the market, Vietnam Post Logistics’ cross-border sea freight service offers an effective solution, significantly helping customers optimize costs and increase profits.<br/>Vietnam Post Logistics provides professional, cost-effective sea freight solutions with no limits on size or quantity of goods.",
+            "title-head": "Advantages",
+            "title-head1": "",
+            "title-des1": "The perfect solution for transporting all types of special goods.",
+            "title-head2": "",
+            "title-des2": "Cost optimization helps increase business profits in the best way.",
+            "title-head3": "",
+            "title-des3": "Maximum cost savings",
+            "title-head4": "",
+            "title-des4": "Extensive global transportation network.",
+            "title-head5": "",
+            "title-des5": "Security and safety are always our top priority.",
+            "title-head6": "",
+            "title-des6": "Read more"
         }
     }
 }

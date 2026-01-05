@@ -78,17 +78,17 @@ export default function Header({ initialLocale = 'en' }) {
     const socialLinks = useMemo(() => [
         {
             href: 'https://www.facebook.com/VietnamPostLogisticsCompany',
-            icon: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-fb.svg',
+            icon: 'ic-fb.svg',
             alt: 'Facebook'
         },
         {
             href: 'https://www.linkedin.com/company/vietnam-post-logistics/',
-            icon: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-ins.svg',
+            icon: 'ic-ins.svg',
             alt: 'LinkedIn'
         },
         {
             href: 'https://www.tiktok.com/@vietnampostlogistics',
-            icon: 'https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-tiktok.svg',
+            icon: 'ic-tiktok.svg',
             alt: 'TikTok'
         },
     ], [])
@@ -462,7 +462,7 @@ export default function Header({ initialLocale = 'en' }) {
                             <div className="container">
                                 <div className="found-f">
                                     <p className="tt">TÌM KIẾM</p>
-                                    <form method="get" id="searchform" className="searchform" action="https://vietnampostlogistics.com/">
+                                    <form method="get" id="searchform" className="searchform" action="/">
                                         <div className="found-form">
                                             <input
                                                 type="search"
@@ -472,7 +472,7 @@ export default function Header({ initialLocale = 'en' }) {
                                                 autoFocus
                                             />
                                             <button type="submit">
-                                                <img src="https://vietnampostlogistics.com/template/assets/images/ic-srch.svg" alt="Search" />
+                                                <img src="/template/assets/images/ic-srch.svg" alt="Search" />
                                             </button>
                                         </div>
                                     </form>

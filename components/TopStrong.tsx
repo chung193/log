@@ -2,11 +2,21 @@
 
 import React, { useEffect, useRef } from "react";
 import './TopStrong.css';
-
-const TopStrong = () => {
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
+const TopStrong = ({ initialLocale = 'en' }) => {
     const swiperRef = useRef<HTMLDivElement>(null);
     const swiperInstance = useRef<any>(null);
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
 
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
     useEffect(() => {
         const initializeSwiper = async () => {
             if (typeof window !== "undefined" && swiperRef.current) {
@@ -83,63 +93,15 @@ const TopStrong = () => {
                     >
                         <span className="word" data-word="Lĩnh" style={{ '--word-index': 0 } as React.CSSProperties}>
                             <span className="char" data-char="L" style={{ '--char-index': 0 } as React.CSSProperties}>
-                                L
+                                {t('components.strong.title')}
                             </span>
-                            <span className="char" data-char="ĩ" style={{ '--char-index': 1 } as React.CSSProperties}>
-                                ĩ
-                            </span>
-                            <span className="char" data-char="n" style={{ '--char-index': 2 } as React.CSSProperties}>
-                                n
-                            </span>
-                            <span className="char" data-char="h" style={{ '--char-index': 3 } as React.CSSProperties}>
-                                h
-                            </span>
-                        </span>
-                        <span className="whitespace"> </span>
-                        <span className="word" data-word="vực" style={{ '--word-index': 1 } as React.CSSProperties}>
-                            <span className="char" data-char="v" style={{ '--char-index': 4 } as React.CSSProperties}>
-                                v
-                            </span>
-                            <span className="char" data-char="ự" style={{ '--char-index': 5 } as React.CSSProperties}>
-                                ự
-                            </span>
-                            <span className="char" data-char="c" style={{ '--char-index': 6 } as React.CSSProperties}>
-                                c
-                            </span>
-                        </span>
-                        <span className="whitespace"> </span>
-                        <span className="word" data-word="thế" style={{ '--word-index': 2 } as React.CSSProperties}>
-                            <span className="char" data-char="t" style={{ '--char-index': 7 } as React.CSSProperties}>
-                                t
-                            </span>
-                            <span className="char" data-char="h" style={{ '--char-index': 8 } as React.CSSProperties}>
-                                h
-                            </span>
-                            <span className="char" data-char="ế" style={{ '--char-index': 9 } as React.CSSProperties}>
-                                ế
-                            </span>
-                        </span>
-                        <span className="whitespace"> </span>
-                        <span className="word" data-word="mạnh" style={{ '--word-index': 3 } as React.CSSProperties}>
-                            <span className="char" data-char="m" style={{ '--char-index': 10 } as React.CSSProperties}>
-                                m
-                            </span>
-                            <span className="char" data-char="ạ" style={{ '--char-index': 11 } as React.CSSProperties}>
-                                ạ
-                            </span>
-                            <span className="char" data-char="n" style={{ '--char-index': 12 } as React.CSSProperties}>
-                                n
-                            </span>
-                            <span className="char" data-char="h" style={{ '--char-index': 13 } as React.CSSProperties}>
-                                h
-                            </span>
+
                         </span>
                     </h3>
                 </div>
                 <div className="line aos-init" data-aos="fade-up-cus">
                     <p className="desc">
-                        Với kinh nghiệm dày dặn và đội ngũ nhân viên chuyên nghiệp, chúng tôi tự tin chinh phục những khách hàng khó tính nhất, đặc biệt trong các
-                        lĩnh vực:
+                        {t('components.strong.second-title')}
                     </p>
                 </div>
             </div>
@@ -162,19 +124,19 @@ const TopStrong = () => {
                                             <img
                                                 width="605"
                                                 height="412"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/Screenshot_2025-04-24_141744-removebg-preview.png"
+                                                src="/images/Screenshot_2025-04-24_141744-removebg-preview-1.webp"
                                                 className="attachment-full size-full"
                                                 alt="Sản phẩm công nghệ"
                                                 decoding="async"
                                                 loading="lazy"
-                                                srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/Screenshot_2025-04-24_141744-removebg-preview.png 605w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/Screenshot_2025-04-24_141744-removebg-preview-300x204.png 300w"
+                                                srcSet="/images/Screenshot_2025-04-24_141744-removebg-preview-1.webp 605w, /images/Screenshot_2025-04-24_141744-removebg-preview-300x204.webp 300w"
                                             />
                                         </a>
                                     </div>
                                     <div className="info">
                                         <h4>
                                             <a className="info-tt" href="#">
-                                                Sản phẩm công nghệ
+                                                {t('components.strong.item1')}
                                             </a>
                                         </h4>
                                     </div>
@@ -191,19 +153,19 @@ const TopStrong = () => {
                                             <img
                                                 width="436"
                                                 height="573"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/hydraulic-ironworker-sw132-removebg-preview.png"
+                                                src="/images/hydraulic-ironworker-sw132-removebg-preview.webp"
                                                 className="attachment-full size-full"
                                                 alt="Thiết bị công nghiệp"
                                                 decoding="async"
                                                 loading="lazy"
-                                                srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/hydraulic-ironworker-sw132-removebg-preview.png 436w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/hydraulic-ironworker-sw132-removebg-preview-228x300.png 228w"
+                                                srcSet="/images/hydraulic-ironworker-sw132-removebg-preview.webp 436w, /images/hydraulic-ironworker-sw132-removebg-preview-228x300.webp 228w"
                                             />
                                         </a>
                                     </div>
                                     <div className="info">
                                         <h4>
                                             <a className="info-tt" href="#">
-                                                Thiết bị công nghiệp
+                                                {t('components.strong.item2')}
                                             </a>
                                         </h4>
                                     </div>
@@ -220,19 +182,19 @@ const TopStrong = () => {
                                             <img
                                                 width="500"
                                                 height="500"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/pngtree-advanced-medical-equipment-png-image_17293421-removebg-preview.png"
+                                                src="/images/pngtree-advanced-medical-equipment-png-image_17293421-removebg-preview.webp"
                                                 className="attachment-full size-full"
                                                 alt="Thiết bị y tế"
                                                 decoding="async"
                                                 loading="lazy"
-                                                srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/pngtree-advanced-medical-equipment-png-image_17293421-removebg-preview.png 500w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/pngtree-advanced-medical-equipment-png-image_17293421-removebg-preview-300x300.png 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/pngtree-advanced-medical-equipment-png-image_17293421-removebg-preview-150x150.png 150w"
+                                                srcSet="/images/pngtree-advanced-medical-equipment-png-image_17293421-removebg-preview.webp 500w, /images/pngtree-advanced-medical-equipment-png-image_17293421-removebg-preview-300x300.webp 300w, pngtree-advanced-medical-equipment-png-image_17293421-removebg-preview-150x150.webp 150w"
                                             />
                                         </a>
                                     </div>
                                     <div className="info">
                                         <h4>
                                             <a className="info-tt" href="#">
-                                                Thiết bị y tế
+                                                {t('components.strong.item3')}
                                             </a>
                                         </h4>
                                     </div>
@@ -249,19 +211,19 @@ const TopStrong = () => {
                                             <img
                                                 width="667"
                                                 height="374"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/Construction-Materials-Are-Used-for-Buildings-removebg-preview.png"
+                                                src="/images/Construction-Materials-Are-Used-for-Buildings-removebg-preview.webp"
                                                 className="attachment-full size-full"
                                                 alt="Vật liệu xây dựng"
                                                 decoding="async"
                                                 loading="lazy"
-                                                srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/Construction-Materials-Are-Used-for-Buildings-removebg-preview.png 667w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/Construction-Materials-Are-Used-for-Buildings-removebg-preview-300x168.png 300w"
+                                                srcSet="/images/Construction-Materials-Are-Used-for-Buildings-removebg-preview.webp 667w, /images/Construction-Materials-Are-Used-for-Buildings-removebg-preview-300x168.webp 300w"
                                             />
                                         </a>
                                     </div>
                                     <div className="info">
                                         <h4>
                                             <a className="info-tt" href="#">
-                                                Vật liệu xây dựng
+                                                {t('components.strong.item4')}
                                             </a>
                                         </h4>
                                     </div>

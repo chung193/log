@@ -23,12 +23,12 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                     <img
                         width="1920"
                         height="1332"
-                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/mde.jpg"
+                        src="mde.jpg"
                         className="attachment-full size-full"
                         alt=""
                         decoding="async"
                         fetchpriority="high"
-                        srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/mde.jpg 1920w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/mde-300x208.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/mde-1024x710.jpg 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/mde-768x533.jpg 768w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/mde-1536x1066.jpg 1536w"
+                        srcSet="mde.jpg 1920w, mde-300x208.jpg 300w, mde-1024x710.jpg 1024w, mde-768x533.jpg 768w, mde-1536x1066.jpg 1536w"
                     />
                 </div>
                 <div className="container">
@@ -87,7 +87,7 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn1.svg"
+                                                src="ic-bn1.svg"
                                                 className="attachment-full size-full"
                                                 alt="Icon TMĐT"
                                                 decoding="async"
@@ -102,7 +102,7 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn2.svg"
+                                                src="ic-bn2.svg"
                                                 className="attachment-full size-full"
                                                 alt="KẾT NỐI HÀNH TRÌNH"
                                                 decoding="async"
@@ -117,7 +117,7 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn3.svg"
+                                                src="ic-bn3.svg"
                                                 className="attachment-full size-full"
                                                 alt="LIÊN KẾT"
                                                 decoding="async"
@@ -133,7 +133,7 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn4.svg"
+                                                src="ic-bn4.svg"
                                                 className="attachment-full size-full"
                                                 alt="tmđt"
                                                 decoding="async"
@@ -220,12 +220,12 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                 <img
                                     width="1914"
                                     height="661"
-                                    src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/xctn2-min.jpg"
+                                    src="xctn2-min.jpg"
                                     className="attachment-full size-full"
                                     alt=""
                                     decoding="async"
                                     loading="lazy"
-                                    srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/xctn2-min.jpg 1914w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/xctn2-min-300x104.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/xctn2-min-1024x354.jpg 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/xctn2-min-768x265.jpg 768w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/xctn2-min-1536x530.jpg 1536w"
+                                    srcSet="xctn2-min.jpg 1914w, xctn2-min-300x104.jpg 300w, xctn2-min-1024x354.jpg 1024w, xctn2-min-768x265.jpg 768w, xctn2-min-1536x530.jpg 1536w"
                                 />
                             </div>
                         </div>
@@ -282,7 +282,7 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                 <img
                                                     width="32"
                                                     height="32"
-                                                    src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-il1.svg"
+                                                    src="ic-il1.svg"
                                                     className="attachment-full size-full"
                                                     alt="Nhanh chóng"
                                                     decoding="async"
@@ -300,7 +300,7 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                 <img
                                                     width="24"
                                                     height="24"
-                                                    src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn1.svg"
+                                                    src="ic-bn1.svg"
                                                     className="attachment-full size-full"
                                                     alt="Icon TMĐT"
                                                     decoding="async"
@@ -318,7 +318,7 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                 <img
                                                     width="32"
                                                     height="32"
-                                                    src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-il3.svg"
+                                                    src="ic-il3.svg"
                                                     className="attachment-full size-full"
                                                     alt="Đa dạng"
                                                     decoding="async"
@@ -336,7 +336,7 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                 <img
                                                     width="24"
                                                     height="24"
-                                                    src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn2.svg"
+                                                    src="ic-bn2.svg"
                                                     className="attachment-full size-full"
                                                     alt="KẾT NỐI HÀNH TRÌNH"
                                                     decoding="async"
@@ -354,7 +354,7 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                 <img
                                                     width="32"
                                                     height="32"
-                                                    src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-il5.svg"
+                                                    src="ic-il5.svg"
                                                     className="attachment-full size-full"
                                                     alt="An toàn"
                                                     decoding="async"
@@ -372,7 +372,7 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                 <img
                                                     width="40"
                                                     height="40"
-                                                    src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/Group-6.png"
+                                                    src="Group-6.png"
                                                     className="attachment-full size-full"
                                                     alt=""
                                                     decoding="async"
@@ -434,7 +434,7 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                             {/* Customer 1 */}
                             <div className="col">
                                 <div className="inland-cus-it">
-                                    <img src="https://vietnampostlogistics.com/template/assets/images/sao.svg" alt="" />
+                                    <img src="/template/assets/images/sao.svg" alt="" />
                                     <p className="text">
                                         <p><strong>Doanh nghiệp sản xuất và kinh doanh</strong> hàng hóa quy mô lớn trong nước.</p>
                                     </p>
@@ -444,7 +444,7 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                             {/* Customer 2 */}
                             <div className="col">
                                 <div className="inland-cus-it">
-                                    <img src="https://vietnampostlogistics.com/template/assets/images/sao.svg" alt="" />
+                                    <img src="/template/assets/images/sao.svg" alt="" />
                                     <p className="text">
                                         <p>Các <strong>doanh nghiệp xuất nhập khẩu</strong> cần vận chuyển hàng hóa qua biên giới.</p>
                                     </p>
@@ -454,7 +454,7 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                             {/* Customer 3 */}
                             <div className="col">
                                 <div className="inland-cus-it">
-                                    <img src="https://vietnampostlogistics.com/template/assets/images/sao.svg" alt="" />
+                                    <img src="/template/assets/images/sao.svg" alt="" />
                                     <p className="text">
                                         <p><strong>Các công ty logistics</strong> có nhu cầu kết nối chuỗi cung ứng.</p>
                                     </p>
@@ -469,12 +469,12 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                             <img
                                 width="1728"
                                 height="592"
-                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/imgContainer.png"
+                                src="imgContainer.png"
                                 className="attachment-full size-full"
                                 alt=""
                                 decoding="async"
                                 loading="lazy"
-                                srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/imgContainer.png 1728w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/imgContainer-300x103.png 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/imgContainer-1024x351.png 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/imgContainer-768x263.png 768w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/imgContainer-1536x526.png 1536w"
+                                srcSet="imgContainer.png 1728w, imgContainer-300x103.png 300w, imgContainer-1024x351.png 1024w, imgContainer-768x263.png 768w, imgContainer-1536x526.png 1536w"
                             />
                         </div>
                     </div>
@@ -541,12 +541,12 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                         <img
                                             width="954"
                                             height="1226"
-                                            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/axctn-1.jpg"
+                                            src="axctn-1.jpg"
                                             className="attachment-full size-full"
                                             alt=""
                                             decoding="async"
                                             loading="lazy"
-                                            srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/axctn-1.jpg 954w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/axctn-1-233x300.jpg 233w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/axctn-1-797x1024.jpg 797w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/axctn-1-768x987.jpg 768w"
+                                            srcSet="axctn-1.jpg 954w, axctn-1-233x300.jpg 233w, axctn-1-797x1024.jpg 797w, axctn-1-768x987.jpg 768w"
                                         />
                                     </div>
                                 </div>
@@ -564,7 +564,7 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                         <img
                                                             width="101"
                                                             height="100"
-                                                            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/icon-car.svg"
+                                                            src="icon-car.svg"
                                                             className="attachment-full size-full"
                                                             alt=""
                                                             decoding="async"
@@ -586,7 +586,7 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                         <img
                                                             width="100"
                                                             height="100"
-                                                            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-tag.svg"
+                                                            src="ic-tag.svg"
                                                             className="attachment-full size-full"
                                                             alt="tag"
                                                             decoding="async"
@@ -608,7 +608,7 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                         <img
                                                             width="100"
                                                             height="100"
-                                                            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-hand.svg"
+                                                            src="ic-hand.svg"
                                                             className="attachment-full size-full"
                                                             alt="Bắt tay"
                                                             decoding="async"
@@ -630,7 +630,7 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                         <img
                                                             width="100"
                                                             height="100"
-                                                            src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-increase.svg"
+                                                            src="ic-increase.svg"
                                                             className="attachment-full size-full"
                                                             alt="vận hành phát triển"
                                                             decoding="async"

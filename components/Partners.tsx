@@ -6,7 +6,7 @@ import { useSearchParams } from 'next/navigation';
 import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
 
-const Partners = () => {
+const Partners = ({ initialLocale = 'en' }) => {
     const swiperRef1 = useRef<HTMLDivElement>(null);
     const swiperRef2 = useRef<HTMLDivElement>(null);
     const swiperInstance1 = useRef<any>(null);
@@ -167,12 +167,12 @@ const Partners = () => {
                                     <img
                                         width="384"
                                         height="201"
-                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw4.jpg"
+                                        src="/images/aw4.webp"
                                         className="attachment-full size-full"
                                         alt="Logo Postal Service - United States"
                                         decoding="async"
                                         loading="lazy"
-                                        srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw4.jpg 384w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw4-300x157.jpg 300w"
+                                        srcSet="/images/aw4.webp 384w, /images/aw4-300x157.webp 300w"
                                     />
                                 </a>
                             </div>
@@ -185,12 +185,12 @@ const Partners = () => {
                                     <img
                                         width="384"
                                         height="201"
-                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw5.jpg"
+                                        src="/images/aw5.webp"
                                         className="attachment-full size-full"
                                         alt="Logo Vietjet Air"
                                         decoding="async"
                                         loading="lazy"
-                                        srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw5.jpg 384w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw5-300x157.jpg 300w"
+                                        srcSet="/images/aw5.webp 384w, /images/aw5-300x157.webp 300w"
                                     />
                                 </a>
                             </div>
@@ -203,12 +203,12 @@ const Partners = () => {
                                     <img
                                         width="384"
                                         height="200"
-                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw6.jpg"
+                                        src="/images/aw6.webp"
                                         className="attachment-full size-full"
                                         alt="Logo Korean Air"
                                         decoding="async"
                                         loading="lazy"
-                                        srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw6.jpg 384w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw6-300x156.jpg 300w"
+                                        srcSet="/images/aw6.webp 384w, /images/aw6-300x156.webp 300w"
                                     />
                                 </a>
                             </div>
@@ -240,12 +240,12 @@ const Partners = () => {
                                     <img
                                         width="384"
                                         height="200"
-                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw6-1.jpg"
+                                        src="/images/aw6-1.webp"
                                         className="attachment-full size-full"
                                         alt="Partner logo"
                                         decoding="async"
                                         loading="lazy"
-                                        srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw6-1.jpg 384w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw6-1-300x156.jpg 300w"
+                                        srcSet="/images/aw6-1.webp 384w, /images/aw6-1-300x156.webp 300w"
                                     />
                                 </a>
                             </div>
@@ -258,12 +258,12 @@ const Partners = () => {
                                     <img
                                         width="384"
                                         height="201"
-                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw5-1.jpg"
+                                        src="/images/aw5-1.webp"
                                         className="attachment-full size-full"
                                         alt="Partner logo"
                                         decoding="async"
                                         loading="lazy"
-                                        srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw5-1.jpg 384w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw5-1-300x157.jpg 300w"
+                                        srcSet="/images/aw5-1.webp 384w, /images/aw5-1-300x157.webp 300w"
                                     />
                                 </a>
                             </div>
@@ -276,12 +276,12 @@ const Partners = () => {
                                     <img
                                         width="384"
                                         height="201"
-                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw4-1.jpg"
+                                        src="/images/aw4-1.webp"
                                         className="attachment-full size-full"
                                         alt="Partner logo"
                                         decoding="async"
                                         loading="lazy"
-                                        srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw4-1.jpg 384w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw4-1-300x157.jpg 300w"
+                                        srcSet="/images/aw4-1.webp 384w, /images/aw4-1-300x157.webp 300w"
                                     />
                                 </a>
                             </div>
@@ -294,12 +294,12 @@ const Partners = () => {
                                     <img
                                         width="384"
                                         height="201"
-                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw3-1.jpg"
+                                        src="/images/aw3-1.webp"
                                         className="attachment-full size-full"
                                         alt="Partner logo"
                                         decoding="async"
                                         loading="lazy"
-                                        srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw3-1.jpg 384w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw3-1-300x157.jpg 300w"
+                                        srcSet="/images/aw3-1.webp 384w, /images/aw3-1-300x157.webp 300w"
                                     />
                                 </a>
                             </div>
@@ -312,12 +312,12 @@ const Partners = () => {
                                     <img
                                         width="384"
                                         height="201"
-                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw2-1.jpg"
+                                        src="/images/aw2-1.webp"
                                         className="attachment-full size-full"
                                         alt="Partner logo"
                                         decoding="async"
                                         loading="lazy"
-                                        srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw2-1.jpg 384w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/aw2-1-300x157.jpg 300w"
+                                        srcSet="/images/aw2-1.webp 384w, /images/aw2-1-300x157.webp 300w"
                                     />
                                 </a>
                             </div>

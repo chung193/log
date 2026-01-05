@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import SiteBreadcrumb from '@/components/SiteBreadcrumb';
 import ListServices from '@/components/ListServices';
@@ -6,18 +7,38 @@ import Partners from '@/components/Partners';
 import TopStrong from '@/components/TopStrong';
 import PartnersSection from '@/components/PartnersSection';
 import ContactFormSection from '@/components/ContactFormSection';
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
+import BoxHeader from '@/components/BoxHeader';
 
-const SeaFreightPage: React.FC<{ language: 'vi' | 'en' }> = ({ language = 'en' }) => {
+const SeaFreightPage: React.FC<{ language: 'vi' | 'en' }> = ({ initialLocale = 'en' }) => {
     const breadcrumbItems = {
         vi: [
-            { text: "Giải pháp", link: "/solutions" },
-            { text: "Giải pháp Kho vận", link: "/solutions/warehouse", isActive: true }
+            { text: "Giải pháp", link: "javascript:;" },
+            { text: "Logistics quốc tế", link: "javascript:;" },
+            { text: "Vận tải đường biển", link: "javascript:;", isActive: true }
         ],
         en: [
-            { text: "Solutions", link: "/solutions" },
-            { text: "Warehouse Solutions", link: "/solutions/warehouse", isActive: true }
+            { text: "Solutions", link: "javascript:;" },
+            {
+                text: "International Logistics", link: "javascript:;"
+            },
+            {
+                text: "Sea Freight", link: "javascript:;", isActive: true
+            },
         ]
     };
+
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
+
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
     return (
         <main className="main page-inter hd-sticky">
             <div className="bn-big white">
@@ -25,99 +46,34 @@ const SeaFreightPage: React.FC<{ language: 'vi' | 'en' }> = ({ language = 'en' }
                     <img
                         width="1728"
                         height="800"
-                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4.jpg"
+                        src="/images/banner4.webp"
                         className="attachment-full size-full"
                         alt="Sea Freight EXPEDITORS GLOBAL"
                         decoding="async"
                         fetchPriority="high"
-                        srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4.jpg 1728w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4-300x139.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4-1024x474.jpg 1024w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4-768x356.jpg 768w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/banner4-1536x711.jpg 1536w"
+                        srcSet="/images/banner4.webp 1728w,/images/banner4.webp 300w, /images/banner4.webp 1024w, /images/banner4.webp 768w, /images/banner4.webp 1536w"
                     />
                 </div>
                 <div className="container">
                     <div className="bn-big-ctn">
                         <SiteBreadcrumb
-                            items={breadcrumbItems[language]}
-                            language={language}
+                            items={breadcrumbItems[initialLocale]}
+                            language={initialLocale}
                             showAnimation={true}
                             className="mb-16"
                             // Tùy chọn: có thể set homeLink khác cho từng ngôn ngữ
-                            homeLink={language === 'vi' ? '/' : '/en'}
+                            homeLink={initialLocale === 'vi' ? '/' : '/en'}
                         />
 
                         <h1 className="bn-big-tt add-class text-verti mb-24 is-inview">
-                            Giải pháp <br />
-                            Logistics Quốc tế
+                            {t("pages.sea-freight.title")} <br />
+                            {t("pages.sea-freight.second-title")}
                         </h1>
                         <p className="bn-big-des aos-init aos-animate" data-aos="fade-up-cus">
-                            Cung cấp dịch vụ Door to Door
+                            {t("pages.sea-freight.sub-title")}
                         </p>
 
-                        <div className="bn-box aos-init aos-animate" data-aos="fade-up-cus" data-aos-delay="600">
-                            <div className="bn-box-row row gap-res">
-                                <div className="bn-box-it col">
-                                    <div className="inner">
-                                        <div className="icon">
-                                            <img
-                                                width="24"
-                                                height="24"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn1.svg"
-                                                className="attachment-full size-full"
-                                                alt="Icon TMĐT"
-                                                decoding="async"
-                                            />
-                                        </div>
-                                        <p className="des">Đảm bảo sự hài lòng với dịch vụ đáng tin cậy.</p>
-                                    </div>
-                                </div>
-                                <div className="bn-box-it col">
-                                    <div className="inner">
-                                        <div className="icon">
-                                            <img
-                                                width="24"
-                                                height="24"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn2.svg"
-                                                className="attachment-full size-full"
-                                                alt="KẾT NỐI HÀNH TRÌNH"
-                                                decoding="async"
-                                            />
-                                        </div>
-                                        <p className="des">Tiết kiệm chi phí nhờ tối ưu hóa quy trình.</p>
-                                    </div>
-                                </div>
-                                <div className="bn-box-it col">
-                                    <div className="inner">
-                                        <div className="icon">
-                                            <img
-                                                width="24"
-                                                height="24"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn3.svg"
-                                                className="attachment-full size-full"
-                                                alt="LIÊN KẾT"
-                                                decoding="async"
-                                                loading="lazy"
-                                            />
-                                        </div>
-                                        <p className="des">Đội ngũ nhân sự năng động và giàu kinh nghiệm.</p>
-                                    </div>
-                                </div>
-                                <div className="bn-box-it col">
-                                    <div className="inner">
-                                        <div className="icon">
-                                            <img
-                                                width="24"
-                                                height="24"
-                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn4.svg"
-                                                className="attachment-full size-full"
-                                                alt="tmđt"
-                                                decoding="async"
-                                                loading="lazy"
-                                            />
-                                        </div>
-                                        <p className="des">An toàn và bảo mật của khách hàng là ưu tiên hàng đầu.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <BoxHeader initialLocale={'en'} />
                     </div>
                 </div>
             </div>
@@ -135,15 +91,15 @@ const SeaFreightPage: React.FC<{ language: 'vi' | 'en' }> = ({ language = 'en' }
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <h1 className="title title-48 add-class text-verti mb-32 is-inview">Vận tải đường biển</h1>
+                                    <h1 className="title title-48 add-class text-verti mb-32 is-inview">
+                                        {t("pages.sea-freight.main-title")}
+                                    </h1>
 
                                     <p className="inter-solve-des">
-                                        <p>Cung cấp giải pháp toàn diện từ khâu lấy hàng, xử lý hàng hóa, lashing đến giao hàng đích danh tại các quốc gia trên thế giới.</p>
-                                        <p>&nbsp;</p>
-                                        <p></p>
+                                        <div dangerouslySetInnerHTML={{ __html: t("pages.sea-freight.main-des") }} />
                                     </p>
 
-                                    <EXPTrust />
+                                    <EXPTrust initialLocale={'en'} />
 
                                     <div className="inter-solve-box">
                                         <div className="row">
@@ -151,28 +107,28 @@ const SeaFreightPage: React.FC<{ language: 'vi' | 'en' }> = ({ language = 'en' }
                                                 <div className="inter-solve-box-it">
                                                     <p className="name">VN-US</p>
                                                     <p className="num">200 - 250</p>
-                                                    <p className="des">TEU/tháng</p>
+                                                    <p className="des">{t("common.unit")}</p>
                                                 </div>
                                             </div>
                                             <div className="col">
                                                 <div className="inter-solve-box-it">
                                                     <p className="name">VN-EU</p>
                                                     <p className="num">150</p>
-                                                    <p className="des">TEU/tháng</p>
+                                                    <p className="des">{t("common.unit")}</p>
                                                 </div>
                                             </div>
                                             <div className="col">
                                                 <div className="inter-solve-box-it">
                                                     <p className="name">VN-Asia, UAE</p>
                                                     <p className="num">350</p>
-                                                    <p className="des">TEU/tháng</p>
+                                                    <p className="des">{t("common.unit")}</p>
                                                 </div>
                                             </div>
                                             <div className="col">
                                                 <div className="inter-solve-box-it">
                                                     <p className="name">China-VN</p>
                                                     <p className="num">300</p>
-                                                    <p className="des">TEU/tháng</p>
+                                                    <p className="des">{t("common.unit")}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -184,12 +140,12 @@ const SeaFreightPage: React.FC<{ language: 'vi' | 'en' }> = ({ language = 'en' }
                                                 <img
                                                     width="977"
                                                     height="400"
-                                                    src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/img-ud.jpg"
+                                                    src="/images/img-ud.webp"
                                                     className="attachment-full size-full"
                                                     alt=""
                                                     decoding="async"
                                                     loading="lazy"
-                                                    srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/03/img-ud.jpg 977w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/img-ud-300x123.jpg 300w, https://vietnampostlogistics.com/wp-content/uploads/2025/03/img-ud-768x314.jpg 768w"
+                                                    srcSet="/images/img-ud.webp 977w, /images/img-ud-300x123.webp 300w, /images/img-ud-768x314.webp 768w"
                                                 />
                                             </div>
                                         </div>
@@ -204,69 +160,11 @@ const SeaFreightPage: React.FC<{ language: 'vi' | 'en' }> = ({ language = 'en' }
                                                         >
                                                             <span className="word" data-word="Ư" style={{ '--word-index': 0 } as React.CSSProperties}>
                                                                 <span className="char" data-char="Ư" style={{ '--char-index': 0 } as React.CSSProperties}>
-                                                                    Ư
+                                                                    {t("pages.sea-freight.title-head")}
                                                                 </span>
-                                                                <span className="char" data-char="u" style={{ '--char-index': 1 } as React.CSSProperties}>
-                                                                    u
-                                                                </span>
+
                                                             </span>
-                                                            <span className="whitespace"> </span>
-                                                            <span className="word" data-word="điểm" style={{ '--word-index': 1 } as React.CSSProperties}>
-                                                                <span className="char" data-char="đ" style={{ '--char-index': 2 } as React.CSSProperties}>
-                                                                    đ
-                                                                </span>
-                                                                <span className="char" data-char="i" style={{ '--char-index': 3 } as React.CSSProperties}>
-                                                                    i
-                                                                </span>
-                                                                <span className="char" data-char="ể" style={{ '--char-index': 4 } as React.CSSProperties}>
-                                                                    ể
-                                                                </span>
-                                                                <span className="char" data-char="m" style={{ '--char-index': 5 } as React.CSSProperties}>
-                                                                    m
-                                                                </span>
-                                                            </span>
-                                                            <span className="whitespace"> </span>
-                                                            <span className="word" data-word="của" style={{ '--word-index': 2 } as React.CSSProperties}>
-                                                                <span className="char" data-char="c" style={{ '--char-index': 6 } as React.CSSProperties}>
-                                                                    c
-                                                                </span>
-                                                                <span className="char" data-char="ủ" style={{ '--char-index': 7 } as React.CSSProperties}>
-                                                                    ủ
-                                                                </span>
-                                                                <span className="char" data-char="a" style={{ '--char-index': 8 } as React.CSSProperties}>
-                                                                    a
-                                                                </span>
-                                                            </span>
-                                                            <span className="whitespace"> </span>
-                                                            <span className="word" data-word="giải" style={{ '--word-index': 3 } as React.CSSProperties}>
-                                                                <span className="char" data-char="g" style={{ '--char-index': 9 } as React.CSSProperties}>
-                                                                    g
-                                                                </span>
-                                                                <span className="char" data-char="i" style={{ '--char-index': 10 } as React.CSSProperties}>
-                                                                    i
-                                                                </span>
-                                                                <span className="char" data-char="ả" style={{ '--char-index': 11 } as React.CSSProperties}>
-                                                                    ả
-                                                                </span>
-                                                                <span className="char" data-char="i" style={{ '--char-index': 12 } as React.CSSProperties}>
-                                                                    i
-                                                                </span>
-                                                            </span>
-                                                            <span className="whitespace"> </span>
-                                                            <span className="word" data-word="pháp" style={{ '--word-index': 4 } as React.CSSProperties}>
-                                                                <span className="char" data-char="p" style={{ '--char-index': 13 } as React.CSSProperties}>
-                                                                    p
-                                                                </span>
-                                                                <span className="char" data-char="h" style={{ '--char-index': 14 } as React.CSSProperties}>
-                                                                    h
-                                                                </span>
-                                                                <span className="char" data-char="á" style={{ '--char-index': 15 } as React.CSSProperties}>
-                                                                    á
-                                                                </span>
-                                                                <span className="char" data-char="p" style={{ '--char-index': 16 } as React.CSSProperties}>
-                                                                    p
-                                                                </span>
-                                                            </span>{' '}
+
                                                         </h3>
                                                     </div>
                                                 </div>
@@ -280,7 +178,7 @@ const SeaFreightPage: React.FC<{ language: 'vi' | 'en' }> = ({ language = 'en' }
                                                                     <img
                                                                         width="32"
                                                                         height="32"
-                                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-il1.svg"
+                                                                        src="/images/ic-il1.svg"
                                                                         className="attachment-full size-full"
                                                                         alt="Nhanh chóng"
                                                                         decoding="async"
@@ -288,7 +186,9 @@ const SeaFreightPage: React.FC<{ language: 'vi' | 'en' }> = ({ language = 'en' }
                                                                     />
                                                                 </div>
                                                                 <p className="text"></p>
-                                                                <div className="des">Giải pháp hoàn hảo cho mọi loại hàng hóa, kể cả các mặt hàng chuyên biệt.</div>
+                                                                <div className="des">
+                                                                    {t("pages.sea-freight.title-des1")}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div className="inland-xo-it col itemEven odd">
@@ -297,7 +197,7 @@ const SeaFreightPage: React.FC<{ language: 'vi' | 'en' }> = ({ language = 'en' }
                                                                     <img
                                                                         width="24"
                                                                         height="24"
-                                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn1.svg"
+                                                                        src="/images/ic-bn1.svg"
                                                                         className="attachment-full size-full"
                                                                         alt="Icon TMĐT"
                                                                         decoding="async"
@@ -305,7 +205,9 @@ const SeaFreightPage: React.FC<{ language: 'vi' | 'en' }> = ({ language = 'en' }
                                                                     />
                                                                 </div>
                                                                 <p className="text"></p>
-                                                                <div className="des">Có khả năng vận chuyển hàng hóa dài ngày, đặc biệt là chuyển hàng quốc tế.</div>
+                                                                <div className="des">
+                                                                    {t("pages.sea-freight.title-des2")}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div className="inland-xo-it col itemEven odd">
@@ -314,7 +216,7 @@ const SeaFreightPage: React.FC<{ language: 'vi' | 'en' }> = ({ language = 'en' }
                                                                     <img
                                                                         width="24"
                                                                         height="24"
-                                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-bn2.svg"
+                                                                        src="/images/ic-bn2.svg"
                                                                         className="attachment-full size-full"
                                                                         alt="KẾT NỐI HÀNH TRÌNH"
                                                                         decoding="async"
@@ -322,7 +224,9 @@ const SeaFreightPage: React.FC<{ language: 'vi' | 'en' }> = ({ language = 'en' }
                                                                     />
                                                                 </div>
                                                                 <p className="text"></p>
-                                                                <div className="des">Mạng lưới vận chuyển rộng khắp toàn cầu.</div>
+                                                                <div className="des">
+                                                                    {t("pages.sea-freight.title-des3")}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div className="inland-xo-it col itemEven even">
@@ -331,7 +235,7 @@ const SeaFreightPage: React.FC<{ language: 'vi' | 'en' }> = ({ language = 'en' }
                                                                     <img
                                                                         width="32"
                                                                         height="32"
-                                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-il3.svg"
+                                                                        src="/images/ic-il3.svg"
                                                                         className="attachment-full size-full"
                                                                         alt="Đa dạng"
                                                                         decoding="async"
@@ -339,7 +243,9 @@ const SeaFreightPage: React.FC<{ language: 'vi' | 'en' }> = ({ language = 'en' }
                                                                     />
                                                                 </div>
                                                                 <p className="text"></p>
-                                                                <div className="des">Tối ưu chi phí so với các phương thức vận chuyển khác.</div>
+                                                                <div className="des">
+                                                                    {t("pages.sea-freight.title-des4")}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div className="inland-xo-it col itemEven even">
@@ -348,7 +254,7 @@ const SeaFreightPage: React.FC<{ language: 'vi' | 'en' }> = ({ language = 'en' }
                                                                     <img
                                                                         width="32"
                                                                         height="32"
-                                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-il5.svg"
+                                                                        src="/images/ic-il5.svg"
                                                                         className="attachment-full size-full"
                                                                         alt="An toàn"
                                                                         decoding="async"
@@ -356,7 +262,9 @@ const SeaFreightPage: React.FC<{ language: 'vi' | 'en' }> = ({ language = 'en' }
                                                                     />
                                                                 </div>
                                                                 <p className="text"></p>
-                                                                <div className="des">Bảo mật và an toàn.</div>
+                                                                <div className="des">
+                                                                    {t("pages.sea-freight.title-des5")}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div className="inland-xo-it col itemEven odd">
@@ -365,15 +273,19 @@ const SeaFreightPage: React.FC<{ language: 'vi' | 'en' }> = ({ language = 'en' }
                                                                     <img
                                                                         width="40"
                                                                         height="40"
-                                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/Group-6.png"
+                                                                        src="/images/Group-6.png"
                                                                         className="attachment-full size-full"
                                                                         alt=""
                                                                         decoding="async"
                                                                         loading="lazy"
                                                                     />
                                                                 </div>
-                                                                <p className="text">KHÁM PHÁ THÊM</p>
-                                                                <div className="des"></div>
+                                                                <p className="text">
+
+                                                                </p>
+                                                                <div className="des">
+                                                                    {t("pages.sea-freight.title-des6")}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -382,8 +294,8 @@ const SeaFreightPage: React.FC<{ language: 'vi' | 'en' }> = ({ language = 'en' }
                                         </div>
                                     </div>
 
-                                    <Partners />
-                                    <TopStrong />
+                                    <Partners initialLocale={'en'} />
+                                    <TopStrong initialLocale={'en'} />
 
                                 </div>
                             </div>

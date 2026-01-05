@@ -1,20 +1,35 @@
 "use client";
 
 import React, { useState } from "react";
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
 
-const WareHouseEXP = () => {
+const WareHouseEXP = ({ initialLocale = 'en' }) => {
     const [activeTab, setActiveTab] = useState<"vietnam" | "china">("vietnam");
     const [activePin, setActivePin] = useState("vinhphuc");
+
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
+
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
 
     return (
         <section className="sec-store-sys">
             <div className="store-sys ss-pd">
                 <div className="container">
                     <div className="head-verti mb-32 center">
-                        <h1 className="title title-48 add-class text-verti is-inview">Hệ thống kho bãi</h1>
+                        <h1 className="title title-48 add-class text-verti is-inview">
+                            {t("components.warehouse-exp.title")}
+                        </h1>
                         <div className="line aos-init aos-animate" data-aos="fade-up-cus">
                             <p className="desc">
-                                Với kinh nghiệm lâu năm trong ngành cùng hệ thống kho bãi rộng lớn, lên tới 500.000 m2 sàn đặt tại các vị trí đắc địa, thuận lợi cho việc vận chuyển và các hoạt động Logistics như: Hà Nam, Vĩnh Phúc, Hà Nội, Hải Phòng, TP. Hồ Chí Minh,…
+                                {t("components.warehouse-exp.title-des")}
                             </p>
                         </div>
                     </div>
@@ -27,14 +42,14 @@ const WareHouseEXP = () => {
                                 onClick={() => setActiveTab("vietnam")}
                                 style={{ cursor: "pointer" }}
                             >
-                                Việt Nam
+                                {t("components.warehouse-exp.vi")}
                             </div>
                             <div
                                 className={`store-sys-btn tabBtn buttons ${activeTab === "china" ? "active" : ""}`}
                                 onClick={() => setActiveTab("china")}
                                 style={{ cursor: "pointer" }}
                             >
-                                Trung Quốc
+                                {t("components.warehouse-exp.ci")}
                             </div>
                         </div>
 
@@ -52,12 +67,12 @@ const WareHouseEXP = () => {
                                                     <img
                                                         width="777"
                                                         height="1284"
-                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/11/map-VN2.png"
+                                                        src="/wp-content/uploads/2025/11/map-VN2.png"
                                                         className="attachment-full size-full"
                                                         alt=""
                                                         decoding="async"
                                                         loading="lazy"
-                                                        srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/11/map-VN2.png 777w, https://vietnampostlogistics.com/wp-content/uploads/2025/11/map-VN2-182x300.png 182w, https://vietnampostlogistics.com/wp-content/uploads/2025/11/map-VN2-620x1024.png 620w, https://vietnampostlogistics.com/wp-content/uploads/2025/11/map-VN2-768x1269.png 768w"
+                                                        srcSet="/wp-content/uploads/2025/11/map-VN2.png 777w, /wp-content/uploads/2025/11/map-VN2-182x300.png 182w, /wp-content/uploads/2025/11/map-VN2-620x1024.png 620w, /wp-content/uploads/2025/11/map-VN2-768x1269.png 768w"
                                                     />
                                                 </div>
                                             </div>
@@ -119,7 +134,7 @@ const WareHouseEXP = () => {
                                                     <img
                                                         width="35"
                                                         height="45"
-                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/11/pinMap.svg"
+                                                        src="/wp-content/uploads/2025/11/pinMap.svg"
                                                         className="attachment-full size-full"
                                                         alt=""
                                                         decoding="async"
@@ -137,7 +152,7 @@ const WareHouseEXP = () => {
                                                     <img
                                                         width="35"
                                                         height="45"
-                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/11/pinMap.svg"
+                                                        src="/wp-content/uploads/2025/11/pinMap.svg"
                                                         className="attachment-full size-full"
                                                         alt=""
                                                         decoding="async"
@@ -155,7 +170,7 @@ const WareHouseEXP = () => {
                                                     <img
                                                         width="35"
                                                         height="45"
-                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/11/pinMap.svg"
+                                                        src="/wp-content/uploads/2025/11/pinMap.svg"
                                                         className="attachment-full size-full"
                                                         alt=""
                                                         decoding="async"
@@ -173,7 +188,7 @@ const WareHouseEXP = () => {
                                                     <img
                                                         width="35"
                                                         height="45"
-                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/11/pinMap.svg"
+                                                        src="/wp-content/uploads/2025/11/pinMap.svg"
                                                         className="attachment-full size-full"
                                                         alt=""
                                                         decoding="async"
@@ -191,7 +206,7 @@ const WareHouseEXP = () => {
                                                     <img
                                                         width="35"
                                                         height="45"
-                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/11/pinMap.svg"
+                                                        src="/wp-content/uploads/2025/11/pinMap.svg"
                                                         className="attachment-full size-full"
                                                         alt=""
                                                         decoding="async"
@@ -209,7 +224,7 @@ const WareHouseEXP = () => {
                                                     <img
                                                         width="35"
                                                         height="45"
-                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/11/pinMap.svg"
+                                                        src="/wp-content/uploads/2025/11/pinMap.svg"
                                                         className="attachment-full size-full"
                                                         alt=""
                                                         decoding="async"
@@ -227,7 +242,7 @@ const WareHouseEXP = () => {
                                                     <img
                                                         width="35"
                                                         height="45"
-                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/11/pinMap.svg"
+                                                        src="/wp-content/uploads/2025/11/pinMap.svg"
                                                         className="attachment-full size-full"
                                                         alt=""
                                                         decoding="async"
@@ -244,7 +259,7 @@ const WareHouseEXP = () => {
                                             <div
                                                 className={`img-Panel svgPanelJS ${activePin === "vinhphuc" ? "open" : ""}`}
                                                 posi-id="vinhphuc1"
-                                                style={{ display: activePin === "vinhphuc" ? "block" : "none" }}
+                                                style={{ display: "block" }}
                                             >
                                                 <div className="wrapper" style={{}}>
                                                     <div className="sys-box">
@@ -252,17 +267,18 @@ const WareHouseEXP = () => {
                                                             <img
                                                                 width="45"
                                                                 height="45"
-                                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-sys-home.svg"
+                                                                src="ic-sys-home.svg"
                                                                 className="attachment-full size-full"
                                                                 alt="Lưu kho"
                                                                 decoding="async"
                                                                 loading="lazy"
                                                             />
                                                         </div>
-                                                        <p className="tt">Kho Ngoại quan Vĩnh Phúc</p>
+                                                        <p className="tt">
+                                                            {t("components.warehouse-exp.address1")}
+                                                        </p>
                                                         <div className="add">
-                                                            <p><strong>Địa chỉ :</strong> Lô F4A, KCN Thăng Long Vĩnh Phúc, xã Bình Xuyên, tỉnh Phú Thọ<span data-sheets-root="1">.</span></p>
-                                                            <p><strong>Diện tích :</strong> <span data-sheets-root="1">18,272 m2</span></p>
+                                                            <div dangerouslySetInnerHTML={{ __html: t("components.warehouse-exp.address1-des") }} />
                                                         </div>
                                                     </div>
 
@@ -271,67 +287,23 @@ const WareHouseEXP = () => {
                                                             <img
                                                                 width="45"
                                                                 height="45"
-                                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-sys-home.svg"
+                                                                src="ic-sys-home.svg"
                                                                 className="attachment-full size-full"
                                                                 alt="Lưu kho"
                                                                 decoding="async"
                                                                 loading="lazy"
                                                             />
                                                         </div>
-                                                        <p className="tt">Kho ngoại quan Vĩnh Phúc 2</p>
+                                                        <p className="tt">
+                                                            {t("components.warehouse-exp.address2")}
+                                                        </p>
                                                         <div className="add">
-                                                            <p><strong>Địa chỉ :</strong> Nhà xưởng 5, Lô 122, Khu công nghiệp Bá Thiện – Phân Khu I, xã Bình Xuyên, tỉnh Phú Thọ.</p>
-                                                            <p><strong>Diện tích :</strong> 4,185 m2</p>
+                                                            <div dangerouslySetInnerHTML={{ __html: t("components.warehouse-exp.address2-des") }} />
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div
-                                                className={`img-Panel svgPanelJS ${activePin === "ninhbinh" ? "open" : ""}`}
-                                                posi-id="ninhbinh1"
-                                                style={{ display: activePin === "ninhbinh" ? "block" : "none" }}
-                                            >
-                                                <div className="wrapper">
-                                                    <div className="sys-box">
-                                                        <div className="icon">
-                                                            <img
-                                                                width="45"
-                                                                height="45"
-                                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-sys-home.svg"
-                                                                className="attachment-full size-full"
-                                                                alt="Lưu kho"
-                                                                decoding="async"
-                                                                loading="lazy"
-                                                            />
-                                                        </div>
-                                                        <p className="tt">Kho Ngoại quan Hà Nam 1</p>
-                                                        <div className="add">
-                                                            <p><strong>Địa chỉ :</strong> Lô CN06, KCN hỗ trợ Đồng Văn III, phường Đồng Văn, tỉnh Ninh Bình<span data-sheets-root="1">.</span></p>
-                                                            <p><strong>Diện tích :</strong> <span data-sheets-root="1">19,276 m2</span></p>
-                                                        </div>
-                                                    </div>
-
-                                                    <div className="sys-box">
-                                                        <div className="icon">
-                                                            <img
-                                                                width="45"
-                                                                height="45"
-                                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-sys-home.svg"
-                                                                className="attachment-full size-full"
-                                                                alt="Lưu kho"
-                                                                decoding="async"
-                                                                loading="lazy"
-                                                            />
-                                                        </div>
-                                                        <p className="tt">Kho ngoại quan Hà Nam 2</p>
-                                                        <div className="add">
-                                                            <p><strong>Địa chỉ :</strong> Lô CN07, KCN hỗ trợ Đồng Văn III, phường Đông Văn, tỉnh Ninh Bình.</p>
-                                                            <p><strong>Diện tích :</strong> 3,000 m2</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
 
                                             {/* Các panel khác giữ nguyên, chỉ thêm style display */}
                                             <div
@@ -391,12 +363,12 @@ const WareHouseEXP = () => {
                                                     <img
                                                         width="686"
                                                         height="558"
-                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/11/map-TQ.png"
+                                                        src="/wp-content/uploads/2025/11/map-TQ.png"
                                                         className="attachment-full size-full"
                                                         alt=""
                                                         decoding="async"
                                                         loading="lazy"
-                                                        srcSet="https://vietnampostlogistics.com/wp-content/uploads/2025/11/map-TQ.png 686w, https://vietnampostlogistics.com/wp-content/uploads/2025/11/map-TQ-300x244.png 300w"
+                                                        srcSet="/wp-content/uploads/2025/11/map-TQ.png 686w, /wp-content/uploads/2025/11/map-TQ-300x244.png 300w"
                                                     />
                                                 </div>
                                             </div>
@@ -428,7 +400,7 @@ const WareHouseEXP = () => {
                                                     <img
                                                         width="35"
                                                         height="45"
-                                                        src="https://vietnampostlogistics.com/wp-content/uploads/2025/11/pinMap.svg"
+                                                        src="/wp-content/uploads/2025/11/pinMap.svg"
                                                         className="attachment-full size-full"
                                                         alt=""
                                                         decoding="async"
@@ -442,9 +414,9 @@ const WareHouseEXP = () => {
                                     <div className="store-sys-box col">
                                         <div className="store-sys-sticky">
                                             <div
-                                                className={`img-Panel svgPanelJS ${activePin === "tq" ? "open" : ""}`}
+                                                className={`img-Panel svgPanelJS open`}
                                                 posi-id="tq"
-                                                style={{ display: activePin === "tq" ? "block" : "none" }}
+                                                style={{ display: "block" }}
                                             >
                                                 <div className="wrapper">
                                                     <div className="sys-box">
@@ -452,18 +424,21 @@ const WareHouseEXP = () => {
                                                             <img
                                                                 width="45"
                                                                 height="45"
-                                                                src="https://vietnampostlogistics.com/wp-content/uploads/2025/03/ic-sys-home.svg"
+                                                                src="ic-sys-home.svg"
                                                                 className="attachment-full size-full"
                                                                 alt="Lưu kho"
                                                                 decoding="async"
                                                                 loading="lazy"
                                                             />
                                                         </div>
-                                                        <p className="tt">Trung tâm kho vận Trung Quốc</p>
+                                                        <p className="tt">
+                                                            {t("components.warehouse-exp.address3")}
+                                                        </p>
                                                         <div className="add">
-                                                            <p><strong>Địa chỉ:</strong> TP Nam Ninh, tỉnh Quảng tây, Trung Quốc</p>
+                                                            <div dangerouslySetInnerHTML={{ __html: t("components.warehouse-exp.address3-des") }} />
                                                         </div>
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>

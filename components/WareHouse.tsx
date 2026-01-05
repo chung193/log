@@ -1,49 +1,60 @@
 import React from "react";
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
+const WareHouse = ({ initialLocale = 'en' }) => {
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
 
-const WareHouse = () => {
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
     const warehouseItems = [
         {
             id: 1,
-            title: "Kho ngoại quan VMI",
-            link: "https://vietnampostlogistics.com/kho-ngoai-quan-vmi-giai-phap-toi-uu-cho-doanh-nghiep",
-            image: "https://vietnampostlogistics.com/wp-content/uploads/2025/03/store1.png",
-            description: "Kinh nghiệm lâu năm trong ngành cùng hệ thống kho bãi rộng lớn",
+            title: t("components.warehouse.item1-title"),
+            link: "/kho-ngoai-quan-vmi-giai-phap-toi-uu-cho-doanh-nghiep",
+            image: "store1.png",
+            description: t("components.warehouse.item1-des"),
             width: 278,
             height: 190
         },
         {
             id: 2,
-            title: "Kho ngoại quan xuất nhập khẩu tại chỗ",
-            link: "https://vietnampostlogistics.com/kho-ngoai-quan-xuat-nhap-khau-tai-cho-vietnam-post-logistics/",
-            image: "https://vietnampostlogistics.com/wp-content/uploads/2025/03/store2.png",
-            description: "Kinh nghiệm lâu năm trong ngành cùng hệ thống kho bãi rộng lớn",
+            title: t("components.warehouse.item2-title"),
+            link: "/kho-ngoai-quan-xuat-nhap-khau-tai-cho-vietnam-post-logistics/",
+            image: "store2.png",
+            description: t("components.warehouse.item2-des"),
             width: 278,
             height: 190
         },
         {
             id: 3,
-            title: "Kho phân phối",
-            link: "https://vietnampostlogistics.com/kho-phan-phoi-vietnam-post-logistics/",
-            image: "https://vietnampostlogistics.com/wp-content/uploads/2025/03/store3.png",
-            description: "Kinh nghiệm lâu năm trong ngành cùng hệ thống kho bãi rộng lớn",
+            title: t("components.warehouse.item3-title"),
+            link: "/kho-phan-phoi-vietnam-post-logistics/",
+            image: "store3.png",
+            description: t("components.warehouse.item3-des"),
             width: 278,
             height: 190
         },
         {
             id: 4,
-            title: "Kho Fulfillment",
-            link: "https://vietnampostlogistics.com/kho-fulfillment-giai-phap-toi-uu-cho-thuong-mai-dien-tu/",
-            image: "https://vietnampostlogistics.com/wp-content/uploads/2025/03/store4.png",
-            description: "Kinh nghiệm lâu năm trong ngành cùng hệ thống kho bãi rộng lớn",
+            title: t("components.warehouse.item4-title"),
+            link: "/kho-fulfillment-giai-phap-toi-uu-cho-thuong-mai-dien-tu/",
+            image: "store4.png",
+            description: t("components.warehouse.item4-des"),
             width: 278,
             height: 190
         },
         {
             id: 5,
-            title: "Kho nguyên vật liệu thô cho các nhà máy",
-            link: "https://vietnampostlogistics.com/kho-nguyen-vat-lieu-tho-cho-cac-nha-may/",
-            image: "https://vietnampostlogistics.com/wp-content/uploads/2025/03/store5.png",
-            description: "Kinh nghiệm lâu năm trong ngành cùng hệ thống kho bãi rộng lớn",
+            title: t("components.warehouse.item5-title"),
+            link: "/kho-nguyen-vat-lieu-tho-cho-cac-nha-may/",
+            image: "store5.png",
+            description: t("components.warehouse.item5-des"),
             width: 278,
             height: 190
         }
@@ -117,7 +128,7 @@ const WareHouse = () => {
                                             </div>
                                             <a className="btn-circle" href={item.link}>
                                                 <img
-                                                    src="https://vietnampostlogistics.com/template/assets/images/ic-arrow.svg"
+                                                    src="/template/assets/images/ic-arrow.svg"
                                                     alt={`Xem thêm về ${item.title}`}
                                                 />
                                             </a>
