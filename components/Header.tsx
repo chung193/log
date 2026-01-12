@@ -46,7 +46,7 @@ export default function Header({ initialLocale = 'en' }) {
         }
     }, [activeItem])
 
-    // Set active menu dựa trên current path
+    // Set active menu dựa trên current path - SỬA LẠI ĐƠN GIẢN
     useEffect(() => {
         const findActiveMenuByPath = (items: MenuItem[], path: string): string | null => {
             for (const item of items) {
@@ -55,8 +55,13 @@ export default function Header({ initialLocale = 'en' }) {
                     return item.id
                 }
 
-                // Kiểm tra partial match (cho các trang con)
-                if (item.href !== 'javascript:;' && path.startsWith(item.href)) {
+                // Kiểm tra nếu là trang chủ
+                if (item.href === '/' && path === '/') {
+                    return item.id
+                }
+
+                // Kiểm tra partial match (cho các trang con) - CHỈ áp dụng khi không phải là trang chủ
+                if (item.href !== '/' && item.href !== 'javascript:;' && path.startsWith(item.href)) {
                     return item.id
                 }
 
@@ -111,7 +116,7 @@ export default function Header({ initialLocale = 'en' }) {
     }, [])
 
     const handleMenuItemClick = useCallback((item: MenuItem) => {
-        // Don't dispatch for dropdown parent items
+        // Chỉ update active menu cho các menu có href thực sự (không phải javascript:;)
         if (item.href === 'javascript:;') {
             return
         }
@@ -131,54 +136,78 @@ export default function Header({ initialLocale = 'en' }) {
         const hasChildren = item.submenu && item.submenu.length > 0
         const isHovered = hoveredMenuItem === item.id
         const isActive = activeItem === item.id
-        const showSubmenu = hasChildren && (isHovered || isActive)
         const isCurrentPage = pathname === item.href
+        const isTopLevel = level === 0
+        const showSubmenu = hasChildren && isHovered
 
         return (
             <li
                 key={`${item.id}-${level}`}
                 style={{ cursor: 'pointer' }}
-                className={`parent fz16 menu-item ${hasChildren ? 'menu-item-has-children dropdown' : ''} ${isCurrentPage ? 'current-menu-item' : ''}`}
+                className={`parent fz16 menu-item ${hasChildren ? 'menu-item-has-children dropdown' : ''} ${isActive || isCurrentPage ? 'current-menu-item active-menu-item' : ''}`}
                 onMouseEnter={() => hasChildren && handleDesktopMenuItemHover(item.id)}
                 onMouseLeave={() => hasChildren && handleDesktopMenuItemHover(null)}
             >
                 {hasChildren && item.href === 'javascript:;' ? (
-                    // Dropdown parent không clickable - ICON NẰM TRONG CÙNG
+                    // Dropdown parent không clickable
                     <span className="menu-link">
-                        {item.name}
-                        {hasChildren && <b><i className="fa-solid fa-circle-plus"></i></b>}
-                        {hasChildren && <b><i className="fa fa-solid fa-chevron-down"></i></b>}
+                        <span className={`menu-text ${isActive || isCurrentPage ? 'active-text' : ''}`}>
+                            {item.name}
+                        </span>
+                        {/* Menu cha cấp cao nhất: chỉ hiển thị circle-plus */}
+                        {isTopLevel && hasChildren && (
+                            <b><i className="fa-solid fa-circle-plus"></i></b>
+                        )}
+                        {/* Menu con: chỉ hiển thị chevron-right */}
+                        {!isTopLevel && hasChildren && (
+                            <b><i className="fa-solid fa-chevron-right"></i></b>
+                        )}
                     </span>
                 ) : (
-                    // Real link với Next.js Link - ICON NẰM TRONG CÙNG
+                    // Real link với Next.js Link
                     <Link
                         href={item.href}
                         className="menu-link"
                         onClick={() => handleMenuItemClick(item)}
                         scroll={false}
                     >
-                        {item.name}
-                        {hasChildren && <b><i className="fa-solid fa-circle-plus"></i></b>}
-                        {hasChildren && <b><i className="fa fa-solid fa-chevron-down"></i></b>}
+                        <span className={`menu-text ${isActive || isCurrentPage ? 'active-text' : ''}`}>
+                            {item.name}
+                        </span>
+                        {/* Menu cha cấp cao nhất: chỉ hiển thị circle-plus */}
+                        {isTopLevel && hasChildren && (
+                            <b><i className="fa-solid fa-circle-plus"></i></b>
+                        )}
+                        {/* Menu con: chỉ hiển thị chevron-right */}
+                        {!isTopLevel && hasChildren && (
+                            <b><i className="fa-solid fa-chevron-right"></i></b>
+                        )}
                     </Link>
                 )}
 
-                {/* Show submenu on hover or active */}
+                {/* Show submenu on hover */}
                 {showSubmenu && item.submenu && (
                     <ul className={`menu-list ${level > 0 ? 'sub-sub-menu' : ''}`} style={{ zIndex: 5 }}>
                         {item.submenu.map((subItem, subIndex) => {
                             const isSubCurrent = pathname === subItem.href
+                            const hasSubChildren = subItem.submenu && subItem.submenu.length > 0
+                            const isSubActive = activeItem === subItem.id || isSubCurrent
+
                             return (
                                 <li
                                     key={`${subItem.id}-${level + 1}`}
-                                    className={`parent fz16 menu-item ${subItem.submenu ? 'menu-item-has-children dropdown' : ''} ${isSubCurrent ? 'current-menu-item' : ''}`}
+                                    className={`parent fz16 menu-item ${hasSubChildren ? 'menu-item-has-children dropdown' : ''} ${isSubActive ? 'current-menu-item active-menu-item' : ''}`}
                                 >
-                                    {subItem.submenu && subItem.href === 'javascript:;' ? (
+                                    {hasSubChildren && subItem.href === 'javascript:;' ? (
                                         // Dropdown parent không clickable
                                         <span className="menu-link">
-                                            {subItem.name}
-                                            {subItem.hasChildren && <b><i className="fa-solid fa-circle-plus"></i></b>}
-                                            {subItem.hasChildren && <b><i className="fa fa-solid fa-chevron-down"></i></b>}
+                                            <span className={`menu-text ${isSubActive ? 'active-text' : ''}`}>
+                                                {subItem.name}
+                                            </span>
+                                            {/* Menu con: chỉ hiển thị chevron-right */}
+                                            {hasSubChildren && (
+                                                <b><i className="fa-solid fa-chevron-right"></i></b>
+                                            )}
                                         </span>
                                     ) : (
                                         // Real link
@@ -188,20 +217,27 @@ export default function Header({ initialLocale = 'en' }) {
                                             onClick={() => handleMenuItemClick(subItem)}
                                             scroll={false}
                                         >
-                                            {subItem.name}
-                                            {subItem.hasChildren && <b><i className="fas fa-solid fa-circle-plus"></i></b>}
-                                            {subItem.hasChildren && <b><i className="fa fa-solid fa-chevron-down"></i></b>}
+                                            <span className={`menu-text ${isSubActive ? 'active-text' : ''}`}>
+                                                {subItem.name}
+                                            </span>
+                                            {/* Menu con: chỉ hiển thị chevron-right */}
+                                            {hasSubChildren && (
+                                                <b><i className="fa-solid fa-chevron-right"></i></b>
+                                            )}
                                         </Link>
                                     )}
 
-                                    {subItem.submenu && (
+                                    {hasSubChildren && subItem.submenu && (
                                         <ul className="menu-list" style={{ zIndex: 4 }}>
                                             {subItem.submenu.map((subSubItem, subSubIndex) => {
                                                 const isSubSubCurrent = pathname === subSubItem.href
+                                                const hasSubSubChildren = subSubItem.submenu && subSubItem.submenu.length > 0
+                                                const isSubSubActive = activeItem === subSubItem.id || isSubSubCurrent
+
                                                 return (
                                                     <li
                                                         key={`${subSubItem.id}-${level + 2}`}
-                                                        className={`parent fz16 menu-item ${isSubSubCurrent ? 'current-menu-item' : ''}`}
+                                                        className={`parent fz16 menu-item ${isSubSubActive ? 'current-menu-item active-menu-item' : ''}`}
                                                     >
                                                         <Link
                                                             href={subSubItem.href}
@@ -209,8 +245,13 @@ export default function Header({ initialLocale = 'en' }) {
                                                             onClick={() => handleMenuItemClick(subSubItem)}
                                                             scroll={false}
                                                         >
-                                                            {subSubItem.name}
-                                                            {subSubItem.hasChildren && <b><i className="fa-solid fa-circle-plus"></i></b>}
+                                                            <span className={`menu-text ${isSubSubActive ? 'active-text' : ''}`}>
+                                                                {subSubItem.name}
+                                                            </span>
+                                                            {/* Level thứ 3: chỉ hiển thị chevron-right */}
+                                                            {hasSubSubChildren && (
+                                                                <b><i className="fa-solid fa-chevron-right"></i></b>
+                                                            )}
                                                         </Link>
                                                     </li>
                                                 )
@@ -226,20 +267,21 @@ export default function Header({ initialLocale = 'en' }) {
         )
     }, [hoveredMenuItem, activeItem, pathname, handleMenuItemClick, handleDesktopMenuItemHover])
 
-    // Mobile menu render function với Next.js Link
+    // Mobile menu render function
     const renderMobileMenuItem = useCallback((item: MenuItem, index: number, level: number = 0) => {
         const hasChildren = item.submenu && item.submenu.length > 0
         const menuKey = `${item.id}-${level}`
         const isOpen = isMobileMenuOpen(menuKey)
         const isCurrentPage = pathname === item.href
+        const isActive = activeItem === item.id || isCurrentPage
 
         return (
             <li
                 key={menuKey}
-                className={`parent fz16 menu-item ${hasChildren ? 'menu-item-has-children dropdown' : ''} ${isCurrentPage ? 'current-menu-item' : ''}`}
+                className={`parent fz16 menu-item ${hasChildren ? 'menu-item-has-children dropdown' : ''} ${isActive ? 'current-menu-item active-menu-item' : ''}`}
             >
                 {hasChildren && item.href === 'javascript:;' ? (
-                    // Dropdown parent chỉ để toggle - ICON NẰM TRONG CÙNG
+                    // Dropdown parent chỉ để toggle
                     <span
                         className="menu-link"
                         onClick={(e) => {
@@ -247,7 +289,9 @@ export default function Header({ initialLocale = 'en' }) {
                             toggleMobileMenu(menuKey)
                         }}
                     >
-                        {item.name}
+                        <span className={`menu-text ${isActive ? 'active-text' : ''}`}>
+                            {item.name}
+                        </span>
                         {hasChildren && (
                             <>
                                 <b><i
@@ -265,7 +309,7 @@ export default function Header({ initialLocale = 'en' }) {
                         )}
                     </span>
                 ) : (
-                    // Real link với Next.js Link - ICON NẰM TRONG CÙNG
+                    // Real link với Next.js Link
                     <Link
                         href={item.href}
                         className="menu-link"
@@ -275,7 +319,9 @@ export default function Header({ initialLocale = 'en' }) {
                         }}
                         scroll={false}
                     >
-                        {item.name}
+                        <span className={`menu-text ${isActive ? 'active-text' : ''}`}>
+                            {item.name}
+                        </span>
                         {hasChildren && (
                             <>
                                 <b><i
@@ -300,14 +346,15 @@ export default function Header({ initialLocale = 'en' }) {
                             const subMenuKey = `${subItem.id}-${level + 1}`
                             const isSubOpen = isMobileMenuOpen(subMenuKey)
                             const isSubCurrent = pathname === subItem.href
+                            const isSubActive = activeItem === subItem.id || isSubCurrent
 
                             return (
                                 <li
                                     key={`${subItem.id}-${level + 1}`}
-                                    className={`parent fz16 menu-item ${subItem.submenu ? 'menu-item-has-children dropdown' : ''} ${isSubCurrent ? 'current-menu-item' : ''}`}
+                                    className={`parent fz16 menu-item ${subItem.submenu ? 'menu-item-has-children dropdown' : ''} ${isSubActive ? 'current-menu-item active-menu-item' : ''}`}
                                 >
                                     {subItem.submenu && subItem.href === 'javascript:;' ? (
-                                        // Dropdown parent - ICON NẰM TRONG CÙNG
+                                        // Dropdown parent
                                         <span
                                             className="menu-link"
                                             onClick={(e) => {
@@ -315,7 +362,9 @@ export default function Header({ initialLocale = 'en' }) {
                                                 toggleMobileMenu(subMenuKey)
                                             }}
                                         >
-                                            {subItem.name}
+                                            <span className={`menu-text ${isSubActive ? 'active-text' : ''}`}>
+                                                {subItem.name}
+                                            </span>
                                             {subItem.hasChildren && (
                                                 <>
                                                     <b><i
@@ -333,7 +382,7 @@ export default function Header({ initialLocale = 'en' }) {
                                             )}
                                         </span>
                                     ) : (
-                                        // Real link - ICON NẰM TRONG CÙNG
+                                        // Real link
                                         <Link
                                             href={subItem.href}
                                             className="menu-link"
@@ -343,7 +392,9 @@ export default function Header({ initialLocale = 'en' }) {
                                             }}
                                             scroll={false}
                                         >
-                                            {subItem.name}
+                                            <span className={`menu-text ${isSubActive ? 'active-text' : ''}`}>
+                                                {subItem.name}
+                                            </span>
                                             {subItem.hasChildren && (
                                                 <>
                                                     <b><i
@@ -366,10 +417,12 @@ export default function Header({ initialLocale = 'en' }) {
                                         <ul className="menu-list">
                                             {subItem.submenu.map((subSubItem, subSubIndex) => {
                                                 const isSubSubCurrent = pathname === subSubItem.href
+                                                const isSubSubActive = activeItem === subSubItem.id || isSubSubCurrent
+
                                                 return (
                                                     <li
                                                         key={`${subSubItem.id}-${level + 2}`}
-                                                        className={`parent fz16 menu-item ${isSubSubCurrent ? 'current-menu-item' : ''}`}
+                                                        className={`parent fz16 menu-item ${isSubSubActive ? 'current-menu-item active-menu-item' : ''}`}
                                                     >
                                                         <Link
                                                             href={subSubItem.href}
@@ -380,7 +433,9 @@ export default function Header({ initialLocale = 'en' }) {
                                                             }}
                                                             scroll={false}
                                                         >
-                                                            {subSubItem.name}
+                                                            <span className={`menu-text ${isSubSubActive ? 'active-text' : ''}`}>
+                                                                {subSubItem.name}
+                                                            </span>
                                                             {subSubItem.hasChildren && <b><i className="fa-solid fa-circle-plus"></i></b>}
                                                         </Link>
                                                     </li>
@@ -395,7 +450,7 @@ export default function Header({ initialLocale = 'en' }) {
                 )}
             </li>
         )
-    }, [isMobileMenuOpen, toggleMobileMenu, pathname, handleMenuItemClick])
+    }, [isMobileMenuOpen, toggleMobileMenu, pathname, handleMenuItemClick, activeItem])
 
     return (
         <header className="hd">
@@ -427,9 +482,9 @@ export default function Header({ initialLocale = 'en' }) {
 
                         {/* Header Actions */}
                         <div className="hd-act">
-                            <div className="hd-srch" onClick={() => setIsSearchOpen(true)}>
+                            {/* <div className="hd-srch" onClick={() => setIsSearchOpen(true)}>
                                 <img src="/images/ic-srch.svg" alt="Search" />
-                            </div>
+                            </div> */}
 
                             <LanguageSwitcher />
 

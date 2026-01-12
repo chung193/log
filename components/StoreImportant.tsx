@@ -11,11 +11,12 @@ interface StoreItemProps {
     alt: string;
     textKey: string;
     descKey: string;
+    locale: Locale; // Thêm locale prop
 }
 
-const StoreItem: React.FC<StoreItemProps> = ({ iconSrc, alt, textKey, descKey }) => {
-
-    const { t } = useTranslations();
+const StoreItem: React.FC<StoreItemProps> = ({ iconSrc, alt, textKey, descKey, locale }) => {
+    // Truyền locale vào useTranslations
+    const { t } = useTranslations(locale);
 
     return (
         <div className="store-imp-it">
@@ -44,7 +45,7 @@ const StoreItem: React.FC<StoreItemProps> = ({ iconSrc, alt, textKey, descKey })
     );
 };
 
-const StoreImportant = ({ initialLocale = 'en' }) => {
+const StoreImportant = ({ initialLocale = 'en' }: { initialLocale?: Locale }) => {
     const searchParams = useSearchParams();
     const langParam = searchParams.get('lang');
 
@@ -101,7 +102,8 @@ const StoreImportant = ({ initialLocale = 'en' }) => {
                     <div className="store-imp-row row gap-res">
                         {storeItems.map((item, index) => (
                             <div className="col" key={index}>
-                                <StoreItem {...item} />
+                                {/* Truyền locale vào StoreItem */}
+                                <StoreItem {...item} locale={locale} />
                             </div>
                         ))}
                     </div>

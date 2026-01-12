@@ -94,7 +94,7 @@ const AboutViewContainer = ({ initialLocale = 'en' }) => {
                                 <img
                                     width="653"
                                     height="716"
-                                    src="/images/container-treo.png"
+                                    src="/images/container-treo.webp"
                                     className="attachment-full size-full"
                                     alt="treo container"
                                     decoding="async"

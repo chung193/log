@@ -1,4 +1,12 @@
 /* Fix cho icon và layout */
+.hd .container {
+    width: 100%;
+    max-width: 123rem !important;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
 .menu-link {
     display: flex !important;
     align-items: center !important;
@@ -12,24 +20,43 @@
     line-height: 1;
 }
 
-.menu-link i.fa-chevron-down {
-    font-size: 12px !important;
-    margin-left: 2px !important;
-    position: relative;
-    z-index: 10 !important;
-    /* Đảm bảo icon trên submenu */
+/* Icon cho menu cha cấp cao nhất - chỉ hiển thị circle-plus màu #FBAE17 */
+.menu-list>.menu-item>.menu-link .fa-circle-plus {
+    color: #FBAE17 !important;
+    font-size: 14px !important;
+    margin-left: 4px !important;
+    transition: opacity 0.3s ease;
 }
 
-/* Fix submenu z-index thấp hơn icon */
+/* Ẩn chevron-down cho menu cha cấp cao nhất */
+.menu-list>.menu-item>.menu-link .fa-chevron-down {
+    display: none !important;
+}
+
+/* Icon cho menu con - chỉ hiển thị chevron-right */
+.menu-list .menu-list>.menu-item>.menu-link .fa-chevron-right {
+    font-size: 12px !important;
+    margin-left: 4px !important;
+    color: #333;
+    transition: opacity 0.3s ease;
+}
+
+/* Ẩn circle-plus và chevron-down cho menu con */
+.menu-list .menu-list>.menu-item>.menu-link .fa-circle-plus,
+.menu-list .menu-list>.menu-item>.menu-link .fa-chevron-down {
+    display: none !important;
+}
+
+/* Khi hover vào menu item - ẩn icon */
+.menu-item:hover>.menu-link .fa-circle-plus,
+.menu-item:hover>.menu-link .fa-chevron-right {
+    opacity: 0;
+}
+
+/* Submenu styling */
 .menu-list .menu-list,
 .sub-sub-menu {
     z-index: 5 !important;
-}
-
-/* Hiệu ứng xoay khi hover */
-.menu-item:hover .fa-chevron-down {
-    transform: rotate(180deg);
-    transition: transform 0.3s ease;
 }
 
 /* Mobile menu icons */
@@ -50,8 +77,50 @@
     gap: 8px;
 }
 
-.icon-chevron,
-.icon-chevron-hover {
-    pointer-events: auto;
-    flex-shrink: 0;
+/* Mobile-specific styling */
+@media (max-width: 991px) {
+
+    /* Hiển thị cả hai icon cho mobile */
+    .mobile-menu-toggle {
+        display: inline-flex !important;
+    }
+
+    .mobile .menu-link .fa-chevron-down {
+        display: inline-flex !important;
+    }
+}
+
+/* ... phần CSS cũ giữ nguyên ... */
+
+/* Style cho active menu */
+.menu-item.active-menu-item .menu-text {
+    font-weight: 700 !important;
+    color: #FBAE17 !important;
+}
+
+/* Style cho current page */
+.menu-item.current-menu-item .menu-text {
+    font-weight: 700 !important;
+}
+
+/* Desktop active menu */
+.hd-nav .menu-item.active-menu-item .menu-text,
+.hd-nav .menu-item.current-menu-item .menu-text {
+    font-weight: 700 !important;
+    color: #FBAE17 !important;
+}
+
+/* Mobile active menu */
+.mobile .menu-item.active-menu-item .menu-text,
+.mobile .menu-item.current-menu-item .menu-text {
+    font-weight: 700 !important;
+    color: #FBAE17 !important;
+}
+
+/* Icon cho menu cha cấp cao nhất - chỉ hiển thị circle-plus màu #FBAE17 */
+.menu-list>.menu-item>.menu-link .fa-circle-plus {
+    color: #FBAE17 !important;
+    font-size: 14px !important;
+    margin-left: 4px !important;
+    transition: opacity 0.3s ease;
 }

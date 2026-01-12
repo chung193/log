@@ -107,6 +107,8 @@ const Ecosystem: React.FC = ({ initialLocale = 'en' }) => {
             : initialLocale;
 
     const { t } = useTranslations(locale);
+
+    debugger
     const circleIcons: CircleIconProps[] = [
         {
             src: '/images/ic-1.svg',
