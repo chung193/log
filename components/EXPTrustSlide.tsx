@@ -6,43 +6,54 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
+const EXPTrustSlide = ({ initialLocale = 'en' }) => {
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
 
-const EXPTrustSlide = () => {
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
     const navigationPrevRef = useRef(null);
     const navigationNextRef = useRef(null);
 
     const slides = [
         {
             id: 1,
-            title: "Ủy thác nhập khẩu",
+            title: t("components.exp-trust.sl1-title"),
             image: "/images/exp1.jpg",
             link: "/uy-thac-nhap-khau-vietnam-post-logistics/",
             alt: "Bãi containers",
-            description: "Đảm bảo hàng hóa từ các quốc gia khác về Việt Nam nhanh chóng, thuận tiện."
+            description: t("components.exp-trust.sl1")
         },
         {
             id: 2,
-            title: "Ủy thác xuất khẩu",
+            title: t("components.exp-trust.sl2-title"),
             image: "/images/exp2.jpg",
             link: "/uy-thac-xuat-khau-vietnam-post-logistics/",
             alt: "thùng hàng carton và pallet",
-            description: "Hỗ trợ đưa sản phẩm của bạn đến tay khách hàng quốc tế một cách chuyên nghiệp."
+            description: t("components.exp-trust.sl2")
         },
         {
             id: 3,
-            title: "Hỗ trợ khai báo hải quan",
+            title: t("components.exp-trust.sl3-title"),
             image: "/images/exp3.webp",
             link: "/ho-tro-khai-bao-hai-quan-vietnam-post-logistics/",
             alt: "Bê thùng hàng",
-            description: "Chuẩn bị và xử lý hồ sơ chính xác, giảm thiểu rủi ro sai sót."
+            description: t("components.exp-trust.sl3")
         },
         {
             id: 4,
-            title: "Tư vấn chính sách xuất nhập khẩu",
+            title: t("components.exp-trust.sl4-title"),
             image: "/images/exp4.webp",
             link: "/tu-van-chinh-sach-xuat-nhap-khau-vietnam-post-logistics/",
             alt: "sân bay",
-            description: "Giải đáp mọi thắc mắc và cập nhật thông tin mới nhất."
+            description: t("components.exp-trust.sl4")
         }
     ];
 

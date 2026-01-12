@@ -6,7 +6,8 @@
     "components": {
         "button": {
             "find-more": "Find more",
-            "contact-us": "Contact for Consultation"
+            "contact-us": "Contact for Consultation",
+            "submit": "SUBMIT"
         },
         "home-banner": {
             "banner-1-caption": "Local Trust, Global Solutions",
@@ -231,9 +232,34 @@
             "des2": "",
             "title3": "Providing diverse and flexible road transport solutions according to customer requirements.",
             "des3": ""
+        },
+        "exp-trust": {
+            "sl1-title": "Import Entrustment",
+            "sl1": "Ensure goods from other countries to Vietnam quickly and conveniently.",
+            "sl2-title": "Export Entrustment",
+            "sl2": "Support to bring your products to international customers in a professional manner.",
+            "sl3-title": "Customs declaration support ",
+            "sl3": "Prepare and process documents accurately, minimizing the risk of errors.",
+            "sl4-title": "Import and export policy consulting ",
+            "sl4": "Answer all questions and update the latest information."
         }
     },
     "pages": {
+        "contact": {
+            "head": "Head office:",
+            "head-detail": "No. 5 Pham Hung Street, Cau Giay Ward, Hanoi",
+            "hp": "Hai Phong Office:",
+            "hp-detail": "No. 5, Nguyen Tri Phuong Street, Hong Bang Ward, TP. Hai Phong",
+            "hcm": "HCM Office:",
+            "hcm-detail": "No. 8 Phan Dinh Giot Street, Tan Son Hoa Ward, Ho Chi Minh City",
+            "contact-us": "Contact Us Now",
+            "get-in": "Get in touch to find out how we can help. We will respond to you in 24h.",
+            "full-name": "Full Name",
+            "company-name": "Company Name",
+            "email": "Email",
+            "phone": "Phone Number",
+            "message": "Message"
+        },
         "im-ex": {
             "title": "Import - Export Solution",
             "item1": "High quality fleet of vehicles with professional staff.",
@@ -242,7 +268,21 @@
             "item4": "Security and safety are always our top priority.",
             "finance": "Supply Chain Finance",
             "im-ex": "Import - Export Solution",
-            "entrustment": "Import - Export Entrustment"
+            "entrustment": "Import - Export Entrustment",
+            "process": "Import - Export entrustment process",
+            "advantages": "Advantages",
+            "ad1-title": "Fast delivery",
+            "ad1": "Fast delivery times thanks to global shipping network.",
+            "ad2-title": "Customs Support",
+            "ad2": "Support customs declaration and optimal tax policy.",
+            "ad3-title": "Flexible to any scale",
+            "ad3": "Flexible response to various shipment sizes.",
+            "ad4-title": "Cooperate with major partners",
+            "ad4": "We are partners with many prestigious businesses and corporations around the world.",
+            "ad5-title": "CN38 – Customs clearance solution",
+            "ad5": "CN38 is an exclusive solution package of Vietnam Post, which can handle customs clearance of a variety of items transported by post with optimal time.",
+            "ad6-title": "T86/ECCF – Fast and efficient delivery",
+            "ad6": "T86/ECCF offers flexible handling for small packages that require quick delivery, especially cosmetics and dietary supplements."
         },
         "finance": {
             "title": "Import - Export Solution",

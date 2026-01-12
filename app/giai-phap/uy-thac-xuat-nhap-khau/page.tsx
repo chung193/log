@@ -168,7 +168,9 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                 <div className="exp-pro ss-pd-b">
                     <div className="container">
                         <div className="head-verti mb-32 center">
-                            <h1 className="title title-48 add-class text-verti">Thực hiện thủ tục xuất nhập khẩu</h1>
+                            <h1 className="title title-48 add-class text-verti">
+                                {t("pages.im-ex.process")}
+                            </h1>
                         </div>
                         <div className="exp-pro-list">
                             <div className="img">
@@ -209,36 +211,11 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                             <div className="title-head text-verti">
                                 <h3 className="title title-40 add-class text-hori words chars splitting" data-spl="data-spl" style={{ '--word-total': 5, '--char-total': 17 } as React.CSSProperties}>
                                     <span className="word" data-word="Ưu" style={{ '--word-index': 0 } as React.CSSProperties}>
-                                        <span className="char" data-char="Ư" style={{ '--char-index': 0 } as React.CSSProperties}>Ư</span>
-                                        <span className="char" data-char="u" style={{ '--char-index': 1 } as React.CSSProperties}>u</span>
+                                        <span className="char" data-char="Ư" style={{ '--char-index': 0 } as React.CSSProperties}>
+                                            {t("pages.im-ex.advantages")}
+                                        </span>
                                     </span>
-                                    <span className="whitespace"> </span>
-                                    <span className="word" data-word="điểm" style={{ '--word-index': 1 } as React.CSSProperties}>
-                                        <span className="char" data-char="đ" style={{ '--char-index': 2 } as React.CSSProperties}>đ</span>
-                                        <span className="char" data-char="i" style={{ '--char-index': 3 } as React.CSSProperties}>i</span>
-                                        <span className="char" data-char="ể" style={{ '--char-index': 4 } as React.CSSProperties}>ể</span>
-                                        <span className="char" data-char="m" style={{ '--char-index': 5 } as React.CSSProperties}>m</span>
-                                    </span>
-                                    <span className="whitespace"> </span>
-                                    <span className="word" data-word="của" style={{ '--word-index': 2 } as React.CSSProperties}>
-                                        <span className="char" data-char="c" style={{ '--char-index': 6 } as React.CSSProperties}>c</span>
-                                        <span className="char" data-char="ủ" style={{ '--char-index': 7 } as React.CSSProperties}>ủ</span>
-                                        <span className="char" data-char="a" style={{ '--char-index': 8 } as React.CSSProperties}>a</span>
-                                    </span>
-                                    <span className="whitespace"> </span>
-                                    <span className="word" data-word="giải" style={{ '--word-index': 3 } as React.CSSProperties}>
-                                        <span className="char" data-char="g" style={{ '--char-index': 9 } as React.CSSProperties}>g</span>
-                                        <span className="char" data-char="i" style={{ '--char-index': 10 } as React.CSSProperties}>i</span>
-                                        <span className="char" data-char="ả" style={{ '--char-index': 11 } as React.CSSProperties}>ả</span>
-                                        <span className="char" data-char="i" style={{ '--char-index': 12 } as React.CSSProperties}>i</span>
-                                    </span>
-                                    <span className="whitespace"> </span>
-                                    <span className="word" data-word="pháp" style={{ '--word-index': 4 } as React.CSSProperties}>
-                                        <span className="char" data-char="p" style={{ '--char-index': 13 } as React.CSSProperties}>p</span>
-                                        <span className="char" data-char="h" style={{ '--char-index': 14 } as React.CSSProperties}>h</span>
-                                        <span className="char" data-char="á" style={{ '--char-index': 15 } as React.CSSProperties}>á</span>
-                                        <span className="char" data-char="p" style={{ '--char-index': 16 } as React.CSSProperties}>p</span>
-                                    </span>
+
                                 </h3>
                             </div>
                         </div>
@@ -259,8 +236,8 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                                                 loading="lazy"
                                             />
                                         </div>
-                                        <p className="text">Giao hàng nhanh chóng</p>
-                                        <div className="des">Thời gian giao hàng nhanh chóng nhờ mạng lưới vận chuyển trên toàn cầu.</div>
+                                        <p className="text">{t("pages.im-ex.ad1-title")}</p>
+                                        <div className="des">{t("pages.im-ex.ad1")}</div>
                                     </div>
                                 </div>
 
@@ -277,9 +254,8 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                                                 loading="lazy"
                                             />
                                         </div>
-                                        <p className="text">Hỗ trợ hải quan</p>
-                                        <div className="des">Hỗ trợ khai báo hải quan và chính sách thuế tối ưu.</div>
-                                    </div>
+                                        <p className="text">{t("pages.im-ex.ad2-title")}</p>
+                                        <div className="des">{t("pages.im-ex.ad2")}</div> </div>
                                 </div>
 
                                 <div className="inland-xo-it col itemEven odd">
@@ -295,9 +271,8 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                                                 loading="lazy"
                                             />
                                         </div>
-                                        <p className="text">Linh hoạt mọi quy mô</p>
-                                        <div className="des">Đáp ứng linh hoạt với nhiều quy mô lô hàng khác nhau.</div>
-                                    </div>
+                                        <p className="text">{t("pages.im-ex.ad3-title")}</p>
+                                        <div className="des">{t("pages.im-ex.ad3")}</div>  </div>
                                 </div>
 
                                 <div className="inland-xo-it col itemEven even">
@@ -313,9 +288,8 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                                                 loading="lazy"
                                             />
                                         </div>
-                                        <p className="text">Hợp tác cùng đối tác lớn</p>
-                                        <div className="des">Hợp tác với các đơn vị chuyển phát nhanh uy tín nhất như FEDEX, UPS, DHL, giúp gia tăng độ tin cậy.</div>
-                                    </div>
+                                        <p className="text">{t("pages.im-ex.ad4-title")}</p>
+                                        <div className="des">{t("pages.im-ex.ad4")}</div> </div>
                                 </div>
 
                                 <div className="inland-xo-it col itemEven even">
@@ -331,9 +305,8 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                                                 loading="lazy"
                                             />
                                         </div>
-                                        <p className="text">CN38 – Giải pháp thông quan</p>
-                                        <div className="des">CN38 là gói giải pháp độc quyền của bưu điện Việt Nam, có thể xử lý thông quan đa dạng các mặt hàng được vận chuyển theo đường bưu chính với thời gian tối ưu.</div>
-                                    </div>
+                                        <p className="text">{t("pages.im-ex.ad5-title")}</p>
+                                        <div className="des">{t("pages.im-ex.ad5")}</div> </div>
                                 </div>
 
                                 <div className="inland-xo-it col itemEven odd">
@@ -349,9 +322,8 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                                                 loading="lazy"
                                             />
                                         </div>
-                                        <p className="text">T86/ECCF – Giao nhanh hiệu quả</p>
-                                        <div className="des">T86/ECCF mang đến khả năng xử lý linh hoạt đối với các gói hàng nhỏ, cần giao hàng nhanh chóng, đặc biệt là các mặt hàng mỹ phẩm và thực phẩm chức năng</div>
-                                    </div>
+                                        <p className="text">{t("pages.im-ex.ad6-title")}</p>
+                                        <div className="des">{t("pages.im-ex.ad6")}</div>   </div>
                                 </div>
                             </div>
                         </div>
