@@ -61,7 +61,6 @@ const InternationalAirCargoPage = ({ initialLocale = 'en' }) => {
                             language={initialLocale}
                             showAnimation={true}
                             className="mb-16"
-                            // Tùy chọn: có thể set homeLink khác cho từng ngôn ngữ
                             homeLink={initialLocale === 'vi' ? '/' : '/en'}
                         />
                         <h1 className="bn-big-tt add-class text-verti mb-24 is-inview">

@@ -107,7 +107,7 @@ const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
                                 <div className="bn-box-it col">
                                     <div className="inner">
                                         <div className="icon">
-                                            <img width="24" height="24" src="ic-bn1.svg" className="attachment-full size-full" alt="Icon TMĐT" decoding="async" />
+                                            <img width="24" height="24" src="/images/ic-bn1.svg" className="attachment-full size-full" alt="Icon TMĐT" decoding="async" />
                                         </div>
                                         <p className="des">
                                             {t("pages.warehouse.item-1")}
@@ -117,7 +117,7 @@ const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
                                 <div className="bn-box-it col">
                                     <div className="inner">
                                         <div className="icon">
-                                            <img width="24" height="24" src="ic-bn2.svg" className="attachment-full size-full" alt="KẾT NỐI HÀNH TRÌNH" decoding="async" />
+                                            <img width="24" height="24" src="/images/ic-bn2.svg" className="attachment-full size-full" alt="KẾT NỐI HÀNH TRÌNH" decoding="async" />
                                         </div>
                                         <p className="des">
                                             {t("pages.warehouse.item-2")}
@@ -127,7 +127,7 @@ const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
                                 <div className="bn-box-it col">
                                     <div className="inner">
                                         <div className="icon">
-                                            <img width="24" height="24" src="ic-bn3.svg" className="attachment-full size-full" alt="LIÊN KẾT" decoding="async" loading="lazy" />
+                                            <img width="24" height="24" src="/images/ic-bn3.svg" className="attachment-full size-full" alt="LIÊN KẾT" decoding="async" loading="lazy" />
                                         </div>
                                         <p className="des">
                                             {t("pages.warehouse.item-3")}
@@ -137,7 +137,7 @@ const ContractLogisticsWarehousingPage = ({ initialLocale = 'en' }) => {
                                 <div className="bn-box-it col">
                                     <div className="inner">
                                         <div className="icon">
-                                            <img width="24" height="24" src="ic-bn4.svg" className="attachment-full size-full" alt="tmđt" decoding="async" loading="lazy" />
+                                            <img width="24" height="24" src="/images/ic-bn4.svg" className="attachment-full size-full" alt="tmđt" decoding="async" loading="lazy" />
                                         </div>
                                         <p className="des">
                                             {t("pages.warehouse.item-4")}

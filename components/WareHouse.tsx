@@ -17,7 +17,7 @@ const WareHouse = ({ initialLocale = 'en' }) => {
             id: 1,
             title: t("components.warehouse.item1-title"),
             link: "/kho-ngoai-quan-vmi-giai-phap-toi-uu-cho-doanh-nghiep",
-            image: "store1.png",
+            image: "/images/store1.webp",
             description: t("components.warehouse.item1-des"),
             width: 278,
             height: 190
@@ -26,7 +26,7 @@ const WareHouse = ({ initialLocale = 'en' }) => {
             id: 2,
             title: t("components.warehouse.item2-title"),
             link: "/kho-ngoai-quan-xuat-nhap-khau-tai-cho-vietnam-post-logistics/",
-            image: "store2.png",
+            image: "/images/store2.webp",
             description: t("components.warehouse.item2-des"),
             width: 278,
             height: 190
@@ -35,7 +35,7 @@ const WareHouse = ({ initialLocale = 'en' }) => {
             id: 3,
             title: t("components.warehouse.item3-title"),
             link: "/kho-phan-phoi-vietnam-post-logistics/",
-            image: "store3.png",
+            image: "/images/store3.webp",
             description: t("components.warehouse.item3-des"),
             width: 278,
             height: 190
@@ -44,7 +44,7 @@ const WareHouse = ({ initialLocale = 'en' }) => {
             id: 4,
             title: t("components.warehouse.item4-title"),
             link: "/kho-fulfillment-giai-phap-toi-uu-cho-thuong-mai-dien-tu/",
-            image: "store4.png",
+            image: "/images/store4.webp",
             description: t("components.warehouse.item4-des"),
             width: 278,
             height: 190
@@ -53,7 +53,7 @@ const WareHouse = ({ initialLocale = 'en' }) => {
             id: 5,
             title: t("components.warehouse.item5-title"),
             link: "/kho-nguyen-vat-lieu-tho-cho-cac-nha-may/",
-            image: "store5.png",
+            image: "/images/store5.webp",
             description: t("components.warehouse.item5-des"),
             width: 278,
             height: 190
@@ -128,7 +128,7 @@ const WareHouse = ({ initialLocale = 'en' }) => {
                                             </div>
                                             <a className="btn-circle" href={item.link}>
                                                 <img
-                                                    src="/template/assets/images/ic-arrow.svg"
+                                                    src="/images/ic-arrow.svg"
                                                     alt={`Xem thêm về ${item.title}`}
                                                 />
                                             </a>

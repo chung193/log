@@ -27,7 +27,7 @@ const WhyChoose = ({ initialLocale = 'en' }) => {
                             <div className="store-why-it">
                                 <div className="icon-item">
                                     <div className="icon">
-                                        <img width="101" height="100" src="ic-home.svg" className="attachment-full size-full" alt="Nhà kho" decoding="async" loading="lazy" />
+                                        <img width="101" height="100" src="/images/ic-home.svg" className="attachment-full size-full" alt="Nhà kho" decoding="async" loading="lazy" />
                                     </div>
                                     <div className="ctn">
                                         <p className="tt">
@@ -41,7 +41,7 @@ const WhyChoose = ({ initialLocale = 'en' }) => {
                             <div className="store-why-it">
                                 <div className="icon-item">
                                     <div className="icon">
-                                        <img width="101" height="100" src="icon-car.svg" className="attachment-full size-full" alt="" decoding="async" loading="lazy" />
+                                        <img width="101" height="100" src="/images/icon-car.svg" className="attachment-full size-full" alt="" decoding="async" loading="lazy" />
                                     </div>
                                     <div className="ctn">
                                         <p className="tt">
@@ -55,7 +55,7 @@ const WhyChoose = ({ initialLocale = 'en' }) => {
                             <div className="store-why-it">
                                 <div className="icon-item">
                                     <div className="icon">
-                                        <img width="100" height="100" src="ic-trip.svg" className="attachment-full size-full" alt="Khách hàng" decoding="async" loading="lazy" />
+                                        <img width="100" height="100" src="/images/ic-trip.svg" className="attachment-full size-full" alt="Khách hàng" decoding="async" loading="lazy" />
                                     </div>
                                     <div className="ctn">
                                         <p className="tt">
@@ -69,7 +69,7 @@ const WhyChoose = ({ initialLocale = 'en' }) => {
                             <div className="store-why-it">
                                 <div className="icon-item">
                                     <div className="icon">
-                                        <img width="101" height="100" src="ic-flame.svg" className="attachment-full size-full" alt="PCCC" decoding="async" loading="lazy" />
+                                        <img width="101" height="100" src="/images/ic-flame.svg" className="attachment-full size-full" alt="PCCC" decoding="async" loading="lazy" />
                                     </div>
                                     <div className="ctn">
                                         <p className="tt">
@@ -83,7 +83,7 @@ const WhyChoose = ({ initialLocale = 'en' }) => {
                             <div className="store-why-it">
                                 <div className="icon-item">
                                     <div className="icon">
-                                        <img width="101" height="100" src="ic-camera.svg" className="attachment-full size-full" alt="CCTV" decoding="async" loading="lazy" />
+                                        <img width="101" height="100" src="/images/ic-camera.svg" className="attachment-full size-full" alt="CCTV" decoding="async" loading="lazy" />
                                     </div>
                                     <div className="ctn">
                                         <p className="tt">
@@ -97,7 +97,7 @@ const WhyChoose = ({ initialLocale = 'en' }) => {
                             <div className="store-why-it">
                                 <div className="icon-item">
                                     <div className="icon">
-                                        <img width="100" height="100" src="ic-increase.svg" className="attachment-full size-full" alt="vận hành phát triển" decoding="async" loading="lazy" />
+                                        <img width="100" height="100" src="/images/ic-increase.svg" className="attachment-full size-full" alt="vận hành phát triển" decoding="async" loading="lazy" />
                                     </div>
                                     <div className="ctn">
                                         <p className="tt">

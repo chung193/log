@@ -79,14 +79,14 @@ const StoreSwiper = ({ initialLocale = 'en' }) => {
                                         <img
                                             width="286"
                                             height="346"
-                                            src="storage1.jpg"
+                                            src="/images/storage1.jpg"
                                             alt="Dịch vụ cho thuê kho bãi"
                                         />
                                     </a>
                                 </div>
                                 <div className="info">
                                     <a className="btn-circle" href="/dich-vu-cho-thue-kho-bai-uy-tin-chat-luong-hang-dau-viet-nam/">
-                                        <img src="/template/assets/images/ic-arrow.svg" alt="arrow" />
+                                        <img src="/images/ic-arrow.svg" alt="arrow" />
                                     </a>
                                     <p className="info-des">
                                         {t("components.store-swiper.item1-title")}
@@ -105,14 +105,14 @@ const StoreSwiper = ({ initialLocale = 'en' }) => {
                                         <img
                                             width="286"
                                             height="346"
-                                            src="storage2.jpg"
+                                            src="/images/storage2.jpg"
                                             alt="Dịch vụ gia tăng"
                                         />
                                     </a>
                                 </div>
                                 <div className="info">
                                     <a className="btn-circle" href="/dich-vu-gia-tri-gia-tang/">
-                                        <img src="/template/assets/images/ic-arrow.svg" alt="arrow" />
+                                        <img src="/images/ic-arrow.svg" alt="arrow" />
                                     </a>
                                     <p className="info-des">
                                         {t("components.store-swiper.item2-title")}
@@ -131,14 +131,14 @@ const StoreSwiper = ({ initialLocale = 'en' }) => {
                                         <img
                                             width="286"
                                             height="346"
-                                            src="storage3.jpg"
+                                            src="/images/storage3.jpg"
                                             alt="Dịch vụ xuất nhập khẩu"
                                         />
                                     </a>
                                 </div>
                                 <div className="info">
                                     <a className="btn-circle" href="/giai-phap-xuat-nhap-khau-tai-kho-va-quan-ly-hang-hoa/">
-                                        <img src="/template/assets/images/ic-arrow.svg" alt="arrow" />
+                                        <img src="/images/ic-arrow.svg" alt="arrow" />
                                     </a>
                                     <p className="info-des">
                                         {t("components.store-swiper.item3-title")}
@@ -157,14 +157,14 @@ const StoreSwiper = ({ initialLocale = 'en' }) => {
                                         <img
                                             width="286"
                                             height="346"
-                                            src="storage4.jpg"
+                                            src="/images/DSC05468-2048x1365.webp"
                                             alt="Dịch vụ hải quan"
                                         />
                                     </a>
                                 </div>
                                 <div className="info">
                                     <a className="btn-circle" href="/dich-vu-hai-quan-cua-vietnam-post-logistics/">
-                                        <img src="/template/assets/images/ic-arrow.svg" alt="arrow" />
+                                        <img src="/images/ic-arrow.svg" alt="arrow" />
                                     </a>
                                     <p className="info-des">
                                         {t("components.store-swiper.item4-title")}

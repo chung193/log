@@ -132,7 +132,7 @@ const Solution: React.FC = () => {
                             {Array.from({ length: 72 }, (_, i) => i + 101).map((num, index) => (
                                 <img
                                     key={num}
-                                    src={`/template/assets/images/container_${num}.png`}
+                                    src={`/images/container_${num}.png`}
                                     alt=""
                                     className={index === currentFrame ? 'active' : ''}
                                     style={{ display: index === currentFrame ? 'block' : 'none' }}

@@ -26,19 +26,19 @@ const StoreSolution = ({ initialLocale = 'en' }) => {
                         <div className="store-cus-l col">
                             <div className="wrapper">
                                 <div className="store-cus-it">
-                                    <img src="/template/assets/images/sao.svg" alt="" />
+                                    <img src="/images/sao.svg" alt="" />
                                     <p className="txt">
                                         {t("components.store-solu.item1")}
                                     </p>
                                 </div>
                                 <div className="store-cus-it">
-                                    <img src="/template/assets/images/sao.svg" alt="" />
+                                    <img src="/images/sao.svg" alt="" />
                                     <p className="txt">
                                         {t("components.store-solu.item2")}
                                     </p>
                                 </div>
                                 <div className="store-cus-it">
-                                    <img src="/template/assets/images/sao.svg" alt="" />
+                                    <img src="/images/sao.svg" alt="" />
                                     <p className="txt">
                                         {t("components.store-solu.item3")}
                                     </p>
@@ -49,7 +49,7 @@ const StoreSolution = ({ initialLocale = 'en' }) => {
                             <div className="wrapper">
                                 <div className="img">
                                     <div className="img-inner">
-                                        <img width="864" height="748" src="pallet.png" className="attachment-full size-full" alt="" decoding="async" loading="lazy" srcSet="pallet.png 864w, pallet-300x260.png 300w, pallet-768x665.png 768w" />
+                                        <img width="864" height="748" src="/images/pallet.png" className="attachment-full size-full" alt="" decoding="async" loading="lazy" srcSet="/images/pallet.png 864w, /images/pallet-300x260.png 300w, /images/pallet-768x665.png 768w" />
                                     </div>
                                 </div>
                             </div>

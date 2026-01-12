@@ -31,7 +31,7 @@ const StoreTime = ({ initialLocale = 'en' }) => {
                     </div>
                     <div className="minibox aos-init aos-animate" data-aos="fade-up-cus" data-aos-delay="600">
                         <div className="icon">
-                            <img width="48" height="48" src="ic-1.svg" className="attachment-full size-full" alt="Hàng hóa" decoding="async" loading="lazy" />
+                            <img width="48" height="48" src="/images/ic-1.svg" className="attachment-full size-full" alt="Hàng hóa" decoding="async" loading="lazy" />
                         </div>
                         <p className="desc">
                             {t("components.store-time.time")}
@@ -40,7 +40,7 @@ const StoreTime = ({ initialLocale = 'en' }) => {
                 </div>
                 <div className="store-ser-time-bot aos-init aos-animate" data-aos="fade-right-cus">
                     <div className="img">
-                        <img width="651" height="502" src="car.png" className="attachment-full size-full" alt="Xe chở container" decoding="async" loading="lazy" srcSet="car.png 651w, car-300x231.png 300w" />
+                        <img width="651" height="502" src="/images/car.webp" className="attachment-full size-full" alt="Xe chở container" decoding="async" loading="lazy" srcSet="/images/car.webp 651w, /images/car-300x231.webp 300w" />
                     </div>
                 </div>
             </div>

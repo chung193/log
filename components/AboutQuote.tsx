@@ -4,7 +4,7 @@ import { useSearchParams } from 'next/navigation';
 import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
 
-const AboutQuote = () => {
+const AboutQuote = ({ language = 'en', initialLocale = 'en' }) => {
     const searchParams = useSearchParams();
     const langParam = searchParams.get('lang');
 
@@ -22,7 +22,7 @@ const AboutQuote = () => {
                     <img
                         width="1728"
                         height="800"
-                        src="ab-quote.jpg"
+                        src="/images/ab-quote.webp"
                         className="attachment-full size-full"
                         alt="Ảnh Vận chuyển đường biển (Sea Freight) - EXPEDITORS GLOBAL"
                         decoding="async"

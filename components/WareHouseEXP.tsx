@@ -67,12 +67,12 @@ const WareHouseEXP = ({ initialLocale = 'en' }) => {
                                                     <img
                                                         width="777"
                                                         height="1284"
-                                                        src="/wp-content/uploads/2025/11/map-VN2.png"
+                                                        src="/images/map-VN2.png"
                                                         className="attachment-full size-full"
                                                         alt=""
                                                         decoding="async"
                                                         loading="lazy"
-                                                        srcSet="/wp-content/uploads/2025/11/map-VN2.png 777w, /wp-content/uploads/2025/11/map-VN2-182x300.png 182w, /wp-content/uploads/2025/11/map-VN2-620x1024.png 620w, /wp-content/uploads/2025/11/map-VN2-768x1269.png 768w"
+                                                        srcSet="/images/map-VN2.png 777w, /images/map-VN2-182x300.png 182w, /images/map-VN2-620x1024.png 620w, /images/map-VN2-768x1269.png 768w"
                                                     />
                                                 </div>
                                             </div>
@@ -134,7 +134,7 @@ const WareHouseEXP = ({ initialLocale = 'en' }) => {
                                                     <img
                                                         width="35"
                                                         height="45"
-                                                        src="/wp-content/uploads/2025/11/pinMap.svg"
+                                                        src="/images/pinMap.svg"
                                                         className="attachment-full size-full"
                                                         alt=""
                                                         decoding="async"
@@ -152,7 +152,7 @@ const WareHouseEXP = ({ initialLocale = 'en' }) => {
                                                     <img
                                                         width="35"
                                                         height="45"
-                                                        src="/wp-content/uploads/2025/11/pinMap.svg"
+                                                        src="/images/pinMap.svg"
                                                         className="attachment-full size-full"
                                                         alt=""
                                                         decoding="async"
@@ -170,7 +170,7 @@ const WareHouseEXP = ({ initialLocale = 'en' }) => {
                                                     <img
                                                         width="35"
                                                         height="45"
-                                                        src="/wp-content/uploads/2025/11/pinMap.svg"
+                                                        src="/images/pinMap.svg"
                                                         className="attachment-full size-full"
                                                         alt=""
                                                         decoding="async"
@@ -188,7 +188,7 @@ const WareHouseEXP = ({ initialLocale = 'en' }) => {
                                                     <img
                                                         width="35"
                                                         height="45"
-                                                        src="/wp-content/uploads/2025/11/pinMap.svg"
+                                                        src="/images/pinMap.svg"
                                                         className="attachment-full size-full"
                                                         alt=""
                                                         decoding="async"
@@ -206,7 +206,7 @@ const WareHouseEXP = ({ initialLocale = 'en' }) => {
                                                     <img
                                                         width="35"
                                                         height="45"
-                                                        src="/wp-content/uploads/2025/11/pinMap.svg"
+                                                        src="/images/pinMap.svg"
                                                         className="attachment-full size-full"
                                                         alt=""
                                                         decoding="async"
@@ -224,7 +224,7 @@ const WareHouseEXP = ({ initialLocale = 'en' }) => {
                                                     <img
                                                         width="35"
                                                         height="45"
-                                                        src="/wp-content/uploads/2025/11/pinMap.svg"
+                                                        src="/images/pinMap.svg"
                                                         className="attachment-full size-full"
                                                         alt=""
                                                         decoding="async"
@@ -242,7 +242,7 @@ const WareHouseEXP = ({ initialLocale = 'en' }) => {
                                                     <img
                                                         width="35"
                                                         height="45"
-                                                        src="/wp-content/uploads/2025/11/pinMap.svg"
+                                                        src="/images/pinMap.svg"
                                                         className="attachment-full size-full"
                                                         alt=""
                                                         decoding="async"
@@ -267,7 +267,7 @@ const WareHouseEXP = ({ initialLocale = 'en' }) => {
                                                             <img
                                                                 width="45"
                                                                 height="45"
-                                                                src="ic-sys-home.svg"
+                                                                src="/images/ic-sys-home.svg"
                                                                 className="attachment-full size-full"
                                                                 alt="Lưu kho"
                                                                 decoding="async"
@@ -287,7 +287,7 @@ const WareHouseEXP = ({ initialLocale = 'en' }) => {
                                                             <img
                                                                 width="45"
                                                                 height="45"
-                                                                src="ic-sys-home.svg"
+                                                                src="/images/ic-sys-home.svg"
                                                                 className="attachment-full size-full"
                                                                 alt="Lưu kho"
                                                                 decoding="async"
@@ -363,12 +363,12 @@ const WareHouseEXP = ({ initialLocale = 'en' }) => {
                                                     <img
                                                         width="686"
                                                         height="558"
-                                                        src="/wp-content/uploads/2025/11/map-TQ.png"
+                                                        src="/images/map-TQ.png"
                                                         className="attachment-full size-full"
                                                         alt=""
                                                         decoding="async"
                                                         loading="lazy"
-                                                        srcSet="/wp-content/uploads/2025/11/map-TQ.png 686w, /wp-content/uploads/2025/11/map-TQ-300x244.png 300w"
+                                                        srcSet="/images/map-TQ.png 686w, /images/map-TQ-300x244.png 300w"
                                                     />
                                                 </div>
                                             </div>
@@ -400,7 +400,7 @@ const WareHouseEXP = ({ initialLocale = 'en' }) => {
                                                     <img
                                                         width="35"
                                                         height="45"
-                                                        src="/wp-content/uploads/2025/11/pinMap.svg"
+                                                        src="/images/pinMap.svg"
                                                         className="attachment-full size-full"
                                                         alt=""
                                                         decoding="async"
@@ -424,7 +424,7 @@ const WareHouseEXP = ({ initialLocale = 'en' }) => {
                                                             <img
                                                                 width="45"
                                                                 height="45"
-                                                                src="ic-sys-home.svg"
+                                                                src="/images/ic-sys-home.svg"
                                                                 className="attachment-full size-full"
                                                                 alt="Lưu kho"
                                                                 decoding="async"

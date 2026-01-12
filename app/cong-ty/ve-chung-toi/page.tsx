@@ -56,11 +56,11 @@ const AboutPage: React.FC<AboutPageProps> = ({ initialLocale = 'en' }) => {
                     <div className="bn-bread">
                         <div className="container">
                             <SiteBreadcrumb
-                                initialLocale={initialLocale}
-                                className=''
-                                language={langParam}
-                                items={breadcrumbItems[locale]}
-                                currentPage="About us"
+                                items={breadcrumbItems[initialLocale]}
+                                language={initialLocale}
+                                showAnimation={true}
+                                className="mb-16"
+                                homeLink={initialLocale === 'vi' ? '/' : '/en'}
                             />
                         </div>
                     </div>

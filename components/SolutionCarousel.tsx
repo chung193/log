@@ -20,31 +20,31 @@ const SolutionCarousel: React.FC = ({ initialLocale = 'en' }) => {
         {
             title: t('components.solution.slides.slide_1_title'),
             description: t('components.solution.slides.slide_1_desc'),
-            image: '/wp-content/uploads/2025/04/kv.jpg',
+            image: '/images/kv.jpg',
             link: '/giai-phap/giai-phap-kho-van/'
         },
         {
             title: t('components.solution.slides.slide_2_title'),
             description: t('components.solution.slides.slide_2_desc'),
-            image: '/wp-content/uploads/2025/04/Untitled-1-1.jpg',
+            image: '/images/Untitled-1-1.jpg',
             link: '/giai-phap/giai-phap-sea-freight/'
         },
         {
             title: t('components.solution.slides.slide_3_title'),
             description: t('components.solution.slides.slide_3_desc'),
-            image: '/wp-content/uploads/2025/04/Untitled-1-1.jpg',
+            image: '/images/Untitled-1-1.jpg',
             link: '/giai-phap/giai-phap-sea-freight/'
         },
         {
             title: t('components.solution.slides.slide_4_title'),
             description: t('components.solution.slides.slide_4_desc'),
-            image: '/wp-content/uploads/2025/04/Untitled-1-1.jpg',
+            image: '/images/Untitled-1-1.jpg',
             link: '/giai-phap/giai-phap-sea-freight/'
         },
         {
             title: t('components.solution.slides.slide_5_title'),
             description: t('components.solution.slides.slide_5_desc'),
-            image: '/wp-content/uploads/2025/04/Untitled-1-1.jpg',
+            image: '/images/Untitled-1-1.jpg',
             link: '/giai-phap/giai-phap-sea-freight/'
         }
     ];
