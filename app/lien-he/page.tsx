@@ -6,7 +6,7 @@ import { useSearchParams } from 'next/navigation';
 import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
 
-const ContactPage = ({ initialLocale = 'en' }) => {
+const ContactPage = () => {
     const breadcrumbItems = {
         'vi': [
             { text: "Giải pháp", link: "/giai-phap" },
@@ -24,7 +24,7 @@ const ContactPage = ({ initialLocale = 'en' }) => {
     const locale: Locale =
         langParam === 'en' || langParam === 'vi'
             ? langParam
-            : initialLocale;
+            : 'en';
 
     const { t } = useTranslations(locale);
     return (

@@ -12,7 +12,7 @@ import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
 import BoxHeader from '@/components/BoxHeader';
 
-const SeaFreightPage: React.FC<{ language: 'vi' | 'en' }> = ({ initialLocale = 'en' }) => {
+const SeaFreightPage = () => {
     const breadcrumbItems = {
         vi: [
             { text: "Giải pháp", link: "javascript:;" },
@@ -36,7 +36,7 @@ const SeaFreightPage: React.FC<{ language: 'vi' | 'en' }> = ({ initialLocale = '
     const locale: Locale =
         langParam === 'en' || langParam === 'vi'
             ? langParam
-            : initialLocale;
+            : 'en';
 
     const { t } = useTranslations(locale);
     return (

@@ -7,7 +7,7 @@ import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
 import SiteBreadcrumb from '@/components/SiteBreadcrumb';
 
-const ExportImportPage: React.FC = ({ initialLocale = 'en' }) => {
+const ExportImportPage: React.FC = () => {
     const breadcrumbItems = {
         'vi': [
             { text: "Giải pháp", link: "/giai-phap" },
@@ -25,7 +25,7 @@ const ExportImportPage: React.FC = ({ initialLocale = 'en' }) => {
     const locale: Locale =
         langParam === 'en' || langParam === 'vi'
             ? langParam
-            : initialLocale;
+            : 'en';
 
     const { t } = useTranslations(locale);
     return (

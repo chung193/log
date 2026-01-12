@@ -11,21 +11,22 @@ import { useSearchParams } from 'next/navigation';
 import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
 
-interface AboutPageProps {
-    initialLocale?: string;
-}
-
-const AboutPage: React.FC<AboutPageProps> = ({ initialLocale = 'en' }) => {
+const AboutPage = () => {
     const searchParams = useSearchParams();
     const langParam = searchParams.get('lang');
 
+    // Đảm bảo locale chỉ có thể là 'vi' hoặc 'en'
     const locale: Locale =
-        langParam === 'en' || langParam === 'vi'
-            ? langParam
-            : initialLocale;
+        (langParam === 'en' || langParam === 'vi' ? langParam : 'vi') as Locale;
 
     const { t } = useTranslations(locale);
-    const breadcrumbItems = {
+
+    // Định nghĩa breadcrumb items với type rõ ràng
+    const breadcrumbItems: Record<Locale, Array<{
+        text: string;
+        link: string;
+        isActive?: boolean;
+    }>> = {
         vi: [
             { text: "Công ty", link: "javascript:;" },
             { text: "Về chúng tôi", link: "/cong-ty/ve-chung-toi", isActive: true }
@@ -35,6 +36,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ initialLocale = 'en' }) => {
             { text: "About us", link: "/cong-ty/ve-chung-toi", isActive: true }
         ]
     };
+
     return (
         <div id="primary" className="content-area">
             <main className="main page-ab">
@@ -55,18 +57,17 @@ const AboutPage: React.FC<AboutPageProps> = ({ initialLocale = 'en' }) => {
 
                     <div className="bn-bread">
                         <div className="container">
+                            {/* Truyền đúng items từ breadcrumbItems với locale key */}
                             <SiteBreadcrumb
-                                items={breadcrumbItems[initialLocale]}
-                                language={initialLocale}
+                                items={breadcrumbItems[locale]} {/* Đây là chỗ sửa */}
+                                language={locale}
                                 showAnimation={true}
                                 className="mb-16"
-                                homeLink={initialLocale === 'vi' ? '/' : '/en'}
+                            // homeLink không cần truyền vì component đã tự xử lý
                             />
                         </div>
                     </div>
-
                 </div>
-
 
                 <section className="sec-ab-first">
                     <div className="ab-first">
@@ -93,7 +94,6 @@ const AboutPage: React.FC<AboutPageProps> = ({ initialLocale = 'en' }) => {
                             </div>
                         </div>
 
-
                         <AboutSwiper lang={locale} />
 
                         <div className="ab-first-bottom ss-pd pb-4">
@@ -102,9 +102,11 @@ const AboutPage: React.FC<AboutPageProps> = ({ initialLocale = 'en' }) => {
                                     <div className="line aos-init aos-animate" data-aos="fade-up-cus" data-aos-delay="400">
                                         <div className="desc">
                                             <strong>
-                                                {t("pages.about-us.intro")}                                                </strong><br />
+                                                {t("pages.about-us.intro")}
+                                            </strong><br />
                                             <br />
-                                            {t("pages.about-us.second-intro")}                                        </div>
+                                            {t("pages.about-us.second-intro")}
+                                        </div>
                                     </div>
                                 </div>
                             </div>

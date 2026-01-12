@@ -157,14 +157,14 @@ const ServiceBenefits = ({ title = "", benefits = [] }) => {
 
 
 // Main Component
-const RailwaySolutionPage: React.FC = ({ initialLocale = 'en' }) => {
+const RailwaySolutionPage: React.FC = () => {
     const searchParams = useSearchParams();
     const langParam = searchParams.get('lang');
 
     const locale: Locale =
         langParam === 'en' || langParam === 'vi'
             ? langParam
-            : initialLocale;
+            : 'en';
 
     const { t } = useTranslations(locale);
 

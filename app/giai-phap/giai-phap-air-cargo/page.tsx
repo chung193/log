@@ -12,7 +12,8 @@ import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
 import SiteBreadcrumb from '@/components/SiteBreadcrumb';
 import ListServices from '@/components/ListServices';
-const InternationalAirCargoPage = ({ initialLocale = 'en' }) => {
+
+const InternationalAirCargoPage = () => {
     const breadcrumbItems = {
         vi: [
             { text: "Giải pháp", link: "javascript:;" },
@@ -36,7 +37,7 @@ const InternationalAirCargoPage = ({ initialLocale = 'en' }) => {
     const locale: Locale =
         langParam === 'en' || langParam === 'vi'
             ? langParam
-            : initialLocale;
+            : 'en';
 
     const { t } = useTranslations(locale);
     return (
