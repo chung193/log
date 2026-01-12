@@ -1,9 +1,13 @@
+'use client'
 import React from 'react';
 import './page.css'; // Import CSS tương ứng
 import SiteBreadcrumb from '@/components/SiteBreadcrumb';
 import SolutionSlider from '@/components/SolutionSlider';
 import PartnersSection from '@/components/PartnersSection';
 import ContactFormSection from '@/components/ContactFormSection';
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
 
 const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
   const breadcrumbItems = {
@@ -13,24 +17,36 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
     ],
     'en': [
       { text: "Solutions", link: "/solutions" },
-      { text: "Warehouse Solutions", link: "/solutions/warehouse", isActive: true }
+      {
+        text: " International e-commerce", link: "/solutions/warehouse", isActive: true
+      }
     ]
   };
 
+  const searchParams = useSearchParams();
+  const langParam = searchParams.get('lang');
+
+  const locale: Locale =
+    langParam === 'en' || langParam === 'vi'
+      ? langParam
+      : initialLocale;
+
+  const { t } = useTranslations(locale);
+
   return (
-    <main className="main page-inland">
+    <div className="main page-inland">
       {/* Hero Banner */}
       <div className="bn-big white">
         <div className="bn-big-bg">
           <img
             width="2000"
             height="1000"
-            src="tmdt1-min.jpg"
+            src="/images/tmdt1-min.webp"
             className="attachment-full size-full"
             alt="Thương mại điện tử quốc tế"
             decoding="async"
             fetchpriority="high"
-            srcSet="tmdt1-min.jpg 2000w, tmdt1-min-300x150.jpg 300w, tmdt1-min-1024x512.jpg 1024w, tmdt1-min-768x384.jpg 768w, tmdt1-min-1536x768.jpg 1536w"
+            srcSet="/images/tmdt1-min.webp 2000w, /images/tmdt1-min.webp 300w, /images/tmdt1-min.webp 1024w, /images/tmdt1-min.webp 768w,/images/tmdt1-min.webp 1536w"
           />
         </div>
         <div className="container">
@@ -45,14 +61,13 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
 
             {/* Main Title */}
             <h1 className="bn-big-tt add-class text-verti mb-24 is-inview">
-              Giải pháp <br />
-              Thương mại điện tử quốc tế
+              {t("pages.e-commerce.title")}<br />
+              {t("pages.e-commerce.sub-title")}
             </h1>
 
             {/* Description */}
             <p className="bn-big-des aos-init aos-animate" data-aos="fade-up-cus">
-              Cung cấp giải pháp toàn diện từ khâu lấy hàng, xử lý hàng hóa, đóng <br />
-              gói đến giao hàng đích danh tại các quốc gia trên thế giới.
+              {t("pages.e-commerce.des")}
             </p>
 
             {/* Statistics */}
@@ -65,7 +80,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                       <span className="num-sym">+</span>
                     </div>
                     <p className="txt">
-                      Tấn hàng mỗi tháng được xử lý và giao hàng Quốc tế.
+                      {t("pages.e-commerce.cargo-handle")}
                     </p>
                   </div>
                 </div>
@@ -76,7 +91,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                       <span className="num-sym">%</span>
                     </div>
                     <p className="txt">
-                      Lô hàng được giao hàng theo đúng cam kết.
+                      {t("pages.e-commerce.shipment")}
                     </p>
                   </div>
                 </div>
@@ -92,14 +107,14 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                       <img
                         width="24"
                         height="24"
-                        src="ic-bn1.svg"
+                        src="/images/ic-bn1.svg"
                         className="attachment-full size-full"
                         alt="Icon TMĐT"
                         decoding="async"
                       />
                     </div>
                     <p className="des">
-                      Tăng cơ hội bán hàng ở các thị trường quốc tế.
+                      {t("pages.e-commerce.item1")}
                     </p>
                   </div>
                 </div>
@@ -109,14 +124,14 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                       <img
                         width="24"
                         height="24"
-                        src="ic-bn2.svg"
+                        src="/images/ic-bn2.svg"
                         className="attachment-full size-full"
                         alt="KẾT NỐI HÀNH TRÌNH"
                         decoding="async"
                       />
                     </div>
                     <p className="des">
-                      Tiết kiệm chi phí nhờ quy trình tối ưu hoá.
+                      {t("pages.e-commerce.item2")}
                     </p>
                   </div>
                 </div>
@@ -126,7 +141,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                       <img
                         width="24"
                         height="24"
-                        src="ic-bn3.svg"
+                        src="/images/ic-bn3.svg"
                         className="attachment-full size-full"
                         alt="LIÊN KẾT"
                         decoding="async"
@@ -134,7 +149,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                       />
                     </div>
                     <p className="des">
-                      Đảm bảo sự hài lòng với dịch vụ đáng tin cậy.
+                      {t("pages.e-commerce.item3")}
                     </p>
                   </div>
                 </div>
@@ -144,7 +159,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                       <img
                         width="24"
                         height="24"
-                        src="ic-bn4.svg"
+                        src="/images/ic-bn4.svg"
                         className="attachment-full size-full"
                         alt="tmđt"
                         decoding="async"
@@ -152,7 +167,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                       />
                     </div>
                     <p className="des">
-                      Sự an toàn và bảo mật của khách hàng là ưu tiên hàng đầu.
+                      {t("pages.e-commerce.item4")}
                     </p>
                   </div>
                 </div>
@@ -170,11 +185,11 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
           <div className="container">
             <div className="head-verti center mb-32">
               <h1 className="title title-48 add-class text-verti is-inview">
-                Kinh nghiệm sâu rộng trên các sàn TMĐT
+                {t("pages.e-commerce.experience")}
               </h1>
               <div className="line aos-init aos-animate" data-aos="fade-up-cus">
                 <p className="desc">
-                  Chúng tôi có kinh nghiệm sâu rộng trong việc quản lý và vận chuyển hàng hóa cho nhiều sàn thương mại điện tử xuyên Quốc gia lớn trên Thế giới như:
+                  {t("pages.e-commerce.experience-des")}
                 </p>
               </div>
             </div>
@@ -190,7 +205,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="182"
                           height="116"
-                          src="br1.jpg"
+                          src="/images/br1.webp"
                           className="attachment-full size-full"
                           alt="Logo etsy"
                           decoding="async"
@@ -207,7 +222,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="182"
                           height="116"
-                          src="br2.jpg"
+                          src="/images/br2.webp"
                           className="attachment-full size-full"
                           alt="amazon"
                           decoding="async"
@@ -224,7 +239,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="182"
                           height="116"
-                          src="br3.jpg"
+                          src="/images/br3.webp"
                           className="attachment-full size-full"
                           alt="temu"
                           decoding="async"
@@ -241,7 +256,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="182"
                           height="116"
-                          src="br4.jpg"
+                          src="/images/br4.webp"
                           className="attachment-full size-full"
                           alt="Logo TQ"
                           decoding="async"
@@ -258,7 +273,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="182"
                           height="116"
-                          src="br5.jpg"
+                          src="/images/br5.webp"
                           className="attachment-full size-full"
                           alt="Tiktok"
                           decoding="async"
@@ -275,7 +290,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="182"
                           height="116"
-                          src="br6.jpg"
+                          src="/images/br6.webp"
                           className="attachment-full size-full"
                           alt="Taobao"
                           decoding="async"
@@ -301,16 +316,16 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
           <div className="container">
             <div className="head-verti center mb-48 white">
               <h1 className="title title-48 add-class text-verti is-inview">
-                Giải pháp toàn diện dành cho
+                {t("pages.e-commerce.comprehensive")}
               </h1>
             </div>
             <div className="solv-cus-list row gap-res">
               {/* Target Customer 1 */}
               <div className="solv-cus-it col">
                 <div className="inner">
-                  <img src="/template/assets/images/sao.svg" alt="icon" />
+                  <img src="/images/sao.svg" alt="icon" />
                   <p className="des">
-                    <strong>Các doanh nghiệp sản xuất tại Việt Nam </strong>muốn đưa hàng hóa ra thế giới.
+                    {t("pages.e-commerce.comprehensive1")}
                   </p>
                 </div>
               </div>
@@ -318,9 +333,9 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
               {/* Target Customer 2 */}
               <div className="solv-cus-it col">
                 <div className="inner">
-                  <img src="/template/assets/images/sao.svg" alt="icon" />
+                  <img src="/images/sao.svg" alt="icon" />
                   <p className="des">
-                    <strong>Doanh nghiệp thương mại điện tử</strong> quy mô vừa và lớn.
+                    {t("pages.e-commerce.comprehensive2")}
                   </p>
                 </div>
               </div>
@@ -328,9 +343,9 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
               {/* Target Customer 3 */}
               <div className="solv-cus-it col">
                 <div className="inner">
-                  <img src="/template/assets/images/sao.svg" alt="icon" />
+                  <img src="/images/sao.svg" alt="icon" />
                   <p className="des">
-                    Các cá nhân, doanh nghiệp có <strong>nhu cầu vận chuyển hàng hóa từ Trung Quốc về Việt Nam.</strong>
+                    {t("pages.e-commerce.comprehensive3")}
                   </p>
                 </div>
               </div>
@@ -338,9 +353,9 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
               {/* Target Customer 4 */}
               <div className="solv-cus-it col">
                 <div className="inner">
-                  <img src="/template/assets/images/sao.svg" alt="icon" />
+                  <img src="/images/sao.svg" alt="icon" />
                   <p className="des">
-                    <strong>Các cá nhân bán hàng trên nền tảng e-commerce</strong> như Amazon, eBay, Etsy tại thị trường Châu Mỹ &amp; Châu Âu.
+                    {t("pages.e-commerce.comprehensive4")}
                   </p>
                 </div>
               </div>
@@ -351,12 +366,12 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                   <img
                     width="526"
                     height="652"
-                    src="solv-cus.png"
+                    src="/images/solv-cus.webp"
                     className="attachment-full size-full"
                     alt="Khách hàng giải pháp TMĐT"
                     decoding="async"
                     loading="lazy"
-                    srcSet="solv-cus.png 526w, solv-cus-242x300.png 242w"
+                    srcSet="/images/solv-cus.webp 526w, /images/solv-cus-242x300.webp 242w"
                   />
                 </div>
               </div>
@@ -374,12 +389,12 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                 <img
                   width="1728"
                   height="600"
-                  src="inland-fly.jpg"
+                  src="/images/inland-fly.webp"
                   className="attachment-full size-full"
                   alt="Ưu điểm giải pháp"
                   decoding="async"
                   loading="lazy"
-                  srcSet="inland-fly.jpg 1728w, inland-fly-300x104.jpg 300w, inland-fly-1024x356.jpg 1024w, inland-fly-768x267.jpg 768w, inland-fly-1536x533.jpg 1536w"
+                  srcSet="/images/inland-fly.webp 1728w, /images/inland-fly-300x104.webp 300w, /images/inland-fly-1024x356.webp 1024w, /images/inland-fly-768x267.webp 768w, /images/inland-fly-1536x533.webp 1536w"
                 />
               </div>
             </div>
@@ -388,7 +403,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                 <div className="head-verti mb-32 center white">
                   <div className="title-head text-verti">
                     <h3 className="title title-40 add-class text-hori words chars splitting is-inview">
-                      Ưu điểm của giải pháp
+                      {t("pages.e-commerce.advantages")}
                     </h3>
                   </div>
                 </div>
@@ -402,16 +417,16 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="32"
                           height="32"
-                          src="ic-il1.svg"
+                          src="/images/ic-il1.svg"
                           className="attachment-full size-full"
                           alt="Nhanh chóng"
                           decoding="async"
                           loading="lazy"
                         />
                       </div>
-                      <p className="text">Giao hàng nhanh chóng</p>
+                      <p className="text">{t("pages.e-commerce.advantages1-title")}</p>
                       <div className="des">
-                        Thời gian giao hàng nhanh chóng nhờ mạng lưới vận chuyển trên toàn cầu.
+                        {t("pages.e-commerce.advantages1")}
                       </div>
                     </div>
                   </div>
@@ -423,16 +438,16 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="24"
                           height="24"
-                          src="ic-bn1.svg"
+                          src="/images/ic-bn1.svg"
                           className="attachment-full size-full"
                           alt="Icon TMĐT"
                           decoding="async"
                           loading="lazy"
                         />
                       </div>
-                      <p className="text">Hỗ trợ hải quan</p>
+                      <p className="text">{t("pages.e-commerce.advantages2-title")}</p>
                       <div className="des">
-                        Hỗ trợ khai báo hải quan và chính sách thuế tối ưu.
+                        {t("pages.e-commerce.advantages2")}
                       </div>
                     </div>
                   </div>
@@ -444,16 +459,16 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="32"
                           height="32"
-                          src="ic-il3.svg"
+                          src="/images/ic-il3.svg"
                           className="attachment-full size-full"
                           alt="Đa dạng"
                           decoding="async"
                           loading="lazy"
                         />
                       </div>
-                      <p className="text">Linh hoạt mọi quy mô</p>
+                      <p className="text">{t("pages.e-commerce.advantages3-title")}</p>
                       <div className="des">
-                        Đáp ứng linh hoạt với nhiều quy mô lô hàng khác nhau.
+                        {t("pages.e-commerce.advantages3")}
                       </div>
                     </div>
                   </div>
@@ -465,16 +480,16 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="24"
                           height="24"
-                          src="ic-bn2.svg"
+                          src="/images/ic-bn2.svg"
                           className="attachment-full size-full"
                           alt="KẾT NỐI HÀNH TRÌNH"
                           decoding="async"
                           loading="lazy"
                         />
                       </div>
-                      <p className="text">Hợp tác cùng đối tác lớn</p>
+                      <p className="text">{t("pages.e-commerce.advantages4-title")}</p>
                       <div className="des">
-                        Hợp tác với các đơn vị chuyển phát nhanh uy tín nhất như FEDEX, UPS, DHL, giúp gia tăng độ tin cậy.
+                        {t("pages.e-commerce.advantages4")}
                       </div>
                     </div>
                   </div>
@@ -486,16 +501,16 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="32"
                           height="32"
-                          src="ic-il5.svg"
+                          src="/images/ic-il5.svg"
                           className="attachment-full size-full"
                           alt="An toàn"
                           decoding="async"
                           loading="lazy"
                         />
                       </div>
-                      <p className="text">Hệ thống quản lý tập trung</p>
+                      <p className="text">{t("pages.e-commerce.advantages5-title")}</p>
                       <div className="des">
-                        Sở hữu hệ thống quản lý tập trung giúp nhà bán hàng quản lý tracking, trạng thái đơn hàng, các thông tin trên cùng một nền tảng dễ dàng và minh bạch.
+                        {t("pages.e-commerce.advantages5")}
                       </div>
                     </div>
                   </div>
@@ -507,16 +522,16 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                         <img
                           width="24"
                           height="24"
-                          src="ic-bn3.svg"
+                          src="/images/ic-bn3.svg"
                           className="attachment-full size-full"
                           alt="LIÊN KẾT"
                           decoding="async"
                           loading="lazy"
                         />
                       </div>
-                      <p className="text">Đội ngũ nhân viên chuyên nghiệp</p>
+                      <p className="text">{t("pages.e-commerce.advantages6-title")}</p>
                       <div className="des">
-                        Đội ngũ nhân viên chuyên nghiệp, có kiến thức chuyên sâu về thị trường TMĐT, thông quan và vận chuyển hàng hóa, sẵn sàng hỗ trợ khách hàng 24/7.
+                        {t("pages.e-commerce.advantages6")}
                       </div>
                     </div>
                   </div>
@@ -533,54 +548,92 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
           <div className="container">
             <div className="mona-content ses-table">
               <h3 className="solv-table-tt center">
-                Chúng tôi luôn sẵn sàng đem đến cho khách hàng những&nbsp;
-                <span className="second">giải pháp hoàn hảo&nbsp;</span>
-                nhất
+                {t("pages.e-commerce.bring")}
               </h3>
               <div className="table-scroll-x">
                 <table style={{ width: '100%' }}>
                   <thead>
                     <tr>
-                      <th style={{ width: '14.2857%' }}>Hạng mục</th>
-                      <th style={{ width: '44.2322%' }}>Ưu điểm</th>
-                      <th style={{ width: '40.7181%' }}>Lợi ích cho khách hàng</th>
+                      <th style={{ width: '14.2857%' }}>
+                        {t("pages.e-commerce.column-category")}
+                      </th>
+                      <th style={{ width: '44.2322%' }}>
+                        {t("pages.e-commerce.column-advantages")}
+                      </th>
+                      <th style={{ width: '40.7181%' }}>
+                        {t("pages.e-commerce.column-benefits")}
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td style={{ width: '14.2857%' }}>Giá</td>
-                      <td style={{ width: '44.2322%' }}>Cạnh tranh</td>
-                      <td style={{ width: '40.7181%' }}>Tiết kiệm chi phí cho khách hàng.</td>
-                    </tr>
-                    <tr>
-                      <td style={{ width: '14.2857%' }}>Thời gian giao</td>
-                      <td style={{ width: '44.2322%' }}>Tốc độ nhanh nhất thị trường (5-7days)</td>
-                      <td style={{ width: '40.7181%' }}>Đảm bảo việc kinh doanh của khách trơn tru.</td>
-                    </tr>
-                    <tr>
-                      <td style={{ width: '14.2857%' }}>Tem nhãn</td>
-                      <td style={{ width: '44.2322%' }}>
-                        Tem chuẩn Global Direct Entry của USPS Cung cấp đủ loại tem Prority, Ground Advantage, Parcel Select. Đặc biệt tem Parcel Select đấu chạy nối thẳng USPS, không qua đại lý trung gian.
+                      <td style={{ width: '14.2857%' }}>
+                        {t("pages.e-commerce.11")}
                       </td>
-                      <td style={{ width: '40.7181%' }}>Tỉ lệ 100% phát hàng thành công.</td>
-                    </tr>
-                    <tr>
-                      <td style={{ width: '14.2857%' }}>Tải bay</td>
-                      <td style={{ width: '44.2322%' }}>Chúng tôi là đối tác chính thức của nhiều hãng hàng không lớn.</td>
-                      <td style={{ width: '40.7181%' }}>Đảm bảo tải bay ngay cả trong mùa cao điểm.</td>
-                    </tr>
-                    <tr>
-                      <td style={{ width: '14.2857%' }}>Cập nhật thông tin</td>
-                      <td style={{ width: '44.2322%' }}>Đội ngũ CS người Việt cập nhật liên tục thông tin.</td>
-                      <td style={{ width: '40.7181%' }}>Luôn nắm bắt tình trạng hàng hóa chi tiết, dễ dàng giao tiếp.</td>
-                    </tr>
-                    <tr>
-                      <td style={{ width: '14.2857%' }}>Đảm bảo chất lượng giao nhận hai đầu</td>
                       <td style={{ width: '44.2322%' }}>
-                        Là đối tác chính thức của USPS và nhiều tập đoàn bưu chính lớn trên Thế giới, trực tiếp liên hệ và giám sát chất lượng vận chuyển tại điểm đích.
+                        {t("pages.e-commerce.12")}
                       </td>
-                      <td style={{ width: '40.7181%' }}>Trạng thái Intransit sớm, minh bạch, rõ ràng, tiết kiệm.</td>
+                      <td style={{ width: '40.7181%' }}>
+                        {t("pages.e-commerce.13")}
+                      </td>
                     </tr>
+
+                    <tr>
+                      <td style={{ width: '14.2857%' }}>
+                        {t("pages.e-commerce.21")}
+                      </td>
+                      <td style={{ width: '44.2322%' }}>
+                        {t("pages.e-commerce.22")}
+                      </td>
+                      <td style={{ width: '40.7181%' }}>
+                        {t("pages.e-commerce.23")}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style={{ width: '14.2857%' }}>
+                        {t("pages.e-commerce.31")}
+                      </td>
+                      <td style={{ width: '44.2322%' }}>
+                        {t("pages.e-commerce.32")}
+                      </td>
+                      <td style={{ width: '40.7181%' }}>
+                        {t("pages.e-commerce.33")}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style={{ width: '14.2857%' }}>
+                        {t("pages.e-commerce.41")}
+                      </td>
+                      <td style={{ width: '44.2322%' }}>
+                        {t("pages.e-commerce.42")}
+                      </td>
+                      <td style={{ width: '40.7181%' }}>
+                        {t("pages.e-commerce.43")}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style={{ width: '14.2857%' }}>
+                        {t("pages.e-commerce.51")}
+                      </td>
+                      <td style={{ width: '44.2322%' }}>
+                        {t("pages.e-commerce.52")}
+                      </td>
+                      <td style={{ width: '40.7181%' }}>
+                        {t("pages.e-commerce.53")}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style={{ width: '14.2857%' }}>
+                        {t("pages.e-commerce.61")}
+                      </td>
+                      <td style={{ width: '44.2322%' }}>
+                        {t("pages.e-commerce.62")}
+                      </td>
+                      <td style={{ width: '40.7181%' }}>
+                        {t("pages.e-commerce.63")}
+                      </td>
+                    </tr>
+
                   </tbody>
                 </table>
               </div>
@@ -597,12 +650,12 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
               <div className="head-verti mb-32">
                 <div className="title-head text-verti">
                   <h3 className="title title-40 add-class text-hori words chars splitting is-inview">
-                    Lĩnh vực thế mạnh
+                    {t("pages.e-commerce.top")}
                   </h3>
                 </div>
                 <div className="line aos-init aos-animate" data-aos="fade-up-cus">
                   <p className="desc">
-                    Với kinh nghiệm sâu rộng trên thị trường thương mại điện tử Quốc tế, chúng tôi tự tin chinh phục các lĩnh vực:
+                    {t("pages.e-commerce.top-des")}
                   </p>
                 </div>
               </div>
@@ -620,7 +673,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                               <img
                                 width="217"
                                 height="174"
-                                src="inter1.png"
+                                src="/images/inter1.webp"
                                 className="attachment-full size-full"
                                 alt="Mỹ phẩm"
                                 decoding="async"
@@ -630,7 +683,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                           </div>
                           <div className="info">
                             <h4>
-                              <a className="info-tt" href="">Mỹ phẩm</a>
+                              <a className="info-tt" href="">{t("pages.e-commerce.top1")}</a>
                             </h4>
                           </div>
                         </div>
@@ -646,7 +699,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                               <img
                                 width="218"
                                 height="174"
-                                src="inter2.png"
+                                src="/images/inter2.webp"
                                 className="attachment-full size-full"
                                 alt="May mặc"
                                 decoding="async"
@@ -656,7 +709,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                           </div>
                           <div className="info">
                             <h4>
-                              <a className="info-tt" href="">May mặc</a>
+                              <a className="info-tt" href="">{t("pages.e-commerce.top2")}</a>
                             </h4>
                           </div>
                         </div>
@@ -672,7 +725,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                               <img
                                 width="217"
                                 height="174"
-                                src="inter3.png"
+                                src="/images/inter3.webp"
                                 className="attachment-full size-full"
                                 alt="Chăm sóc sức khoẻ"
                                 decoding="async"
@@ -682,7 +735,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                           </div>
                           <div className="info">
                             <h4>
-                              <a className="info-tt" href="">Chăm sóc sức khoẻ</a>
+                              <a className="info-tt" href="">{t("pages.e-commerce.top3")}</a>
                             </h4>
                           </div>
                         </div>
@@ -698,7 +751,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                               <img
                                 width="217"
                                 height="174"
-                                src="inter4.png"
+                                src="/images/inter4.webp"
                                 className="attachment-full size-full"
                                 alt="Đồ gia dụng"
                                 decoding="async"
@@ -708,38 +761,13 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
                           </div>
                           <div className="info">
                             <h4>
-                              <a className="info-tt" href="">Đồ gia dụng</a>
+                              <a className="info-tt" href="">{t("pages.e-commerce.top4")}</a>
                             </h4>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    {/* Mỹ phẩm (duplicate) */}
-                    <div className="swiper-slide col" role="group" aria-label="5 / 5">
-                      <div className="inter-solve-top-it">
-                        <div className="inner">
-                          <div className="img">
-                            <a className="img-inner" href="">
-                              <img
-                                width="217"
-                                height="174"
-                                src="inter1.png"
-                                className="attachment-full size-full"
-                                alt="Mỹ phẩm"
-                                decoding="async"
-                                loading="lazy"
-                              />
-                            </a>
-                          </div>
-                          <div className="info">
-                            <h4>
-                              <a className="info-tt" href="">Mỹ phẩm</a>
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                   <span className="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
                 </div>
@@ -766,7 +794,7 @@ const ECommerceSolutionsPage = ({ initialLocale = 'en' }) => {
       <PartnersSection />
       <ContactFormSection />
 
-    </main>
+    </div>
   );
 };
 

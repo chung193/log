@@ -1,31 +1,15 @@
+'use client'
 import React from 'react';
 import ContactFormSection from '@/components/ContactFormSection'
 import PartnersSection from '@/components/PartnersSection';
 import SiteBreadcrumb from '@/components/SiteBreadcrumb';
-const BenefitsBox = () => {
-    const benefits = [
-        {
-            icon: 'ic-bn1.svg',
-            alt: 'Icon TMĐT',
-            text: 'Đảm bảo sự hài lòng với dịch vụ đáng tin cậy.'
-        },
-        {
-            icon: 'ic-bn2.svg',
-            alt: 'KẾT NỐI HÀNH TRÌNH',
-            text: 'Tiết kiệm chi phí nhờ quy trình tối ưu hoá.'
-        },
-        {
-            icon: 'ic-bn3.svg',
-            alt: 'LIÊN KẾT',
-            text: 'Đội ngũ nhân sự năng động và giàu kinh nghiệm.'
-        },
-        {
-            icon: 'ic-bn4.svg',
-            alt: 'tmđt',
-            text: 'Sự an toàn và bảo mật của khách hàng là ưu tiên hàng đầu.'
-        }
-    ];
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
+import ListServices from '@/components/ListServices';
 
+
+const BenefitsBox = ({ benefits = [] }) => {
     return (
         <div className="bn-box aos-init aos-animate" data-aos="fade-up-cus" data-aos-delay="600">
             <div className="bn-box-row row gap-res">
@@ -52,81 +36,9 @@ const BenefitsBox = () => {
     );
 };
 
-// Component cho Side Menu
-const SolutionMenu = () => {
-    const menuItems = [
-        {
-            icon: 'menu1.svg',
-            label: 'Vận tải đường biển',
-            href: '/giai-phap/giai-phap-sea-freight/',
-            active: false
-        },
-        {
-            icon: 'menu2.svg',
-            label: 'Chuyển phát nhanh Quốc tế',
-            href: '/giai-phap/giai-phap-air-express/',
-            active: false
-        },
-        {
-            icon: 'menu3.svg',
-            label: 'Vận tải hàng không',
-            href: '/giai-phap/giai-phap-air-cargo/',
-            active: false
-        },
-        {
-            icon: 'menu4.svg',
-            label: 'Đường bộ xuyên biên giới',
-            href: '/giai-phap/giai-phap-cross-border-trucking/',
-            active: false
-        },
-        {
-            icon: 'menu5.svg',
-            label: 'Vận tải đường sắt',
-            href: '/giai-phap/giai-phap-railway/',
-            active: true
-        }
-    ];
-
-    return (
-        <div className="side-fixed">
-            <div className="side-fixed-wrap">
-                <div className="wrapper">
-                    <div className="inter-solve-menu">
-                        {menuItems.map((item, index) => (
-                            <a
-                                key={index}
-                                className={`inter-solve-menu-link ${item.active ? 'active' : ''}`}
-                                href={item.href}
-                            >
-                                <img
-                                    width="24"
-                                    height={index === 1 || index === 2 ? "25" : "24"}
-                                    src={item.icon}
-                                    className="attachment-full size-full wp-post-image"
-                                    alt=""
-                                    decoding="async"
-                                    loading="lazy"
-                                />
-                                <span className="txt">{item.label}</span>
-                            </a>
-                        ))}
-                    </div>
-                </div>
-            </div>
-            <div className="side-close">
-                <i className="fas fa-times close icon"></i>
-            </div>
-        </div>
-    );
-};
-
 // Component cho Statistics Box
-const StatisticsBox = () => {
-    const stats = [
-        { name: 'VN-Laos', value: '15', description: 'Containers/tháng' },
-        { name: 'VN- Campuchia', value: '20', description: 'Containers/tháng' },
-        { name: 'VN- China', value: '15', description: 'Containers/tháng' }
-    ];
+const StatisticsBox = ({ stats = [] }) => {
+
 
     return (
         <div className="inter-solve-box">
@@ -146,25 +58,7 @@ const StatisticsBox = () => {
 };
 
 // Component cho Advantages
-const AdvantagesSection = () => {
-    const advantages = [
-        {
-            icon: 'ic-il1.svg',
-            description: 'Khả năng vận chuyển hàng hóa khối lượng lớn với chi phí phải chăng.'
-        },
-        {
-            icon: 'ic-bn1.svg',
-            description: 'Giảm thiểu tác động đến môi trường nhờ hiệu quả năng lượng của đường sắt'
-        },
-        {
-            icon: 'ic-bn2.svg',
-            description: 'Độ an toàn cao, hạn chế các rủi ro hư hỏng hoặc mất mát hàng hóa.'
-        },
-        {
-            icon: 'ic-il3.svg',
-            description: 'Dễ dàng kết nối với các hệ thống vận tải khác để giao hàng nhanh chóng.'
-        }
-    ];
+const AdvantagesSection = ({ advantages = [] }) => {
 
     return (
         <div className="inland-xo">
@@ -173,12 +67,12 @@ const AdvantagesSection = () => {
                     <img
                         width="1950"
                         height="788"
-                        src="ds-min.jpg"
+                        src="/images/ds-min.webp"
                         className="attachment-full size-full"
                         alt=""
                         decoding="async"
                         loading="lazy"
-                        srcSet="ds-min.jpg 1950w, ds-min-300x121.jpg 300w, ds-min-1024x414.jpg 1024w, ds-min-768x310.jpg 768w, ds-min-1536x621.jpg 1536w"
+                        srcSet="/images/ds-min.webp 1950w, /images/ds-min.webp 300w,/images/ds-min.webp 1024w, /images/ds-min.webp 768w, /images/ds-min.webp 1536w"
                     />
                 </div>
             </div>
@@ -224,30 +118,13 @@ const AdvantagesSection = () => {
 };
 
 // Component cho Service Benefits
-const ServiceBenefits = () => {
-    const benefits = [
-        {
-            icon: 'ic-tag.svg',
-            title: 'Tiết kiệm chi phí vận chuyển'
-        },
-        {
-            icon: 'ic-increase.svg',
-            title: 'Tăng khả năng lập kế hoạch chính xác nhờ lịch trình ổn định'
-        },
-        {
-            icon: 'ic-trip.svg',
-            title: 'Tăng cường độ tin cậy và an toàn'
-        },
-        {
-            icon: 'ic-hand.svg',
-            title: 'Giảm thiểu tác động môi trường'
-        }
-    ];
+const ServiceBenefits = ({ title = "", benefits = [] }) => {
+
 
     return (
         <div className="inter-solve-ser ss-pd-t">
             <h1 className="title title-48 add-class text-verti mb-32">
-                Lợi ích khi sử dụng dịch vụ
+                {title}
             </h1>
 
             <div className="store-why-list row">
@@ -278,130 +155,99 @@ const ServiceBenefits = () => {
     );
 };
 
-// Component cho Contact Form
-const ContactForm = () => {
-    return (
-        <section className="sec-homes-contact">
-            <div className="homes-contact">
-                <div className="recontainer">
-                    <div className="homes-contact-flex">
-                        <div className="homes-contact-ctn ss-pd">
-                            <div className="wrapper">
-                                <div className="head-verti white mb-32">
-                                    <div className="line aos-init" data-aos="fade-up-cus">
-                                        <h2 className="title title-48 add-class text-verti">
-                                            Liên hệ với EXPEDITORS GLOBAL
-                                        </h2>
-                                    </div>
-                                </div>
-                                <div className="mainForm">
-                                    <form
-                                        action="/giai-phap/giai-phap-railway/#wpcf7-f785-p974-o1"
-                                        method="post"
-                                        className="wpcf7-form init"
-                                    >
-                                        <div className="form-list row">
-                                            <label className="form-ip col per5">
-                                                <span className="text spe">Tên của bạn</span>
-                                                <input
-                                                    className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                                                    placeholder="Nhập Tên của bạn"
-                                                    type="text"
-                                                    name="your-name"
-                                                    required
-                                                />
-                                            </label>
-                                            <label className="form-ip col per5">
-                                                <span className="text spe">Tên công ty</span>
-                                                <input
-                                                    className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                                                    placeholder="Tên công ty"
-                                                    type="text"
-                                                    name="company-name"
-                                                    required
-                                                />
-                                            </label>
-                                            <label className="form-ip col per5">
-                                                <span className="text spe">Email</span>
-                                                <input
-                                                    className="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email"
-                                                    placeholder="Email"
-                                                    type="email"
-                                                    name="your-email"
-                                                    required
-                                                />
-                                            </label>
-                                            <label className="form-ip col per5">
-                                                <span className="text spe">Số điện thoại</span>
-                                                <input
-                                                    className="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel"
-                                                    placeholder="Số điện thoại"
-                                                    type="tel"
-                                                    name="phone"
-                                                    required
-                                                />
-                                            </label>
-                                            <label className="form-ip col" htmlFor="id_f_contact_global">
-                                                <div className="btn-box">
-                                                    <div className="btn pri">
-                                                        <input
-                                                            className="wpcf7-form-control wpcf7-submit has-spinner hidden"
-                                                            id="id_f_contact_global"
-                                                            type="submit"
-                                                            value="Send"
-                                                        />
-                                                        <span className="txt">
-                                                            <span className="txt-inner">Liên hệ tư vấn</span>
-                                                            <span className="txt-icon">
-                                                                <img
-                                                                    src="/template/assets/images/ic-arrow.svg"
-                                                                    alt=""
-                                                                />
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="homes-contact-img ParaBlock">
-                            <div className="img ParaScroll">
-                                <div className="img-inner">
-                                    <img
-                                        width="1229"
-                                        height="615"
-                                        src="fly.png"
-                                        className="attachment-full size-full"
-                                        alt="Máy bay, containers"
-                                        decoding="async"
-                                        loading="lazy"
-                                        srcSet="fly.png 1229w, fly-300x150.png 300w, fly-1024x512.png 1024w, fly-768x384.png 768w"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-};
 
 // Main Component
 const RailwaySolutionPage: React.FC = ({ initialLocale = 'en' }) => {
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
+
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
+
     const breadcrumbItems = {
         'vi': [
-            { text: "Giải pháp", link: "/giai-phap" },
-            { text: "Giải pháp Kho vận", link: "/giai-phap/giai-phap-kho-van", isActive: true }
+            { text: "Giải pháp", link: "javascript:;" },
+            { text: "Giải pháp Kho vận", link: "javascript:;", isActive: true }
         ],
         'en': [
-            { text: "Solutions", link: "/solutions" },
-            { text: "Warehouse Solutions", link: "/solutions/warehouse", isActive: true }
+            { text: "Solutions", link: "javascript:;" },
+            { text: "International Logistics", link: "javascript:;" },
+            { text: "Railway", link: "javascript:;", isActive: true },
         ]
     };
+
+
+    const benefits = [
+        {
+            icon: '/images/ic-bn1.svg',
+            alt: 'Icon TMĐT',
+            text: t("pages.rail.item1")
+        },
+        {
+            icon: '/images/ic-bn2.svg',
+            alt: 'KẾT NỐI HÀNH TRÌNH',
+            text: t("pages.rail.item2")
+        },
+        {
+            icon: '/images/ic-bn3.svg',
+            alt: 'LIÊN KẾT',
+            text: t("pages.rail.item3")
+        },
+        {
+            icon: '/images/ic-bn4.svg',
+            alt: 'tmđt',
+            text: t("pages.rail.item4")
+        }
+    ];
+
+    const stats = [
+        { name: 'VN-Laos', value: '15', description: t("common.cont-unit") },
+        { name: 'VN- Campuchia', value: '20', description: t("common.cont-unit") },
+        { name: 'VN- China', value: '15', description: t("common.cont-unit") }
+    ];
+
+    const advantages = [
+        {
+            icon: '/images/ic-il1.svg',
+            description: t("pages.rail.advantages1")
+        },
+        {
+            icon: '/images/ic-bn1.svg',
+            description: t("pages.rail.advantages2")
+        },
+        {
+            icon: '/images/ic-bn2.svg',
+            description: t("pages.rail.advantages3")
+        },
+        {
+            icon: '/images/ic-il3.svg',
+            description: t("pages.rail.advantages4")
+        }
+    ];
+
+    const benefits2 = [
+        {
+            icon: '/images/ic-tag.svg',
+            title: t("pages.rail.benefit1")
+        },
+        {
+            icon: '/images/ic-increase.svg',
+            title: t("pages.rail.benefit2")
+        },
+        {
+            icon: '/images/ic-trip.svg',
+            title: t("pages.rail.benefit3")
+        },
+        {
+            icon: '/images/ic-hand.svg',
+            title: t("pages.rail.benefit4")
+        }
+    ];
+
     return (
         <main className="main page-inter">
             {/* Hero Banner Section */}
@@ -410,12 +256,12 @@ const RailwaySolutionPage: React.FC = ({ initialLocale = 'en' }) => {
                     <img
                         width="2000"
                         height="1121"
-                        src="coverrw-min.jpg"
+                        src="/images/coverrw-min.webp"
                         className="attachment-full size-full"
                         alt=""
                         decoding="async"
                         fetchPriority="high"
-                        srcSet="coverrw-min.jpg 2000w, coverrw-min-300x168.jpg 300w, coverrw-min-1024x574.jpg 1024w, coverrw-min-768x430.jpg 768w, coverrw-min-1536x861.jpg 1536w"
+                        srcSet="/images/coverrw-min.webp 2000w, /images/coverrw-min-300x168.webp 300w, /images/coverrw-min-1024x574.webp 1024w, /images/coverrw-min-768x430.webp 768w, /images/coverrw-min-1536x861.webp 1536w"
                     />
                 </div>
                 <div className="container">
@@ -428,17 +274,17 @@ const RailwaySolutionPage: React.FC = ({ initialLocale = 'en' }) => {
                         />
 
                         <h1 className="bn-big-tt add-class text-verti mb-24 is-inview">
-                            Giải pháp <br />
-                            Logistics Quốc tế
+                            {t("pages.rail.title")} <br />
+                            {t("pages.rail.second-title")}
                         </h1>
 
                         <p className="bn-big-des aos-init aos-animate" data-aos="fade-up-cus">
-                            An toàn - Nhanh chóng - Tiết kiệm chi phí<br />
+                            {t("pages.rail.des")}<br />
                             <br />
                             <br />
                         </p>
 
-                        <BenefitsBox />
+                        <BenefitsBox benefits={benefits} />
                     </div>
                 </div>
             </div>
@@ -449,7 +295,7 @@ const RailwaySolutionPage: React.FC = ({ initialLocale = 'en' }) => {
                     <div className="container">
                         <div className="inter-solve-row row">
                             <div className="inter-solve-side col">
-                                <SolutionMenu />
+                                <ListServices />
                                 <div className="side-overlay"></div>
                             </div>
 
@@ -462,18 +308,18 @@ const RailwaySolutionPage: React.FC = ({ initialLocale = 'en' }) => {
 
                                 <div className="wrapper">
                                     <h1 className="title title-48 add-class text-verti mb-32">
-                                        Vận tải đường sắt
+                                        {t("pages.rail.main-title")}
                                     </h1>
 
                                     <p className="inter-solve-des">
-                                        EXPEDITORS GLOBAL cung cấp các giải pháp vận chuyển hàng hóa bằng đường sắt Bắc Nam, cũng như các tuyến đường sắt Quốc tế. Chúng tôi xử lý và vận chuyển nhiều loại hàng hóa khác nhau với nhiều dịch vụ linh hoạt cho khách hàng.
+                                        {t("pages.rail.main-des")}
                                     </p>
 
-                                    <StatisticsBox />
+                                    <StatisticsBox stats={stats} />
 
-                                    <AdvantagesSection />
+                                    <AdvantagesSection advantages={advantages} />
 
-                                    <ServiceBenefits />
+                                    <ServiceBenefits benefits={benefits2} title={t("pages.rail.benefit-title")} />
                                 </div>
                             </div>
                         </div>

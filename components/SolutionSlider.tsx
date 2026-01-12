@@ -7,43 +7,65 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "./SolutionSlider.css";
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
 
-const SolutionSlider = () => {
+const SolutionSlider = ({ initialLocale = 'en' }) => {
     const swiperRef = useRef(null);
+
+
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
+
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
 
     const slides = [
         {
             id: 1,
             title: "Vận chuyển T11/T01",
-            image: "storage1.jpg",
+            image: "/images/storage1.webp",
             link: "/giai-phap-thuong-mai-dien-tu-t86/",
             alt: "Vận chuyển T11/T01",
-            description: "Vận chuyển qua hình thức T11/T01"
+            description: t("pages.e-commerce.item1")
         },
         {
             id: 2,
             title: "Vận chuyển FEDEX/UPS/DHL",
-            image: "storage2.jpg",
+            image: "/images/storage2.webp",
             link: "/giai-phap-van-chuyen-thuong-mai-dien-tu-quoc-te/",
             alt: "Vận chuyển FEDEX/UPS/DHL",
-            description: "Vận chuyến qua các đơn vị chuyển phát nhanh toàn cầu FEDEX/UPS/DHL"
+            description: t("pages.e-commerce.item2")
         },
         {
             id: 3,
             title: "Vận chuyển ECCF",
-            image: "storage3.jpg",
+            image: "/images/anhkhac.webp",
             link: "/van-chuyen-eccf/",
             alt: "Vận chuyển ECCF",
-            description: "Vận chuyển qua hình thức ECCF."
+            description: t("pages.e-commerce.item3")
+        },
+        {
+            id: 3,
+            title: "Vận chuyển ECCF",
+            image: "/images/storage3.webp",
+            link: "/van-chuyen-eccf/",
+            alt: "Vận chuyển ECCF",
+            description: t("pages.e-commerce.item4")
         }
     ];
 
     const filterButtons = [
-        { id: 1, text: "Việt Nam - Mỹ", href: "#" },
-        { id: 2, text: "Việt Nam - Châu Âu", href: "#" },
-        { id: 3, text: "Việt Nam - Canada", href: "#" },
-        { id: 4, text: "Việt Nam – Úc", href: "#" },
-        { id: 5, text: "Trung Quốc – Việt Nam", href: "#" }
+        { id: 1, text: t("components.solution-slider.btn1"), href: "#" },
+        { id: 2, text: t("components.solution-slider.btn2"), href: "#" },
+        { id: 3, text: t("components.solution-slider.btn3"), href: "#" },
+        { id: 4, text: t("components.solution-slider.btn4"), href: "#" },
+        { id: 5, text: t("components.solution-slider.btn5"), href: "#" }
     ];
 
     return (
@@ -52,7 +74,7 @@ const SolutionSlider = () => {
                 <div className="container">
                     <div className="head-verti center mb-32">
                         <h1 className="title title-48 add-class text-verti is-inview">
-                            Cung cấp giải pháp toàn diện
+                            {t("components.solution-slider.title")}
                         </h1>
                     </div>
 
@@ -72,9 +94,13 @@ const SolutionSlider = () => {
                     <div className="head-verti center mb-32">
                         <div className="line aos-init aos-animate" data-aos="fade-up-cus">
                             <div className="desc">
-                                <p><strong>Cung cấp giải pháp toàn diện từ khâu lấy hàng, xử lý hàng hóa, đóng gói đến giao hàng đích danh tại các quốc gia trên thế giới.</strong></p>
+                                <p><strong>
+                                    {t("components.solution-slider.sub-title")}
+                                </strong></p>
                                 <p>&nbsp;</p>
-                                <p>Chúng tôi kết hợp với các hàng không hàng đầu thế giới để vận chuyển hàng hóa từ Việt Nam đi khắp thế giới, đặc biệt là Korean Air.</p>
+                                <p>
+                                    {t("components.solution-slider.des")}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -97,14 +123,14 @@ const SolutionSlider = () => {
                                     slidesPerView: 4,
                                 }
                             }}
-                            navigation={{
-                                nextEl: '.swiper-next',
-                                prevEl: '.swiper-prev',
-                            }}
-                            pagination={{
-                                clickable: true,
-                                el: '.swiper-pagination',
-                            }}
+                            // navigation={{
+                            //     nextEl: '.swiper-next',
+                            //     prevEl: '.swiper-prev',
+                            // }}
+                            // pagination={{
+                            //     clickable: true,
+                            //     el: '.swiper-pagination',
+                            // }}
                             autoplay={{
                                 delay: 5000,
                                 disableOnInteraction: false,
@@ -126,7 +152,7 @@ const SolutionSlider = () => {
                                                         alt={slide.alt}
                                                         decoding="async"
                                                         loading="lazy"
-                                                        srcSet={`${slide.image} 286w, ${slide.image.replace('.jpg', '-248x300.jpg')} 248w`}
+                                                        srcSet={`${slide.image} 286w, ${slide.image.replace('.webp', '-248x300.webp')} 248w`}
                                                     />
                                                 </a>
                                             </div>
@@ -148,7 +174,7 @@ const SolutionSlider = () => {
                         </Swiper>
 
                         {/* Navigation Buttons */}
-                        <div className="swiper-control posi midle">
+                        {/* <div className="swiper-control posi midle">
                             <div className="swiper-control-btn swiper-prev" role="button" aria-label="Previous slide">
                                 <i className="fa-solid fa-arrow-left"></i>
                             </div>
@@ -157,8 +183,8 @@ const SolutionSlider = () => {
                             </div>
                         </div>
 
-                        {/* Pagination */}
-                        <div className="swiper-pagination"></div>
+                        {/* Pagination 
+                        <div className="swiper-pagination"></div> */}
                     </div>
                 </div>
             </div>

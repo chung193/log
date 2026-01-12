@@ -89,19 +89,21 @@ const InternationalAirCargoPage = ({ initialLocale = 'en' }) => {
                                 </div>
                                 <div className="wrapper">
                                     <h1 className="title title-48 add-class text-verti mb-32 is-inview">
-                                        Vận tải hàng không
+                                        {t("pages.air.title")}
                                     </h1>
                                     <div className="inter-solve-usr">
                                         <div className="name">
-                                            <img src="/images/ic-usr-black.svg" alt="" />
-                                            <div className="txt">Dành cho đối tượng:</div>
+                                            {/* <img src="/images/ic-usr-black.svg" alt="" /> */}
+                                            <div className="txt">
+
+                                            </div>
                                         </div>
                                         <div className="ctn">
-                                            <p className="des">Khách hàng Doanh nghiệp</p>
+                                            <p className="des"></p>
                                         </div>
                                     </div>
                                     <p className="inter-solve-des">
-                                        Với kinh nghiệm sâu rộng và chuyên môn trong lĩnh vực vận tải hàng không, EXPEDITORS GLOBAL có thể đáp ứng nhu cầu vận chuyển hàng hóa nhanh chóng và hiệu quả cho nhiều doanh nghiệp, đặc biệt là các doanh nghiệp FDI.
+                                        {t("pages.air.des")}
                                     </p>
                                     <div className="inter-solve-box">
                                         <div className="row">
@@ -109,28 +111,32 @@ const InternationalAirCargoPage = ({ initialLocale = 'en' }) => {
                                                 <div className="inter-solve-box-it">
                                                     <p className="name">VN-US</p>
                                                     <p className="num">20000</p>
-                                                    <p className="des">TEU/tháng</p>
+                                                    <p className="des">
+                                                        {t("common.unit")}
+                                                    </p>
                                                 </div>
                                             </div>
                                             <div className="col">
                                                 <div className="inter-solve-box-it">
                                                     <p className="name">VN-EU</p>
                                                     <p className="num">40000</p>
-                                                    <p className="des">TEU/tháng</p>
+                                                    <p className="des">
+                                                        {t("common.unit")}
+                                                    </p>
                                                 </div>
                                             </div>
                                             <div className="col">
                                                 <div className="inter-solve-box-it">
                                                     <p className="name">VN-Asia</p>
                                                     <p className="num">10000</p>
-                                                    <p className="des">TEU/tháng</p>
+                                                    <p className="des">{t("common.unit")}</p>
                                                 </div>
                                             </div>
                                             <div className="col">
                                                 <div className="inter-solve-box-it">
                                                     <p className="name">China/EU-VN</p>
                                                     <p className="num">6000 - 7000</p>
-                                                    <p className="des">TEU/tháng</p>
+                                                    <p className="des">{t("common.unit")}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -155,7 +161,7 @@ const InternationalAirCargoPage = ({ initialLocale = 'en' }) => {
                                                 <div className="head-verti mb-32 center white">
                                                     <div className="title-head text-verti">
                                                         <h3 className="title title-40 add-class text-hori words chars splitting is-inview" data-spl="data-spl" style={{ '--word-total': 5, '--char-total': 17 } as React.CSSProperties}>
-                                                            Ưu điểm của giải pháp
+                                                            {t("pages.air.advantages")}
                                                         </h3>
                                                     </div>
                                                 </div>
@@ -175,7 +181,7 @@ const InternationalAirCargoPage = ({ initialLocale = 'en' }) => {
                                                                     />
                                                                 </div>
                                                                 <div className="des">
-                                                                    Tốc độ giao hàng nhanh chóng nhất, đặc biệt quan trọng khi cần đẩy nhanh quá trình vận chuyển.
+                                                                    {t("pages.air.item1")}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -193,7 +199,7 @@ const InternationalAirCargoPage = ({ initialLocale = 'en' }) => {
                                                                     />
                                                                 </div>
                                                                 <div className="des">
-                                                                    Độ an toàn cao của vận chuyển hàng hóa, đặc biệt phù hợp với hàng dễ vỡ, dễ hỏng.
+                                                                    {t("pages.air.item2")}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -211,7 +217,7 @@ const InternationalAirCargoPage = ({ initialLocale = 'en' }) => {
                                                                     />
                                                                 </div>
                                                                 <div className="des">
-                                                                    Kết nối việc giao thương với nhiều quốc gia trên thế giới, tạo điều kiện cho thương mại quốc tế phát triển mạnh mẽ.
+                                                                    {t("pages.air.item3")}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -229,7 +235,7 @@ const InternationalAirCargoPage = ({ initialLocale = 'en' }) => {
                                                                     />
                                                                 </div>
                                                                 <div className="des">
-                                                                    Phí bảo hiểm tối ưu, giúp tiết kiệm chi phí cho doanh nghiệp.
+                                                                    {t("pages.air.item4")}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -247,7 +253,7 @@ const InternationalAirCargoPage = ({ initialLocale = 'en' }) => {
                                                                     />
                                                                 </div>
                                                                 <div className="des">
-                                                                    Giảm thiểu tình trạng mất hàng hoặc thất lạc hàng hóa, đảm bảo tính toàn vẹn và đúng thời hạn của đơn hàng.
+                                                                    {t("pages.air.item5")}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -265,7 +271,7 @@ const InternationalAirCargoPage = ({ initialLocale = 'en' }) => {
                                                                     />
                                                                 </div>
                                                                 <div className="des">
-                                                                    Xử lý nhanh chóng, tiết kiệm chi phí lưu kho.
+                                                                    {t("pages.air.item6")}
                                                                 </div>
                                                             </div>
                                                         </div>

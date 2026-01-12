@@ -1,7 +1,12 @@
+'use client'
 import PartnersSection from '@/components/PartnersSection';
 import ContactFormSection from '@/components/ContactFormSection';
 import SiteBreadcrumb from '@/components/SiteBreadcrumb';
 import React from 'react';
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
+import ListServices from '@/components/ListServices';
 
 const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
     const breadcrumbItems = {
@@ -14,6 +19,16 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
             { text: "Warehouse Solutions", link: "/solutions/warehouse", isActive: true }
         ]
     };
+
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
+
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
     return (
         <main className="main page-inter">
             <div className="bn-big white">
@@ -21,12 +36,12 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                     <img
                         width="1728"
                         height="800"
-                        src="banner4.jpg"
+                        src="/images/banner4.jpg"
                         className="attachment-full size-full"
                         alt="Sea Freight EXPEDITORS GLOBAL"
                         decoding="async"
                         fetchPriority="high"
-                        srcSet="banner4.jpg 1728w, banner4-300x139.jpg 300w, banner4-1024x474.jpg 1024w, banner4-768x356.jpg 768w, banner4-1536x711.jpg 1536w"
+                        srcSet="/images/banner4.jpg 1728w, /images/banner4-300x139.jpg 300w, /images/banner4-1024x474.jpg 1024w, /images/banner4-768x356.jpg 768w, /images/banner4-1536x711.jpg 1536w"
                     />
                 </div>
                 <div className="container">
@@ -38,11 +53,11 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                             currentPage="Giải pháp Kho vận"
                         />
                         <h1 className="bn-big-tt add-class text-verti mb-24 is-inview">
-                            Giải pháp <br />
-                            Logistics Quốc tế
+                            {t("pages.trucking.title")} <br />
+                            {t("pages.trucking.second-title")}
                         </h1>
                         <p className="bn-big-des aos-init aos-animate" data-aos="fade-up-cus">
-                            An toàn - Nhanh chóng - Tối ưu chi phí
+                            {t("pages.trucking.des")}
                             <br />
                             <br />
                         </p>
@@ -55,13 +70,15 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="ic-bn1.svg"
+                                                src="/images/ic-bn1.svg"
                                                 className="attachment-full size-full"
                                                 alt="Icon TMĐT"
                                                 decoding="async"
                                             />
                                         </div>
-                                        <p className="des">Đảm bảo sự hài lòng với dịch vụ đáng tin cậy.</p>
+                                        <p className="des">
+                                            {t("pages.trucking.item1")}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="bn-box-it col">
@@ -70,13 +87,15 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="ic-bn2.svg"
+                                                src="/images/ic-bn2.svg"
                                                 className="attachment-full size-full"
                                                 alt="KẾT NỐI HÀNH TRÌNH"
                                                 decoding="async"
                                             />
                                         </div>
-                                        <p className="des">Tiết kiệm chi phí nhờ quy trình tối ưu hoá.</p>
+                                        <p className="des">
+                                            {t("pages.trucking.item2")}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="bn-box-it col">
@@ -85,14 +104,16 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="ic-bn3.svg"
+                                                src="/images/ic-bn3.svg"
                                                 className="attachment-full size-full"
                                                 alt="LIÊN KẾT"
                                                 decoding="async"
                                                 loading="lazy"
                                             />
                                         </div>
-                                        <p className="des">Đội ngũ xe chất lượng cao.</p>
+                                        <p className="des">
+                                            {t("pages.trucking.item3")}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="bn-box-it col">
@@ -101,14 +122,14 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="ic-bn4.svg"
+                                                src="/images/ic-bn4.svg"
                                                 className="attachment-full size-full"
                                                 alt="tmđt"
                                                 decoding="async"
                                                 loading="lazy"
                                             />
                                         </div>
-                                        <p className="des">Hệ thống theo dõi hành trình xe 24/7.</p>
+                                        <p className="des">{t("pages.trucking.item4")}</p>
                                     </div>
                                 </div>
                             </div>
@@ -123,72 +144,7 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                         <div className="inter-solve-row row">
                             <div className="inter-solve-side col">
                                 <div className="side-fixed">
-                                    <div className="side-fixed-wrap">
-                                        <div className="wrapper">
-                                            <div className="inter-solve-menu">
-                                                <a className="inter-solve-menu-link " href="/giai-phap/giai-phap-sea-freight/">
-                                                    <img
-                                                        width="24"
-                                                        height="24"
-                                                        src="menu1.svg"
-                                                        className="attachment-full size-full wp-post-image"
-                                                        alt=""
-                                                        decoding="async"
-                                                        loading="lazy"
-                                                    />
-                                                    <span className="txt">Vận tải đường biển</span>
-                                                </a>
-                                                <a className="inter-solve-menu-link " href="/giai-phap/giai-phap-air-express/">
-                                                    <img
-                                                        width="24"
-                                                        height="25"
-                                                        src="menu2.svg"
-                                                        className="attachment-full size-full wp-post-image"
-                                                        alt=""
-                                                        decoding="async"
-                                                        loading="lazy"
-                                                    />
-                                                    <span className="txt">Chuyển phát nhanh Quốc tế</span>
-                                                </a>
-                                                <a className="inter-solve-menu-link " href="/giai-phap/giai-phap-air-cargo/">
-                                                    <img
-                                                        width="24"
-                                                        height="25"
-                                                        src="menu3.svg"
-                                                        className="attachment-full size-full wp-post-image"
-                                                        alt=""
-                                                        decoding="async"
-                                                        loading="lazy"
-                                                    />
-                                                    <span className="txt">Vận tải hàng không</span>
-                                                </a>
-                                                <a className="inter-solve-menu-link active" href="/giai-phap/giai-phap-cross-border-trucking/">
-                                                    <img
-                                                        width="24"
-                                                        height="24"
-                                                        src="menu4.svg"
-                                                        className="attachment-full size-full wp-post-image"
-                                                        alt=""
-                                                        decoding="async"
-                                                        loading="lazy"
-                                                    />
-                                                    <span className="txt">Đường bộ xuyên biên giới</span>
-                                                </a>
-                                                <a className="inter-solve-menu-link " href="/giai-phap/giai-phap-railway/">
-                                                    <img
-                                                        width="24"
-                                                        height="24"
-                                                        src="menu5.svg"
-                                                        className="attachment-full size-full wp-post-image"
-                                                        alt=""
-                                                        decoding="async"
-                                                        loading="lazy"
-                                                    />
-                                                    <span className="txt">Vận tải đường sắt</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <ListServices />
                                     <div className="side-close">
                                         <i className="fas fa-times close icon"></i>
                                     </div>
@@ -203,32 +159,23 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <h1 className="title title-48 add-class text-verti mb-32">Đường bộ xuyên biên giới</h1>
+                                    <h1 className="title title-48 add-class text-verti mb-32">
+                                        {t("pages.trucking.sub-title")}
+                                    </h1>
                                     <div className="inter-solve-usr">
                                         <div className="name">
-                                            <img src="/template/assets/images/ic-usr-black.svg" alt="" />
-                                            <div className="txt">Dành cho đối tượng:</div>
+                                            <img src="/images/ic-usr-black.svg" alt="" />
+                                            <div className="txt">{t("pages.trucking.second-sub-title")}</div>
                                         </div>
                                         <div className="ctn">
                                             <p className="des"></p>
-                                            <p>
-                                                Các doanh nghiệp xuất nhập khẩu
-                                                <br />
-                                                Các công ty thương mại điện tử quốc tế.
-                                                <br />
-                                                Các nhà cung cấp dịch vụ logistics cần giải pháp tích hợp
-                                            </p>
+                                            <div dangerouslySetInnerHTML={{ __html: t("pages.trucking.second-sub-title-des") }} />
+
                                             <p></p>
                                         </div>
                                     </div>
                                     <p className="inter-solve-des"></p>
-                                    <p>
-                                        Giải pháp vận tải đường bộ xuyên biên giới giúp doanh nghiệp vận chuyển hàng hóa bằng đường bộ nhanh chóng và chi phí tối ưu.
-                                        <br />
-                                        Chúng tôi có hệ thống theo dõi hành trình xe GPS 24/7, này giúp tăng cường tính minh bạch, an toàn và giảm thiểu rủi ro mất mát hoặc hư hỏng hàng hóa.
-                                        <br />
-                                        &nbsp;
-                                    </p>
+                                    <div dangerouslySetInnerHTML={{ __html: t("pages.trucking.sub-des") }} />
                                     <p></p>
 
                                     <div className="inter-solve-box">
@@ -237,21 +184,21 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                                 <div className="inter-solve-box-it">
                                                     <p className="name">VN-Laos</p>
                                                     <p className="num">15</p>
-                                                    <p className="des">Containers/tháng</p>
+                                                    <p className="des">{t("common.cont-unit")}</p>
                                                 </div>
                                             </div>
                                             <div className="col">
                                                 <div className="inter-solve-box-it">
                                                     <p className="name">VN- Campuchia</p>
                                                     <p className="num">20</p>
-                                                    <p className="des">Containers/tháng</p>
+                                                    <p className="des">{t("common.cont-unit")}</p>
                                                 </div>
                                             </div>
                                             <div className="col">
                                                 <div className="inter-solve-box-it">
                                                     <p className="name">VN- China</p>
                                                     <p className="num">15</p>
-                                                    <p className="des">Containers/tháng</p>
+                                                    <p className="des">{t("common.cont-unit")}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -263,12 +210,12 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                                 <img
                                                     width="1920"
                                                     height="825"
-                                                    src="IMG_2842-e1745555200414.jpg"
+                                                    src="/images/IMG_2842-e1745555124249.webp"
                                                     className="attachment-full size-full"
                                                     alt=""
                                                     decoding="async"
                                                     loading="lazy"
-                                                    srcSet="IMG_2842-e1745555200414.jpg 1920w, IMG_2842-e1745555200414-300x129.jpg 300w, IMG_2842-e1745555200414-1024x440.jpg 1024w, IMG_2842-e1745555200414-768x330.jpg 768w, IMG_2842-e1745555200414-1536x660.jpg 1536w"
+                                                    srcSet="/images/IMG_2842-e1745555200414.webp 1920w, /images/IMG_2842-e1745555200414-300x129.webp 300w, /images/IMG_2842-e1745555200414-1024x440.webp 1024w, /images/IMG_2842-e1745555200414-768x330.webp 768w, /images/IMG_2842-e1745555200414-1536x660.webp 1536w"
                                                 />
                                             </div>
                                         </div>
@@ -279,69 +226,10 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                                         <h3 className="title title-40 add-class text-hori words chars splitting" data-spl="data-spl" style={{ '--word-total': 5, '--char-total': 17 } as React.CSSProperties}>
                                                             <span className="word" data-word="Ư" style={{ '--word-index': 0 } as React.CSSProperties}>
                                                                 <span className="char" data-char="Ư" style={{ '--char-index': 0 } as React.CSSProperties}>
-                                                                    Ư
+                                                                    {t("pages.trucking.advantages")}
                                                                 </span>
-                                                                <span className="char" data-char="u" style={{ '--char-index': 1 } as React.CSSProperties}>
-                                                                    u
-                                                                </span>
+
                                                             </span>
-                                                            <span className="whitespace"> </span>
-                                                            <span className="word" data-word="điểm" style={{ '--word-index': 1 } as React.CSSProperties}>
-                                                                <span className="char" data-char="đ" style={{ '--char-index': 2 } as React.CSSProperties}>
-                                                                    đ
-                                                                </span>
-                                                                <span className="char" data-char="i" style={{ '--char-index': 3 } as React.CSSProperties}>
-                                                                    i
-                                                                </span>
-                                                                <span className="char" data-char="ể" style={{ '--char-index': 4 } as React.CSSProperties}>
-                                                                    ể
-                                                                </span>
-                                                                <span className="char" data-char="m" style={{ '--char-index': 5 } as React.CSSProperties}>
-                                                                    m
-                                                                </span>
-                                                            </span>
-                                                            <span className="whitespace"> </span>
-                                                            <span className="word" data-word="của" style={{ '--word-index': 2 } as React.CSSProperties}>
-                                                                <span className="char" data-char="c" style={{ '--char-index': 6 } as React.CSSProperties}>
-                                                                    c
-                                                                </span>
-                                                                <span className="char" data-char="ủ" style={{ '--char-index': 7 } as React.CSSProperties}>
-                                                                    ủ
-                                                                </span>
-                                                                <span className="char" data-char="a" style={{ '--char-index': 8 } as React.CSSProperties}>
-                                                                    a
-                                                                </span>
-                                                            </span>
-                                                            <span className="whitespace"> </span>
-                                                            <span className="word" data-word="giải" style={{ '--word-index': 3 } as React.CSSProperties}>
-                                                                <span className="char" data-char="g" style={{ '--char-index': 9 } as React.CSSProperties}>
-                                                                    g
-                                                                </span>
-                                                                <span className="char" data-char="i" style={{ '--char-index': 10 } as React.CSSProperties}>
-                                                                    i
-                                                                </span>
-                                                                <span className="char" data-char="ả" style={{ '--char-index': 11 } as React.CSSProperties}>
-                                                                    ả
-                                                                </span>
-                                                                <span className="char" data-char="i" style={{ '--char-index': 12 } as React.CSSProperties}>
-                                                                    i
-                                                                </span>
-                                                            </span>
-                                                            <span className="whitespace"> </span>
-                                                            <span className="word" data-word="pháp" style={{ '--word-index': 4 } as React.CSSProperties}>
-                                                                <span className="char" data-char="p" style={{ '--char-index': 13 } as React.CSSProperties}>
-                                                                    p
-                                                                </span>
-                                                                <span className="char" data-char="h" style={{ '--char-index': 14 } as React.CSSProperties}>
-                                                                    h
-                                                                </span>
-                                                                <span className="char" data-char="á" style={{ '--char-index': 15 } as React.CSSProperties}>
-                                                                    á
-                                                                </span>
-                                                                <span className="char" data-char="p" style={{ '--char-index': 16 } as React.CSSProperties}>
-                                                                    p
-                                                                </span>
-                                                            </span>{' '}
                                                         </h3>
                                                     </div>
                                                 </div>
@@ -354,7 +242,7 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                                                     <img
                                                                         width="32"
                                                                         height="32"
-                                                                        src="ic-il1.svg"
+                                                                        src="/images/ic-il1.svg"
                                                                         className="attachment-full size-full"
                                                                         alt="Nhanh chóng"
                                                                         decoding="async"
@@ -362,7 +250,9 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                                                     />
                                                                 </div>
                                                                 <p className="text"></p>
-                                                                <div className="des">Vận chuyển nhanh chóng và tiết kiệm tối đa phí tổn. Hiện nay vận tải xuyên biên giới phát triển mạnh mẽ và được ưa chuộng rộng rãi.</div>
+                                                                <div className="des">
+                                                                    {t("pages.trucking.advantages1")}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div className="inland-xo-it col itemEven">
@@ -371,7 +261,7 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                                                     <img
                                                                         width="24"
                                                                         height="24"
-                                                                        src="ic-bn1.svg"
+                                                                        src="/images/ic-bn1.svg"
                                                                         className="attachment-full size-full"
                                                                         alt="Icon TMĐT"
                                                                         decoding="async"
@@ -379,7 +269,9 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                                                     />
                                                                 </div>
                                                                 <p className="text"></p>
-                                                                <div className="des">Quá trình giao dịch hàng hóa được diễn ra một cách nhanh chóng hơn, thúc đẩy kinh tế mạnh mẽ.</div>
+                                                                <div className="des">
+                                                                    {t("pages.trucking.advantages2")}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div className="inland-xo-it col itemEven">
@@ -388,7 +280,7 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                                                     <img
                                                                         width="24"
                                                                         height="24"
-                                                                        src="ic-bn2.svg"
+                                                                        src="/images/ic-bn2.svg"
                                                                         className="attachment-full size-full"
                                                                         alt="KẾT NỐI HÀNH TRÌNH"
                                                                         decoding="async"
@@ -396,15 +288,19 @@ const CrossBorderTruckingPage: React.FC = ({ initialLocale = 'en' }) => {
                                                                     />
                                                                 </div>
                                                                 <p className="text"></p>
-                                                                <div className="des">Giúp doanh nghiệp vận chuyển nhanh hơn đường biển, tiết kiệm chi phí hơn so với đường hàng không.</div>
+                                                                <div className="des">
+                                                                    {t("pages.trucking.advantages3")}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div className="inland-xo-it col itemEven">
                                                             <div className="inner">
                                                                 <div className="icon">
-                                                                    <img width="40" height="40" src="Group-6.png" className="attachment-full size-full" alt="" decoding="async" loading="lazy" />
+                                                                    <img width="40" height="40" src="/images/Group-6.png" className="attachment-full size-full" alt="" decoding="async" loading="lazy" />
                                                                 </div>
-                                                                <p className="text">KHÁM PHÁ THÊM</p>
+                                                                <p className="text">
+                                                                    {t("pages.trucking.advantages4")}
+                                                                </p>
                                                                 <div className="des"></div>
                                                             </div>
                                                         </div>
