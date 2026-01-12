@@ -1,8 +1,12 @@
+'use client'
 import React from 'react';
 import SiteBreadcrumb from '@/components/SiteBreadcrumb';
 import SolutionSwiper from '@/components/SolutionSwiper';
 import PartnersSection from '@/components/PartnersSection';
 import ContactFormSection from '@/components/ContactFormSection';
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
 
 const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
     const breadcrumbItems = {
@@ -12,9 +16,19 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
         ],
         'en': [
             { text: "Solutions", link: "/solutions" },
-            { text: "Warehouse Solutions", link: "/solutions/warehouse", isActive: true }
+            { text: "Domestic Logistics", link: "/solutions/warehouse", isActive: true }
         ]
     }
+
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
+
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
     return (
         <main className="main page-inland" >
             {/* Banner Section */}
@@ -23,12 +37,12 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                     <img
                         width="1920"
                         height="1332"
-                        src="mde.jpg"
+                        src="/images/mde.webp"
                         className="attachment-full size-full"
                         alt=""
                         decoding="async"
                         fetchpriority="high"
-                        srcSet="mde.jpg 1920w, mde-300x208.jpg 300w, mde-1024x710.jpg 1024w, mde-768x533.jpg 768w, mde-1536x1066.jpg 1536w"
+                        srcSet="/images/mde.webp 1920w, /images/mde-300x208.webp 300w, /images/mde-1024x710.webp 1024w, /images/mde-768x533.webp 768w, /images/mde-1536x1066.webp 1536w"
                     />
                 </div>
                 <div className="container">
@@ -42,7 +56,7 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                         />
                         {/* Main Title */}
                         <h1 className="bn-big-tt add-class text-verti mb-24 is-inview">
-                            Giải pháp <br /> Logistics Nội địa
+                            {t("pages.logistics.title")}
                         </h1>
 
                         {/* Stats Counter */}
@@ -54,7 +68,9 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                             <span className="num-txt countNum is-inview">12</span>
                                             <span className="num-sym">K+</span>
                                         </div>
-                                        <p className="txt">Chuyến được vận chuyển trong năm 2024.</p>
+                                        <p className="txt">
+                                            {t("pages.logistics.title1")}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="bn-count-it col">
@@ -63,7 +79,9 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                             <span className="num-txt countNum is-inview">1</span>
                                             <span className="num-sym">K+</span>
                                         </div>
-                                        <p className="txt">Tấn hàng được vận chuyển trong 1 ngày</p>
+                                        <p className="txt">
+                                            {t("pages.logistics.title2")}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="bn-count-it col">
@@ -72,7 +90,9 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                             <span className="num-txt countNum is-inview">99</span>
                                             <span className="num-sym">%</span>
                                         </div>
-                                        <p className="txt">Chuyến vận tải đúng lịch trình và an toàn tuyệt đối.</p>
+                                        <p className="txt">
+                                            {t("pages.logistics.title3")}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -87,13 +107,15 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="ic-bn1.svg"
+                                                src="/images/ic-bn1.svg"
                                                 className="attachment-full size-full"
                                                 alt="Icon TMĐT"
                                                 decoding="async"
                                             />
                                         </div>
-                                        <p className="des">Đảm bảo sự hài lòng với dịch vụ đáng tin cậy.</p>
+                                        <p className="des">
+                                            {t("pages.logistics.item1")}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="bn-box-it col">
@@ -102,13 +124,15 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="ic-bn2.svg"
+                                                src="/images/ic-bn2.svg"
                                                 className="attachment-full size-full"
                                                 alt="KẾT NỐI HÀNH TRÌNH"
                                                 decoding="async"
                                             />
                                         </div>
-                                        <p className="des">Tiết kiệm chi phí nhờ quy trình tối ưu hoá.</p>
+                                        <p className="des">
+                                            {t("pages.logistics.item2")}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="bn-box-it col">
@@ -117,14 +141,16 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="ic-bn3.svg"
+                                                src="/images/ic-bn3.svg"
                                                 className="attachment-full size-full"
                                                 alt="LIÊN KẾT"
                                                 decoding="async"
                                                 loading="lazy"
                                             />
                                         </div>
-                                        <p className="des">Hệ thống theo dõi hành trình xe GPS 24/7.</p>
+                                        <p className="des">
+                                            {t("pages.logistics.item3")}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="bn-box-it col">
@@ -133,14 +159,16 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="ic-bn4.svg"
+                                                src="/images/ic-bn4.svg"
                                                 className="attachment-full size-full"
                                                 alt="tmđt"
                                                 decoding="async"
                                                 loading="lazy"
                                             />
                                         </div>
-                                        <p className="des">Sự an toàn và bảo mật của khách hàng là ưu tiên hàng đầu.</p>
+                                        <p className="des">
+                                            {t("pages.logistics.item4")}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -161,50 +189,18 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                     style={{ "--word-total": 6, "--char-total": 23 } as React.CSSProperties}
                                 >
                                     <span className="word" data-word="Cung" style={{ "--word-index": 0 } as React.CSSProperties}>
-                                        <span className="char" data-char="C" style={{ "--char-index": 0 } as React.CSSProperties}>C</span>
-                                        <span className="char" data-char="u" style={{ "--char-index": 1 } as React.CSSProperties}>u</span>
-                                        <span className="char" data-char="n" style={{ "--char-index": 2 } as React.CSSProperties}>n</span>
-                                        <span className="char" data-char="g" style={{ "--char-index": 3 } as React.CSSProperties}>g</span>
+                                        <span className="char" data-char="C" style={{ "--char-index": 0 } as React.CSSProperties}>
+                                            {t("pages.logistics.providing")}
+                                        </span>
                                     </span>
-                                    <span className="whitespace"> </span>
-                                    <span className="word" data-word="cấp" style={{ "--word-index": 1 } as React.CSSProperties}>
-                                        <span className="char" data-char="c" style={{ "--char-index": 4 } as React.CSSProperties}>c</span>
-                                        <span className="char" data-char="ấ" style={{ "--char-index": 5 } as React.CSSProperties}>ấ</span>
-                                        <span className="char" data-char="p" style={{ "--char-index": 6 } as React.CSSProperties}>p</span>
-                                    </span>
-                                    <span className="whitespace"> </span>
-                                    <span className="word" data-word="giải" style={{ "--word-index": 2 } as React.CSSProperties}>
-                                        <span className="char" data-char="g" style={{ "--char-index": 7 } as React.CSSProperties}>g</span>
-                                        <span className="char" data-char="i" style={{ "--char-index": 8 } as React.CSSProperties}>i</span>
-                                        <span className="char" data-char="ả" style={{ "--char-index": 9 } as React.CSSProperties}>ả</span>
-                                        <span className="char" data-char="i" style={{ "--char-index": 10 } as React.CSSProperties}>i</span>
-                                    </span>
-                                    <span className="whitespace"> </span>
-                                    <span className="word" data-word="pháp" style={{ "--word-index": 3 } as React.CSSProperties}>
-                                        <span className="char" data-char="p" style={{ "--char-index": 11 } as React.CSSProperties}>p</span>
-                                        <span className="char" data-char="h" style={{ "--char-index": 12 } as React.CSSProperties}>h</span>
-                                        <span className="char" data-char="á" style={{ "--char-index": 13 } as React.CSSProperties}>á</span>
-                                        <span className="char" data-char="p" style={{ "--char-index": 14 } as React.CSSProperties}>p</span>
-                                    </span>
-                                    <span className="whitespace"> </span>
-                                    <span className="word" data-word="toàn" style={{ "--word-index": 4 } as React.CSSProperties}>
-                                        <span className="char" data-char="t" style={{ "--char-index": 15 } as React.CSSProperties}>t</span>
-                                        <span className="char" data-char="o" style={{ "--char-index": 16 } as React.CSSProperties}>o</span>
-                                        <span className="char" data-char="à" style={{ "--char-index": 17 } as React.CSSProperties}>à</span>
-                                        <span className="char" data-char="n" style={{ "--char-index": 18 } as React.CSSProperties}>n</span>
-                                    </span>
-                                    <span className="whitespace"> </span>
-                                    <span className="word" data-word="diện" style={{ "--word-index": 5 } as React.CSSProperties}>
-                                        <span className="char" data-char="d" style={{ "--char-index": 19 } as React.CSSProperties}>d</span>
-                                        <span className="char" data-char="i" style={{ "--char-index": 20 } as React.CSSProperties}>i</span>
-                                        <span className="char" data-char="ệ" style={{ "--char-index": 21 } as React.CSSProperties}>ệ</span>
-                                        <span className="char" data-char="n" style={{ "--char-index": 22 } as React.CSSProperties}>n</span>
-                                    </span>
+
                                 </h3>
                             </div>
                             <div className="line aos-init aos-animate" data-aos="fade-up-cus" data-aos-delay="400">
                                 <div className="desc">
-                                    <p>Hiện tại, EXPEDITORS GLOBAL đang cung cấp các tuyến vận chuyển nội địa khắp Việt Nam với khả năng xử lý nhanh chóng, an toàn bằng đội xe container và xa tải hiện đại đáp ứng mọi nhu cầu vận chuyển của khách hàng.</p>
+                                    <p>
+                                        {t("pages.logistics.providing-des")}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -220,12 +216,12 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                 <img
                                     width="1914"
                                     height="661"
-                                    src="xctn2-min.jpg"
+                                    src="/images/xctn2-min.webp"
                                     className="attachment-full size-full"
                                     alt=""
                                     decoding="async"
                                     loading="lazy"
-                                    srcSet="xctn2-min.jpg 1914w, xctn2-min-300x104.jpg 300w, xctn2-min-1024x354.jpg 1024w, xctn2-min-768x265.jpg 768w, xctn2-min-1536x530.jpg 1536w"
+                                    srcSet="/images/xctn2-min.webp 1914w, /images/xctn2-min-300x104.webp 300w, /images/xctn2-min-1024x354.webp 1024w,/images/xctn2-min-768x265.webp 768w, /images/xxctn2-min-1536x530.webp 1536w"
                                 />
                             </div>
                         </div>
@@ -239,36 +235,11 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                             style={{ "--word-total": 5, "--char-total": 17 } as React.CSSProperties}
                                         >
                                             <span className="word" data-word="Ưu" style={{ "--word-index": 0 } as React.CSSProperties}>
-                                                <span className="char" data-char="Ư" style={{ "--char-index": 0 } as React.CSSProperties}>Ư</span>
-                                                <span className="char" data-char="u" style={{ "--char-index": 1 } as React.CSSProperties}>u</span>
+                                                <span className="char" data-char="Ư" style={{ "--char-index": 0 } as React.CSSProperties}>
+                                                    {t("pages.logistics.advantages")}
+                                                </span>
                                             </span>
-                                            <span className="whitespace"> </span>
-                                            <span className="word" data-word="điểm" style={{ "--word-index": 1 } as React.CSSProperties}>
-                                                <span className="char" data-char="đ" style={{ "--char-index": 2 } as React.CSSProperties}>đ</span>
-                                                <span className="char" data-char="i" style={{ "--char-index": 3 } as React.CSSProperties}>i</span>
-                                                <span className="char" data-char="ể" style={{ "--char-index": 4 } as React.CSSProperties}>ể</span>
-                                                <span className="char" data-char="m" style={{ "--char-index": 5 } as React.CSSProperties}>m</span>
-                                            </span>
-                                            <span className="whitespace"> </span>
-                                            <span className="word" data-word="của" style={{ "--word-index": 2 } as React.CSSProperties}>
-                                                <span className="char" data-char="c" style={{ "--char-index": 6 } as React.CSSProperties}>c</span>
-                                                <span className="char" data-char="ủ" style={{ "--char-index": 7 } as React.CSSProperties}>ủ</span>
-                                                <span className="char" data-char="a" style={{ "--char-index": 8 } as React.CSSProperties}>a</span>
-                                            </span>
-                                            <span className="whitespace"> </span>
-                                            <span className="word" data-word="giải" style={{ "--word-index": 3 } as React.CSSProperties}>
-                                                <span className="char" data-char="g" style={{ "--char-index": 9 } as React.CSSProperties}>g</span>
-                                                <span className="char" data-char="i" style={{ "--char-index": 10 } as React.CSSProperties}>i</span>
-                                                <span className="char" data-char="ả" style={{ "--char-index": 11 } as React.CSSProperties}>ả</span>
-                                                <span className="char" data-char="i" style={{ "--char-index": 12 } as React.CSSProperties}>i</span>
-                                            </span>
-                                            <span className="whitespace"> </span>
-                                            <span className="word" data-word="pháp" style={{ "--word-index": 4 } as React.CSSProperties}>
-                                                <span className="char" data-char="p" style={{ "--char-index": 13 } as React.CSSProperties}>p</span>
-                                                <span className="char" data-char="h" style={{ "--char-index": 14 } as React.CSSProperties}>h</span>
-                                                <span className="char" data-char="á" style={{ "--char-index": 15 } as React.CSSProperties}>á</span>
-                                                <span className="char" data-char="p" style={{ "--char-index": 16 } as React.CSSProperties}>p</span>
-                                            </span>
+
                                         </h3>
                                     </div>
                                 </div>
@@ -282,14 +253,16 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                 <img
                                                     width="32"
                                                     height="32"
-                                                    src="ic-il1.svg"
+                                                    src="/images/ic-il1.svg"
                                                     className="attachment-full size-full"
                                                     alt="Nhanh chóng"
                                                     decoding="async"
                                                     loading="lazy"
                                                 />
                                             </div>
-                                            <div className="des">Đội xe container và xe tải hiện đại, được bảo dưỡng định kỳ để đảm bảo an toàn.</div>
+                                            <div className="des">
+                                                {t("pages.logistics.ad1")}
+                                            </div>
                                         </div>
                                     </div>
 
@@ -300,14 +273,16 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                 <img
                                                     width="24"
                                                     height="24"
-                                                    src="ic-bn1.svg"
+                                                    src="/images/ic-bn1.svg"
                                                     className="attachment-full size-full"
                                                     alt="Icon TMĐT"
                                                     decoding="async"
                                                     loading="lazy"
                                                 />
                                             </div>
-                                            <div className="des">Mạng lưới vận chuyển rộng khắp, đáp ứng nhanh các yêu cầu vận tải.</div>
+                                            <div className="des">
+                                                {t("pages.logistics.ad2")}
+                                            </div>
                                         </div>
                                     </div>
 
@@ -318,14 +293,16 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                 <img
                                                     width="32"
                                                     height="32"
-                                                    src="ic-il3.svg"
+                                                    src="/images/ic-il3.svg"
                                                     className="attachment-full size-full"
                                                     alt="Đa dạng"
                                                     decoding="async"
                                                     loading="lazy"
                                                 />
                                             </div>
-                                            <div className="des">Hỗ trợ khách hàng trong việc tối ưu hóa lộ trình và chi phí vận chuyển.</div>
+                                            <div className="des">
+                                                {t("pages.logistics.ad3")}
+                                            </div>
                                         </div>
                                     </div>
 
@@ -336,14 +313,16 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                 <img
                                                     width="24"
                                                     height="24"
-                                                    src="ic-bn2.svg"
+                                                    src="/images/ic-bn2.svg"
                                                     className="attachment-full size-full"
                                                     alt="KẾT NỐI HÀNH TRÌNH"
                                                     decoding="async"
                                                     loading="lazy"
                                                 />
                                             </div>
-                                            <div className="des">Dịch vụ linh hoạt với khả năng vận chuyển đa dạng các loại hàng hóa từ hàng tiêu dùng, công nghiệp đến hàng hóa đặc biệt.</div>
+                                            <div className="des">
+                                                {t("pages.logistics.ad4")}
+                                            </div>
                                         </div>
                                     </div>
 
@@ -354,14 +333,16 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                 <img
                                                     width="32"
                                                     height="32"
-                                                    src="ic-il5.svg"
+                                                    src="/images/ic-il5.svg"
                                                     className="attachment-full size-full"
                                                     alt="An toàn"
                                                     decoding="async"
                                                     loading="lazy"
                                                 />
                                             </div>
-                                            <div className="des">Dịch vụ có hỗ trợ hệ thống TMS tích hợp.</div>
+                                            <div className="des">
+                                                {t("pages.logistics.ad5")}
+                                            </div>
                                         </div>
                                     </div>
 
@@ -372,14 +353,16 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                 <img
                                                     width="40"
                                                     height="40"
-                                                    src="Group-6.png"
+                                                    src="/images/Group-6.webp"
                                                     className="attachment-full size-full"
                                                     alt=""
                                                     decoding="async"
                                                     loading="lazy"
                                                 />
                                             </div>
-                                            <div className="des">KHÁM PHÁ THÊM</div>
+                                            <div className="des">
+                                                {t("pages.logistics.ad6")}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -401,31 +384,12 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                     style={{ "--word-total": 4, "--char-total": 15 } as React.CSSProperties}
                                 >
                                     <span className="word" data-word="Giải" style={{ "--word-index": 0 } as React.CSSProperties}>
-                                        <span className="char" data-char="G" style={{ "--char-index": 0 } as React.CSSProperties}>G</span>
-                                        <span className="char" data-char="i" style={{ "--char-index": 1 } as React.CSSProperties}>i</span>
-                                        <span className="char" data-char="ả" style={{ "--char-index": 2 } as React.CSSProperties}>ả</span>
-                                        <span className="char" data-char="i" style={{ "--char-index": 3 } as React.CSSProperties}>i</span>
+                                        <span className="char" data-char="G" style={{ "--char-index": 0 } as React.CSSProperties}>
+                                            {t("pages.logistics.solution-for")}
+                                        </span>
+
                                     </span>
-                                    <span className="whitespace"> </span>
-                                    <span className="word" data-word="pháp" style={{ "--word-index": 1 } as React.CSSProperties}>
-                                        <span className="char" data-char="p" style={{ "--char-index": 4 } as React.CSSProperties}>p</span>
-                                        <span className="char" data-char="h" style={{ "--char-index": 5 } as React.CSSProperties}>h</span>
-                                        <span className="char" data-char="á" style={{ "--char-index": 6 } as React.CSSProperties}>á</span>
-                                        <span className="char" data-char="p" style={{ "--char-index": 7 } as React.CSSProperties}>p</span>
-                                    </span>
-                                    <span className="whitespace"> </span>
-                                    <span className="word" data-word="dành" style={{ "--word-index": 2 } as React.CSSProperties}>
-                                        <span className="char" data-char="d" style={{ "--char-index": 8 } as React.CSSProperties}>d</span>
-                                        <span className="char" data-char="à" style={{ "--char-index": 9 } as React.CSSProperties}>à</span>
-                                        <span className="char" data-char="n" style={{ "--char-index": 10 } as React.CSSProperties}>n</span>
-                                        <span className="char" data-char="h" style={{ "--char-index": 11 } as React.CSSProperties}>h</span>
-                                    </span>
-                                    <span className="whitespace"> </span>
-                                    <span className="word" data-word="cho" style={{ "--word-index": 3 } as React.CSSProperties}>
-                                        <span className="char" data-char="c" style={{ "--char-index": 12 } as React.CSSProperties}>c</span>
-                                        <span className="char" data-char="h" style={{ "--char-index": 13 } as React.CSSProperties}>h</span>
-                                        <span className="char" data-char="o" style={{ "--char-index": 14 } as React.CSSProperties}>o</span>
-                                    </span>
+
                                 </h3>
                             </div>
                         </div>
@@ -434,9 +398,11 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                             {/* Customer 1 */}
                             <div className="col">
                                 <div className="inland-cus-it">
-                                    <img src="/template/assets/images/sao.svg" alt="" />
+                                    <img src="/images/sao.svg" alt="" />
                                     <p className="text">
-                                        <p><strong>Doanh nghiệp sản xuất và kinh doanh</strong> hàng hóa quy mô lớn trong nước.</p>
+                                        <p>
+                                            {t("pages.logistics.so1")}
+                                        </p>
                                     </p>
                                 </div>
                             </div>
@@ -444,9 +410,11 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                             {/* Customer 2 */}
                             <div className="col">
                                 <div className="inland-cus-it">
-                                    <img src="/template/assets/images/sao.svg" alt="" />
+                                    <img src="/images/sao.svg" alt="" />
                                     <p className="text">
-                                        <p>Các <strong>doanh nghiệp xuất nhập khẩu</strong> cần vận chuyển hàng hóa qua biên giới.</p>
+                                        <p>
+                                            {t("pages.logistics.so2")}
+                                        </p>
                                     </p>
                                 </div>
                             </div>
@@ -454,9 +422,9 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                             {/* Customer 3 */}
                             <div className="col">
                                 <div className="inland-cus-it">
-                                    <img src="/template/assets/images/sao.svg" alt="" />
+                                    <img src="/images/sao.svg" alt="" />
                                     <p className="text">
-                                        <p><strong>Các công ty logistics</strong> có nhu cầu kết nối chuỗi cung ứng.</p>
+                                        {t("pages.logistics.so3")}
                                     </p>
                                 </div>
                             </div>
@@ -469,12 +437,12 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                             <img
                                 width="1728"
                                 height="592"
-                                src="imgContainer.png"
+                                src="/images/imgContainer.webp"
                                 className="attachment-full size-full"
                                 alt=""
                                 decoding="async"
                                 loading="lazy"
-                                srcSet="imgContainer.png 1728w, imgContainer-300x103.png 300w, imgContainer-1024x351.png 1024w, imgContainer-768x263.png 768w, imgContainer-1536x526.png 1536w"
+                                srcSet="/images/imgContainer.webp 1728w, /images/imgContainer-300x103.webp 300w, /images/imgContainer-1024x351.webp 1024w, /images/imgContainer-768x263.webp 768w, /images/imgContainer-1536x526.webp 1536w"
                             />
                         </div>
                     </div>
@@ -493,42 +461,11 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                     style={{ "--word-total": 6, "--char-total": 20 } as React.CSSProperties}
                                 >
                                     <span className="word" data-word="Vì" style={{ "--word-index": 0 } as React.CSSProperties}>
-                                        <span className="char" data-char="V" style={{ "--char-index": 0 } as React.CSSProperties}>V</span>
-                                        <span className="char" data-char="ì" style={{ "--char-index": 1 } as React.CSSProperties}>ì</span>
+                                        <span className="char" data-char="V" style={{ "--char-index": 0 } as React.CSSProperties}>
+                                            {t("pages.logistics.why-choose")}
+                                        </span>
                                     </span>
-                                    <span className="whitespace"> </span>
-                                    <span className="word" data-word="sao" style={{ "--word-index": 1 } as React.CSSProperties}>
-                                        <span className="char" data-char="s" style={{ "--char-index": 2 } as React.CSSProperties}>s</span>
-                                        <span className="char" data-char="a" style={{ "--char-index": 3 } as React.CSSProperties}>a</span>
-                                        <span className="char" data-char="o" style={{ "--char-index": 4 } as React.CSSProperties}>o</span>
-                                    </span>
-                                    <span className="whitespace"> </span>
-                                    <span className="word" data-word="nên" style={{ "--word-index": 2 } as React.CSSProperties}>
-                                        <span className="char" data-char="n" style={{ "--char-index": 5 } as React.CSSProperties}>n</span>
-                                        <span className="char" data-char="ê" style={{ "--char-index": 6 } as React.CSSProperties}>ê</span>
-                                        <span className="char" data-char="n" style={{ "--char-index": 7 } as React.CSSProperties}>n</span>
-                                    </span>
-                                    <span className="whitespace"> </span>
-                                    <span className="word" data-word="chọn" style={{ "--word-index": 3 } as React.CSSProperties}>
-                                        <span className="char" data-char="c" style={{ "--char-index": 8 } as React.CSSProperties}>c</span>
-                                        <span className="char" data-char="h" style={{ "--char-index": 9 } as React.CSSProperties}>h</span>
-                                        <span className="char" data-char="ọ" style={{ "--char-index": 10 } as React.CSSProperties}>ọ</span>
-                                        <span className="char" data-char="n" style={{ "--char-index": 11 } as React.CSSProperties}>n</span>
-                                    </span>
-                                    <span className="whitespace"> </span>
-                                    <span className="word" data-word="chúng" style={{ "--word-index": 4 } as React.CSSProperties}>
-                                        <span className="char" data-char="c" style={{ "--char-index": 12 } as React.CSSProperties}>c</span>
-                                        <span className="char" data-char="h" style={{ "--char-index": 13 } as React.CSSProperties}>h</span>
-                                        <span className="char" data-char="ú" style={{ "--char-index": 14 } as React.CSSProperties}>ú</span>
-                                        <span className="char" data-char="n" style={{ "--char-index": 15 } as React.CSSProperties}>n</span>
-                                        <span className="char" data-char="g" style={{ "--char-index": 16 } as React.CSSProperties}>g</span>
-                                    </span>
-                                    <span className="whitespace"> </span>
-                                    <span className="word" data-word="tôi" style={{ "--word-index": 5 } as React.CSSProperties}>
-                                        <span className="char" data-char="t" style={{ "--char-index": 17 } as React.CSSProperties}>t</span>
-                                        <span className="char" data-char="ô" style={{ "--char-index": 18 } as React.CSSProperties}>ô</span>
-                                        <span className="char" data-char="i" style={{ "--char-index": 19 } as React.CSSProperties}>i</span>
-                                    </span>
+
                                 </h3>
                             </div>
                         </div>
@@ -541,12 +478,12 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                         <img
                                             width="954"
                                             height="1226"
-                                            src="axctn-1.jpg"
+                                            src="/images/axctn-1.webp"
                                             className="attachment-full size-full"
                                             alt=""
                                             decoding="async"
                                             loading="lazy"
-                                            srcSet="axctn-1.jpg 954w, axctn-1-233x300.jpg 233w, axctn-1-797x1024.jpg 797w, axctn-1-768x987.jpg 768w"
+                                            srcSet="/images/axctn-1.webp 954w, /images/axctn-1-233x300.webp 233w, /images/axctn-1-797x1024.webp 797w, /images/axctn-1-768x987.webp 768w"
                                         />
                                     </div>
                                 </div>
@@ -564,7 +501,7 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                         <img
                                                             width="101"
                                                             height="100"
-                                                            src="icon-car.svg"
+                                                            src="/images/icon-car.svg"
                                                             className="attachment-full size-full"
                                                             alt=""
                                                             decoding="async"
@@ -572,7 +509,9 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                         />
                                                     </div>
                                                     <div className="ctn">
-                                                        <p className="tt">Đảm bảo hàng hóa được giao đúng thời gian, đúng địa điểm.</p>
+                                                        <p className="tt">
+                                                            {t("pages.logistics.why1")}
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -586,7 +525,7 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                         <img
                                                             width="100"
                                                             height="100"
-                                                            src="ic-tag.svg"
+                                                            src="/images/ic-tag.svg"
                                                             className="attachment-full size-full"
                                                             alt="tag"
                                                             decoding="async"
@@ -594,7 +533,9 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                         />
                                                     </div>
                                                     <div className="ctn">
-                                                        <p className="tt">Giảm chi phí lưu kho nhờ khả năng vận chuyển nhanh chóng.</p>
+                                                        <p className="tt">
+                                                            {t("pages.logistics.why2")}
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -608,7 +549,7 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                         <img
                                                             width="100"
                                                             height="100"
-                                                            src="ic-hand.svg"
+                                                            src="/images/ic-hand.svg"
                                                             className="attachment-full size-full"
                                                             alt="Bắt tay"
                                                             decoding="async"
@@ -616,7 +557,9 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                         />
                                                     </div>
                                                     <div className="ctn">
-                                                        <p className="tt">Cải thiện chuỗi cung ứng và hiệu quả logistics tổng thể.</p>
+                                                        <p className="tt">
+                                                            {t("pages.logistics.why3")}
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -630,7 +573,7 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                         <img
                                                             width="100"
                                                             height="100"
-                                                            src="ic-increase.svg"
+                                                            src="/images/ic-increase.svg"
                                                             className="attachment-full size-full"
                                                             alt="vận hành phát triển"
                                                             decoding="async"
@@ -638,7 +581,9 @@ const InlandLogisticsPage: React.FC = ({ initialLocale = 'en' }) => {
                                                         />
                                                     </div>
                                                     <div className="ctn">
-                                                        <p className="tt">Đội ngũ lái xe chuyên nghiệp và giàu kinh nghiệm.</p>
+                                                        <p className="tt">
+                                                            {t("pages.logistics.why4")}
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>

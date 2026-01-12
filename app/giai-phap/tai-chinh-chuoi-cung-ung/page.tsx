@@ -1,8 +1,33 @@
+'use client'
 import PartnersSection from '@/components/PartnersSection';
 import React from 'react';
 import ContactFormSection from '@/components/ContactFormSection';
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
+import SiteBreadcrumb from '@/components/SiteBreadcrumb';
 
-const ExportImportPage: React.FC = () => {
+const ExportImportPage: React.FC = ({ initialLocale = 'en' }) => {
+    const breadcrumbItems = {
+        'vi': [
+            { text: "Giải pháp", link: "/giai-phap" },
+            { text: "Giải pháp Kho vận", link: "/giai-phap/giai-phap-kho-van", isActive: true }
+        ],
+        'en': [
+            { text: "Solutions", link: "/solutions" },
+            { text: "Domestic Logistics", link: "/solutions/warehouse", isActive: true }
+        ]
+    }
+
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
+
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
     return (
         <main className="main page-exp">
             {/* Banner Section */}
@@ -11,43 +36,30 @@ const ExportImportPage: React.FC = () => {
                     <img
                         width="1728"
                         height="800"
-                        src="banner2.jpg"
+                        src="/images/banner2.jpg"
                         className="attachment-full size-full"
                         alt="Containers xuất nhập khẩu - EXPEDITORS GLOBAL"
                         decoding="async"
                         fetchpriority="high"
-                        srcSet="banner2.jpg 1728w, banner2-300x139.jpg 300w, banner2-1024x474.jpg 1024w, banner2-768x356.jpg 768w, banner2-1536x711.jpg 1536w"
+                        srcSet="/images/banner2.jpg 1728w, /images/banner2-300x139.jpg 300w, /images/banner2-1024x474.jpg 1024w, /images/banner2-768x356.jpg 768w, /images/banner2-1536x711.jpg 1536w"
                     />
                 </div>
                 <div className="container">
                     <div className="bn-big-ctn">
-                        {/* Breadcrumb */}
-                        <div className="breadcrumb">
-                            <div className="breadcrumb-wrapper">
-                                <ul className="breadcrumb-list">
-                                    <li className="breadcrumb-item aos-init aos-animate" data-aos="fade-left">
-                                        <a href="/" className="breadcrumb-link">Trang chủ</a>
-                                    </li>
-                                    <li className="breadcrumb-item aos-init aos-animate" data-aos="fade-left">
-                                        <a href="" className="breadcrumb-link">Giải pháp</a>
-                                    </li>
-                                    <li className="breadcrumb-item aos-init aos-animate" data-aos="fade-left">
-                                        <a href="/danh-muc-giai-phap/xuat-nhat-khau/" className="breadcrumb-link">Xuất nhật khẩu</a>
-                                    </li>
-                                    <li className="breadcrumb-item aos-init aos-animate" data-aos="fade-left">
-                                        <a href="" className="breadcrumb-link">Tài chính chuỗi cung ứng</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        <SiteBreadcrumb
+                            initialLocale={initialLocale}
+                            className=''
+                            items={breadcrumbItems[initialLocale as 'vi' | 'en']}
+                            currentPage="Giải pháp Kho vận"
+                        />
 
                         {/* Main Title */}
                         <h1 className="bn-big-tt add-class text-verti mb-24 is-inview">
-                            Giải pháp Xuất - nhập khẩu
+                            {t("pages.finance.title")}
                         </h1>
 
                         {/* Features Box */}
-                        <div className="bn-box aos-init aos-animate" data-aos="fade-up-cus" data-aos-delay="600">
+                        <div className="bn-box aos-init aos-animate" data-aos-delay="600">
                             <div className="bn-box-row row gap-res">
                                 {/* Feature 1 */}
                                 <div className="bn-box-it col">
@@ -56,13 +68,15 @@ const ExportImportPage: React.FC = () => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="ic-bn1.svg"
+                                                src="/images/ic-bn1.svg"
                                                 className="attachment-full size-full"
                                                 alt="Icon TMĐT"
                                                 decoding="async"
                                             />
                                         </div>
-                                        <p className="des">Tăng cơ hội bán hàng ở các thị trường quốc tế.</p>
+                                        <p className="des">
+                                            {t("pages.finance.title1")}
+                                        </p>
                                     </div>
                                 </div>
 
@@ -73,13 +87,15 @@ const ExportImportPage: React.FC = () => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="ic-bn2.svg"
+                                                src="/images/ic-bn2.svg"
                                                 className="attachment-full size-full"
                                                 alt="KẾT NỐI HÀNH TRÌNH"
                                                 decoding="async"
                                             />
                                         </div>
-                                        <p className="des">Tiết kiệm chi phí nhờ quy trình tối ưu hoá.</p>
+                                        <p className="des">
+                                            {t("pages.finance.title2")}
+                                        </p>
                                     </div>
                                 </div>
 
@@ -90,14 +106,16 @@ const ExportImportPage: React.FC = () => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="ic-bn3.svg"
+                                                src="/images/ic-bn3.svg"
                                                 className="attachment-full size-full"
                                                 alt="LIÊN KẾT"
                                                 decoding="async"
                                                 loading="lazy"
                                             />
                                         </div>
-                                        <p className="des">Đảm bảo sự hài lòng với dịch vụ đáng tin cậy.</p>
+                                        <p className="des">
+                                            {t("pages.finance.title3")}
+                                        </p>
                                     </div>
                                 </div>
 
@@ -108,14 +126,16 @@ const ExportImportPage: React.FC = () => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="ic-bn4.svg"
+                                                src="/images/ic-bn4.svg"
                                                 className="attachment-full size-full"
                                                 alt="tmđt"
                                                 decoding="async"
                                                 loading="lazy"
                                             />
                                         </div>
-                                        <p className="des">Sự an toàn và bảo mật của khách hàng là ưu tiên hàng đầu.</p>
+                                        <p className="des">
+                                            {t("pages.finance.title4")}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -130,10 +150,10 @@ const ExportImportPage: React.FC = () => {
                 <div className="exp-tabLink ss-pd-t">
                     <div className="cpn-faq-filter scrollContainer">
                         <a className="cpn-faq-filter-it buttons active" href="/giai-phap/tai-chinh-chuoi-cung-ung/">
-                            Tài chính chuỗi cung ứng
+                            {t("pages.finance.finance")}
                         </a>
                         <a className="cpn-faq-filter-it buttons" href="/giai-phap/uy-thac-xuat-nhap-khau/">
-                            Ủy thác xuất nhập khẩu
+                            {t("pages.finance.im-ex")}
                         </a>
                     </div>
                 </div>
@@ -144,12 +164,12 @@ const ExportImportPage: React.FC = () => {
                         <img
                             width="1728"
                             height="700"
-                            src="imgFull2.jpg"
+                            src="/images/imgFull2.webp"
                             className="attachment-full size-full"
                             alt=""
                             decoding="async"
                             loading="lazy"
-                            srcSet="imgFull2.jpg 1728w, imgFull2-300x122.jpg 300w, imgFull2-1024x415.jpg 1024w, imgFull2-768x311.jpg 768w, imgFull2-1536x622.jpg 1536w"
+                            srcSet="/images/imgFull2.webp 1728w, /images/imgFull2-300x122.webp 300w, /images/imgFull2-1024x415.webp 1024w, /images/imgFull2-768x311.webp 768w, /images/imgFull2-1536x622.webp 1536w"
                         />
                     </div>
                     <div className="container">
@@ -159,7 +179,7 @@ const ExportImportPage: React.FC = () => {
                                 <div className="exp-fin-l col">
                                     <div className="wrapper white">
                                         <h1 className="title title-48 add-class text-verti">
-                                            Tài chính chuỗi cung ứng
+                                            {t("pages.finance.finance")}
                                         </h1>
                                     </div>
                                 </div>
@@ -170,37 +190,41 @@ const ExportImportPage: React.FC = () => {
                                         <div className="exp-fin-list row">
                                             {/* Feature 1 */}
                                             <div className="col">
-                                                <div className="exp-fin-it aos-init" data-aos="fade-up-cus">
-                                                    <img src="/template/assets/images/sao.svg" alt="" />
-                                                    <h4 className="tt">Cung cấp dịch vụ tài chính chuỗi cung ứng</h4>
-                                                    <p className="des">Dựa trên đối tác và dự án chọn lọc, để hỗ trợ hoạt động kinh doanh của đối tác trong việc tối ưu hoá dòng tiền.</p>
+                                                <div className="exp-fin-it aos-init" >
+                                                    <img src="/images/sao.svg" alt="" />
+                                                    <h4 className="tt">
+                                                        {t("pages.finance.finance1-title")}
+                                                    </h4>
+                                                    <p className="des">
+                                                        {t("pages.finance.finance1")}
+                                                    </p>
                                                 </div>
                                             </div>
 
                                             {/* Feature 2 */}
                                             <div className="col">
-                                                <div className="exp-fin-it aos-init" data-aos="fade-up-cus">
-                                                    <img src="/template/assets/images/sao.svg" alt="" />
-                                                    <h4 className="tt">Ưu tiên đối tác tin cậy</h4>
-                                                    <p className="des">Chúng tôi ưu tiên đối tác tin cậy mà EXPEDITORS GLOBAL đang phục vụ dịch vụ logistics.</p>
+                                                <div className="exp-fin-it aos-init" >
+                                                    <img src="/images/sao.svg" alt="" />
+                                                    <h4 className="tt">{t("pages.finance.finance2-title")} </h4>
+                                                    <p className="des">{t("pages.finance.finance2")}</p>
                                                 </div>
                                             </div>
 
                                             {/* Feature 3 */}
                                             <div className="col">
-                                                <div className="exp-fin-it aos-init" data-aos="fade-up-cus">
-                                                    <img src="/template/assets/images/sao.svg" alt="" />
-                                                    <h4 className="tt">Liên quan đến tín dụng</h4>
-                                                    <p className="des">Quá trình này sẽ liên quan đến việc xác nhận và bảo lãnh tín dụng từ ngân hàng ưu đãi của chúng tôi</p>
+                                                <div className="exp-fin-it aos-init">
+                                                    <img src="/images/sao.svg" alt="" />
+                                                    <h4 className="tt">{t("pages.finance.finance3-title")} </h4>
+                                                    <p className="des">{t("pages.finance.finance3")}</p>
                                                 </div>
                                             </div>
 
                                             {/* Feature 4 */}
                                             <div className="col">
-                                                <div className="exp-fin-it aos-init" data-aos="fade-up-cus">
-                                                    <img src="/template/assets/images/sao.svg" alt="" />
-                                                    <h4 className="tt">Hỗ trợ trả trước</h4>
-                                                    <p className="des">Mô hình này sẽ hỗ trợ đối tác được trả trước để tái chế vốn vào hoạt động tốt hơn.</p>
+                                                <div className="exp-fin-it aos-init" >
+                                                    <img src="/images/sao.svg" alt="" />
+                                                    <h4 className="tt">{t("pages.finance.finance4-title")} </h4>
+                                                    <p className="des">{t("pages.finance.finance4")}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -218,7 +242,7 @@ const ExportImportPage: React.FC = () => {
                     <div className="container">
                         <div className="head-verti mb-32 center">
                             <h1 className="title title-48 add-class text-verti">
-                                Quy trình chuỗi tài chính
+                                {t("pages.finance.procedure")}
                             </h1>
                         </div>
                         <div className="exp-chain-img">
@@ -226,7 +250,7 @@ const ExportImportPage: React.FC = () => {
                                 <img
                                     width="1281"
                                     height="498"
-                                    src="sodoquytrinh.svg"
+                                    src="/images/Group-2144769115.webp"
                                     className="attachment-full size-full"
                                     alt=""
                                     decoding="async"
@@ -239,18 +263,18 @@ const ExportImportPage: React.FC = () => {
             </section>
 
             {/* Advantages Section */}
-            <div className="inland-xo">
+            <div className="inland-xo" style={{ marginBottom: '100px' }}>
                 <div className="imgFull">
                     <div className="imgFull-inner">
                         <img
                             width="1728"
                             height="600"
-                            src="inland-fly.jpg"
+                            src="/images/inland-fly.webp"
                             className="attachment-full size-full"
                             alt=""
                             decoding="async"
                             loading="lazy"
-                            srcSet="inland-fly.jpg 1728w, inland-fly-300x104.jpg 300w, inland-fly-1024x356.jpg 1024w, inland-fly-768x267.jpg 768w, inland-fly-1536x533.jpg 1536w"
+                            srcSet="/images/inland-fly.webp 1728w, /images/inland-fly-300x104.webp 300w, /images/inland-fly-1024x356.webp 1024w, /images/inland-fly-768x267.webp 768w, /images/inland-fly-1536x533.webp 1536w"
                         />
                     </div>
                 </div>
@@ -264,36 +288,11 @@ const ExportImportPage: React.FC = () => {
                                     style={{ "--word-total": 5, "--char-total": 17 } as React.CSSProperties}
                                 >
                                     <span className="word" data-word="Ưu" style={{ "--word-index": 0 } as React.CSSProperties}>
-                                        <span className="char" data-char="Ư" style={{ "--char-index": 0 } as React.CSSProperties}>Ư</span>
-                                        <span className="char" data-char="u" style={{ "--char-index": 1 } as React.CSSProperties}>u</span>
+                                        <span className="char" data-char="u" style={{ "--char-index": 1 } as React.CSSProperties}>
+                                            {t("pages.finance.advantages")}
+                                        </span>
                                     </span>
-                                    <span className="whitespace"> </span>
-                                    <span className="word" data-word="điểm" style={{ "--word-index": 1 } as React.CSSProperties}>
-                                        <span className="char" data-char="đ" style={{ "--char-index": 2 } as React.CSSProperties}>đ</span>
-                                        <span className="char" data-char="i" style={{ "--char-index": 3 } as React.CSSProperties}>i</span>
-                                        <span className="char" data-char="ể" style={{ "--char-index": 4 } as React.CSSProperties}>ể</span>
-                                        <span className="char" data-char="m" style={{ "--char-index": 5 } as React.CSSProperties}>m</span>
-                                    </span>
-                                    <span className="whitespace"> </span>
-                                    <span className="word" data-word="của" style={{ "--word-index": 2 } as React.CSSProperties}>
-                                        <span className="char" data-char="c" style={{ "--char-index": 6 } as React.CSSProperties}>c</span>
-                                        <span className="char" data-char="ủ" style={{ "--char-index": 7 } as React.CSSProperties}>ủ</span>
-                                        <span className="char" data-char="a" style={{ "--char-index": 8 } as React.CSSProperties}>a</span>
-                                    </span>
-                                    <span className="whitespace"> </span>
-                                    <span className="word" data-word="giải" style={{ "--word-index": 3 } as React.CSSProperties}>
-                                        <span className="char" data-char="g" style={{ "--char-index": 9 } as React.CSSProperties}>g</span>
-                                        <span className="char" data-char="i" style={{ "--char-index": 10 } as React.CSSProperties}>i</span>
-                                        <span className="char" data-char="ả" style={{ "--char-index": 11 } as React.CSSProperties}>ả</span>
-                                        <span className="char" data-char="i" style={{ "--char-index": 12 } as React.CSSProperties}>i</span>
-                                    </span>
-                                    <span className="whitespace"> </span>
-                                    <span className="word" data-word="pháp" style={{ "--word-index": 4 } as React.CSSProperties}>
-                                        <span className="char" data-char="p" style={{ "--char-index": 13 } as React.CSSProperties}>p</span>
-                                        <span className="char" data-char="h" style={{ "--char-index": 14 } as React.CSSProperties}>h</span>
-                                        <span className="char" data-char="á" style={{ "--char-index": 15 } as React.CSSProperties}>á</span>
-                                        <span className="char" data-char="p" style={{ "--char-index": 16 } as React.CSSProperties}>p</span>
-                                    </span>
+
                                 </h3>
                             </div>
                         </div>
@@ -308,15 +307,15 @@ const ExportImportPage: React.FC = () => {
                                             <img
                                                 width="32"
                                                 height="32"
-                                                src="ic-il1.svg"
+                                                src="/images/ic-il1.svg"
                                                 className="attachment-full size-full"
                                                 alt="Nhanh chóng"
                                                 decoding="async"
                                                 loading="lazy"
                                             />
                                         </div>
-                                        <p className="text">Giao hàng nhanh chóng</p>
-                                        <div className="des">Thời gian giao hàng nhanh chóng nhờ mạng lưới vận chuyển trên toàn cầu.</div>
+                                        <p className="text">{t("pages.finance.ad1-title")}</p>
+                                        <div className="des">{t("pages.finance.ad1")}</div>
                                     </div>
                                 </div>
 
@@ -327,15 +326,15 @@ const ExportImportPage: React.FC = () => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="ic-bn1.svg"
+                                                src="/images/ic-bn1.svg"
                                                 className="attachment-full size-full"
                                                 alt="Icon TMĐT"
                                                 decoding="async"
                                                 loading="lazy"
                                             />
                                         </div>
-                                        <p className="text">Hỗ trợ hải quan</p>
-                                        <div className="des">Hỗ trợ khai báo hải quan và chính sách thuế tối ưu.</div>
+                                        <p className="text">{t("pages.finance.ad2-title")}</p>
+                                        <div className="des">{t("pages.finance.ad2")}</div>
                                     </div>
                                 </div>
 
@@ -346,15 +345,15 @@ const ExportImportPage: React.FC = () => {
                                             <img
                                                 width="32"
                                                 height="32"
-                                                src="ic-il3.svg"
+                                                src="/images/ic-il3.svg"
                                                 className="attachment-full size-full"
                                                 alt="Đa dạng"
                                                 decoding="async"
                                                 loading="lazy"
                                             />
                                         </div>
-                                        <p className="text">Linh hoạt mọi quy mô</p>
-                                        <div className="des">Đáp ứng linh hoạt với nhiều quy mô lô hàng khác nhau.</div>
+                                        <p className="text">{t("pages.finance.ad3-title")}</p>
+                                        <div className="des">{t("pages.finance.ad3")}</div>
                                     </div>
                                 </div>
 
@@ -365,16 +364,15 @@ const ExportImportPage: React.FC = () => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="ic-bn2.svg"
+                                                src="/images/ic-bn2.svg"
                                                 className="attachment-full size-full"
                                                 alt="KẾT NỐI HÀNH TRÌNH"
                                                 decoding="async"
                                                 loading="lazy"
                                             />
                                         </div>
-                                        <p className="text">Hợp tác cùng đối tác lớn</p>
-                                        <div className="des">Hợp tác với các đơn vị chuyển phát nhanh uy tín nhất như FEDEX, UPS, DHL, giúp gia tăng độ tin cậy.</div>
-                                    </div>
+                                        <p className="text">{t("pages.finance.ad4-title")}</p>
+                                        <div className="des">{t("pages.finance.ad4")}</div></div>
                                 </div>
 
                                 {/* Advantage 5 */}
@@ -384,16 +382,15 @@ const ExportImportPage: React.FC = () => {
                                             <img
                                                 width="32"
                                                 height="32"
-                                                src="ic-il5.svg"
+                                                src="/images/ic-il5.svg"
                                                 className="attachment-full size-full"
                                                 alt="An toàn"
                                                 decoding="async"
                                                 loading="lazy"
                                             />
                                         </div>
-                                        <p className="text">CN38 – Giải pháp thông quan</p>
-                                        <div className="des">CN38 là gói giải pháp độc quyền của bưu điện Việt Nam, có thể xử lý thông quan đa dạng các mặt hàng được vận chuyển theo đường bưu chính với thời gian tối ưu.</div>
-                                    </div>
+                                        <p className="text">{t("pages.finance.ad5-title")}</p>
+                                        <div className="des">{t("pages.finance.ad5")}</div> </div>
                                 </div>
 
                                 {/* Advantage 6 */}
@@ -403,16 +400,15 @@ const ExportImportPage: React.FC = () => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="ic-bn3.svg"
+                                                src="/images/ic-bn3.svg"
                                                 className="attachment-full size-full"
                                                 alt="LIÊN KẾT"
                                                 decoding="async"
                                                 loading="lazy"
                                             />
                                         </div>
-                                        <p className="text">T86/ECCF – Giao nhanh hiệu quả</p>
-                                        <div className="des">T86/ECCF mang đến khả năng xử lý linh hoạt đối với các gói hàng nhỏ, cần giao hàng nhanh chóng, đặc biệt là các mặt hàng mỹ phẩm và thực phẩm chức năng</div>
-                                    </div>
+                                        <p className="text">{t("pages.finance.ad6-title")}</p>
+                                        <div className="des">{t("pages.finance.ad6")}</div>  </div>
                                 </div>
                             </div>
                         </div>

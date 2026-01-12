@@ -1,8 +1,12 @@
+'use client'
 import React from 'react';
 import SiteBreadcrumb from '@/components/SiteBreadcrumb';
 import EXPTrustSlide from '@/components/EXPTrustSlide';
 import PartnersSection from '@/components/PartnersSection';
 import ContactFormSection from '@/components/ContactFormSection';
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
 
 const ImportExportSolution = ({ initialLocale = 'en' }) => {
     const breadcrumbItems = {
@@ -15,6 +19,16 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
             { text: "Warehouse Solutions", link: "/solutions/warehouse", isActive: true }
         ]
     }
+
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
+
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
     return (
         <main className="main page-exp">
             {/* Banner Section */}
@@ -23,12 +37,12 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                     <img
                         width="1728"
                         height="800"
-                        src="banner2.jpg"
+                        src="/images/banner2.jpg"
                         className="attachment-full size-full"
                         alt="Containers xuất nhập khẩu - EXPEDITORS GLOBAL"
                         decoding="async"
                         fetchPriority="high"
-                        srcSet="banner2.jpg 1728w, banner2-300x139.jpg 300w, banner2-1024x474.jpg 1024w, banner2-768x356.jpg 768w, banner2-1536x711.jpg 1536w"
+                        srcSet="/images/banner2.jpg 1728w, /images/banner2-300x139.jpg 300w, /images/banner2-1024x474.jpg 1024w, /images/banner2-768x356.jpg 768w, /images/banner2-1536x711.jpg 1536w"
                     />
                 </div>
                 <div className="container">
@@ -42,7 +56,7 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                         />
 
                         <h1 className="bn-big-tt add-class text-verti mb-24 is-inview">
-                            Giải pháp Xuất - nhập khẩu
+                            {t("pages.im-ex.title")}
                         </h1>
 
                         {/* Benefit Boxes */}
@@ -54,13 +68,15 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="ic-bn1.svg"
+                                                src="/images/ic-bn1.svg"
                                                 className="attachment-full size-full"
                                                 alt="Icon TMĐT"
                                                 decoding="async"
                                             />
                                         </div>
-                                        <p className="des">Tăng cơ hội bán hàng ở các thị trường quốc tế.</p>
+                                        <p className="des">
+                                            {t("pages.im-ex.item1")}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="bn-box-it col">
@@ -69,13 +85,15 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="ic-bn2.svg"
+                                                src="/images/ic-bn2.svg"
                                                 className="attachment-full size-full"
                                                 alt="KẾT NỐI HÀNH TRÌNH"
                                                 decoding="async"
                                             />
                                         </div>
-                                        <p className="des">Tiết kiệm chi phí nhờ quy trình tối ưu hoá.</p>
+                                        <p className="des">
+                                            {t("pages.im-ex.item2")}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="bn-box-it col">
@@ -84,14 +102,16 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="ic-bn3.svg"
+                                                src="/images/ic-bn3.svg"
                                                 className="attachment-full size-full"
                                                 alt="LIÊN KẾT"
                                                 decoding="async"
                                                 loading="lazy"
                                             />
                                         </div>
-                                        <p className="des">Đảm bảo sự hài lòng với dịch vụ đáng tin cậy.</p>
+                                        <p className="des">
+                                            {t("pages.im-ex.item3")}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="bn-box-it col">
@@ -100,14 +120,16 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="ic-bn4.svg"
+                                                src="/images/ic-bn4.svg"
                                                 className="attachment-full size-full"
                                                 alt="tmđt"
                                                 decoding="async"
                                                 loading="lazy"
                                             />
                                         </div>
-                                        <p className="des">Sự an toàn và bảo mật của khách hàng là ưu tiên hàng đầu.</p>
+                                        <p className="des">
+                                            {t("pages.im-ex.item4")}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -121,10 +143,10 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                 <div className="exp-tabLink ss-pd-t">
                     <div className="cpn-faq-filter scrollContainer">
                         <a className="cpn-faq-filter-it buttons" href="/giai-phap/tai-chinh-chuoi-cung-ung/">
-                            Tài chính chuỗi cung ứng
+                            {t("pages.im-ex.finance")}
                         </a>
                         <a className="cpn-faq-filter-it buttons active" href="/giai-phap/uy-thac-xuat-nhap-khau/">
-                            Ủy thác xuất nhập khẩu
+                            {t("pages.im-ex.im-ex")}
                         </a>
                     </div>
                 </div>
@@ -132,7 +154,9 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                 <div className="exp-entrust ss-pd-b">
                     <div className="container">
                         <div className="head-verti mb-32 center">
-                            <h1 className="title title-48 add-class text-verti">Ủy thác xuất nhập khẩu</h1>
+                            <h1 className="title title-48 add-class text-verti">
+                                {t("pages.im-ex.entrustment")}
+                            </h1>
                         </div>
                         <EXPTrustSlide />
                     </div>
@@ -151,7 +175,7 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                                 <img
                                     width="1229"
                                     height="1080"
-                                    src="sodogiaiphap.svg"
+                                    src="/images/Group-2144769112-1.webp"
                                     className="attachment-full size-full"
                                     alt=""
                                     decoding="async"
@@ -170,12 +194,12 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                         <img
                             width="1728"
                             height="600"
-                            src="inland-fly.jpg"
+                            src="/images/inland-fly.webp"
                             className="attachment-full size-full"
                             alt=""
                             decoding="async"
                             loading="lazy"
-                            srcSet="inland-fly.jpg 1728w, inland-fly-300x104.jpg 300w, inland-fly-1024x356.jpg 1024w, inland-fly-768x267.jpg 768w, inland-fly-1536x533.jpg 1536w"
+                            srcSet="/images/inland-fly.webp 1728w, /images/inland-fly-300x104.webp 300w, /images/inland-fly-1024x356.webp 1024w, /images/inland-fly-768x267.webp 768w, /images/inland-fly-1536x533.webp 1536w"
                         />
                     </div>
                 </div>
@@ -228,7 +252,7 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="32"
                                                 height="32"
-                                                src="ic-il1.svg"
+                                                src="/images/ic-il1.svg"
                                                 className="attachment-full size-full"
                                                 alt="Nhanh chóng"
                                                 decoding="async"
@@ -246,7 +270,7 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="ic-bn1.svg"
+                                                src="/images/ic-bn1.svg"
                                                 className="attachment-full size-full"
                                                 alt="Icon TMĐT"
                                                 decoding="async"
@@ -264,7 +288,7 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="32"
                                                 height="32"
-                                                src="ic-il3.svg"
+                                                src="/images/ic-il3.svg"
                                                 className="attachment-full size-full"
                                                 alt="Đa dạng"
                                                 decoding="async"
@@ -282,7 +306,7 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="ic-bn2.svg"
+                                                src="/images/ic-bn2.svg"
                                                 className="attachment-full size-full"
                                                 alt="KẾT NỐI HÀNH TRÌNH"
                                                 decoding="async"
@@ -300,7 +324,7 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="32"
                                                 height="32"
-                                                src="ic-il5.svg"
+                                                src="/images/ic-il5.svg"
                                                 className="attachment-full size-full"
                                                 alt="An toàn"
                                                 decoding="async"
@@ -318,7 +342,7 @@ const ImportExportSolution = ({ initialLocale = 'en' }) => {
                                             <img
                                                 width="24"
                                                 height="24"
-                                                src="ic-bn3.svg"
+                                                src="/images/ic-bn3.svg"
                                                 className="attachment-full size-full"
                                                 alt="LIÊN KẾT"
                                                 decoding="async"

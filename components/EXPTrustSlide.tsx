@@ -15,7 +15,7 @@ const EXPTrustSlide = () => {
         {
             id: 1,
             title: "Ủy thác nhập khẩu",
-            image: "exp1.jpg",
+            image: "/images/exp1.jpg",
             link: "/uy-thac-nhap-khau-vietnam-post-logistics/",
             alt: "Bãi containers",
             description: "Đảm bảo hàng hóa từ các quốc gia khác về Việt Nam nhanh chóng, thuận tiện."
@@ -23,7 +23,7 @@ const EXPTrustSlide = () => {
         {
             id: 2,
             title: "Ủy thác xuất khẩu",
-            image: "exp2.jpg",
+            image: "/images/exp2.jpg",
             link: "/uy-thac-xuat-khau-vietnam-post-logistics/",
             alt: "thùng hàng carton và pallet",
             description: "Hỗ trợ đưa sản phẩm của bạn đến tay khách hàng quốc tế một cách chuyên nghiệp."
@@ -31,7 +31,7 @@ const EXPTrustSlide = () => {
         {
             id: 3,
             title: "Hỗ trợ khai báo hải quan",
-            image: "exp3.jpg",
+            image: "/images/exp3.webp",
             link: "/ho-tro-khai-bao-hai-quan-vietnam-post-logistics/",
             alt: "Bê thùng hàng",
             description: "Chuẩn bị và xử lý hồ sơ chính xác, giảm thiểu rủi ro sai sót."
@@ -39,7 +39,7 @@ const EXPTrustSlide = () => {
         {
             id: 4,
             title: "Tư vấn chính sách xuất nhập khẩu",
-            image: "exp4.jpg",
+            image: "/images/exp4.webp",
             link: "/tu-van-chinh-sach-xuat-nhap-khau-vietnam-post-logistics/",
             alt: "sân bay",
             description: "Giải đáp mọi thắc mắc và cập nhật thông tin mới nhất."

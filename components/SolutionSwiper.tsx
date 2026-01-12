@@ -6,32 +6,44 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
-
-const SolutionSwiper = () => {
+import { useSearchParams } from 'next/navigation';
+import { useTranslations } from '@/hooks/useTranslations';
+import { Locale } from '@/lib/i18n';
+const SolutionSwiper = ({ initialLocale = 'en' }) => {
     const navigationPrevRef = useRef(null);
     const navigationNextRef = useRef(null);
+
+    const searchParams = useSearchParams();
+    const langParam = searchParams.get('lang');
+
+    const locale: Locale =
+        langParam === 'en' || langParam === 'vi'
+            ? langParam
+            : initialLocale;
+
+    const { t } = useTranslations(locale);
 
     const slides = [
         {
             id: 1,
-            title: "Vận chuyển nội địa",
-            image: "storage1.jpg",
+            title: "",
+            image: "/images/storage1.jpg",
             link: "/dich-vu-van-chuyen-noi-dia/",
-            description: "Vận chuyển hàng hóa từ kho đến các điểm giao hàng trong nước."
+            description: t("components.solution-swiper.title1")
         },
         {
             id: 2,
-            title: "Vận chuyển xuyên biên giới ASEAN",
-            image: "storage2.jpg",
+            title: "",
+            image: "/images/storage2.jpg",
             link: "/van-chuyen-xuyen-bien-gioi-asean/",
-            description: "Vận chuyển xuyên biên giới qua các nước trong khu vực ASEAN."
+            description: t("components.solution-swiper.title2")
         },
         {
             id: 3,
-            title: "Vận tải đường bộ",
-            image: "storage3.jpg",
+            title: "",
+            image: "/images/storage3.jpg",
             link: "/giai-phap-van-tai-duong-bo-da-dang-linh-hoat-theo-yeu-cau/",
-            description: "Cung cấp giải pháp vận tải đường bộ đa dạng, linh hoạt theo yêu cầu của khách hàng."
+            description: t("components.solution-swiper.title3")
         }
     ];
 
