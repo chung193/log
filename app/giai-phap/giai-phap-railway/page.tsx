@@ -8,8 +8,42 @@ import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
 import ListServices from '@/components/ListServices';
 
+interface Stat {
+    name: string;
+    value: string;
+    description: string;
+}
 
-const BenefitsBox = ({ benefits = [] }) => {
+interface Advantage {
+    icon: string;
+    description: string;
+}
+
+interface Benefit {
+    icon: string;
+    alt: string;
+    text: string;
+}
+
+// Tạo interface riêng cho ServiceBenefits
+interface ServiceBenefitItem {
+    icon: string;
+    text: string;
+}
+
+interface AdvantageBoxProps {
+    advantage?: Advantage[];
+}
+
+interface StatsBoxProps {
+    stat?: Stat[];
+}
+
+interface BenefitsBoxProps {
+    benefits?: Benefit[];
+}
+
+const BenefitsBox = ({ benefits = [] }: BenefitsBoxProps) => {
     return (
         <div className="bn-box aos-init aos-animate" data-aos="fade-up-cus" data-aos-delay="600">
             <div className="bn-box-row row gap-res">
@@ -37,13 +71,11 @@ const BenefitsBox = ({ benefits = [] }) => {
 };
 
 // Component cho Statistics Box
-const StatisticsBox = ({ stats = [] }) => {
-
-
+const StatisticsBox = ({ stat = [] }: StatsBoxProps) => {
     return (
         <div className="inter-solve-box">
             <div className="row">
-                {stats.map((stat, index) => (
+                {stat.map((stat, index) => (
                     <div key={index} className="col">
                         <div className="inter-solve-box-it">
                             <p className="name">{stat.name}</p>
@@ -58,8 +90,7 @@ const StatisticsBox = ({ stats = [] }) => {
 };
 
 // Component cho Advantages
-const AdvantagesSection = ({ advantages = [] }) => {
-
+const AdvantagesSection = ({ advantage = [] }: AdvantageBoxProps) => {
     return (
         <div className="inland-xo">
             <div className="imgFull">
@@ -88,7 +119,7 @@ const AdvantagesSection = ({ advantages = [] }) => {
 
                     <div className="inland-xo-box">
                         <div className="inland-xo-list row gap-res rows-2 listEven">
-                            {advantages.map((advantage, index) => (
+                            {advantage.map((advantage, index) => (
                                 <div
                                     key={index}
                                     className={`inland-xo-it col itemEven ${index % 2 === 0 ? 'even' : 'odd'}`}
@@ -117,10 +148,13 @@ const AdvantagesSection = ({ advantages = [] }) => {
     );
 };
 
+interface ServiceBenefitsProps {
+    title?: string;
+    benefits?: ServiceBenefitItem[]; // Đổi từ Benefit[] thành ServiceBenefitItem[]
+}
+
 // Component cho Service Benefits
-const ServiceBenefits = ({ title = "", benefits = [] }) => {
-
-
+const ServiceBenefits = ({ title = "", benefits = [] }: ServiceBenefitsProps) => {
     return (
         <div className="inter-solve-ser ss-pd-t">
             <h1 className="title title-48 add-class text-verti mb-32">
@@ -144,7 +178,7 @@ const ServiceBenefits = ({ title = "", benefits = [] }) => {
                                     />
                                 </div>
                                 <div className="ctn">
-                                    <p className="tt">{benefit.title}</p>
+                                    <p className="tt">{benefit.text}</p>
                                 </div>
                             </div>
                         </div>
@@ -154,7 +188,6 @@ const ServiceBenefits = ({ title = "", benefits = [] }) => {
         </div>
     );
 };
-
 
 // Main Component
 const RailwaySolutionPage: React.FC = () => {
@@ -180,8 +213,7 @@ const RailwaySolutionPage: React.FC = () => {
         ]
     };
 
-
-    const benefits = [
+    const benefits: Benefit[] = [
         {
             icon: '/images/ic-bn1.svg',
             alt: 'Icon TMĐT',
@@ -204,13 +236,13 @@ const RailwaySolutionPage: React.FC = () => {
         }
     ];
 
-    const stats = [
+    const stats: Stat[] = [
         { name: 'VN-Laos', value: '15', description: t("common.cont-unit") },
         { name: 'VN- Campuchia', value: '20', description: t("common.cont-unit") },
         { name: 'VN- China', value: '15', description: t("common.cont-unit") }
     ];
 
-    const advantages = [
+    const advantages: Advantage[] = [
         {
             icon: '/images/ic-il1.svg',
             description: t("pages.rail.advantages1")
@@ -229,22 +261,22 @@ const RailwaySolutionPage: React.FC = () => {
         }
     ];
 
-    const benefits2 = [
+    const benefits2: ServiceBenefitItem[] = [
         {
             icon: '/images/ic-tag.svg',
-            title: t("pages.rail.benefit1")
+            text: t("pages.rail.benefit1")
         },
         {
             icon: '/images/ic-increase.svg',
-            title: t("pages.rail.benefit2")
+            text: t("pages.rail.benefit2")
         },
         {
             icon: '/images/ic-trip.svg',
-            title: t("pages.rail.benefit3")
+            text: t("pages.rail.benefit3")
         },
         {
             icon: '/images/ic-hand.svg',
-            title: t("pages.rail.benefit4")
+            text: t("pages.rail.benefit4")
         }
     ];
 
@@ -260,17 +292,15 @@ const RailwaySolutionPage: React.FC = () => {
                         className="attachment-full size-full"
                         alt=""
                         decoding="async"
-                        fetchPriority="high"
+
                         srcSet="/images/coverrw-min.webp 2000w, /images/coverrw-min-300x168.webp 300w, /images/coverrw-min-1024x574.webp 1024w, /images/coverrw-min-768x430.webp 768w, /images/coverrw-min-1536x861.webp 1536w"
                     />
                 </div>
                 <div className="container">
                     <div className="bn-big-ctn">
                         <SiteBreadcrumb
-                            initialLocale={initialLocale}
                             className=''
-                            items={breadcrumbItems[initialLocale as 'vi' | 'en']}
-                            currentPage="Giải pháp Kho vận"
+                            items={breadcrumbItems[locale as 'vi' | 'en']}
                         />
 
                         <h1 className="bn-big-tt add-class text-verti mb-24 is-inview">
@@ -315,9 +345,9 @@ const RailwaySolutionPage: React.FC = () => {
                                         {t("pages.rail.main-des")}
                                     </p>
 
-                                    <StatisticsBox stats={stats} />
+                                    <StatisticsBox stat={stats} />
 
-                                    <AdvantagesSection advantages={advantages} />
+                                    <AdvantagesSection advantage={advantages} />
 
                                     <ServiceBenefits benefits={benefits2} title={t("pages.rail.benefit-title")} />
                                 </div>

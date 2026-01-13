@@ -40,17 +40,15 @@ const ExportImportPage: React.FC = () => {
                         className="attachment-full size-full"
                         alt="Containers xuất nhập khẩu - EXPEDITORS GLOBAL"
                         decoding="async"
-                        fetchpriority="high"
                         srcSet="/images/banner2.jpg 1728w, /images/banner2-300x139.jpg 300w, /images/banner2-1024x474.jpg 1024w, /images/banner2-768x356.jpg 768w, /images/banner2-1536x711.jpg 1536w"
                     />
                 </div>
                 <div className="container">
                     <div className="bn-big-ctn">
                         <SiteBreadcrumb
-                            initialLocale={initialLocale}
+
                             className=''
-                            items={breadcrumbItems[initialLocale as 'vi' | 'en']}
-                            currentPage="Giải pháp Kho vận"
+                            items={breadcrumbItems[locale as 'vi' | 'en']}
                         />
 
                         {/* Main Title */}

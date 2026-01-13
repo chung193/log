@@ -4,14 +4,14 @@ import { useSearchParams } from 'next/navigation';
 import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
 
-const AboutQuote = ({ language = 'en', initialLocale = 'en' }) => {
+const AboutQuote = () => {
     const searchParams = useSearchParams();
     const langParam = searchParams.get('lang');
 
     const locale: Locale =
         langParam === 'en' || langParam === 'vi'
             ? langParam
-            : initialLocale;
+            : 'en';
 
     const { t } = useTranslations(locale);
 

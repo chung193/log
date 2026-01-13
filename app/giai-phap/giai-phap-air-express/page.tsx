@@ -48,19 +48,17 @@ const InternationalLogisticsPage: React.FC = () => {
                         className="attachment-full size-full"
                         alt="Sea Freight EXPEDITORS GLOBAL"
                         decoding="async"
-                        fetchPriority="high"
+
                         srcSet="/images/banner4.webp 1728w, /images/banner4-300x139.webp 300w, /images/banner4-1024x474.webp 1024w, /images/banner4-768x356.webp 768w, /images/banner4-1536x711.webp 1536w"
                     />
                 </div>
                 <div className="container">
                     <div className="bn-big-ctn">
                         <SiteBreadcrumb
-                            items={breadcrumbItems[initialLocale]}
-                            language={initialLocale}
+                            items={breadcrumbItems[locale]}
+                            language={locale}
                             showAnimation={true}
                             className="mb-16"
-                            // Tùy chọn: có thể set homeLink khác cho từng ngôn ngữ
-                            homeLink={initialLocale === 'vi' ? '/' : '/en'}
                         />
                         <h1 className="bn-big-tt add-class text-verti mb-24 is-inview">
                             {t("pages.in-log.title")} <br />
@@ -154,7 +152,7 @@ const InternationalLogisticsPage: React.FC = () => {
                 <div className="inter-solve ss-pd">
                     <div className="container">
                         <div className="inter-solve-row row">
-                            <ListServices initialLocale={'en'} />
+                            <ListServices />
                             <div className="inter-solve-main col">
                                 <div className="side-open">
                                     <div className="side-open-wrap">
@@ -414,9 +412,7 @@ const InternationalLogisticsPage: React.FC = () => {
                     </div>
                 </div>
             </section>
-
             <PartnersSection />
-
             <ContactFormSection />
         </main>
     );

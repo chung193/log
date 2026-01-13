@@ -4,7 +4,7 @@ import { useSearchParams } from 'next/navigation';
 import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
 
-const AboutViewContainer = ({ initialLocale = 'en' }) => {
+const AboutViewContainer = () => {
     const imageRef = useRef<HTMLDivElement>(null);
     const rafId = useRef<number | null>(null);
     const lastScrollY = useRef(0);
@@ -15,7 +15,7 @@ const AboutViewContainer = ({ initialLocale = 'en' }) => {
     const locale: Locale =
         langParam === 'en' || langParam === 'vi'
             ? langParam
-            : initialLocale;
+            : 'en';
 
     const { t } = useTranslations(locale);
 

@@ -40,7 +40,7 @@ const ContactPage = () => {
                                 className="attachment-full size-full"
                                 alt="Vận tải đường bộ - EXPEDITORS GLOBAL"
                                 decoding="async"
-                                fetchPriority="high"
+
                                 srcSet="/images/banner.webp 1728w, /images/banner-300x87.webp 300w, /images/banner-1024x296.webp 1024w, /images/banner-768x222.webp 768w, /images/banner-1536x444.webp 1536w"
                             />
                         </div>
@@ -48,10 +48,8 @@ const ContactPage = () => {
                     <div className="bn-bread">
                         <div className="container">
                             <SiteBreadcrumb
-                                initialLocale={initialLocale}
                                 className=''
-                                items={breadcrumbItems[initialLocale as 'vi' | 'en']}
-                                currentPage="Giải pháp Kho vận"
+                                items={breadcrumbItems[locale as 'vi' | 'en']}
                             />
                         </div>
                     </div>

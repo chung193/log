@@ -45,7 +45,6 @@ const ECommerceSolutionsPage = () => {
             className="attachment-full size-full"
             alt="Thương mại điện tử quốc tế"
             decoding="async"
-            fetchpriority="high"
             srcSet="/images/tmdt1-min.webp 2000w, /images/tmdt1-min.webp 300w, /images/tmdt1-min.webp 1024w, /images/tmdt1-min.webp 768w,/images/tmdt1-min.webp 1536w"
           />
         </div>
@@ -53,10 +52,8 @@ const ECommerceSolutionsPage = () => {
           <div className="bn-big-ctn">
             {/* Breadcrumb */}
             <SiteBreadcrumb
-              initialLocale={initialLocale}
               className=''
-              items={breadcrumbItems[initialLocale as 'vi' | 'en']}
-              currentPage="Giải pháp Kho vận"
+              items={breadcrumbItems[locale as 'vi' | 'en']}
             />
 
             {/* Main Title */}

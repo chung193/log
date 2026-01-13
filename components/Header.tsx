@@ -12,7 +12,7 @@ import menuData, { getMenuByLocale, MenuItem } from '@/data/menu'
 import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
 
-export default function Header({ initialLocale = 'en' }) {
+export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isSearchOpen, setIsSearchOpen] = useState(false)
     const [activeMobileMenus, setActiveMobileMenus] = useState<Record<string, boolean>>({})
@@ -24,7 +24,7 @@ export default function Header({ initialLocale = 'en' }) {
     const searchParams = useSearchParams()
 
     const langParam = searchParams.get('lang')
-    const locale: Locale = (langParam === 'en' || langParam === 'vi') ? langParam : initialLocale
+    const locale: Locale = (langParam === 'en' || langParam === 'vi') ? langParam : 'en'
 
     const { t } = useTranslations(locale)
 

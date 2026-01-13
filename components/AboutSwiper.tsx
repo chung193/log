@@ -10,8 +10,12 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const AboutSwiper = ({ lang = 'en' }) => {
-    const swiperRef = useRef<SwiperType>();
+interface AboutSwiperProps {
+    lang?: 'vi' | 'en';
+}
+
+const AboutSwiper = ({ lang = 'en' }: AboutSwiperProps) => {
+    const swiperRef = useRef<SwiperType | null>(null);
 
     const slides = {
         "vi":

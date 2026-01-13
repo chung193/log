@@ -51,18 +51,17 @@ const InternationalAirCargoPage = () => {
                         className="attachment-full size-full"
                         alt="Sea Freight EXPEDITORS GLOBAL"
                         decoding="async"
-                        fetchPriority="high"
+
                         srcSet="/images/banner4.jpg 1728w, /images/banner4-300x139.jpg 300w, /images/banner4-1024x474.jpg 1024w, /images/banner4-768x356.jpg 768w, /images/banner4-1536x711.jpg 1536w"
                     />
                 </div>
                 <div className="container">
                     <div className="bn-big-ctn">
                         <SiteBreadcrumb
-                            items={breadcrumbItems[initialLocale]}
-                            language={initialLocale}
+                            items={breadcrumbItems[locale]}
+                            language={locale}
                             showAnimation={true}
                             className="mb-16"
-                            homeLink={initialLocale === 'vi' ? '/' : '/en'}
                         />
                         <h1 className="bn-big-tt add-class text-verti mb-24 is-inview">
                             {t("pages.air.title")} <br />
@@ -71,7 +70,7 @@ const InternationalAirCargoPage = () => {
                         <p className="bn-big-des aos-init aos-animate" data-aos="fade-up-cus">
                             {t("pages.air.des")}<br /><br />
                         </p>
-                        <BoxHeader initialLocale={'en'} />
+                        <BoxHeader />
                     </div>
                 </div>
             </div>
@@ -80,7 +79,7 @@ const InternationalAirCargoPage = () => {
                 <div className="inter-solve ss-pd">
                     <div className="container">
                         <div className="inter-solve-row row">
-                            <ListServices initialLocale={initialLocale} />
+                            <ListServices />
                             <div className="inter-solve-main col">
                                 <div className="side-open">
                                     <div className="side-open-wrap">

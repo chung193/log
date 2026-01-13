@@ -48,18 +48,17 @@ const ContractLogisticsWarehousingPage = () => {
                         className="attachment-full size-full"
                         alt="Containers xuất nhập khẩu - EXPEDITORS GLOBAL"
                         decoding="async"
-                        fetchPriority="high"
+
                         srcSet="/images/banner2.jpg 1728w, /images/banner2-300x139.jpg 300w, /images/banner2-1024x474.jpg 1024w, /images/banner2-768x356.jpg 768w, /images/banner2-1536x711.jpg 1536w"
                     />
                 </div>
                 <div className="container">
                     <div className="bn-big-ctn">
                         <SiteBreadcrumb
-                            initialLocale={initialLocale}
+
                             className=''
-                            language={initialLocale}
-                            items={breadcrumbItems[initialLocale as 'vi' | 'en']}
-                            currentPage="Giải pháp Kho vận"
+                            language={locale}
+                            items={breadcrumbItems[locale as 'vi' | 'en']}
                         />
 
                         <h1 className="bn-big-tt add-class text-verti mb-24 is-inview">
@@ -162,7 +161,7 @@ const ContractLogisticsWarehousingPage = () => {
                         </div>
                     </div>
 
-                    <WareHouse lang={initialLocale} />
+                    <WareHouse />
 
                     <div className="store-ser-swiper ss-pd">
                         <div className="container">
@@ -171,18 +170,18 @@ const ContractLogisticsWarehousingPage = () => {
                                     {t("pages.warehouse.store-ser-des")}                                    </p>
                             </div>
 
-                            <StoreSwiper initialLocale={initialLocale} />
+                            <StoreSwiper />
                         </div>
                     </div>
 
-                    <StoreTime initialLocale={initialLocale} />
+                    <StoreTime />
                 </div>
             </section>
 
-            <StoreSolution initialLocale={initialLocale} />
-            <WhyChoose initialLocale={initialLocale} />
-            <WareHouseEXP initialLocale={initialLocale} />
-            <StoreImportant initialLocale={initialLocale} />
+            <StoreSolution />
+            <WhyChoose />
+            <WareHouseEXP />
+            <StoreImportant />
 
         </main>
     );

@@ -10,14 +10,14 @@ import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
 
 
-export default function HomeBanner({ initialLocale = 'en' }) {
+export default function HomeBanner() {
     const searchParams = useSearchParams();
     const langParam = searchParams.get('lang');
 
     const locale: Locale =
         langParam === 'en' || langParam === 'vi'
             ? langParam
-            : initialLocale;
+            : 'en';
 
     const { t } = useTranslations(locale);
 
@@ -54,12 +54,12 @@ export default function HomeBanner({ initialLocale = 'en' }) {
     }
 
     // Click trực tiếp vào preview slide để set nó thành active
-    const handlePreviewClick = (index) => {
+    const handlePreviewClick = (index: number) => {
         setActiveIndex(index)
     }
 
     // Lấy slide tiếp theo dựa trên offset
-    const getSlideAtOffset = (offset) => {
+    const getSlideAtOffset = (offset: number) => {
         return slides[(activeIndex + offset) % slides.length]
     }
 

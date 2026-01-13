@@ -15,18 +15,12 @@ const AboutPage = () => {
     const searchParams = useSearchParams();
     const langParam = searchParams.get('lang');
 
-    // Đảm bảo locale chỉ có thể là 'vi' hoặc 'en'
     const locale: Locale =
         (langParam === 'en' || langParam === 'vi' ? langParam : 'vi') as Locale;
 
     const { t } = useTranslations(locale);
 
-    // Định nghĩa breadcrumb items với type rõ ràng
-    const breadcrumbItems: Record<Locale, Array<{
-        text: string;
-        link: string;
-        isActive?: boolean;
-    }>> = {
+    const breadcrumbItems = {
         vi: [
             { text: "Công ty", link: "javascript:;" },
             { text: "Về chúng tôi", link: "/cong-ty/ve-chung-toi", isActive: true }
@@ -50,20 +44,18 @@ const AboutPage = () => {
                                 className="attachment-full size-full"
                                 alt="Kho ngoại quan chất lượng cao"
                                 decoding="async"
-                                fetchpriority="high"
+
                             />
                         </div>
                     </div>
 
                     <div className="bn-bread">
                         <div className="container">
-                            {/* Truyền đúng items từ breadcrumbItems với locale key */}
                             <SiteBreadcrumb
-                                items={breadcrumbItems[locale]} {/* Đây là chỗ sửa */}
+                                items={breadcrumbItems[locale]}
                                 language={locale}
                                 showAnimation={true}
                                 className="mb-16"
-                            // homeLink không cần truyền vì component đã tự xử lý
                             />
                         </div>
                     </div>
@@ -103,7 +95,8 @@ const AboutPage = () => {
                                         <div className="desc">
                                             <strong>
                                                 {t("pages.about-us.intro")}
-                                            </strong><br />
+                                            </strong>
+                                            <br />
                                             <br />
                                             {t("pages.about-us.second-intro")}
                                         </div>
@@ -117,14 +110,14 @@ const AboutPage = () => {
                     </div>
                 </section>
 
-                <AboutQuote language={locale} />
-                <AboutViewContainer language={locale} />
+                <AboutQuote />
+                <AboutViewContainer />
                 <Ecosystem />
                 <PartnersSection />
 
             </main>
         </div>
-    )
-}
+    );
+};
 
 export default AboutPage;

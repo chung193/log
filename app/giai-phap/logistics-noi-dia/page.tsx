@@ -40,8 +40,6 @@ const InlandLogisticsPage: React.FC = () => {
                         src="/images/mde.webp"
                         className="attachment-full size-full"
                         alt=""
-                        decoding="async"
-                        fetchpriority="high"
                         srcSet="/images/mde.webp 1920w, /images/mde-300x208.webp 300w, /images/mde-1024x710.webp 1024w, /images/mde-768x533.webp 768w, /images/mde-1536x1066.webp 1536w"
                     />
                 </div>
@@ -49,10 +47,8 @@ const InlandLogisticsPage: React.FC = () => {
                     <div className="bn-big-ctn">
                         {/* Breadcrumb */}
                         <SiteBreadcrumb
-                            initialLocale={initialLocale}
                             className=''
-                            items={breadcrumbItems[initialLocale as 'vi' | 'en']}
-                            currentPage="Giải pháp Kho vận"
+                            items={breadcrumbItems[locale as 'vi' | 'en']}
                         />
                         {/* Main Title */}
                         <h1 className="bn-big-tt add-class text-verti mb-24 is-inview">

@@ -1,23 +1,33 @@
-'use client';
-
 import React, { useEffect, useRef, useState } from 'react';
 import { CountUp } from 'countup.js';
-import { useSearchParams } from 'next/navigation';
-import { useTranslations } from '@/hooks/useTranslations';
-import { Locale } from '@/lib/i18n';
 
-const StatCard = ({ value, prefix = '', suffix = '', delay = 0 }: { value: number; prefix?: string; suffix?: string; delay?: number; }) => {
-    const countUpRef = useRef(null);
+interface StatCardProps {
+    value: number;
+    prefix?: string;
+    suffix?: string;
+    delay?: number;
+}
+
+const StatCard: React.FC<StatCardProps> = ({
+    value,
+    prefix = '',
+    suffix = '',
+    delay = 0
+}) => {
+    const countUpRef = useRef<HTMLSpanElement>(null);
     const [hasStarted, setHasStarted] = useState(false);
 
-
-
     useEffect(() => {
+        const currentRef = countUpRef.current;
+        if (!currentRef) return;
+
         const observer = new IntersectionObserver(
             (entries) => {
                 if (entries[0].isIntersecting && !hasStarted) {
                     setTimeout(() => {
-                        const countUp = new CountUp(countUpRef.current, value, {
+                        if (!currentRef) return;
+
+                        const countUp = new CountUp(currentRef, value, {
                             duration: 2.5,
                             separator: ',',
                             prefix: prefix,
@@ -28,6 +38,8 @@ const StatCard = ({ value, prefix = '', suffix = '', delay = 0 }: { value: numbe
                         if (!countUp.error) {
                             countUp.start();
                             setHasStarted(true);
+                        } else {
+                            console.error('CountUp error:', countUp.error);
                         }
                     }, delay);
                 }
@@ -35,294 +47,202 @@ const StatCard = ({ value, prefix = '', suffix = '', delay = 0 }: { value: numbe
             { threshold: 0.3 }
         );
 
-        if (countUpRef.current) {
-            observer.observe(countUpRef.current);
-        }
+        observer.observe(currentRef);
 
-        return () => observer.disconnect();
+        return () => {
+            if (currentRef) {
+                observer.unobserve(currentRef);
+            }
+            observer.disconnect();
+        };
     }, [value, prefix, suffix, hasStarted, delay]);
 
     return <span ref={countUpRef}>0</span>;
 };
 
-const LogisticsStats = ({ initialLocale = 'en' }) => {
-    const searchParams = useSearchParams();
-    const langParam = searchParams.get('lang');
+interface StatData {
+    title: string;
+    value: number;
+    description: string;
+    bgColor: string;
+    textColor: string;
+    accentColor: string;
+    image: string;
+}
 
-    const locale: Locale =
-        langParam === 'en' || langParam === 'vi'
-            ? langParam
-            : initialLocale;
+const LogisticsStats: React.FC = () => {
+    // Sample data - thay bằng translation hook của bạn
+    const stats: StatData[] = [
+        {
+            title: 'Vận chuyển tới',
+            value: 230,
+            description: 'Quốc gia và vùng lãnh thổ',
+            bgColor: '#0A5A99',
+            textColor: '#FFF',
+            accentColor: '#FFA500',
+            image: '/images/globe.jpg' // Thay Unsplash URL
+        },
+        {
+            title: 'Vận chuyển',
+            value: 50000,
+            description: 'Container/năm',
+            bgColor: '#FFA500',
+            textColor: '#FFF',
+            accentColor: '#FFF',
+            image: '/images/container.jpg'
+        },
+        {
+            title: 'Xuất khẩu',
+            value: 1200000,
+            description: 'Tấn hàng hóa/năm',
+            bgColor: '#1B8FAD',
+            textColor: '#FFF',
+            accentColor: '#FFF',
+            image: '/images/ship.jpg'
+        },
+        {
+            title: 'Tổng diện tích',
+            value: 500000,
+            description: 'm² kho bãi',
+            bgColor: '#4A4A4A',
+            textColor: '#FFF',
+            accentColor: '#FFA500',
+            image: '/images/warehouse.jpg'
+        }
+    ];
 
-    const { t } = useTranslations(locale);
     return (
-        <div style={{
-            padding: '40px 20px',
-            backgroundColor: '#0D2840',
-            minHeight: '100vh',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-        }}>
-            <div style={{
-                maxWidth: '1400px',
-                width: '100%',
-                margin: '0 auto'
-            }}>
-                {/* Grid Container - 2 hàng */}
-                <div style={{
-                    display: 'grid',
-                    gap: '20px'
-                }}>
-                    {/* Hàng 1 - 2 card: 1 card lớn bên trái + 1 card nhỏ bên phải */}
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: '1.3fr 1fr',
-                        gap: '20px',
-                        height: '330px'
-                    }}>
-                        {/* Card 1 - Vận chuyển tới 230 - CARD LỚN */}
-                        <div style={{
-                            position: 'relative',
-                            borderRadius: '20px',
-                            overflow: 'hidden',
-                            backgroundColor: '#0A5A99',
-                            padding: '50px',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'flex-start',
-                            boxShadow: '0 10px 30px rgba(0,0,0,0.3)'
-                        }}>
-                            {/* Globe Image - ở phần phải */}
-                            <div style={{
-                                position: 'absolute',
-                                right: '-50px',
-                                top: '50%',
-                                transform: 'translateY(-50%)',
-                                width: '380px',
-                                height: '380px',
-                                backgroundImage: 'url(https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=800&q=80)',
-                                backgroundSize: 'cover',
-                                backgroundPosition: 'center',
-                                borderRadius: '50%',
-                                opacity: 0.95,
-                                zIndex: 0
-                            }} />
+        <div className="bg-[#0D2840] min-h-screen flex items-center justify-center p-5 md:p-10">
+            <div className="max-w-7xl w-full mx-auto">
+                {/* Grid Container */}
+                <div className="grid gap-5">
+                    {/* Row 1 - Desktop: 2 cards (1 large + 1 small) */}
+                    <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-5">
+                        {/* Card 1 - Large */}
+                        <div
+                            className="relative rounded-3xl overflow-hidden p-10 md:p-12 flex flex-col justify-start shadow-2xl min-h-[300px] lg:min-h-[330px]"
+                            style={{ backgroundColor: stats[0].bgColor }}
+                        >
+                            {/* Globe Image */}
+                            <div
+                                className="absolute -right-12 top-1/2 -translate-y-1/2 w-80 h-80 lg:w-96 lg:h-96 rounded-full opacity-95"
+                                style={{
+                                    backgroundImage: `url(https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=800&q=80)`,
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center'
+                                }}
+                                role="img"
+                                aria-label="Global network illustration"
+                            />
 
-                            <div style={{ position: 'relative', zIndex: 1 }}>
-                                <p style={{
-                                    margin: '0 0 15px 0',
-                                    fontSize: '18px',
-                                    fontWeight: '600',
-                                    color: '#FFF',
-                                    opacity: 0.95
-                                }}>
-                                    {t('components.stats.title-1')}
+                            <div className="relative z-10">
+                                <p className="mb-4 text-base md:text-lg font-semibold text-white opacity-95">
+                                    {stats[0].title}
                                 </p>
-                                <h2 style={{
-                                    margin: '0 0 15px 0',
-                                    fontSize: '90px',
-                                    fontWeight: 'bold',
-                                    color: '#FFA500',
-                                    lineHeight: '1',
-                                    letterSpacing: '-2px'
-                                }}>
-                                    <StatCard value={parseInt(t('components.stats.stat-1'))} delay={0} />
+                                <h2 className="mb-4 text-6xl md:text-7xl lg:text-8xl font-bold leading-none tracking-tight"
+                                    style={{ color: stats[0].accentColor }}>
+                                    <StatCard value={stats[0].value} delay={0} />
                                 </h2>
-                                <p style={{
-                                    margin: 0,
-                                    fontSize: '17px',
-                                    fontWeight: '600',
-                                    color: '#FFF',
-                                    opacity: 0.95
-                                }}>
-                                    {t('components.stats.desc-1')}
+                                <p className="text-sm md:text-base font-semibold text-white opacity-95">
+                                    {stats[0].description}
                                 </p>
                             </div>
                         </div>
 
-                        {/* Card 2 - Vận chuyển 50,000 Container - CARD NHỎ */}
-                        <div style={{
-                            position: 'relative',
-                            borderRadius: '20px',
-                            overflow: 'hidden',
-                            backgroundColor: '#FFA500',
-                            padding: '40px',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'flex-start',
-                            boxShadow: '0 10px 30px rgba(0,0,0,0.3)'
-                        }}>
-                            {/* Container Image - góc dưới phải */}
-                            <div style={{
-                                position: 'absolute',
-                                right: '20px',
-                                bottom: '20px',
-                                width: '200px',
-                                height: '140px',
-                                backgroundImage: 'url(https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80)',
-                                backgroundSize: 'contain',
-                                backgroundPosition: 'center',
-                                backgroundRepeat: 'no-repeat',
-                                zIndex: 0,
-                                filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.4))'
-                            }} />
+                        {/* Card 2 - Small */}
+                        <div
+                            className="relative rounded-3xl overflow-hidden p-8 md:p-10 flex flex-col justify-start shadow-2xl min-h-[280px] lg:min-h-[330px]"
+                            style={{ backgroundColor: stats[1].bgColor }}
+                        >
+                            {/* Container Image */}
+                            <div
+                                className="absolute right-5 bottom-5 w-48 h-32 lg:w-52 lg:h-36"
+                                style={{
+                                    backgroundImage: `url(https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80)`,
+                                    backgroundSize: 'contain',
+                                    backgroundPosition: 'center',
+                                    backgroundRepeat: 'no-repeat',
+                                    filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.4))'
+                                }}
+                                role="img"
+                                aria-label="Container illustration"
+                            />
 
-                            <div style={{ position: 'relative', zIndex: 1 }}>
-                                <p style={{
-                                    margin: '0 0 10px 0',
-                                    fontSize: '16px',
-                                    fontWeight: '600',
-                                    color: '#FFF',
-                                    opacity: 0.95
-                                }}>
-                                    {t('components.stats.title-2')}
+                            <div className="relative z-10">
+                                <p className="mb-3 text-sm md:text-base font-semibold text-white opacity-95">
+                                    {stats[1].title}
                                 </p>
-                                <h2 style={{
-                                    margin: '0 0 10px 0',
-                                    fontSize: '60px',
-                                    fontWeight: 'bold',
-                                    color: '#FFF',
-                                    lineHeight: '1',
-                                    letterSpacing: '-1px'
-                                }}>
-                                    <StatCard value={parseInt(t('components.stats.stat-2'))} delay={200} />
+                                <h2 className="mb-3 text-5xl md:text-6xl font-bold leading-none tracking-tight"
+                                    style={{ color: stats[1].accentColor }}>
+                                    <StatCard value={stats[1].value} delay={200} />
                                 </h2>
-                                <p style={{
-                                    margin: 0,
-                                    fontSize: '15px',
-                                    fontWeight: '600',
-                                    color: '#FFF',
-                                    opacity: 0.95
-                                }}>
-                                    {t('components.stats.desc-2')}
+                                <p className="text-sm md:text-base font-semibold text-white opacity-95">
+                                    {stats[1].description}
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    {/* Hàng 2 - 2 card ngang bằng nhau */}
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: '1fr 1fr',
-                        gap: '20px',
-                        height: '320px'
-                    }}>
-                        {/* Card 3 - Xuất khẩu 1,200,000 */}
-                        <div style={{
-                            position: 'relative',
-                            borderRadius: '20px',
-                            overflow: 'hidden',
-                            backgroundColor: '#1B8FAD',
-                            padding: '40px',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'flex-start',
-                            boxShadow: '0 10px 30px rgba(0,0,0,0.3)'
-                        }}>
-                            {/* Ship Image - chiếm phần dưới */}
-                            <div style={{
-                                position: 'absolute',
-                                left: '0',
-                                bottom: '-20px',
-                                right: '0',
-                                height: '170px',
-                                backgroundImage: 'url(https://images.unsplash.com/photo-1571610818339-45bebb3682a4?w=800&q=80)',
-                                backgroundSize: 'cover',
-                                backgroundPosition: 'center top',
-                                opacity: 0.9,
-                                zIndex: 0
-                            }} />
+                    {/* Row 2 - 2 equal cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        {/* Card 3 */}
+                        <div
+                            className="relative rounded-3xl overflow-hidden p-8 md:p-10 flex flex-col justify-start shadow-2xl min-h-[280px] lg:min-h-[320px]"
+                            style={{ backgroundColor: stats[2].bgColor }}
+                        >
+                            {/* Ship Image */}
+                            <div
+                                className="absolute left-0 bottom-0 right-0 h-40 md:h-44 opacity-90"
+                                style={{
+                                    backgroundImage: `url(https://images.unsplash.com/photo-1571610818339-45bebb3682a4?w=800&q=80)`,
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center top'
+                                }}
+                                role="img"
+                                aria-label="Ship illustration"
+                            />
 
-                            <div style={{ position: 'relative', zIndex: 1 }}>
-                                <p style={{
-                                    margin: '0 0 10px 0',
-                                    fontSize: '16px',
-                                    fontWeight: '600',
-                                    color: '#FFF',
-                                    opacity: 0.95,
-                                    textAlign: 'right'
-                                }}>
-                                    {t('components.stats.title-2')}
+                            <div className="relative z-10 text-right">
+                                <p className="mb-3 text-sm md:text-base font-semibold text-white opacity-95">
+                                    {stats[2].title}
                                 </p>
-                                <h2 style={{
-                                    margin: '0 0 10px 0',
-                                    fontSize: '70px',
-                                    fontWeight: 'bold',
-                                    color: '#FFF',
-                                    lineHeight: '1',
-                                    textAlign: 'right',
-                                    letterSpacing: '-1px'
-                                }}>
-                                    <StatCard value={parseInt(t('components.stats.stat-2'))} delay={400} />
+                                <h2 className="mb-3 text-5xl md:text-6xl lg:text-7xl font-bold leading-none tracking-tight"
+                                    style={{ color: stats[2].accentColor }}>
+                                    <StatCard value={stats[2].value} delay={400} />
                                 </h2>
-                                <p style={{
-                                    margin: 0,
-                                    fontSize: '15px',
-                                    fontWeight: '600',
-                                    color: '#FFF',
-                                    opacity: 0.95,
-                                    textAlign: 'right'
-                                }}>
-                                    {t('components.stats.desc-2')}
+                                <p className="text-sm md:text-base font-semibold text-white opacity-95">
+                                    {stats[2].description}
                                 </p>
                             </div>
                         </div>
 
-                        {/* Card 4 - Tổng diện tích 500,000 */}
-                        <div style={{
-                            position: 'relative',
-                            borderRadius: '20px',
-                            overflow: 'hidden',
-                            backgroundColor: '#4A4A4A',
-                            padding: '40px',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'flex-start',
-                            boxShadow: '0 10px 30px rgba(0,0,0,0.3)'
-                        }}>
-                            {/* Warehouse/Boxes Image - góc dưới phải */}
-                            <div style={{
-                                position: 'absolute',
-                                right: '0',
-                                bottom: '0',
-                                width: '320px',
-                                height: '220px',
-                                backgroundImage: 'url(https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80)',
-                                backgroundSize: 'cover',
-                                backgroundPosition: 'center',
-                                opacity: 0.85,
-                                zIndex: 0
-                            }} />
+                        {/* Card 4 */}
+                        <div
+                            className="relative rounded-3xl overflow-hidden p-8 md:p-10 flex flex-col justify-start shadow-2xl min-h-[280px] lg:min-h-[320px]"
+                            style={{ backgroundColor: stats[3].bgColor }}
+                        >
+                            {/* Warehouse Image */}
+                            <div
+                                className="absolute right-0 bottom-0 w-72 h-52 md:w-80 md:h-56 opacity-85"
+                                style={{
+                                    backgroundImage: `url(https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80)`,
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center'
+                                }}
+                                role="img"
+                                aria-label="Warehouse illustration"
+                            />
 
-                            <div style={{ position: 'relative', zIndex: 1 }}>
-                                <p style={{
-                                    margin: '0 0 10px 0',
-                                    fontSize: '16px',
-                                    fontWeight: '600',
-                                    color: '#FFF',
-                                    opacity: 0.95
-                                }}>
-                                    {t('components.stats.title-4')}
+                            <div className="relative z-10">
+                                <p className="mb-3 text-sm md:text-base font-semibold text-white opacity-95">
+                                    {stats[3].title}
                                 </p>
-                                <h2 style={{
-                                    margin: '0 0 10px 0',
-                                    fontSize: '70px',
-                                    fontWeight: 'bold',
-                                    color: '#FFA500',
-                                    lineHeight: '1',
-                                    letterSpacing: '-1px'
-                                }}>
-                                    <StatCard value={parseInt(t('components.stats.stat-4'))} delay={600} />
+                                <h2 className="mb-3 text-5xl md:text-6xl lg:text-7xl font-bold leading-none tracking-tight"
+                                    style={{ color: stats[3].accentColor }}>
+                                    <StatCard value={stats[3].value} delay={600} />
                                 </h2>
-                                <p style={{
-                                    margin: 0,
-                                    fontSize: '15px',
-                                    fontWeight: '600',
-                                    color: '#FFF',
-                                    opacity: 0.95
-                                }}>
-                                    {t('components.stats.desc-4')}
+                                <p className="text-sm md:text-base font-semibold text-white opacity-95">
+                                    {stats[3].description}
                                 </p>
                             </div>
                         </div>

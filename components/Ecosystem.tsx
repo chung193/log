@@ -20,7 +20,7 @@ const LogisticsItem: React.FC<LogisticsItemProps> = ({ title, subtitle, descript
                 <div className="des">
                     <p className="des">{title}</p>
                     {description && <p className="sub">{description}</p>}
-                    <div dangerouslySetInnerHTML={{ __html: content }} />
+                    {content && <div dangerouslySetInnerHTML={{ __html: content }} />}
                 </div>
                 {subtitle && <p className="tt">{subtitle}</p>}
             </div>
@@ -97,14 +97,14 @@ const CircleIcon: React.FC<CircleIconProps> = ({ src, alt, angle }) => {
     );
 };
 
-const Ecosystem: React.FC = ({ initialLocale = 'en' }) => {
+const Ecosystem: React.FC = () => {
     const searchParams = useSearchParams();
     const langParam = searchParams.get('lang');
 
     const locale: Locale =
         langParam === 'en' || langParam === 'vi'
             ? langParam
-            : initialLocale;
+            : 'en';
 
     const { t } = useTranslations(locale);
 

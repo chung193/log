@@ -40,17 +40,15 @@ const CrossBorderTruckingPage: React.FC = () => {
                         className="attachment-full size-full"
                         alt="Sea Freight EXPEDITORS GLOBAL"
                         decoding="async"
-                        fetchPriority="high"
+
                         srcSet="/images/banner4.jpg 1728w, /images/banner4-300x139.jpg 300w, /images/banner4-1024x474.jpg 1024w, /images/banner4-768x356.jpg 768w, /images/banner4-1536x711.jpg 1536w"
                     />
                 </div>
                 <div className="container">
                     <div className="bn-big-ctn">
                         <SiteBreadcrumb
-                            initialLocale={initialLocale}
                             className=''
-                            items={breadcrumbItems[initialLocale as 'vi' | 'en']}
-                            currentPage="Giải pháp Kho vận"
+                            items={breadcrumbItems[locale as 'vi' | 'en']}
                         />
                         <h1 className="bn-big-tt add-class text-verti mb-24 is-inview">
                             {t("pages.trucking.title")} <br />

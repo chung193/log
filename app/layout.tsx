@@ -4,13 +4,18 @@ import Footer from '@/components/Footer';
 import BackToTop from '@/components/BackToTop';
 import Header from '@/components/Header';
 import ReduxProvider from '@/redux/ReduxProvider';
+import { ReactNode } from 'react';
 
 export const metadata = {
   title: 'EXPEDITORS GLOBAL - Giải pháp cho doanh nghiệp',
   description: 'EXPEDITORS GLOBAL - Cung cấp các giải pháp toàn trình, vận chuyển Quốc tế, kho vận, TMĐT Quốc tế và Xuất Nhập khẩu cho doanh nghiệp.',
 }
 
-export default function RootLayout({ children }) {
+interface RootLayoutProps {
+  children: ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="vi-VN">
       <head>
