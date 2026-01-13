@@ -11,7 +11,7 @@ import { useSearchParams } from 'next/navigation';
 import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
 
-const SolutionSlider = ({ initialLocale = 'en' }) => {
+const SolutionSlider = () => {
     const swiperRef = useRef(null);
 
 
@@ -21,7 +21,7 @@ const SolutionSlider = ({ initialLocale = 'en' }) => {
     const locale: Locale =
         langParam === 'en' || langParam === 'vi'
             ? langParam
-            : initialLocale;
+            : 'en';
 
     const { t } = useTranslations(locale);
 

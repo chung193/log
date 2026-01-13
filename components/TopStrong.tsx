@@ -5,7 +5,7 @@ import './TopStrong.css';
 import { useSearchParams } from 'next/navigation';
 import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
-const TopStrong = ({ initialLocale = 'en' }) => {
+const TopStrong = () => {
     const swiperRef = useRef<HTMLDivElement>(null);
     const swiperInstance = useRef<any>(null);
     const searchParams = useSearchParams();
@@ -14,7 +14,7 @@ const TopStrong = ({ initialLocale = 'en' }) => {
     const locale: Locale =
         langParam === 'en' || langParam === 'vi'
             ? langParam
-            : initialLocale;
+            : 'en';
 
     const { t } = useTranslations(locale);
     useEffect(() => {

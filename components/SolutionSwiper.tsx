@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Swiper as SwiperType } from 'swiper'; // Đây là type import
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -9,9 +10,10 @@ import "swiper/css/autoplay";
 import { useSearchParams } from 'next/navigation';
 import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
-const SolutionSwiper = ({ initialLocale = 'en' }) => {
-    const navigationPrevRef = useRef(null);
-    const navigationNextRef = useRef(null);
+
+const SolutionSwiper = () => {
+    const navigationPrevRef = useRef<HTMLDivElement>(null);
+    const navigationNextRef = useRef<HTMLDivElement>(null);
 
     const searchParams = useSearchParams();
     const langParam = searchParams.get('lang');
@@ -19,7 +21,7 @@ const SolutionSwiper = ({ initialLocale = 'en' }) => {
     const locale: Locale =
         langParam === 'en' || langParam === 'vi'
             ? langParam
-            : initialLocale;
+            : 'en';
 
     const { t } = useTranslations(locale);
 
@@ -74,11 +76,13 @@ const SolutionSwiper = ({ initialLocale = 'en' }) => {
                     disableOnInteraction: false,
                 }}
                 loop={true}
-                onSwiper={(swiper) => {
+                onSwiper={(swiper: SwiperType) => { // Thêm type ở đây
                     // Delay để đảm bảo refs đã được set
                     setTimeout(() => {
-                        swiper.params.navigation.prevEl = navigationPrevRef.current;
-                        swiper.params.navigation.nextEl = navigationNextRef.current;
+                        if (swiper.params.navigation && typeof swiper.params.navigation !== 'boolean') {
+                            swiper.params.navigation.prevEl = navigationPrevRef.current;
+                            swiper.params.navigation.nextEl = navigationNextRef.current;
+                        }
                         swiper.navigation.init();
                         swiper.navigation.update();
                     });

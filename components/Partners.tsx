@@ -6,7 +6,7 @@ import { useSearchParams } from 'next/navigation';
 import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
 
-const Partners = ({ initialLocale = 'en' }) => {
+const Partners = () => {
     const swiperRef1 = useRef<HTMLDivElement>(null);
     const swiperRef2 = useRef<HTMLDivElement>(null);
     const swiperInstance1 = useRef<any>(null);
@@ -18,7 +18,7 @@ const Partners = ({ initialLocale = 'en' }) => {
     const locale: Locale =
         langParam === 'en' || langParam === 'vi'
             ? langParam
-            : initialLocale;
+            : 'en';
 
     const { t } = useTranslations(locale);
 

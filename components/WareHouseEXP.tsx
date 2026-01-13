@@ -5,7 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
 
-const WareHouseEXP = ({ initialLocale = 'en' }) => {
+const WareHouseEXP = () => {
     const [activeTab, setActiveTab] = useState<"vietnam" | "china">("vietnam");
     const [activePin, setActivePin] = useState("vinhphuc");
 
@@ -15,7 +15,7 @@ const WareHouseEXP = ({ initialLocale = 'en' }) => {
     const locale: Locale =
         langParam === 'en' || langParam === 'vi'
             ? langParam
-            : initialLocale;
+            : 'en';
 
     const { t } = useTranslations(locale);
 

@@ -5,7 +5,7 @@ import { Locale } from '@/lib/i18n';
 import FindMoreButton from "./FindMoreButton";
 import './SolutionCarousel.css';
 
-const SolutionCarousel: React.FC = ({ initialLocale = 'en' }) => {
+const SolutionCarousel: React.FC = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const searchParams = useSearchParams();
     const langParam = searchParams.get('lang');
@@ -13,7 +13,7 @@ const SolutionCarousel: React.FC = ({ initialLocale = 'en' }) => {
     const locale: Locale =
         langParam === 'en' || langParam === 'vi'
             ? langParam
-            : initialLocale;
+            : 'en';
 
     const { t } = useTranslations(locale);
     const slides = [
@@ -155,7 +155,7 @@ const SolutionCarousel: React.FC = ({ initialLocale = 'en' }) => {
                                     {slide.description}
                                 </p>
 
-                                <FindMoreButton link={slide.link} label={t("components.button.find-more")} />
+                                <FindMoreButton href={slide.link} label={t("components.button.find-more")} />
                             </div>
 
                         </div>

@@ -2,14 +2,14 @@ import React from "react";
 import { useSearchParams } from 'next/navigation';
 import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
-const WareHouse = ({ initialLocale = 'en' }) => {
+const WareHouse = () => {
     const searchParams = useSearchParams();
     const langParam = searchParams.get('lang');
 
     const locale: Locale =
         langParam === 'en' || langParam === 'vi'
             ? langParam
-            : initialLocale;
+            : 'en';
 
     const { t } = useTranslations(locale);
     const warehouseItems = [

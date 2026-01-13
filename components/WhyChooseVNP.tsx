@@ -4,7 +4,7 @@ import { useSearchParams } from 'next/navigation';
 import { useTranslations } from '@/hooks/useTranslations';
 import { Locale } from '@/lib/i18n';
 
-const why_choose_us = ({ initialLocale = 'en' }) => {
+const why_choose_us = () => {
     const [hoveredId, setHoveredId] = useState<number | null>(null);
 
     const searchParams = useSearchParams();
@@ -13,7 +13,7 @@ const why_choose_us = ({ initialLocale = 'en' }) => {
     const locale: Locale =
         langParam === 'en' || langParam === 'vi'
             ? langParam
-            : initialLocale;
+            : 'en';
 
     const { t } = useTranslations(locale);
 

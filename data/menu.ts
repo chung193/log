@@ -1,3 +1,5 @@
+import { Locale } from "@/lib/i18n"
+
 // data/menu.ts
 export interface MenuItem {
     id: string
@@ -140,20 +142,127 @@ const menuData: MenuItem[] = [
     },
 ]
 
-// Hàm để lấy menu theo locale
-export const getMenuByLocale = (locale: Locale): MenuItem[] => {
-    return menuData.map(item => ({
-        ...item,
-        name: locale === 'en' ? item.nameEn : item.name,
-        submenu: item.submenu?.map(subItem => ({
-            ...subItem,
-            name: locale === 'en' ? subItem.nameEn : subItem.name,
-            submenu: subItem.submenu?.map(subSubItem => ({
-                ...subSubItem,
-                name: locale === 'en' ? subSubItem.nameEn : subSubItem.name
-            }))
-        }))
-    }));
+// Helper function để lấy text theo locale
+const getLocalizedText = (item: MenuItem, locale: Locale): string => {
+    return locale === 'en' ? item.nameEn : item.name
 }
 
-export default menuData;
+// Recursive function để map menu với đa ngôn ngữ
+const mapMenuRecursive = (items: MenuItem[], locale: Locale): MenuItem[] => {
+    return items.map(item => ({
+        ...item,
+        name: getLocalizedText(item, locale),
+        submenu: item.submenu ? mapMenuRecursive(item.submenu, locale) : undefined
+    }))
+}
+
+// Hàm chính để lấy menu theo locale
+export const getMenuByLocale = (locale: Locale): MenuItem[] => {
+    return mapMenuRecursive(menuData, locale)
+}
+
+// Hàm để tìm menu item theo path
+export const findMenuItemByPath = (path: string, locale: Locale = 'vi'): MenuItem | null => {
+    const searchRecursive = (items: MenuItem[]): MenuItem | null => {
+        for (const item of items) {
+            if (item.href === path) {
+                return { ...item, name: getLocalizedText(item, locale) }
+            }
+            if (item.submenu) {
+                const found = searchRecursive(item.submenu)
+                if (found) return found
+            }
+        }
+        return null
+    }
+
+    return searchRecursive(menuData)
+}
+
+// Hàm để lấy breadcrumb path
+export const getBreadcrumbPath = (path: string, locale: Locale = 'vi'): MenuItem[] => {
+    const result: MenuItem[] = []
+
+    const searchRecursive = (items: MenuItem[], parents: MenuItem[] = []): boolean => {
+        for (const item of items) {
+            const currentPath = [...parents, item]
+
+            if (item.href === path) {
+                result.push(...currentPath.map(p => ({
+                    ...p,
+                    name: getLocalizedText(p, locale)
+                })))
+                return true
+            }
+
+            if (item.submenu && searchRecursive(item.submenu, currentPath)) {
+                return true
+            }
+        }
+        return false
+    }
+
+    searchRecursive(menuData)
+    return result
+}
+
+// Cache để tối ưu performance
+let cachedMenu: Record<string, MenuItem[]> = {}
+
+// Hàm lấy menu với cache
+export const getMenuByLocaleMemoized = (locale: Locale): MenuItem[] => {
+    if (!cachedMenu[locale]) {
+        cachedMenu[locale] = getMenuByLocale(locale)
+    }
+    return cachedMenu[locale]
+}
+
+// Hàm clear cache khi cần
+export const clearMenuCache = (): void => {
+    cachedMenu = {}
+}
+
+// Hàm validate menu data (chỉ chạy trong development)
+const validateMenuData = (): void => {
+    if (process.env.NODE_ENV !== 'development') return
+
+    const ids = new Set<string>()
+
+    const validateRecursive = (items: MenuItem[], level = 0): boolean => {
+        for (const item of items) {
+            // Check duplicate ID
+            if (ids.has(item.id)) {
+                console.warn(`[Menu Validation] Duplicate menu ID: ${item.id}`)
+                return false
+            }
+            ids.add(item.id)
+
+            // Check href hợp lệ
+            if (item.href === 'javascript:;' && !item.hasChildren && !item.submenu?.length) {
+                console.warn(`[Menu Validation] Menu item "${item.id}" has javascript href but no children`)
+            }
+
+            // Check consistency giữa hasChildren và submenu
+            if (item.hasChildren && (!item.submenu || item.submenu.length === 0)) {
+                console.warn(`[Menu Validation] Menu item "${item.id}" has hasChildren=true but no submenu`)
+            }
+
+            if (!item.hasChildren && item.submenu && item.submenu.length > 0) {
+                console.warn(`[Menu Validation] Menu item "${item.id}" has submenu but hasChildren=false`)
+            }
+
+            // Validate submenu
+            if (item.submenu && !validateRecursive(item.submenu, level + 1)) {
+                return false
+            }
+        }
+        return true
+    }
+
+    validateRecursive(menuData)
+}
+
+// Chạy validation trong development
+validateMenuData()
+
+export default menuData

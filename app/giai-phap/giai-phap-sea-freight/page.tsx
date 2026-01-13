@@ -292,8 +292,8 @@ const SeaFreightPage = () => {
                                         </div>
                                     </div>
 
-                                    <Partners initialLocale={'en'} />
-                                    <TopStrong initialLocale={'en'} />
+                                    <Partners />
+                                    <TopStrong />
 
                                 </div>
                             </div>

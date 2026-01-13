@@ -7,7 +7,7 @@ type LogisticsCarouselItems = {
     bottomImage: string;
 };
 
-const LogisticsCarouselItems: React.FC<LogisticsGridProps> = ({
+const LogisticsCarouselItems: React.FC<LogisticsCarouselItems> = ({
     topImage,
     logoImage,
     bottomImage
