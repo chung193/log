@@ -51,14 +51,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
       </head>
       <body className="home page-template page-template-page-template page-template-home-template page-template-page-templatehome-template-php page page-id-8 wp-custom-logo desktop-detect">
-        <Suspense fallback={<div>Loading...</div>}>
-          <ReduxProvider>
-            <Header />
-            {children}
-            <Footer />
-            <BackToTop />
-          </ReduxProvider>
-        </Suspense>
+        {/* <Suspense fallback={<div>Loading...</div>}> */}
+        <ReduxProvider>
+          <Header />
+          {children}
+          <Footer />
+          <BackToTop />
+        </ReduxProvider>
+        {/* </Suspense> */}
         {/* JS Files */}
         <script src="/js/language-cookie.js" defer></script>
         <script src="/js/jquery.js"></script>

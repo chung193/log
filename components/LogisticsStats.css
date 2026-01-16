@@ -1,0 +1,32 @@
+.container {
+    width: 100%;
+    max-width: 123rem;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.homes-four-wrap {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+@media screen and (max-width: 1200px) {
+    .homes-four-grids {
+        gap: 0.6rem;
+    }
+}
+
+.homes-four-grids {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% calc(2/12*100%) calc(4/12*100%);
+    grid-template-columns: 50% calc(2 / 12 * 100%) calc(4 / 12 * 100%);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.2rem;
+    margin: calc(-1 * 1.2rem);
+}
