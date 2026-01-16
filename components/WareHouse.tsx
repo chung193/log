@@ -16,7 +16,7 @@ const WareHouse = () => {
         {
             id: 1,
             title: t("components.warehouse.item1-title"),
-            link: "/kho-ngoai-quan-vmi-giai-phap-toi-uu-cho-doanh-nghiep",
+            link: "javascript:;",
             image: "/images/store1.webp",
             description: t("components.warehouse.item1-des"),
             width: 278,
@@ -25,7 +25,7 @@ const WareHouse = () => {
         {
             id: 2,
             title: t("components.warehouse.item2-title"),
-            link: "/kho-ngoai-quan-xuat-nhap-khau-tai-cho-vietnam-post-logistics/",
+            link: "javascript:;",
             image: "/images/store2.webp",
             description: t("components.warehouse.item2-des"),
             width: 278,
@@ -34,7 +34,7 @@ const WareHouse = () => {
         {
             id: 3,
             title: t("components.warehouse.item3-title"),
-            link: "/kho-phan-phoi-vietnam-post-logistics/",
+            link: "javascript:;",
             image: "/images/store3.webp",
             description: t("components.warehouse.item3-des"),
             width: 278,
@@ -43,7 +43,7 @@ const WareHouse = () => {
         {
             id: 4,
             title: t("components.warehouse.item4-title"),
-            link: "/kho-fulfillment-giai-phap-toi-uu-cho-thuong-mai-dien-tu/",
+            link: "javascript:;",
             image: "/images/store4.webp",
             description: t("components.warehouse.item4-des"),
             width: 278,
@@ -52,7 +52,7 @@ const WareHouse = () => {
         {
             id: 5,
             title: t("components.warehouse.item5-title"),
-            link: "/kho-nguyen-vat-lieu-tho-cho-cac-nha-may/",
+            link: "javascript:;",
             image: "/images/store5.webp",
             description: t("components.warehouse.item5-des"),
             width: 278,

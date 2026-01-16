@@ -82,17 +82,17 @@ export default function Header() {
 
     const socialLinks = useMemo(() => [
         {
-            href: 'https://www.facebook.com/VietnamPostLogisticsCompany',
+            href: 'https://www.facebook.com/',
             icon: 'ic-fb.svg',
             alt: 'Facebook'
         },
         {
-            href: 'https://www.linkedin.com/company/vietnam-post-logistics/',
+            href: 'https://www.linkedin.com/',
             icon: 'ic-ins.svg',
             alt: 'LinkedIn'
         },
         {
-            href: 'https://www.tiktok.com/@vietnampostlogistics',
+            href: 'https://www.tiktok.com/',
             icon: 'ic-tiktok.svg',
             alt: 'TikTok'
         },

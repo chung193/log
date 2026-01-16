@@ -108,7 +108,7 @@ const Ecosystem: React.FC = () => {
 
     const { t } = useTranslations(locale);
 
-    debugger
+
     const circleIcons: CircleIconProps[] = [
         {
             src: '/images/ic-1.svg',

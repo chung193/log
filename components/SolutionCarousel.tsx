@@ -21,31 +21,31 @@ const SolutionCarousel: React.FC = () => {
             title: t('components.solution.slides.slide_1_title'),
             description: t('components.solution.slides.slide_1_desc'),
             image: '/images/kv.jpg',
-            link: '/giai-phap/giai-phap-kho-van/'
+            link: "javascript:;",
         },
         {
             title: t('components.solution.slides.slide_2_title'),
             description: t('components.solution.slides.slide_2_desc'),
             image: '/images/Untitled-1-1.jpg',
-            link: '/giai-phap/giai-phap-sea-freight/'
+            link: "javascript:;",
         },
         {
             title: t('components.solution.slides.slide_3_title'),
             description: t('components.solution.slides.slide_3_desc'),
             image: '/images/Untitled-1-1.jpg',
-            link: '/giai-phap/giai-phap-sea-freight/'
+            link: "javascript:;",
         },
         {
             title: t('components.solution.slides.slide_4_title'),
             description: t('components.solution.slides.slide_4_desc'),
             image: '/images/Untitled-1-1.jpg',
-            link: '/giai-phap/giai-phap-sea-freight/'
+            link: "javascript:;",
         },
         {
             title: t('components.solution.slides.slide_5_title'),
             description: t('components.solution.slides.slide_5_desc'),
             image: '/images/Untitled-1-1.jpg',
-            link: '/giai-phap/giai-phap-sea-freight/'
+            link: "javascript:;",
         }
     ];
     return (

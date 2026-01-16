@@ -27,7 +27,7 @@ const EXPTrustSlide = () => {
             id: 1,
             title: t("components.exp-trust.sl1-title"),
             image: "/images/exp1.jpg",
-            link: "/uy-thac-nhap-khau-vietnam-post-logistics/",
+            link: "javascript:;",
             alt: "Bãi containers",
             description: t("components.exp-trust.sl1")
         },
@@ -35,7 +35,7 @@ const EXPTrustSlide = () => {
             id: 2,
             title: t("components.exp-trust.sl2-title"),
             image: "/images/exp2.jpg",
-            link: "/uy-thac-xuat-khau-vietnam-post-logistics/",
+            link: "javascript:;",
             alt: "thùng hàng carton và pallet",
             description: t("components.exp-trust.sl2")
         },
@@ -43,7 +43,7 @@ const EXPTrustSlide = () => {
             id: 3,
             title: t("components.exp-trust.sl3-title"),
             image: "/images/exp3.webp",
-            link: "/ho-tro-khai-bao-hai-quan-vietnam-post-logistics/",
+            link: "javascript:;",
             alt: "Bê thùng hàng",
             description: t("components.exp-trust.sl3")
         },
@@ -51,7 +51,7 @@ const EXPTrustSlide = () => {
             id: 4,
             title: t("components.exp-trust.sl4-title"),
             image: "/images/exp4.webp",
-            link: "/tu-van-chinh-sach-xuat-nhap-khau-vietnam-post-logistics/",
+            link: "javascript:;",
             alt: "sân bay",
             description: t("components.exp-trust.sl4")
         }

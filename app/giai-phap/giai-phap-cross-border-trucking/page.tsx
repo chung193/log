@@ -11,12 +11,12 @@ import ListServices from '@/components/ListServices';
 const CrossBorderTruckingPage: React.FC = () => {
     const breadcrumbItems = {
         'vi': [
-            { text: "Giải pháp", link: "/giai-phap" },
-            { text: "Giải pháp Kho vận", link: "/giai-phap/giai-phap-kho-van", isActive: true }
+            { text: "Giải pháp", link: "javascript:;" },
+            { text: "Giải pháp Kho vận", link: "javascript:;", isActive: true }
         ],
         'en': [
-            { text: "Solutions", link: "/solutions" },
-            { text: "Warehouse Solutions", link: "/solutions/warehouse", isActive: true }
+            { text: "Solutions", link: "javascript:;" },
+            { text: "Warehouse Solutions", link: "javascript:;", isActive: true }
         ]
     };
 
@@ -166,15 +166,10 @@ const CrossBorderTruckingPage: React.FC = () => {
                                             <div className="txt">{t("pages.trucking.second-sub-title")}</div>
                                         </div>
                                         <div className="ctn">
-                                            <p className="des"></p>
                                             <div dangerouslySetInnerHTML={{ __html: t("pages.trucking.second-sub-title-des") }} />
-
-                                            <p></p>
                                         </div>
                                     </div>
-                                    <p className="inter-solve-des"></p>
                                     <div dangerouslySetInnerHTML={{ __html: t("pages.trucking.sub-des") }} />
-                                    <p></p>
 
                                     <div className="inter-solve-box">
                                         <div className="row">

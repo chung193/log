@@ -30,21 +30,21 @@ const SolutionSwiper = () => {
             id: 1,
             title: "",
             image: "/images/storage1.jpg",
-            link: "/dich-vu-van-chuyen-noi-dia/",
+            link: "javascript:;",
             description: t("components.solution-swiper.title1")
         },
         {
             id: 2,
             title: "",
             image: "/images/storage2.jpg",
-            link: "/van-chuyen-xuyen-bien-gioi-asean/",
+            link: "javascript:;",
             description: t("components.solution-swiper.title2")
         },
         {
             id: 3,
             title: "",
             image: "/images/storage3.jpg",
-            link: "/giai-phap-van-tai-duong-bo-da-dang-linh-hoat-theo-yeu-cau/",
+            link: "javascript:;",
             description: t("components.solution-swiper.title3")
         }
     ];

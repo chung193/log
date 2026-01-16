@@ -30,7 +30,7 @@ const SolutionSlider = () => {
             id: 1,
             title: "Vận chuyển T11/T01",
             image: "/images/storage1.webp",
-            link: "/giai-phap-thuong-mai-dien-tu-t86/",
+            link: "javascript:;",
             alt: "Vận chuyển T11/T01",
             description: t("pages.e-commerce.item1")
         },
@@ -38,7 +38,7 @@ const SolutionSlider = () => {
             id: 2,
             title: "Vận chuyển FEDEX/UPS/DHL",
             image: "/images/storage2.webp",
-            link: "/giai-phap-van-chuyen-thuong-mai-dien-tu-quoc-te/",
+            link: "javascript:;",
             alt: "Vận chuyển FEDEX/UPS/DHL",
             description: t("pages.e-commerce.item2")
         },
@@ -46,7 +46,7 @@ const SolutionSlider = () => {
             id: 3,
             title: "Vận chuyển ECCF",
             image: "/images/anhkhac.webp",
-            link: "/van-chuyen-eccf/",
+            llink: "javascript:;",
             alt: "Vận chuyển ECCF",
             description: t("pages.e-commerce.item3")
         },
@@ -54,7 +54,7 @@ const SolutionSlider = () => {
             id: 3,
             title: "Vận chuyển ECCF",
             image: "/images/storage3.webp",
-            link: "/van-chuyen-eccf/",
+            link: "javascript:;",
             alt: "Vận chuyển ECCF",
             description: t("pages.e-commerce.item4")
         }

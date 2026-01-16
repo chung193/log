@@ -12,13 +12,13 @@ import { Locale } from '@/lib/i18n';
 const ECommerceSolutionsPage = () => {
   const breadcrumbItems = {
     'vi': [
-      { text: "Giải pháp", link: "/giai-phap" },
-      { text: "Giải pháp Kho vận", link: "/giai-phap/giai-phap-kho-van", isActive: true }
+      { text: "Giải pháp", link: "javascript:;" },
+      { text: "Giải pháp Kho vận", link: "javascript:;", isActive: true }
     ],
     'en': [
-      { text: "Solutions", link: "/solutions" },
+      { text: "Solutions", link: "javascript:;" },
       {
-        text: " International e-commerce", link: "/solutions/warehouse", isActive: true
+        text: " International e-commerce", link: "javascript:;", isActive: true
       }
     ]
   };

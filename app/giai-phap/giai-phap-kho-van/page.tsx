@@ -27,13 +27,13 @@ const ContractLogisticsWarehousingPage = () => {
 
     const breadcrumbItems = {
         'vi': [
-            { text: "Giải pháp", link: "/giai-phap" },
-            { text: "Giải pháp Kho vận", link: "/giai-phap/giai-phap-kho-van", isActive: true }
+            { text: "Giải pháp", link: "javascript:;" },
+            { text: "Giải pháp Kho vận", link: "javascript:;", isActive: true }
         ],
         'en': [
-            { text: "Solutions", link: "/solutions" },
+            { text: "Solutions", link: "javascript:;" },
             {
-                text: "Contract Logistics", link: "/solutions/warehouse", isActive: true
+                text: "Contract Logistics", link: "javascript:;", isActive: true
             }
         ]
     };

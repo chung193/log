@@ -23,11 +23,11 @@ const AboutPage = () => {
     const breadcrumbItems = {
         vi: [
             { text: "Công ty", link: "javascript:;" },
-            { text: "Về chúng tôi", link: "/cong-ty/ve-chung-toi", isActive: true }
+            { text: "Về chúng tôi", link: "javascript:;", isActive: true }
         ],
         en: [
             { text: "Company", link: "javascript:;" },
-            { text: "About us", link: "/cong-ty/ve-chung-toi", isActive: true }
+            { text: "About us", link: "javascript:;", isActive: true }
         ]
     };
 
