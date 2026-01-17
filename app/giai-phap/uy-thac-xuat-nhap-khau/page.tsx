@@ -12,11 +12,13 @@ const ImportExportSolution = () => {
     const breadcrumbItems = {
         'vi': [
             { text: "Giải pháp", link: "javascript:;" },
-            { text: "Giải pháp Kho vận", link: "javascript:;", isActive: true }
+            { text: "Xuất nhập khẩu", link: "javascript:;" },
+            { text: "Ủy thác xuất nhập khẩu", link: "javascript:;", isActive: true }
         ],
         'en': [
             { text: "Solutions", link: "javascript:;" },
-            { text: "Warehouse Solutions", link: "javascript:;", isActive: true }
+            { text: "Export and import", link: "javascript:;" },
+            { text: "Import - Export Solution", link: "javascript:;", isActive: true }
         ]
     }
 

@@ -17,7 +17,7 @@ const WareHouse = () => {
             id: 1,
             title: t("components.warehouse.item1-title"),
             link: "javascript:;",
-            image: "/images/store1.webp",
+            image: "/images/store1.png",
             description: t("components.warehouse.item1-des"),
             width: 278,
             height: 190
@@ -26,7 +26,7 @@ const WareHouse = () => {
             id: 2,
             title: t("components.warehouse.item2-title"),
             link: "javascript:;",
-            image: "/images/store2.webp",
+            image: "/images/store2.png",
             description: t("components.warehouse.item2-des"),
             width: 278,
             height: 190
@@ -35,7 +35,7 @@ const WareHouse = () => {
             id: 3,
             title: t("components.warehouse.item3-title"),
             link: "javascript:;",
-            image: "/images/store3.webp",
+            image: "/images/store3.png",
             description: t("components.warehouse.item3-des"),
             width: 278,
             height: 190
@@ -44,7 +44,7 @@ const WareHouse = () => {
             id: 4,
             title: t("components.warehouse.item4-title"),
             link: "javascript:;",
-            image: "/images/store4.webp",
+            image: "/images/store4.png",
             description: t("components.warehouse.item4-des"),
             width: 278,
             height: 190
@@ -53,7 +53,7 @@ const WareHouse = () => {
             id: 5,
             title: t("components.warehouse.item5-title"),
             link: "javascript:;",
-            image: "/images/store5.webp",
+            image: "/images/store5.png",
             description: t("components.warehouse.item5-des"),
             width: 278,
             height: 190

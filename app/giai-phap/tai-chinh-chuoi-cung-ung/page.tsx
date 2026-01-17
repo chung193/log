@@ -15,7 +15,8 @@ const ExportImportPage: React.FC = () => {
         ],
         'en': [
             { text: "Solutions", link: "javascript:;" },
-            { text: "Domestic Logistics", link: "javascript:;e", isActive: true }
+            { text: "Export and import", link: "javascript:;e" },
+            { text: "Supply Chain Finance", link: "javascript:;e", isActive: true }
         ]
     }
 
@@ -248,7 +249,7 @@ const ExportImportPage: React.FC = () => {
                                 <img
                                     width="1281"
                                     height="498"
-                                    src="/images/Group-2144769115.webp"
+                                    src="/images/Group-2144769115.png"
                                     className="attachment-full size-full"
                                     alt=""
                                     decoding="async"

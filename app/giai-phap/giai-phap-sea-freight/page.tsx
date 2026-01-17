@@ -64,8 +64,9 @@ const SeaFreightPage = () => {
                         />
 
                         <h1 className="bn-big-tt add-class text-verti mb-24 is-inview">
-                            {t("pages.sea-freight.title")} <br />
-                            {t("pages.sea-freight.second-title")}
+                            {t("pages.sea-freight.second-title")}<br />
+                            {t("pages.sea-freight.title")}
+
                         </h1>
                         <p className="bn-big-des aos-init aos-animate" data-aos="fade-up-cus">
                             {t("pages.sea-freight.sub-title")}
@@ -80,7 +81,7 @@ const SeaFreightPage = () => {
                 <div className="inter-solve ss-pd solv-freight">
                     <div className="container">
                         <div className="inter-solve-row row">
-                            <ListServices />
+                            <ListServices activeIndex={0} />
                             <div className="inter-solve-main col">
                                 <div className="side-open">
                                     <div className="side-open-wrap">

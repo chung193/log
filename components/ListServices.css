@@ -1,0 +1,10 @@
+.inter-solve-menu-link.active::after {
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    background-image: url(../public/images/ic-chevron.svg) !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

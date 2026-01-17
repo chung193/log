@@ -474,12 +474,12 @@ const InlandLogisticsPage: React.FC = () => {
                                         <img
                                             width="954"
                                             height="1226"
-                                            src="/images/axctn-1.webp"
+                                            src="/images/car.jpg"
                                             className="attachment-full size-full"
                                             alt=""
                                             decoding="async"
                                             loading="lazy"
-                                            srcSet="/images/axctn-1.webp 954w, /images/axctn-1-233x300.webp 233w, /images/axctn-1-797x1024.webp 797w, /images/axctn-1-768x987.webp 768w"
+                                            srcSet="/images/car.jpg 954w, /images/axctn-1-233x300.webp 233w, /images/axctn-1-797x1024.webp 797w, /images/axctn-1-768x987.webp 768w"
                                         />
                                     </div>
                                 </div>

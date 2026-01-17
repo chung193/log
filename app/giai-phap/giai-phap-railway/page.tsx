@@ -325,7 +325,7 @@ const RailwaySolutionPage: React.FC = () => {
                     <div className="container">
                         <div className="inter-solve-row row">
                             <div className="inter-solve-side col">
-                                <ListServices />
+                                <ListServices activeIndex={4} />
                                 <div className="side-overlay"></div>
                             </div>
 

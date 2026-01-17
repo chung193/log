@@ -40,7 +40,7 @@ const StoreTime = () => {
                 </div>
                 <div className="store-ser-time-bot aos-init aos-animate" data-aos="fade-right-cus">
                     <div className="img">
-                        <img width="651" height="502" src="/images/car.webp" className="attachment-full size-full" alt="Xe chở container" decoding="async" loading="lazy" srcSet="/images/car.webp 651w, /images/car-300x231.webp 300w" />
+                        <img width="651" height="502" src="/images/car.png" className="attachment-full size-full" alt="Xe chở container" decoding="async" loading="lazy" srcSet="/images/car.png 651w, /images/car-300x231.png 300w" />
                     </div>
                 </div>
             </div>

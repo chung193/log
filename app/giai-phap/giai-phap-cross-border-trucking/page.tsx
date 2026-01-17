@@ -142,7 +142,7 @@ const CrossBorderTruckingPage: React.FC = () => {
                         <div className="inter-solve-row row">
                             <div className="inter-solve-side col">
                                 <div className="side-fixed">
-                                    <ListServices />
+                                    <ListServices activeIndex={3} />
                                     <div className="side-close">
                                         <i className="fas fa-times close icon"></i>
                                     </div>

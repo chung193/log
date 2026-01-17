@@ -22,7 +22,7 @@
 
 /* Icon cho menu cha cấp cao nhất - chỉ hiển thị circle-plus màu #FBAE17 */
 .menu-list>.menu-item>.menu-link .fa-circle-plus {
-    color: #FBAE17 !important;
+    color: #F32736 !important;
     font-size: 14px !important;
     margin-left: 4px !important;
     transition: opacity 0.3s ease;
@@ -95,7 +95,7 @@
 /* Style cho active menu */
 .menu-item.active-menu-item .menu-text {
     font-weight: 700 !important;
-    color: #FBAE17 !important;
+    color: #F32736 !important;
 }
 
 /* Style cho current page */
@@ -107,20 +107,29 @@
 .hd-nav .menu-item.active-menu-item .menu-text,
 .hd-nav .menu-item.current-menu-item .menu-text {
     font-weight: 700 !important;
-    color: #FBAE17 !important;
+    color: #F32736 !important;
 }
 
 /* Mobile active menu */
 .mobile .menu-item.active-menu-item .menu-text,
 .mobile .menu-item.current-menu-item .menu-text {
     font-weight: 700 !important;
-    color: #FBAE17 !important;
+    color: #F32736 !important;
 }
 
 /* Icon cho menu cha cấp cao nhất - chỉ hiển thị circle-plus màu #FBAE17 */
 .menu-list>.menu-item>.menu-link .fa-circle-plus {
-    color: #FBAE17 !important;
+    color: #F32736 !important;
     font-size: 14px !important;
     margin-left: 4px !important;
     transition: opacity 0.3s ease;
+}
+
+.hd-nav .menu-nav>.menu-list>.menu-item::before {
+    background: #F32736 !important;
+}
+
+.hd-nav .menu-nav>.menu-item:hover>.menu-link,
+.hd-nav .menu-nav>.menu-list>.menu-item:hover>a {
+    color: #F32736 !important;
 }

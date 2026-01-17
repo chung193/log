@@ -152,7 +152,7 @@ const InternationalLogisticsPage: React.FC = () => {
                 <div className="inter-solve ss-pd">
                     <div className="container">
                         <div className="inter-solve-row row">
-                            <ListServices />
+                            <ListServices activeIndex={1} />
                             <div className="inter-solve-main col">
                                 <div className="side-open">
                                     <div className="side-open-wrap">

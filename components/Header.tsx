@@ -23,10 +23,35 @@ export default function Header() {
     const pathname = usePathname()
     const searchParams = useSearchParams()
 
-    const langParam = searchParams.get('lang')
+    // Lấy locale từ URL hoặc localStorage
+    const savedLocale = typeof window !== 'undefined' ? localStorage.getItem('locale') : null
+    const langParam = searchParams.get('lang') || savedLocale
     const locale: Locale = (langParam === 'en' || langParam === 'vi') ? langParam : 'en'
 
     const { t } = useTranslations(locale)
+
+    // Lưu locale vào localStorage khi thay đổi
+    useEffect(() => {
+        if (langParam && (langParam === 'en' || langParam === 'vi')) {
+            localStorage.setItem('locale', langParam)
+        }
+    }, [langParam])
+
+    // Helper function để tạo URL với locale
+    const createUrlWithLocale = useCallback((href: string, currentLocale: string) => {
+        if (href === 'javascript:;') return href
+
+        try {
+            // Xử lý relative path
+            const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000'
+            const url = new URL(href, baseUrl)
+            url.searchParams.set('lang', currentLocale)
+            return `${url.pathname}${url.search}`
+        } catch (e) {
+            // Fallback nếu URL không hợp lệ
+            return `${href}${href.includes('?') ? '&' : '?'}lang=${currentLocale}`
+        }
+    }, [])
 
     // Lấy menu items theo locale
     const menuItems = useMemo(() => getMenuByLocale(locale), [locale])
@@ -46,7 +71,7 @@ export default function Header() {
         }
     }, [activeItem])
 
-    // Set active menu dựa trên current path - SỬA LẠI ĐƠN GIẢN
+    // Set active menu dựa trên current path
     useEffect(() => {
         const findActiveMenuByPath = (items: MenuItem[], path: string): string | null => {
             for (const item of items) {
@@ -166,7 +191,7 @@ export default function Header() {
                 ) : (
                     // Real link với Next.js Link
                     <Link
-                        href={item.href}
+                        href={createUrlWithLocale(item.href, locale)}
                         className="menu-link"
                         onClick={() => handleMenuItemClick(item)}
                         scroll={false}
@@ -183,7 +208,8 @@ export default function Header() {
                             <b><i className="fa-solid fa-chevron-right"></i></b>
                         )}
                     </Link>
-                )}
+                )
+                }
 
                 {/* Show submenu on hover */}
                 {showSubmenu && item.submenu && (
@@ -212,7 +238,7 @@ export default function Header() {
                                     ) : (
                                         // Real link
                                         <Link
-                                            href={subItem.href}
+                                            href={createUrlWithLocale(subItem.href, locale)}
                                             className="menu-link"
                                             onClick={() => handleMenuItemClick(subItem)}
                                             scroll={false}
@@ -240,7 +266,7 @@ export default function Header() {
                                                         className={`parent fz16 menu-item ${isSubSubActive ? 'current-menu-item active-menu-item' : ''}`}
                                                     >
                                                         <Link
-                                                            href={subSubItem.href}
+                                                            href={createUrlWithLocale(subSubItem.href, locale)}
                                                             className="menu-link"
                                                             onClick={() => handleMenuItemClick(subSubItem)}
                                                             scroll={false}
@@ -263,9 +289,9 @@ export default function Header() {
                         })}
                     </ul>
                 )}
-            </li>
+            </li >
         )
-    }, [hoveredMenuItem, activeItem, pathname, handleMenuItemClick, handleDesktopMenuItemHover])
+    }, [hoveredMenuItem, activeItem, pathname, handleMenuItemClick, handleDesktopMenuItemHover, locale, createUrlWithLocale])
 
     // Mobile menu render function
     const renderMobileMenuItem = useCallback((item: MenuItem, index: number, level: number = 0) => {
@@ -311,7 +337,7 @@ export default function Header() {
                 ) : (
                     // Real link với Next.js Link
                     <Link
-                        href={item.href}
+                        href={createUrlWithLocale(item.href, locale)}
                         className="menu-link"
                         onClick={() => {
                             handleMenuItemClick(item)
@@ -384,7 +410,7 @@ export default function Header() {
                                     ) : (
                                         // Real link
                                         <Link
-                                            href={subItem.href}
+                                            href={createUrlWithLocale(subItem.href, locale)}
                                             className="menu-link"
                                             onClick={() => {
                                                 handleMenuItemClick(subItem)
@@ -425,7 +451,7 @@ export default function Header() {
                                                         className={`parent fz16 menu-item ${isSubSubActive ? 'current-menu-item active-menu-item' : ''}`}
                                                     >
                                                         <Link
-                                                            href={subSubItem.href}
+                                                            href={createUrlWithLocale(subSubItem.href, locale)}
                                                             className="menu-link"
                                                             onClick={() => {
                                                                 handleMenuItemClick(subSubItem)
@@ -450,7 +476,7 @@ export default function Header() {
                 )}
             </li>
         )
-    }, [isMobileMenuOpen, toggleMobileMenu, pathname, handleMenuItemClick, activeItem])
+    }, [isMobileMenuOpen, toggleMobileMenu, pathname, handleMenuItemClick, activeItem, locale, createUrlWithLocale])
 
     return (
         <header className="hd">
@@ -459,7 +485,7 @@ export default function Header() {
                     <div className="hd-flex">
                         {/* Logo với Next.js Link */}
                         <div className="hd-logo">
-                            <Link href="/" className="custom-logo-link" rel="home">
+                            <Link href={createUrlWithLocale('/', locale)} className="custom-logo-link" rel="home">
                                 <img
                                     width="146"
                                     height="49"
